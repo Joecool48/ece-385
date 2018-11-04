@@ -1,0 +1,432 @@
+!SESSION 2018-10-29 00:34:54.226 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-10-29 00:36:31.106
+!MESSAGE Indexed 'Lab9Software_bsp' (80 sources, 62 headers) in 1.9 sec: 1,190 declarations; 2,486 references; 110 unresolved inclusions; 6 syntax errors; 191 unresolved names (4.9%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-10-29 00:36:44.656
+!MESSAGE Indexed 'Lab9Software' (0 sources, 0 headers) in 0.001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+!SESSION 2018-10-30 03:53:16.393 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-10-30 03:53:25.611
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 04:10:39.976
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0xb0]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2018-10-30 04:10:43.242
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=0xb0] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 04:10:43.562
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0xb0 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2018-10-30 04:10:47.513
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, --sidp=0xb0, /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2018-10-30 04:10:47.519
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 04:12:51.600
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0xb0]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2018-10-30 04:12:54.655
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=0xb0] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 04:12:54.891
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0xb0 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2018-10-30 04:12:58.451
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, --sidp=0xb0, /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2018-10-30 04:12:58.526
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 11:04:09.397
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0xb0]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2018-10-30 11:04:12.366
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --stop, --accept-bad-sysid, --sidp=0xb0] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 11:04:12.601
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0xb0 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2018-10-30 11:04:15.942
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, --sidp=0xb0, /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2018-10-30 11:04:15.949
+!MESSAGE Downloading ELF Process failed
+!SESSION 2018-10-30 11:20:58.388 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-10-30 11:21:04.279
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2018-10-30 11:25:36.436 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-10-30 11:25:42.013
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 11:29:50.756
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0xb0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 11:29:53.000
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0xb0 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 11:34:34.126
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 11:34:34.926
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540916636]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 11:34:37.406
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540916636 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 11:35:46.325
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 11:35:47.141
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540916636]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 11:35:49.617
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540916636 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 11:37:37.006
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 11:37:37.528
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540916636]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 11:37:39.987
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540916636 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 11:38:00.348
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 11:38:01.149
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540916636]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 11:38:03.631
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540916636 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+!SESSION 2018-10-30 11:46:43.700 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY com.altera.sbtgui.core 4 0 2018-10-30 11:47:10.774
+!MESSAGE Error executing 'nios2-bsp-generate-files --bsp-dir . --settings settings.bsp', unexpected return code 1.
+
+Error message:
+
+SEVERE: [Error] hal: <b>hal.stdin</b> "jtag_uart_0" is out of range: "none", "jtag"
+SEVERE: [Error] hal: <b>hal.stdin</b> "jtag_uart_0" is out of range: "none", "jtag"
+SEVERE: nios2-bsp-generate-files failed.
+
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 11:49:08.437
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x38]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 11:49:10.631
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x38 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+!SESSION 2018-10-30 12:00:40.551 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-10-30 12:00:43.717
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2018-10-30 12:04:24.956 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-10-30 12:04:29.154
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2018-10-30 12:10:06.810 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-10-30 12:14:05.442
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 12:24:36.605
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 12:24:38.926
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 12:29:20.283
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 12:29:21.235
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 12:29:23.692
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 12:31:43.929
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 12:31:44.752
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 12:31:47.202
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 12:32:46.379
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 12:32:47.165
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 12:32:49.645
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 12:57:06.087
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 12:57:06.937
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 12:57:09.399
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 13:00:50.124
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 13:00:52.876
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 13:04:04.709
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 13:04:05.518
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 13:04:07.997
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 14:50:30.801
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 14:50:31.675
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 14:50:34.241
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 15:05:55.206
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 15:05:57.673
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 15:07:40.729
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 15:07:43.237
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 15:35:52.145
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 15:35:54.962
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 15:55:12.146
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 15:55:13.332
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 15:55:16.642
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 15:56:42.282
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 15:56:43.290
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 15:56:46.500
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 15:59:09.411
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 15:59:10.374
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 15:59:13.225
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:02:42.333
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:02:43.256
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:02:46.081
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:06:34.149
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:06:35.087
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:06:38.017
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:11:47.749
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:11:48.668
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:11:51.495
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:16:35.919
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:16:36.918
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:16:40.884
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:23:52.869
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:23:54.082
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:23:58.153
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:24:58.734
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:24:59.748
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:25:02.993
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:27:51.870
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:27:52.921
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:27:56.380
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:30:30.857
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:30:31.796
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:30:35.011
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:36:52.574
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:36:53.488
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:36:56.363
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:37:10.809
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:37:11.712
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:37:14.540
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+!SESSION 2018-10-30 16:38:01.513 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-10-30 16:38:07.118
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:39:09.159
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:39:12.548
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+!SESSION 2018-10-30 16:40:05.160 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-10-30 16:40:09.938
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:41:01.678
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 16:41:04.823
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
+!SESSION 2018-10-30 16:43:54.725 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/users/asus/desktop/yeda/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-10-30 16:43:58.091
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 17:02:35.297
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x38 --id=0x43 --timestamp=1540918600]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2018-10-30 17:02:39.036
+!MESSAGE Executing: [C:/users/asus/desktop/yeda/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x38 --id=0x43 --timestamp=1540918600 /cygdrive/c/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software/Lab9Software.elf]
