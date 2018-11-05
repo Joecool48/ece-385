@@ -53,6 +53,7 @@ lab8_soc lab9_qsystem (
 	.sdram_clk_clk(DRAM_CLK)						// Clock out to SDRAM
 );
 
+
 // Display the first 4 and the last 4 hex values of the received message
 hexdriver hexdrv0 (
 	.In(AES_EXPORT_DATA[3:0]),
