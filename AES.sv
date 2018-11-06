@@ -16,18 +16,18 @@ module AES (
 	input  logic [127:0] AES_MSG_ENC,
 	output logic [127:0] AES_MSG_DEC
 );
-	parameter [4:0] COUNTER_START = 9:
-	enum [5:0] {START, KEY_EXPANSION, ADD_ROUND_KEY_INIT, INV_SHIFT_ROWS_LOOP, INV_SHIFT_ROWS_LOOP_WAIT, INV_SUB_BYTES_LOOP, INV_SUB_BYTES_LOOP_WAIT, INV_ADD_ROUND_KEY_LOOP, INV_MIX_COLUMNS_LOOP_0, INV_MIX_COLUMNS_LOOP_WAIT_0, INV_MIX_COLUMNS_LOOP_1, INV_MIX_COLUMNS_LOOP_WAIT_1, INV_MIX_COLUMNS_LOOP_2, INV_MIX_COLUMNS_LOOP_WAIT_2, INV_MIX_COLUMNS_LOOP_3, INV_MIX_COLUMNS_LOOP_WAIT_3, DONE} current_state, next_state;//INV_SHIFT_ROWS_WAIT, INV_SUB_BYTES_WAIT, INV_ADD_ROUND_KEY, DONE} current_state, next_state;
+	parameter [4:0] COUNTER_START = 9;
+	enum logic [5:0] {START, KEY_EXPANSION, ADD_ROUND_KEY_INIT, INV_SHIFT_ROWS_LOOP, INV_SHIFT_ROWS_LOOP_WAIT, INV_SUB_BYTES_LOOP, INV_SUB_BYTES_LOOP_WAIT, INV_ADD_ROUND_KEY_LOOP, INV_MIX_COLUMNS_LOOP_0, INV_MIX_COLUMNS_LOOP_WAIT_0, INV_MIX_COLUMNS_LOOP_1, INV_MIX_COLUMNS_LOOP_WAIT_1, INV_MIX_COLUMNS_LOOP_2, INV_MIX_COLUMNS_LOOP_WAIT_2, INV_MIX_COLUMNS_LOOP_3, INV_MIX_COLUMNS_LOOP_WAIT_3, DONE} current_state, next_state;//INV_SHIFT_ROWS_WAIT, INV_SUB_BYTES_WAIT, INV_ADD_ROUND_KEY, DONE} current_state, next_state;
 	logic [1407:0] key_expansion_out;
 	logic [4:0] loop_counter;
 	logic [1:0] mix_col_counter;
 	logic [127:0] inv_shift_rows_data_in, inv_shift_rows_data_out;
-	logic [31:0] inv_mix_columns_in [3:0], inv_mix_columns_out [3:0];
+	logic [31:0] inv_mix_columns_in, inv_mix_columns_out;
 	logic [7:0] inv_sub_bytes_in [15:0], inv_sub_bytes_out [15:0];
 	logic [127:0] state;
 	
 	KeyExpansion key_exp (.clk(CLK), .CipherKey(AES_KEY), .KeySchedule(key_expansion_out));
-	InvShiftRows inv_shift_rows (.data_in(inv_shift_rows_data_in), .data_out(inv_shfit_rows_data_out));
+	InvShiftRows inv_shift_rows (.data_in(inv_shift_rows_data_in), .data_out(inv_shift_rows_data_out));
 	InvMixColumns inv_mix_columns (.in(inv_mix_columns_in), .out(inv_mix_columns_out));
 	InvSubBytes sub0 (.clk(CLK), .in(inv_sub_bytes_in[0]), .out(inv_sub_bytes_out[0]));
 	InvSubBytes sub1 (.clk(CLK), .in(inv_sub_bytes_in[1]), .out(inv_sub_bytes_out[1]));
@@ -47,13 +47,13 @@ module AES (
 	InvSubBytes sub15 (.clk(CLK), .in(inv_sub_bytes_in[15]), .out(inv_sub_bytes_out[15]));
 	
 	always_comb begin
-		if (RESET) begin	
-			AES_MSG_DEC = 128'b0;
-			loop_counter = COUNTER_START;
-			current_state = START;
-			next_state = START;
-		end
-		unique case (current_state) begin
+//		if (RESET) begin	
+//			AES_MSG_DEC = 128'b0;
+//			loop_counter = COUNTER_START;
+//			current_state = START;
+//			next_state = START;
+//		end
+		unique case (current_state)
 			START: begin
 				if (AES_START) next_state = KEY_EXPANSION;
 				else next_state = START;
@@ -71,17 +71,17 @@ module AES (
 			INV_SHIFT_ROWS_LOOP_WAIT: begin
 				next_state = INV_SUB_BYTES_LOOP;
 			end
-			INV_SUB_BYTES: begin	
-				next_state = INV_SUB_BYTES_WAIT;
+			INV_SUB_BYTES_LOOP: begin	
+				next_state = INV_SUB_BYTES_LOOP_WAIT;
 			end
-			INV_SUB_BYTES_WAIT: begin
-				next_state = ADD_ROUND_KEY_LOOP
+			INV_SUB_BYTES_LOOP_WAIT: begin
+				next_state = INV_ADD_ROUND_KEY_LOOP;
 			end
 			INV_ADD_ROUND_KEY_LOOP: begin
 				if (loop_counter <= 0)
 					next_state = DONE;
 				else 
-					next_state = INV_MIX_COLUMNS_LOOP;
+					next_state = INV_MIX_COLUMNS_LOOP_0;
 			end
 			INV_MIX_COLUMNS_LOOP_0: begin
 				next_state = INV_MIX_COLUMNS_LOOP_WAIT_0;
@@ -90,7 +90,7 @@ module AES (
 				next_state = INV_MIX_COLUMNS_LOOP_1;
 			end
 			INV_MIX_COLUMNS_LOOP_1: begin
-				next_state = INV_MIX_COLUMNS_LOOP_WAIT_`;
+				next_state = INV_MIX_COLUMNS_LOOP_WAIT_1;
 			end
 			INV_MIX_COLUMNS_LOOP_WAIT_1: begin
 				next_state = INV_MIX_COLUMNS_LOOP_2;
@@ -105,13 +105,8 @@ module AES (
 				next_state = INV_MIX_COLUMNS_LOOP_WAIT_3;
 			end
 			INV_MIX_COLUMNS_LOOP_WAIT_3: begin
-				if(loop_counter <= 0) begin
-					next_state = DONE;
-				end
-				else begin
-					next_state = INV_SHIFT_ROWS_LOOP;
-					loop_counter--;
-				end
+				next_state = INV_SHIFT_ROWS_LOOP;
+				loop_counter--;
 			end
 			DONE: begin
 				if (~AES_START) begin
@@ -123,7 +118,7 @@ module AES (
 			end
 		endcase
 		
-		unique case (current_state) begin
+		case (current_state)
 			START: begin
 				state = AES_MSG_ENC;
 			end
@@ -136,15 +131,47 @@ module AES (
 			INV_SHIFT_ROWS_LOOP_WAIT: begin
 				state = inv_shift_rows_data_out;
 			end
-			INV_SUB_BYTES: begin
-				for(int i = 0; i<16; i++) begin
-					inv_sub_bytes_in[i] = state[8*i+7:8*i];
-				end
+			INV_SUB_BYTES_LOOP: begin
+//				for(int i = 0; i<16; i++) begin
+//					inv_sub_bytes_in[i] <= state[8*i+7:8*i];
+//				end
+				{inv_sub_bytes_in[0], 
+				 inv_sub_bytes_in[1],
+				 inv_sub_bytes_in[2],
+				 inv_sub_bytes_in[3],
+				 inv_sub_bytes_in[4],
+				 inv_sub_bytes_in[5],
+				 inv_sub_bytes_in[6],
+				 inv_sub_bytes_in[7],
+				 inv_sub_bytes_in[8],
+				 inv_sub_bytes_in[9],
+				 inv_sub_bytes_in[10],
+				 inv_sub_bytes_in[11],
+				 inv_sub_bytes_in[12],
+				 inv_sub_bytes_in[13],
+				 inv_sub_bytes_in[14],
+				 inv_sub_bytes_in[15]}= state[127:0];
 			end
-			INV_SUB_BYTES_WAIT: begin	
-				for(int i = 0; i<16; i++) begin
-					state[8*i+7:8*i] = inv_sub_bytes_out[i];
-				end
+			INV_SUB_BYTES_LOOP_WAIT: begin	
+//				for(int i = 0; i<16; i++) begin
+//					state[8*i+7:8*i] <= inv_sub_bytes_out[i];
+//				end
+				state[127:0] = {inv_sub_bytes_in[0], 
+									 inv_sub_bytes_in[1],
+									 inv_sub_bytes_in[2],
+									 inv_sub_bytes_in[3],
+									 inv_sub_bytes_in[4],
+									 inv_sub_bytes_in[5],
+									 inv_sub_bytes_in[6],
+									 inv_sub_bytes_in[7],
+									 inv_sub_bytes_in[8],
+									 inv_sub_bytes_in[9],
+									 inv_sub_bytes_in[10],
+									 inv_sub_bytes_in[11],
+									 inv_sub_bytes_in[12],
+									 inv_sub_bytes_in[13],
+									 inv_sub_bytes_in[14],
+									 inv_sub_bytes_in[15]};
 			end
 			INV_MIX_COLUMNS_LOOP_0: begin
 				inv_mix_columns_in = state[31:0];

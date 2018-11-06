@@ -1,5 +1,5 @@
 EDA Netlist Writer report for Lab9
-Tue Oct 30 17:01:14 2018
+Mon Nov 05 22:20:09 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue Oct 30 17:01:13 2018 ;
+; EDA Netlist Writer Status ; Successful - Mon Nov 05 22:20:09 2018 ;
 ; Revision Name             ; Lab9                                  ;
 ; Top-level Entity Name     ; Lab9                                  ;
 ; Family                    ; Cyclone IV E                          ;
@@ -66,20 +66,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------------+
 
 
-+-----------------------------------------------------------------------------------+
-; Simulation Generated Files                                                        ;
-+-----------------------------------------------------------------------------------+
-; Generated Files                                                                   ;
-+-----------------------------------------------------------------------------------+
-; C:/Users/ASUS/Desktop/Yeda/Lab9/simulation/modelsim/Lab9_7_1200mv_85c_slow.svo    ;
-; C:/Users/ASUS/Desktop/Yeda/Lab9/simulation/modelsim/Lab9_7_1200mv_0c_slow.svo     ;
-; C:/Users/ASUS/Desktop/Yeda/Lab9/simulation/modelsim/Lab9_min_1200mv_0c_fast.svo   ;
-; C:/Users/ASUS/Desktop/Yeda/Lab9/simulation/modelsim/Lab9.svo                      ;
-; C:/Users/ASUS/Desktop/Yeda/Lab9/simulation/modelsim/Lab9_7_1200mv_85c_v_slow.sdo  ;
-; C:/Users/ASUS/Desktop/Yeda/Lab9/simulation/modelsim/Lab9_7_1200mv_0c_v_slow.sdo   ;
-; C:/Users/ASUS/Desktop/Yeda/Lab9/simulation/modelsim/Lab9_min_1200mv_0c_v_fast.sdo ;
-; C:/Users/ASUS/Desktop/Yeda/Lab9/simulation/modelsim/Lab9_v.sdo                    ;
-+-----------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                           ;
++--------------------------------------------------------------------------------------+
+; Generated Files                                                                      ;
++--------------------------------------------------------------------------------------+
+; C:/Users/ASUS/Desktop/Yeda/Lab9Git/simulation/modelsim/Lab9_7_1200mv_85c_slow.svo    ;
+; C:/Users/ASUS/Desktop/Yeda/Lab9Git/simulation/modelsim/Lab9_7_1200mv_0c_slow.svo     ;
+; C:/Users/ASUS/Desktop/Yeda/Lab9Git/simulation/modelsim/Lab9_min_1200mv_0c_fast.svo   ;
+; C:/Users/ASUS/Desktop/Yeda/Lab9Git/simulation/modelsim/Lab9.svo                      ;
+; C:/Users/ASUS/Desktop/Yeda/Lab9Git/simulation/modelsim/Lab9_7_1200mv_85c_v_slow.sdo  ;
+; C:/Users/ASUS/Desktop/Yeda/Lab9Git/simulation/modelsim/Lab9_7_1200mv_0c_v_slow.sdo   ;
+; C:/Users/ASUS/Desktop/Yeda/Lab9Git/simulation/modelsim/Lab9_min_1200mv_0c_v_fast.sdo ;
+; C:/Users/ASUS/Desktop/Yeda/Lab9Git/simulation/modelsim/Lab9_v.sdo                    ;
++--------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -88,21 +88,21 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Oct 30 17:01:04 2018
+    Info: Processing started: Mon Nov 05 22:19:59 2018
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Lab9 -c Lab9
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file Lab9_7_1200mv_85c_slow.svo in folder "C:/Users/ASUS/Desktop/Yeda/Lab9/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Lab9_7_1200mv_0c_slow.svo in folder "C:/Users/ASUS/Desktop/Yeda/Lab9/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Lab9_min_1200mv_0c_fast.svo in folder "C:/Users/ASUS/Desktop/Yeda/Lab9/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Lab9.svo in folder "C:/Users/ASUS/Desktop/Yeda/Lab9/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Lab9_7_1200mv_85c_v_slow.sdo in folder "C:/Users/ASUS/Desktop/Yeda/Lab9/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Lab9_7_1200mv_0c_v_slow.sdo in folder "C:/Users/ASUS/Desktop/Yeda/Lab9/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Lab9_min_1200mv_0c_v_fast.sdo in folder "C:/Users/ASUS/Desktop/Yeda/Lab9/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file Lab9_v.sdo in folder "C:/Users/ASUS/Desktop/Yeda/Lab9/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Lab9_7_1200mv_85c_slow.svo in folder "C:/Users/ASUS/Desktop/Yeda/Lab9Git/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Lab9_7_1200mv_0c_slow.svo in folder "C:/Users/ASUS/Desktop/Yeda/Lab9Git/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Lab9_min_1200mv_0c_fast.svo in folder "C:/Users/ASUS/Desktop/Yeda/Lab9Git/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Lab9.svo in folder "C:/Users/ASUS/Desktop/Yeda/Lab9Git/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Lab9_7_1200mv_85c_v_slow.sdo in folder "C:/Users/ASUS/Desktop/Yeda/Lab9Git/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Lab9_7_1200mv_0c_v_slow.sdo in folder "C:/Users/ASUS/Desktop/Yeda/Lab9Git/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Lab9_min_1200mv_0c_v_fast.sdo in folder "C:/Users/ASUS/Desktop/Yeda/Lab9Git/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Lab9_v.sdo in folder "C:/Users/ASUS/Desktop/Yeda/Lab9Git/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4728 megabytes
-    Info: Processing ended: Tue Oct 30 17:01:14 2018
+    Info: Peak virtual memory: 4739 megabytes
+    Info: Processing ended: Mon Nov 05 22:20:09 2018
     Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Total CPU time (on all processors): 00:00:09
 
 

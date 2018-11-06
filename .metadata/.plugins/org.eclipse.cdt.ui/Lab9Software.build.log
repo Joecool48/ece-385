@@ -1,5 +1,7 @@
-17:02:27 **** Incremental Build of configuration Nios II for project Lab9Software ****
+22:21:42 **** Incremental Build of configuration Nios II for project Lab9Software ****
 make all 
+makefile:759: warning: overriding commands for target `obj/default/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o'
+makefile:756: warning: ignoring old commands for target `obj/default/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o'
 Info: Building ../Lab9Software_bsp/
 C:/Users/ASUS/Desktop/Yeda/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab9Software_bsp/
 [BSP build complete]
@@ -10,13 +12,13 @@ main.c:122:10: warning: 'key_num' may be used uninitialized in this function [-W
    key_num[idx++] = w[i];
           ^
 Info: Linking Lab9Software.elf
-nios2-elf-g++  -T'../Lab9Software_bsp//linker.x' -msys-crt0='../Lab9Software_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Lab9Software_bsp/   -Wl,-Map=Lab9Software.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Lab9Software.elf obj/default/main.o -lm -msys-lib=m
-nios2-elf-insert Lab9Software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 67 --sidp 0x38 --timestamp 1540918600 --stderr_dev jtag --stdin_dev jtag --stdout_dev jtag --sopc_system_name lab8_soc --quartus_project_dir "C:/Users/ASUS/Desktop/Yeda/Lab9" --jdi ../..//output_files/Lab9.jdi --sopcinfo C:/Users/ASUS/Desktop/Yeda/Lab9/Software/Lab9Software_bsp/../../lab8_soc.sopcinfo
-Info: (Lab9Software.elf) 115 KBytes program size (code + initialized data).
+nios2-elf-g++  -T'../Lab9Software_bsp//linker.x' -msys-crt0='../Lab9Software_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Lab9Software_bsp/   -Wl,-Map=Lab9Software.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Lab9Software.elf obj/default/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o obj/default/main.o obj/default/.metadata/.plugins/org.eclipse.cdt.make.core/specs.o -lm -msys-lib=m
+nios2-elf-insert Lab9Software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 67 --sidp 0x38 --timestamp 1540918600 --stderr_dev jtag --stdin_dev jtag --stdout_dev jtag --sopc_system_name lab8_soc --quartus_project_dir "C:/Users/ASUS/Desktop/Yeda/Lab9Git" --jdi ../..//output_files/Lab9.jdi --sopcinfo C:/Users/ASUS/Desktop/Yeda/Lab9Git/Software/Lab9Software_bsp/../../lab8_soc.sopcinfo
+Info: (Lab9Software.elf) 116 KBytes program size (code + initialized data).
 Info:                    65411 KBytes free for stack + heap.
 Info: Creating Lab9Software.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source Lab9Software.elf >Lab9Software.objdump
 [Lab9Software build complete]
 
-17:02:33 Build Finished (took 6s.679ms)
+22:21:53 Build Finished (took 10s.858ms)
 

@@ -37,31 +37,39 @@ module avalon_aes_interface (
 	// Exported Conduit
 	output logic [31:0] EXPORT_DATA		// Exported Conduit Signal to LEDs
 );
-
-logic [32:0] register_file[16];
- 
+logic [31:0] register_file[16];
+logic [127:0] AES_MSG_DEC;
+logic AES_DONE;
 always_ff @ (posedge CLK) begin
-if(RESET) begin
-    for(int i = 0; i< 4; i++)
-        register_file[i] <= 0;
+	if(RESET) begin
+		 for(int i = 0; i< 16; i++)
+			  register_file[i] <= 0;
+	end
+	else if(AVL_WRITE && AVL_CS) begin
+		if(AVL_BYTE_EN[3])
+		  register_file[AVL_ADDR][31:24] <= AVL_WRITEDATA[31:24];
+		if(AVL_BYTE_EN[2])
+		  register_file[AVL_ADDR][ 23:16] <= AVL_WRITEDATA[23:16];
+		if(AVL_BYTE_EN[1])
+		  register_file[AVL_ADDR][15:8] <= AVL_WRITEDATA[15:8];
+		if(AVL_BYTE_EN[0])
+		  register_file[AVL_ADDR][ 7:0] <= AVL_WRITEDATA[7:0];
+	end
+	register_file[15] <= AES_DONE;
+	register_file[8] <= AES_MSG_DEC[31:0];
+	register_file[9] <= AES_MSG_DEC[63:32];
+	register_file[10] <= 16'haaaa;
+	register_file[11] <= AES_MSG_DEC[127:96];
 end
-else if(AVL_WRITE && AVL_CS) begin
-    if(AVL_BYTE_EN[3])
-        register_file[AVL_ADDR][31:24] <= AVL_WRITEDATA[31:24];
-    if(AVL_BYTE_EN[2])
-        register_file[AVL_ADDR][ 23:16] <= AVL_WRITEDATA[23:16];
-	 if(AVL_BYTE_EN[1])
-        register_file[AVL_ADDR][15:8] <= AVL_WRITEDATA[15:8];
-    if(AVL_BYTE_EN[0])
-        register_file[AVL_ADDR][ 7:0] <= AVL_WRITEDATA[ 7:0];
-end
-//else if(hardware_write) begin: HW_WRITE_TO_REG
-////you declare hardware_write
-//    register_file[2] <= AES_MSG_DEC;
-end
+
+AES aes (.AES_START(register_file[14][0]),
+			.AES_KEY({register_file[0],register_file[1],register_file[2],register_file[3]}),
+			.AES_MSG_ENC({register_file[4],register_file[5],register_file[6],register_file[7]}),
+			.*);
+
 
 assign AVL_READDATA = (AVL_CS && AVL_READ) ? register_file[AVL_ADDR]:16'b0;
                       
-assign EXPORT_DATA = register_file[0];
+assign EXPORT_DATA = {register_file[0][31:16], register_file[3][15:0]};
 
 endmodule
