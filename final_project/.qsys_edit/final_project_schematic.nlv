@@ -1,0 +1,27 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst final_project.nios2_gen2_0.reset_bridge -pg 1
+preplace inst final_project.sysid -pg 1 -lvl 3 -y 100
+preplace inst final_project.nios2_gen2_0.cpu -pg 1
+preplace inst final_project.master_template_0 -pg 1 -lvl 4 -y 60
+preplace inst final_project.nios2_gen2_0 -pg 1 -lvl 2 -y 160
+preplace inst final_project.jtag_game_nios -pg 1 -lvl 3 -y 200
+preplace inst final_project.sdram -pg 1 -lvl 3 -y 320
+preplace inst final_project.nios2_gen2_0.clock_bridge -pg 1
+preplace inst final_project -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst final_project.pll -pg 1 -lvl 3 -y 430
+preplace inst final_project.clk_0 -pg 1 -lvl 1 -y 350
+preplace netloc POINT_TO_POINT<net_container>final_project</net_container>(SLAVE)jtag_game_nios.irq,(MASTER)nios2_gen2_0.irq) 1 2 1 N
+preplace netloc INTERCONNECT<net_container>final_project</net_container>(SLAVE)sdram.s1,(SLAVE)sysid.control_slave,(SLAVE)nios2_gen2_0.debug_mem_slave,(MASTER)nios2_gen2_0.data_master,(MASTER)master_template_0.avalon_master,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)pll.pll_slave,(SLAVE)jtag_game_nios.avalon_jtag_slave) 1 1 4 350 360 770 90 NJ 170 1370
+preplace netloc EXPORT<net_container>final_project</net_container>(SLAVE)final_project.sdram_wire,(SLAVE)sdram.wire) 1 0 3 NJ 420 NJ 380 NJ
+preplace netloc FAN_OUT<net_container>final_project</net_container>(MASTER)pll.c0,(SLAVE)master_template_0.clock_reset,(SLAVE)sdram.clk,(SLAVE)nios2_gen2_0.clk,(SLAVE)sysid.clk,(SLAVE)jtag_game_nios.clk) 1 1 3 330 300 810 310 1070
+preplace netloc EXPORT<net_container>final_project</net_container>(MASTER)final_project.sys_clk,(MASTER)pll.c3) 1 3 2 NJ 500 NJ
+preplace netloc EXPORT<net_container>final_project</net_container>(MASTER)pll.c2,(MASTER)final_project.sdram_clk) 1 3 2 NJ 480 NJ
+preplace netloc EXPORT<net_container>final_project</net_container>(SLAVE)final_project.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>final_project</net_container>(MASTER)clk_0.clk,(SLAVE)pll.inclk_interface) 1 1 2 NJ 400 NJ
+preplace netloc EXPORT<net_container>final_project</net_container>(SLAVE)final_project.avalon_user,(SLAVE)master_template_0.user) 1 0 4 NJ 70 NJ 70 NJ 70 NJ
+preplace netloc EXPORT<net_container>final_project</net_container>(SLAVE)final_project.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>final_project</net_container>(SLAVE)master_template_0.control,(SLAVE)final_project.avalon_control) 1 0 4 NJ 50 NJ 50 NJ 50 NJ
+preplace netloc FAN_OUT<net_container>final_project</net_container>(SLAVE)nios2_gen2_0.reset,(MASTER)clk_0.clk_reset,(SLAVE)pll.inclk_interface_reset,(SLAVE)master_template_0.clock_reset_reset,(SLAVE)sdram.reset,(SLAVE)jtag_game_nios.reset,(SLAVE)sysid.reset) 1 1 3 310 340 790 30 NJ
+levelinfo -pg 1 0 100 1480
+levelinfo -hier final_project 110 140 490 840 1140 1390
