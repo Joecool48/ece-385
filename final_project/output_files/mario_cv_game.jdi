@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="53dc5276e1bc5815b03a"/>
+    <hash md5_digest_80b="54a9a49e550ada1493dc"/>
   </project>
   <file_info>
     <file device="EP4CE115F29C7" path="mario_cv_game.sof" usercode="0xFFFFFFFF"/>
@@ -139,7 +139,7 @@
   <sld_infos>
     <sld_info hpath="final_project:nios_system" name="nios_system">
       <assignment_values>
-        <assignment_value text="QSYS_NAME final_project HAS_SOPCINFO 1 GENERATION_ID 1542520811"/>
+        <assignment_value text="QSYS_NAME final_project HAS_SOPCINFO 1 GENERATION_ID 1542752135"/>
       </assignment_values>
       <parameters/>
     </sld_info>

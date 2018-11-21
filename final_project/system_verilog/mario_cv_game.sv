@@ -33,11 +33,16 @@ module mario_cv_game (
                                  DRAM_CS_N,    //SDRAM Chip Select
 											DRAM_CLK //SDRAM Clock
 							);
+							// Reset assignments high and low
+							assign Reset = KEY[0];
+							assign Reset_h = ~Reset;
 							
 							// Set it to 0 to make the bus burst
 							logic avalon_control_fixed_location;  // avalon_control.fixed_location
 							assign avalon_control_fixed_location = 1'b0;
 							
+							
+							// Avalon bus arbitrates to allow us to access sprite data
 							logic [31:0] avalon_control_read_base;       //               .read_base
 							logic [31:0] avalon_control_read_length;     //               .read_length
 							logic avalon_control_go;              //               .go
@@ -49,20 +54,86 @@ module mario_cv_game (
 							
 							
 							
+							logic [15:0] sprite_id, sprite_id_pio_export;
+							logic [15:0] sprite_x, sprite_y, sprite_x_pio_export, sprite_y_pio_export;
+							logic [31:0] sprite_address, sprite_address_pio_export;
+							logic [15:0] sprite_width, sprite_height, sprite_width_pio_export, sprite_height_pio_export;
 							
-							// Reset assignments high and low
-							assign Reset = KEY[0];
-							assign Reset_h = ~Reset;
+							logic [5:0] empty;
+							logic [5:0] full;
+							
+							// FIFO's to queue any new sprites/backgrounds to be drawn
+							logic fifo_re, fifo_we;
+							logic fifo_full, fifo_empty;
+							assign fifo_full = full[0];
+							assign fifo_empty = empty[0];
+							sprite_fifo #(.FIFO_DEPTH(128), .BUS_WIDTH(16)) sprite_id_fifo (.Clk(SYS_CLK), 
+																												.Reset(Reset), 
+																												.data_in(sprite_id_pio_export), 
+																												.re(fifo_re), 
+																												.we(fifo_we),
+																												.f(full[0]),
+																												.e(empty[0]),
+																												.data_out(sprite_id));
+																												
+							sprite_fifo #(.FIFO_DEPTH(128), .BUS_WIDTH(16)) sprite_x_fifo (.Clk(SYS_CLK), 
+																												.Reset(Reset), 
+																												.data_in(sprite_x_pio_export), 
+																												.re(fifo_re), 
+																												.we(fifo_we),
+																												.f(full[1]),
+																												.e(empty[1]),
+																												.data_out(sprite_x));
+														
+														
+							sprite_fifo #(.FIFO_DEPTH(128), .BUS_WIDTH(16)) sprite_y_fifo (.Clk(SYS_CLK), 
+																												.Reset(Reset), 
+																												.data_in(sprite_y_pio_export), 
+																												.re(fifo_re), 
+																												.we(fifo_we),
+																												.f(full[2]),
+																												.e(empty[2]),
+																												.data_out(sprite_y));
+														
+														
+							sprite_fifo #(.FIFO_DEPTH(128), .BUS_WIDTH(16)) sprite_width_fifo (.Clk(SYS_CLK),
+																												.Reset(Reset), 
+																												.data_in(sprite_width_pio_export), 
+																												.re(fifo_re), 
+																												.we(fifo_we),
+																												.f(full[3]),
+																												.e(empty[3]),
+																												.data_out(sprite_width));
+																												
+							sprite_fifo #(.FIFO_DEPTH(128), .BUS_WIDTH(16)) sprite_height_fifo (.Clk(SYS_CLK),
+																												.Reset(Reset), 
+																												.data_in(sprite_height_pio_export), 
+																												.re(fifo_re), 
+																												.we(fifo_we),
+																												.f(full[4]),
+																												.e(empty[4]),
+																												.data_out(sprite_height));
+							
+							sprite_fifo #(.FIFO_DEPTH(128), .BUS_WIDTH(32)) sprite_address_fifo (.Clk(SYS_CLK),
+																												.Reset(Reset), 
+																												.data_in(sprite_address_pio_export), 
+																												.re(fifo_re), 
+																												.we(fifo_we),
+																												.f(full[5]),
+																												.e(empty[5]),
+																												.data_out(sprite_address));
+							
+
 							
 							// VGA controller current position
 							logic [9:0] DrawX, DrawY;
 							
 							// Frame buffer init
-							logic fb_current_write, fb_update_write;
+							logic fb_curr_write, fb_update_write;
 							logic [17:0] fb_curr_addr, fb_update_addr;
 							logic [7:0] fb_curr_data_in, fb_curr_data_out, fb_update_data_in, fb_update_data_out;
 							
-							
+							// Frame buffer stats for reader
 							logic [17:0] read_fb_addr;
 							logic [7:0] read_fb_data_out;
 							logic frame_num;
@@ -70,7 +141,7 @@ module mario_cv_game (
 							// Module to select the read frame for frame controller
 							read_frame_mux frame_read_mux (.fb_addr(read_fb_addr), .fb_data_out(read_fb_data_out), .*);
 							
-							
+							// Frame buffer stats for writer
 							logic [17:0] write_fb_addr;
 							logic [7:0] write_fb_data_out;
 							logic [7:0] write_fb_data_in;
@@ -80,6 +151,8 @@ module mario_cv_game (
 							// Module to select the frame for writing sprite data to
 							write_frame_mux frame_write_mux (.*, .fb_addr(write_fb_addr), .fb_data_out(write_fb_data_out), .fb_data_in(write_fb_data_in), .fb_write(write_fb_write_en));
 							
+							// Tells the write buffer whether to draw a new sprite
+							logic draw_sprite, done_draw;
 							
 							final_project nios_system (
 											 .*,
@@ -95,32 +168,32 @@ module mario_cv_game (
 											 .sdram_wire_ras_n(DRAM_RAS_N),    //  .ras_n
 											 .sdram_wire_we_n(DRAM_WE_N),      //  .we_n
 											 .sdram_clk_clk(DRAM_CLK),			//  clock out to SDRAM from other PLL port
-											 .sys_clk_clk(SYS_CLK)				// Clock for system
+											 .sys_clk_clk(SYS_CLK)			// Clock for system
+											 // Also imports all the sprite PIO information
 							);
 							
 							// Module instantiated to keep track of frame number based on VS input
-							frame_number f_num (.*);
+							frame_number f_num (.Clk(SYS_CLK), .*);
 							
 							VGA_controller vga_controller (.Clk(CLOCK_50), .*);
 							
-							// Inferred on chip memory for frame buffers
-							// Get 128 pixels per line which is 1 /5 of a 640 length line of pixels
-							RAM_param #(.DATA_WIDTH(8), .ADDRESS_SPACE(18)) fb_curr (
+							// Inferred on chip memory for frame buffers 480 * 360
+							RAM_param #(.DATA_WIDTH(8), .ADDRESSES(172800)) fb_curr (
 																	.clk(SYS_CLK),
 																	.write(fb_current_write), 
 																	.addr(fb_curr_addr),
 																	.data_in(fb_curr_data_in), 
 																	.data_out(fb_curr_data_out)
 							);
-							// Inferred on chip memory for frame buffers
-							// Get 128 pixels per line which is 1 /5 of a 640 length line of pixels
-							RAM_param #(.DATA_WIDTH(8), .ADDRESS_SPACE(18)) fb_update  (
+							// Inferred on chip memory for frame buffers 480 * 360
+							RAM_param #(.DATA_WIDTH(8), .ADDRESSES(172800)) fb_update  (
 																	.clk(SYS_CLK),
 																	.write(fb_update_write), 
 																	.addr(fb_update_addr),
 																	.data_in(fb_update_data_in), 
 																	.data_out(fb_update_data_out)
 							);
+							
 							// Frame controller that writes to the FPGA from the selected frame buffer
 							frame_controller f_ctl (.*, .Clk(SYS_CLK), .fb_addr(read_fb_addr), .fb_data_out(read_fb_data_out), .active(read_active));
 							
@@ -130,10 +203,26 @@ module mario_cv_game (
 							.fb_data_in(write_fb_data_in), 
 							.fb_data_out(write_fb_data_out),
 							.fb_write(write_fb_write_en), // Signal a write to the current frame buffer
-							.sprite_id(), // NEED CONTROL HERE
-							.sprite_x(), // NEED CONTROL HERE
-							.sprite_y(), // NEED CONTROL HERE
-							.draw_sprite(),  // NEED CONTROL HERE
-							.done_draw(), // NEED CONTROL HERE
+							.draw_sprite(draw_sprite),
+							.done_draw(done_draw)
 							);
+							logic [15:0] last_sprite_id;
+							// System to manage the draw_sprite, done_draw, read_active, and fifo_re/fifo_we signals
+							always_ff @ (posedge VGA_CLK) begin
+								if (DrawX == 10'b0) read_active <= 1'b1;
+								if (DrawX == 10'b1) read_active <= 1'b0;
+							end
+							always_ff @ (posedge SYS_CLK) begin
+								fifo_we <= 1'b0;
+								fifo_re <= 1'b0;
+								draw_sprite <= 1'b0;
+								if (last_sprite_id != sprite_id) begin
+									last_sprite_id <= sprite_id;
+									fifo_we <= 1'b1;
+								end
+								if (done_draw && !fifo_empty) begin
+									fifo_re <= 1'b1;
+									draw_sprite <= 1'b1;
+								end
+							end
 endmodule

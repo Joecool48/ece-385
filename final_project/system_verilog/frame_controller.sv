@@ -7,15 +7,16 @@ module frame_controller (input logic Clk, Reset, VGA_CLK,
 								 output logic [17:0] fb_addr,
 								 input logic [7:0] fb_data_out
 								 );
-	enum [3:0] {WAIT, GET_ROW, WRITE_PIXEL, DONE} curr_state, next_state; 
+	enum logic [3:0] {WAIT, GET_ROW, WRITE_PIXEL, DONE} curr_state, next_state; 
 	logic [7:0] curr_pix;
 	logic [7:0] curr_data;
 	logic [7:0] pix_num;
-	
+	logic [1:0] counter;
 	Color_Mapper color_mapper (.encoded_color(curr_pix), .red(VGA_R), .green(VGA_G), .blue(VGA_B));
-	pixel_mux pix_mux (.pixel_buf(curr_data), .pixel_select(pix_num), .pixel(curr_pix));
+	//pixel_mux pix_mux (.pixel_buf(curr_data), .pixel_select(pix_num), .pixel(curr_pix));
 	
 	always_ff @ (posedge Clk) begin
+		counter <= counter + 1;
 		case (curr_state)
 			WAIT: begin
 				fb_addr <= 18'b0;
@@ -29,19 +30,16 @@ module frame_controller (input logic Clk, Reset, VGA_CLK,
 			end
 			WRITE_PIXEL: begin
 				// See other always_ff for checking for posedge DrawX
+				if (counter == 2'b0) begin
+					pix_num <= pix_num + 1;
+				end
 			end
 			DONE: begin
 				
 			end
 		endcase
 	end
-	// Only update when moving to next pixel
-	always_ff @(posedge DrawX) begin
-		if (curr_state == WRITE_PIXEL) begin 
-			pix_num <= pix_num + 1;
-			next_state <= GET_ROW;
-		end
-	end
+	
 	always_comb begin
 		next_state = curr_state;
 		case (curr_state)
@@ -54,6 +52,9 @@ module frame_controller (input logic Clk, Reset, VGA_CLK,
 				else next_state = WRITE_PIXEL;
 			end
 			WRITE_PIXEL: begin
+				if (counter == 2'b0) begin
+					next_state = GET_ROW;
+				end
 			end
 			DONE: begin
 				if (~active) begin
@@ -66,4 +67,4 @@ module frame_controller (input logic Clk, Reset, VGA_CLK,
 	always_ff @ (posedge Clk) begin
 		curr_state <= next_state;
 	end
-	
+endmodule	

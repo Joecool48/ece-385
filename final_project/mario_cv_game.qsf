@@ -48,7 +48,7 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (SystemVerilog)"
-set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_TIME_SCALE "10 ns" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "SYSTEMVERILOG HDL" -section_id eda_simulation
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
@@ -586,17 +586,17 @@ set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/sys_manager.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbench.sv
 set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/sprite_controller.sv
 set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/read_frame_mux.sv
 set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/write_frame_mux.sv
 set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/frame_number.sv
-set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/pixel_mux.sv
 set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/sprite_fifo.sv
 set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/frame_controller.sv
-set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/sprites_info.sv
 set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/RAM_param.sv
 set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/VGA_controller.sv
 set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/Color_Mapper.sv
 set_global_assignment -name QSYS_FILE final_project.qsys
 set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/mario_cv_game.sv
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS COMMAND_MACRO_MODE -section_id eda_simulation
+set_global_assignment -name EDA_SIMULATION_RUN_SCRIPT testbench.sv -section_id eda_simulation

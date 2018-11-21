@@ -1,5 +1,5 @@
 Flow report for mario_cv_game
-Sun Nov 18 00:02:08 2018
+Tue Nov 20 16:17:14 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sun Nov 18 00:02:08 2018       ;
+; Flow Status                        ; Successful - Tue Nov 20 16:17:14 2018       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; mario_cv_game                               ;
 ; Top-level Entity Name              ; mario_cv_game                               ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 3,426 / 114,480 ( 3 % )                     ;
-;     Total combinational functions  ; 3,115 / 114,480 ( 3 % )                     ;
-;     Dedicated logic registers      ; 1,896 / 114,480 ( 2 % )                     ;
-; Total registers                    ; 2014                                        ;
+; Total logic elements               ; 4,908 / 114,480 ( 4 % )                     ;
+;     Total combinational functions  ; 4,306 / 114,480 ( 4 % )                     ;
+;     Dedicated logic registers      ; 2,936 / 114,480 ( 3 % )                     ;
+; Total registers                    ; 3054                                        ;
 ; Total pins                         ; 115 / 529 ( 22 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 11,264 / 3,981,312 ( < 1 % )                ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/17/2018 23:59:50 ;
+; Start date & time ; 11/20/2018 16:15:16 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; mario_cv_game       ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 136784553372249.154252079013143        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 279391481703556.154275211607565        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -96,12 +96,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:34     ; 1.0                     ; 1424 MB             ; 00:02:32                           ;
-; Fitter               ; 00:00:25     ; 1.0                     ; 1472 MB             ; 00:00:32                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 819 MB              ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.1                     ; 931 MB              ; 00:00:03                           ;
-; EDA Netlist Writer   ; 00:00:06     ; 1.0                     ; 1094 MB             ; 00:00:06                           ;
-; Total                ; 00:02:12     ; --                      ; --                  ; 00:03:17                           ;
+; Analysis & Synthesis ; 00:01:11     ; 1.0                     ; 1382 MB             ; 00:02:17                           ;
+; Fitter               ; 00:00:29     ; 1.0                     ; 1490 MB             ; 00:00:37                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 825 MB              ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.1                     ; 939 MB              ; 00:00:03                           ;
+; EDA Netlist Writer   ; 00:00:07     ; 1.0                     ; 1111 MB             ; 00:00:06                           ;
+; Total                ; 00:01:54     ; --                      ; --                  ; 00:03:07                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

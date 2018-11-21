@@ -1,4 +1,20 @@
 
+State Machine - |mario_cv_game|sprite_controller:s_ctl|next_state
+Name next_state.DONE next_state.FETCH_FB_ROW_2 next_state.FETCH_FB_ROW next_state.FETCH_AVALON_MEM next_state.LOAD_NEW_SPRITE next_state.WAIT 
+next_state.WAIT 0 0 0 0 0 0 
+next_state.LOAD_NEW_SPRITE 0 0 0 0 1 1 
+next_state.FETCH_AVALON_MEM 0 0 0 1 0 1 
+next_state.FETCH_FB_ROW 0 0 1 0 0 1 
+next_state.FETCH_FB_ROW_2 0 1 0 0 0 1 
+next_state.DONE 1 0 0 0 0 1 
+
+State Machine - |mario_cv_game|frame_controller:f_ctl|curr_state
+Name curr_state.DONE curr_state.WRITE_PIXEL curr_state.GET_ROW curr_state.WAIT 
+curr_state.WAIT 0 0 0 0 
+curr_state.GET_ROW 0 0 1 1 
+curr_state.WRITE_PIXEL 0 1 0 1 
+curr_state.DONE 1 0 0 1 
+
 State Machine - |mario_cv_game|final_project:nios_system|final_project_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:sdram_s1_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
 state.ST_IDLE 0 0 0 0 

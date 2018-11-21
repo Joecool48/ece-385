@@ -21,6 +21,12 @@ module final_project (
 	sdram_wire_dqm,
 	sdram_wire_ras_n,
 	sdram_wire_we_n,
+	sprite_address_pio_export,
+	sprite_height_pio_export,
+	sprite_id_pio_export,
+	sprite_width_pio_export,
+	sprite_x_pio_export,
+	sprite_y_pio_export,
 	sys_clk_clk);	
 
 	input		avalon_control_fixed_location;
@@ -44,5 +50,11 @@ module final_project (
 	output	[3:0]	sdram_wire_dqm;
 	output		sdram_wire_ras_n;
 	output		sdram_wire_we_n;
+	output	[31:0]	sprite_address_pio_export;
+	output	[15:0]	sprite_height_pio_export;
+	output	[15:0]	sprite_id_pio_export;
+	output	[15:0]	sprite_width_pio_export;
+	output	[15:0]	sprite_x_pio_export;
+	output	[15:0]	sprite_y_pio_export;
 	output		sys_clk_clk;
 endmodule

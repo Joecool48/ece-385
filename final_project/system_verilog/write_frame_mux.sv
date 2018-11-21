@@ -1,7 +1,7 @@
 module write_frame_mux (input frame_num, 
 							  input logic [17:0] fb_curr_addr, fb_update_addr,
 							  input logic [7:0] fb_curr_data_out, fb_update_data_out,
-							  input logic [7:0] fb_curr_data_in, fb_curr_data_out,
+							  input logic [7:0] fb_curr_data_in, fb_update_data_in,
 							  input logic fb_curr_write, fb_update_write,
 							  output logic [17:0] fb_addr,
 							  output logic [7:0] fb_data_out,
