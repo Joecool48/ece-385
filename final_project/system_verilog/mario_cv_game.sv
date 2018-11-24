@@ -1,9 +1,9 @@
 // synthesis VERILOG_INPUT_VERSION SYSTEMVERILOG_2005
 // 480 X 360
 module mario_cv_game (
-							input               CLOCK_50,
-							input        [3:0]  KEY,          //bit 0 is set up as Reset
-							output				  SYS_CLK, // Clock for everything in the system
+							input  logic             CLOCK_50,
+							input  logic      [3:0]  KEY,          //bit 0 is set up as Reset
+							output logic				  SYS_CLK, // Clock for everything in the system
 							// VGA Interface 
 							output logic [7:0]  VGA_R,        //VGA Red
 											VGA_G,        //VGA Green
@@ -20,7 +20,7 @@ module mario_cv_game (
                                  OTG_RD_N,     //CY7C67200 Read
                                  OTG_WR_N,     //CY7C67200 Write
                                  OTG_RST_N,    //CY7C67200 Reset
-							input               OTG_INT,      //CY7C67200 Interrupt
+							input logic  [1:0]  OTG_INT,      //CY7C67200 Interrupt
 							// SDRAM Interface for Nios II Software
 							output logic [12:0] DRAM_ADDR,    //SDRAM Address 13 Bits
 							inout  wire  [31:0] DRAM_DQ,      //SDRAM Data 32 Bits
@@ -34,8 +34,8 @@ module mario_cv_game (
 											DRAM_CLK //SDRAM Clock
 							);
 							// Reset assignments high and low
+							logic Reset;
 							assign Reset = KEY[0];
-							assign Reset_h = ~Reset;
 							
 							// Set it to 0 to make the bus burst
 							logic avalon_control_fixed_location;  // avalon_control.fixed_location
@@ -171,27 +171,27 @@ module mario_cv_game (
 											 .sys_clk_clk(SYS_CLK)			// Clock for system
 											 // Also imports all the sprite PIO information
 							);
-							
+
 							// Module instantiated to keep track of frame number based on VS input
 							frame_number f_num (.Clk(SYS_CLK), .*);
 							
 							VGA_controller vga_controller (.Clk(CLOCK_50), .*);
-							
+
 							// Inferred on chip memory for frame buffers 480 * 360
-							RAM_param #(.DATA_WIDTH(8), .ADDRESSES(172800)) fb_curr (
-																	.clk(SYS_CLK),
-																	.write(fb_current_write), 
-																	.addr(fb_curr_addr),
-																	.data_in(fb_curr_data_in), 
-																	.data_out(fb_curr_data_out)
+							RAM_param fb_curr (
+																	.clock(SYS_CLK),
+																	.wren(fb_curr_write), 
+																	.address(fb_curr_addr),
+																	.data(fb_curr_data_in), 
+																	.q(fb_curr_data_out)
 							);
 							// Inferred on chip memory for frame buffers 480 * 360
-							RAM_param #(.DATA_WIDTH(8), .ADDRESSES(172800)) fb_update  (
-																	.clk(SYS_CLK),
-																	.write(fb_update_write), 
-																	.addr(fb_update_addr),
-																	.data_in(fb_update_data_in), 
-																	.data_out(fb_update_data_out)
+							RAM_param fb_update  (
+																	.clock(SYS_CLK),
+																	.wren(fb_update_write), 
+																	.address(fb_update_addr),
+																	.data(fb_update_data_in), 
+																	.q(fb_update_data_out)
 							);
 							
 							// Frame controller that writes to the FPGA from the selected frame buffer
@@ -209,20 +209,22 @@ module mario_cv_game (
 							logic [15:0] last_sprite_id;
 							// System to manage the draw_sprite, done_draw, read_active, and fifo_re/fifo_we signals
 							always_ff @ (posedge VGA_CLK) begin
-								if (DrawX == 10'b0) read_active <= 1'b1;
-								if (DrawX == 10'b1) read_active <= 1'b0;
+								if (endpulse) read_active <= 1'b1;
+								else read_active <= 1'b0;
 							end
-							always_ff @ (posedge SYS_CLK) begin
+							always_ff @ (posedge SYS_CLK) begin								
 								fifo_we <= 1'b0;
 								fifo_re <= 1'b0;
 								draw_sprite <= 1'b0;
-								if (last_sprite_id != sprite_id) begin
+								if (last_sprite_id != sprite_id && !fifo_full) begin
 									last_sprite_id <= sprite_id;
 									fifo_we <= 1'b1;
 								end
 								if (done_draw && !fifo_empty) begin
 									fifo_re <= 1'b1;
 									draw_sprite <= 1'b1;
+									
 								end
 							end
+							
 endmodule

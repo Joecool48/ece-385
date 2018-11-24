@@ -14,7 +14,7 @@ logic [BUS_WIDTH - 1:0] rd_ptr, wr_ptr;
 logic [BUS_WIDTH - 1:0] status;
 
 assign e = (status == 0);
-assign f = (status == {(FIFO_DEPTH){1'b1}});
+assign f = (status == {(FIFO_DEPTH){1'd1}});
  
 always@(posedge Clk or posedge Reset)
 begin
@@ -22,7 +22,7 @@ begin
     begin
         data_out <= 0;
 		  for (int i = 0; i < FIFO_DEPTH; i = i + 1) begin
-			buff_mem[i] = {(BUS_WIDTH){1'b0}};
+			buff_mem[i] = {(BUS_WIDTH){1'd0}};
         end
         status <= 0;
         rd_ptr <= 0;
@@ -38,13 +38,13 @@ begin
         begin
             data_out <= buff_mem[rd_ptr][BUS_WIDTH-1:0];
             status[rd_ptr] <= 1'b0;
-            rd_ptr <= rd_ptr + 1;
+            rd_ptr <= rd_ptr + {(BUS_WIDTH){1'd1}};
         end
         else if( we && !f )
         begin
             buff_mem[wr_ptr] <= data_in;
             status[wr_ptr] <= 1'b1;
-            wr_ptr <= wr_ptr + 1;
+            wr_ptr <= wr_ptr + {(BUS_WIDTH){1'd1}};
         end
     end
 end

@@ -23,11 +23,11 @@ for image in images:
 image_dir_str = "../images/mario_sprites/"
 
 images = os.listdir(image_dir_str)
-
+images.remove("NES-Mario-World1-1.png")
 address_offset = 0
 sprite_id_start = 1
 status_file = open("status_file.txt", "w", 1)
-mem_file = open("mem_file.hex", "w", 1)
+mem_file = open("frame_buffer.hex", "w", 1)
 for img in images:
     im = Image.open(image_dir_str + img)
     status_file.write("Name: " + img + "\n")
@@ -42,7 +42,7 @@ for img in images:
             else:
                 mem_file.write(format(color_dict[im.getpixel((x,y))], "02x"))
             address_offset += 1
-            if address_offset % 4 == 0:
+            if address_offset % 1 == 0:
                 mem_file.write("\n")
     status_file.write("End Address: " + str(address_offset) + "\n\n")
     sprite_id_start += 1

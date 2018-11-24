@@ -1,0 +1,12 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+/home/joey/courses/ece385/final_project {/home/joey/courses/ece385/final_project/RAM_param.v}
+vlib final_project
+vmap final_project final_project
+
+do "/home/joey/courses/ece385/final_project/testbench.sv"

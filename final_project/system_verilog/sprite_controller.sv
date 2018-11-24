@@ -54,7 +54,7 @@ module sprite_controller (input logic Clk, Reset,
 				end
 			end
 			FETCH_FB_ROW_2: begin
-				fb_addr <= fb_addr + 1;
+				fb_addr <= fb_addr + 32'd1;
 			end
 			
 			DONE: begin
@@ -65,7 +65,7 @@ module sprite_controller (input logic Clk, Reset,
 	
 	
 	always_comb begin
-		next_state = curr_state;
+	next_state = curr_state;
 		case (curr_state) 
 			WAIT: begin
 				if (draw_sprite) next_state = LOAD_NEW_SPRITE;
@@ -87,6 +87,9 @@ module sprite_controller (input logic Clk, Reset,
 			DONE: begin
 				if (!draw_sprite) next_state = WAIT;
 			end
+			default: begin
+				next_state = WAIT;
+			end
 		endcase
 	end	
 	
@@ -95,7 +98,7 @@ module sprite_controller (input logic Clk, Reset,
 	
 	
 	always_ff @ (posedge Clk) begin
-		next_state <= curr_state;
+		curr_state <= next_state;
 	end
 	
 endmodule

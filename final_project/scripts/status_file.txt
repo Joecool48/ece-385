@@ -5,150 +5,143 @@ Height: 32
 Start Address 0
 End Address: 512
 
-Name: NES-Mario-World1-1.png
-Start Id: 2
-Width: 3391
-Height: 224
-Start Address 512
-End Address: 760096
-
 Name: sprite13.png
+Start Id: 2
+Width: 16
+Height: 32
+Start Address 512
+End Address: 1024
+
+Name: sprite17.png
 Start Id: 3
 Width: 16
 Height: 32
-Start Address 760096
-End Address: 760608
+Start Address 1024
+End Address: 1536
 
-Name: sprite17.png
+Name: sprite21.png
 Start Id: 4
 Width: 16
 Height: 32
-Start Address 760608
-End Address: 761120
+Start Address 1536
+End Address: 2048
 
-Name: sprite21.png
+Name: sprite2.png
 Start Id: 5
 Width: 16
 Height: 32
-Start Address 761120
-End Address: 761632
+Start Address 2048
+End Address: 2560
 
-Name: sprite2.png
+Name: sprite19.png
 Start Id: 6
 Width: 16
 Height: 32
-Start Address 761632
-End Address: 762144
+Start Address 2560
+End Address: 3072
 
-Name: sprite19.png
+Name: sprite7.png
 Start Id: 7
 Width: 16
 Height: 32
-Start Address 762144
-End Address: 762656
+Start Address 3072
+End Address: 3584
 
-Name: sprite7.png
+Name: sprite12.png
 Start Id: 8
 Width: 16
 Height: 32
-Start Address 762656
-End Address: 763168
+Start Address 3584
+End Address: 4096
 
-Name: sprite12.png
+Name: sprite4.png
 Start Id: 9
 Width: 16
 Height: 32
-Start Address 763168
-End Address: 763680
+Start Address 4096
+End Address: 4608
 
-Name: sprite4.png
+Name: sprite3.png
 Start Id: 10
 Width: 16
 Height: 32
-Start Address 763680
-End Address: 764192
+Start Address 4608
+End Address: 5120
 
-Name: sprite3.png
+Name: sprite1.png
 Start Id: 11
 Width: 16
 Height: 32
-Start Address 764192
-End Address: 764704
+Start Address 5120
+End Address: 5632
 
-Name: sprite1.png
+Name: sprite16.png
 Start Id: 12
 Width: 16
 Height: 32
-Start Address 764704
-End Address: 765216
+Start Address 5632
+End Address: 6144
 
-Name: sprite16.png
+Name: sprite11.png
 Start Id: 13
 Width: 16
 Height: 32
-Start Address 765216
-End Address: 765728
+Start Address 6144
+End Address: 6656
 
-Name: sprite11.png
+Name: sprite14.png
 Start Id: 14
 Width: 16
 Height: 32
-Start Address 765728
-End Address: 766240
+Start Address 6656
+End Address: 7168
 
-Name: sprite14.png
+Name: sprite5.png
 Start Id: 15
 Width: 16
 Height: 32
-Start Address 766240
-End Address: 766752
+Start Address 7168
+End Address: 7680
 
-Name: sprite5.png
+Name: sprite8.png
 Start Id: 16
 Width: 16
 Height: 32
-Start Address 766752
-End Address: 767264
+Start Address 7680
+End Address: 8192
 
-Name: sprite8.png
+Name: sprite20.png
 Start Id: 17
 Width: 16
 Height: 32
-Start Address 767264
-End Address: 767776
+Start Address 8192
+End Address: 8704
 
-Name: sprite20.png
+Name: sprite6.png
 Start Id: 18
 Width: 16
 Height: 32
-Start Address 767776
-End Address: 768288
+Start Address 8704
+End Address: 9216
 
-Name: sprite6.png
+Name: sprite15.png
 Start Id: 19
 Width: 16
 Height: 32
-Start Address 768288
-End Address: 768800
+Start Address 9216
+End Address: 9728
 
-Name: sprite15.png
+Name: sprite18.png
 Start Id: 20
 Width: 16
 Height: 32
-Start Address 768800
-End Address: 769312
+Start Address 9728
+End Address: 10240
 
-Name: sprite18.png
+Name: sprite10.png
 Start Id: 21
 Width: 16
 Height: 32
-Start Address 769312
-End Address: 769824
-
-Name: sprite10.png
-Start Id: 22
-Width: 16
-Height: 32
-Start Address 769824
-End Address: 770336
+Start Address 10240
+End Address: 10752
 
