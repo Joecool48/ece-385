@@ -32,8 +32,7 @@ module  VGA_controller (input              Clk,         // 50 MHz clock
                                            VGA_SYNC_N,  // Composite Sync signal.  Active low.  We don't use it in this lab,
                                                         // but the video DAC on the DE2 board requires an input for it.
                         output logic [9:0] DrawX,       // horizontal coordinate
-                                           DrawY,        // vertical coordinate
-								output logic 		 endpulse
+                                           DrawY        // vertical coordinate
                         );     
     
     // 800 pixels per line (including front/back porch
@@ -45,7 +44,6 @@ module  VGA_controller (input              Clk,         // 50 MHz clock
     logic [9:0] h_counter, v_counter;
     logic [9:0] h_counter_in, v_counter_in;
 	 
-	 logic endpulse_in;
 	 
     assign VGA_SYNC_N = 1'b0;
     assign DrawX = h_counter;
@@ -74,11 +72,9 @@ module  VGA_controller (input              Clk,         // 50 MHz clock
             VGA_BLANK_N <= 1'b0;
             h_counter <= 10'd0;
             v_counter <= 10'd0;
-				endpulse <= 1'b0;
         end
         else
         begin
-				endpulse <= endpulse_in;
             VGA_HS <= VGA_HS_in;
             VGA_VS <= VGA_VS_in;
             VGA_BLANK_N <= VGA_BLANK_N_in;
@@ -92,13 +88,11 @@ module  VGA_controller (input              Clk,         // 50 MHz clock
         // horizontal and vertical counter
         h_counter_in = h_counter + 10'd1;
         v_counter_in = v_counter;
-		  endpulse_in = 1'b0;
         if(h_counter + 10'd1 == H_TOTAL)
         begin
             h_counter_in = 10'd0;
             if(v_counter + 10'd1 == V_TOTAL) begin
                 v_counter_in = 10'd0;
-					 endpulse_in = 1'b1;
 				end
             else
                 v_counter_in = v_counter + 10'd1;

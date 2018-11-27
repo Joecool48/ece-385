@@ -1,5 +1,5 @@
 Flow report for mario_cv_game
-Thu Nov 22 21:42:45 2018
+Mon Nov 26 21:44:10 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,22 +40,22 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Flow Failed - Thu Nov 22 21:42:45 2018      ;
+; Flow Status                        ; Successful - Mon Nov 26 21:44:10 2018       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; mario_cv_game                               ;
 ; Top-level Entity Name              ; mario_cv_game                               ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 23,086 / 114,480 ( 20 % )                   ;
+;     Total combinational functions  ; 21,676 / 114,480 ( 19 % )                   ;
+;     Dedicated logic registers      ; 15,451 / 114,480 ( 13 % )                   ;
+; Total registers                    ; 15569                                       ;
+; Total pins                         ; 116 / 529 ( 22 % )                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 11,296 / 3,981,312 ( < 1 % )                ;
+; Embedded Multiplier 9-bit elements ; 2 / 532 ( < 1 % )                           ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/22/2018 21:42:02 ;
+; Start date & time ; 11/26/2018 21:38:20 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; mario_cv_game       ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 136784553372249.154294452208064        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 136784553372249.154328990016907        ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; testbench      ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; testbench                              ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation ;
@@ -106,8 +106,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:43     ; 1.0                     ; 895 MB              ; 00:01:35                           ;
-; Total                ; 00:00:43     ; --                      ; --                  ; 00:01:35                           ;
+; Analysis & Synthesis ; 00:02:04     ; 1.0                     ; 1313 MB             ; 00:03:10                           ;
+; Fitter               ; 00:02:48     ; 1.0                     ; 1763 MB             ; 00:04:01                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 898 MB              ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:11     ; 1.2                     ; 1107 MB             ; 00:00:13                           ;
+; EDA Netlist Writer   ; 00:00:26     ; 1.0                     ; 1281 MB             ; 00:00:25                           ;
+; Total                ; 00:05:35     ; --                      ; --                  ; 00:07:55                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -117,6 +121,10 @@ refer to the applicable agreement for further details.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; Joey_PC          ; Arch Linux ; Arch Linux ; x86_64         ;
+; Fitter               ; Joey_PC          ; Arch Linux ; Arch Linux ; x86_64         ;
+; Assembler            ; Joey_PC          ; Arch Linux ; Arch Linux ; x86_64         ;
+; Timing Analyzer      ; Joey_PC          ; Arch Linux ; Arch Linux ; x86_64         ;
+; EDA Netlist Writer   ; Joey_PC          ; Arch Linux ; Arch Linux ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -124,6 +132,10 @@ refer to the applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off mario_cv_game -c mario_cv_game
+quartus_fit --read_settings_files=off --write_settings_files=off mario_cv_game -c mario_cv_game
+quartus_asm --read_settings_files=off --write_settings_files=off mario_cv_game -c mario_cv_game
+quartus_sta mario_cv_game -c mario_cv_game
+quartus_eda --read_settings_files=off --write_settings_files=off mario_cv_game -c mario_cv_game
 
 
 

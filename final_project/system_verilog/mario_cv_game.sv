@@ -33,6 +33,11 @@ module mario_cv_game (
                                  DRAM_CS_N,    //SDRAM Chip Select
 											DRAM_CLK //SDRAM Clock
 							);
+							// 800 pixels per line (including front/back porch
+							// 525 lines per frame (including front/back porch)
+							parameter [9:0] H_TOTAL = 10'd800;
+							parameter [9:0] V_TOTAL = 10'd525;
+							
 							// Reset assignments high and low
 							logic Reset;
 							assign Reset = KEY[0];
@@ -207,14 +212,14 @@ module mario_cv_game (
 							.done_draw(done_draw)
 							);
 							// For controlling the reading and writing to the fifo queues
-							enum logic [3:0] {WAIT, READ, READ1, READ2, READ3, WRITE, WRITE1, WRITE2, WRITE3} fifo_curr_state, fifo_next_state;
+							enum logic [3:0] {WAIT, READ, READ1, READ2, READ3, WRITE, WRITE1, WRITE2, WRITE3, DONE} fifo_curr_state, fifo_next_state;
 							logic [15:0] last_sprite_id;
 							// System to manage the draw_sprite, done_draw, read_active, and fifo_re/fifo_we signals
 							
 							// TODO:
 							//		Figure out a way to signal the controller to start reading without using always_ff and VGA_CLK. This wont work
 							always_ff @ (posedge VGA_CLK) begin
-								if (endpulse) read_active <= 1'b1;
+								if ((DrawX == H_TOTAL - 1) && (DrawY == V_TOTAL - 1)) read_active <= 1'b1;
 								else read_active <= 1'b0;
 							end
 //							always_ff @ (posedge SYS_CLK) begin								
