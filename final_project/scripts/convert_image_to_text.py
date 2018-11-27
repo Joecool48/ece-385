@@ -44,8 +44,8 @@ for img in images:
     status_file.write("Width: " + str(im.width) + "\n")
     status_file.write("Height: " + str(im.height) + "\n")
     status_file.write("Start Address " + str(address_offset) + "\n")
-    for y in range(im.height):
-        for x in range(im.width):
+    for x in range(im.width):
+        for y in range(im.height):
             if not im.getpixel((x,y)) in color_dict:
                 mem_file.write(format(address_offset, "0" + str(int(math.ceil(math.log(MAX_ADDRESSES, 16)))) + "x"))
                 mem_file.write(" : ")
