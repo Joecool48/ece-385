@@ -206,25 +206,97 @@ module mario_cv_game (
 							.draw_sprite(draw_sprite),
 							.done_draw(done_draw)
 							);
+							// For controlling the reading and writing to the fifo queues
+							enum logic [3:0] {WAIT, READ, READ1, READ2, READ3, WRITE, WRITE1, WRITE2, WRITE3} fifo_curr_state, fifo_next_state;
 							logic [15:0] last_sprite_id;
 							// System to manage the draw_sprite, done_draw, read_active, and fifo_re/fifo_we signals
+							
+							// TODO:
+							//		Figure out a way to signal the controller to start reading without using always_ff and VGA_CLK. This wont work
 							always_ff @ (posedge VGA_CLK) begin
 								if (endpulse) read_active <= 1'b1;
 								else read_active <= 1'b0;
 							end
-							always_ff @ (posedge SYS_CLK) begin								
-								fifo_we <= 1'b0;
-								fifo_re <= 1'b0;
-								draw_sprite <= 1'b0;
-								if (last_sprite_id != sprite_id && !fifo_full) begin
-									last_sprite_id <= sprite_id;
-									fifo_we <= 1'b1;
-								end
-								if (done_draw && !fifo_empty) begin
-									fifo_re <= 1'b1;
-									draw_sprite <= 1'b1;
+//							always_ff @ (posedge SYS_CLK) begin								
+//								fifo_we <= 1'b0;
+//								fifo_re <= 1'b0;
+//								draw_sprite <= 1'b0;
+//								if (last_sprite_id != sprite_id && !fifo_full) begin
+//									last_sprite_id <= sprite_id;
+//									fifo_we <= 1'b1;
+//								end
+//								if (done_draw && !fifo_empty) begin
+//									fifo_re <= 1'b1;
+//									draw_sprite <= 1'b1;
+//									
+//								end
+//							end
+							always_comb begin
+								fifo_next_state = fifo_curr_state;
+								case (fifo_curr_state)
+									WAIT: begin
+										if (last_sprite_id != sprite_id_pio_export) fifo_next_state = WRITE;
+										else if (done_draw && !fifo_empty) fifo_next_state = READ;
+									end
+									READ: fifo_next_state = READ1;
+									READ1: fifo_next_state = READ2;
+									READ2: fifo_next_state = READ3;
+									READ3: fifo_next_state = DONE;
+									WRITE: fifo_next_state = WRITE1;
+									WRITE1: fifo_next_state = WRITE2;
+									WRITE2: fifo_next_state = WRITE3;
+									WRITE3: fifo_next_state = DONE;
+									DONE: fifo_next_state = WAIT;
+									default: fifo_next_state = WAIT;
+								endcase
 									
-								end
 							end
-							
+							// Make sure done_draw is set low in a couple cycles after it is set high
+							always_ff @ (posedge SYS_CLK) begin
+								case (fifo_curr_state)
+									WAIT: begin
+										if (last_sprite_id != sprite_id_pio_export) begin
+											last_sprite_id  <= sprite_id_pio_export;
+											fifo_we <= 1'b1;
+										end
+										else if (done_draw && !fifo_empty) begin 
+											fifo_re <= 1'b1;
+											draw_sprite <= 1'b1;
+										end
+										else begin
+											fifo_we <= 1'b0;
+											fifo_re <= 1'b0;
+											draw_sprite <= 1'b0;
+										end
+									end
+									READ: fifo_re <= 1'b1;
+									READ1: fifo_re <= 1'b1;
+									READ2: fifo_re <= 1'b1;
+									READ3: fifo_re <= 1'b1;
+									WRITE: begin
+										fifo_we <= 1'b1;
+										draw_sprite <= 1'b1;
+									end
+									WRITE1: begin
+										fifo_we <= 1'b1;
+										draw_sprite <= 1'b1;
+									end
+									WRITE2: begin
+										fifo_we <= 1'b1;
+										draw_sprite <= 1'b1;
+									end
+									WRITE3: begin
+										fifo_we <= 1'b1;
+										draw_sprite <= 1'b1;
+									end
+									DONE: begin
+										fifo_re = 1'b0;
+										fifo_we = 1'b0;
+										draw_sprite <= 1'b0;
+									end
+								endcase
+							end
+							always_ff @ (posedge SYS_CLK) begin
+								fifo_curr_state <= fifo_next_state;
+							end
 endmodule
