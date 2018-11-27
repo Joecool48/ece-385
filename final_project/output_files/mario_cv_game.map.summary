@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Tue Nov 27 00:25:09 2018
+Analysis & Synthesis Status : Successful - Tue Nov 27 15:24:55 2018
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : mario_cv_game
 Top-level Entity Name : mario_cv_game
 Family : Cyclone IV E
-Total logic elements : 34,873
-    Total combinational functions : 21,680
-    Dedicated logic registers : 15,543
-Total registers : 15543
+Total logic elements : 34,697
+    Total combinational functions : 21,608
+    Dedicated logic registers : 15,440
+Total registers : 15440
 Total pins : 116
 Total virtual pins : 0
 Total memory bits : 11,296

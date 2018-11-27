@@ -180,7 +180,7 @@ module mario_cv_game (
 							// Module instantiated to keep track of frame number based on VS input
 							frame_number f_num (.Clk(SYS_CLK), .*);
 							
-							VGA_controller vga_controller (.Clk(CLOCK_50), .*);
+							VGA_controller vga_controller (.Clk(SYS_CLK), .*);
 
 							// Inferred on chip memory for frame buffers 480 * 360
 							RAM_param fb_curr (

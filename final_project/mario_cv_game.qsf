@@ -35,7 +35,7 @@
 #
 # -------------------------------------------------------------------------- #
 
-
+set_global_assignment -name NUM_PARALLEL_PROCESSORS 4
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
 set_global_assignment -name TOP_LEVEL_ENTITY mario_cv_game
@@ -589,7 +589,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/write_frame_mux.sv
 set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/frame_number.sv
 set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/sprite_fifo.sv
 set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/frame_controller.sv
-set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/RAM_param.sv
 set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/VGA_controller.sv
 set_global_assignment -name SYSTEMVERILOG_FILE system_verilog/Color_Mapper.sv
 set_global_assignment -name QSYS_FILE final_project.qsys
@@ -607,4 +606,5 @@ set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "1000 ns" -section_id tes
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME testbench -section_id testbench
 set_global_assignment -name EDA_TEST_BENCH_FILE testbench.sv -section_id testbench
 set_global_assignment -name HEX_FILE scripts/frame_buffer.hex
+set_global_assignment -name SDC_FILE output_files/mario_cv_game.sdc
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

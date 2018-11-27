@@ -87,9 +87,9 @@ module RAM_param (
 		altsyncram_component.clock_enable_input_a = "BYPASS",
 		altsyncram_component.clock_enable_output_a = "BYPASS",
 `ifdef NO_PLI
-		altsyncram_component.init_file = "/home/joey/courses/ece385/final_project/scripts/frame_buffer.rif"
+		altsyncram_component.init_file = "/Users/yeda_/Documents/ECE_385/ece-385/final_project/scripts/frame_buffer.rif"
 `else
-		altsyncram_component.init_file = "/home/joey/courses/ece385/final_project/scripts/frame_buffer.hex"
+		altsyncram_component.init_file = "/Users/yeda_/Documents/ECE_385/ece-385/final_project/scripts/frame_buffer.hex"
 `endif
 ,
 		altsyncram_component.intended_device_family = "Cyclone IV E",
