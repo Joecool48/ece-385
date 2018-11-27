@@ -1,5 +1,5 @@
 Flow report for mario_cv_game
-Tue Nov 27 00:28:53 2018
+Tue Nov 27 15:30:43 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Nov 27 00:28:53 2018       ;
+; Flow Status                        ; Successful - Tue Nov 27 15:30:42 2018       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; mario_cv_game                               ;
 ; Top-level Entity Name              ; mario_cv_game                               ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 23,053 / 114,480 ( 20 % )                   ;
-;     Total combinational functions  ; 21,702 / 114,480 ( 19 % )                   ;
-;     Dedicated logic registers      ; 15,451 / 114,480 ( 13 % )                   ;
-; Total registers                    ; 15569                                       ;
+; Total logic elements               ; 29,819 / 114,480 ( 26 % )                   ;
+;     Total combinational functions  ; 21,630 / 114,480 ( 19 % )                   ;
+;     Dedicated logic registers      ; 15,348 / 114,480 ( 13 % )                   ;
+; Total registers                    ; 15466                                       ;
 ; Total pins                         ; 116 / 529 ( 22 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 11,296 / 3,981,312 ( < 1 % )                ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/27/2018 00:22:52 ;
+; Start date & time ; 11/27/2018 15:22:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; mario_cv_game       ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 136784553372249.154329977210507        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 62375689495936.154335375120456         ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; testbench      ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; testbench                              ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation ;
@@ -92,6 +92,7 @@ refer to the applicable agreement for further details.
 ; MISC_FILE                            ; RAM_param_inst.v                       ; --            ; --          ; --             ;
 ; MISC_FILE                            ; RAM_param_bb.v                         ; --            ; --          ; --             ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                   ; --            ; --          ; --             ;
+; NUM_PARALLEL_PROCESSORS              ; 4                                      ; --            ; --          ; --             ;
 ; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
 ; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
@@ -106,12 +107,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:02:12     ; 1.0                     ; 1334 MB             ; 00:03:23                           ;
-; Fitter               ; 00:02:51     ; 1.0                     ; 1765 MB             ; 00:04:02                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 922 MB              ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:10     ; 1.2                     ; 1139 MB             ; 00:00:12                           ;
-; EDA Netlist Writer   ; 00:00:27     ; 1.0                     ; 1307 MB             ; 00:00:25                           ;
-; Total                ; 00:05:45     ; --                      ; --                  ; 00:08:08                           ;
+; Analysis & Synthesis ; 00:02:20     ; 1.0                     ; 5217 MB             ; 00:03:07                           ;
+; Fitter               ; 00:04:47     ; 1.1                     ; 6127 MB             ; 00:06:42                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 4831 MB             ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:14     ; 1.6                     ; 5207 MB             ; 00:00:19                           ;
+; EDA Netlist Writer   ; 00:00:25     ; 1.0                     ; 4956 MB             ; 00:00:25                           ;
+; Total                ; 00:07:51     ; --                      ; --                  ; 00:10:38                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -120,11 +121,11 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; Joey_PC          ; Arch Linux ; Arch Linux ; x86_64         ;
-; Fitter               ; Joey_PC          ; Arch Linux ; Arch Linux ; x86_64         ;
-; Assembler            ; Joey_PC          ; Arch Linux ; Arch Linux ; x86_64         ;
-; Timing Analyzer      ; Joey_PC          ; Arch Linux ; Arch Linux ; x86_64         ;
-; EDA Netlist Writer   ; Joey_PC          ; Arch Linux ; Arch Linux ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-NK7ISUL  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-NK7ISUL  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-NK7ISUL  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-NK7ISUL  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-NK7ISUL  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

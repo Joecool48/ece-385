@@ -43,27 +43,31 @@ module  VGA_controller (input              Clk,         // 50 MHz clock
     logic VGA_HS_in, VGA_VS_in, VGA_BLANK_N_in;
     logic [9:0] h_counter, v_counter;
     logic [9:0] h_counter_in, v_counter_in;
-	 
+	 logic VGA_COUNTER; 
 	 
     assign VGA_SYNC_N = 1'b0;
     assign DrawX = h_counter;
     assign DrawY = v_counter;
 
     // Generate VGA_CLK
-    always_ff @ (posedge Clk)
+    always_ff @ (posedge Clk or negedge Reset)
     begin
-        if (Reset)
+        if (~Reset)
         begin
             VGA_CLK <= 1'b0;
+				VGA_COUNTER <= 1'b0;
         end
         else
         begin
-            VGA_CLK <= ~VGA_CLK;
+				if (VGA_COUNTER == 1) begin
+					VGA_CLK <= ~VGA_CLK;
+				end
+				VGA_COUNTER <= VGA_COUNTER + 1;
         end
     end
     
     // VGA control signals
-    always_ff @ (posedge VGA_CLK)
+    always_ff @ (posedge VGA_CLK or negedge Reset)
     begin
         if (~Reset)
         begin

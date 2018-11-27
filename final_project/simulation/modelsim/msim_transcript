@@ -1,3 +1,4 @@
+# Reading C:/Quartus/modelsim_ase/tcl/vsim/pref.tcl
 # do mario_cv_game_run_msim_rtl_verilog.do
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
@@ -6,18 +7,18 @@
 # vmap work rtl_work
 # Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
 # vmap work rtl_work 
-# Copying /opt/altera/18.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Copying C:/Quartus/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+/home/joey/courses/ece385/final_project {/home/joey/courses/ece385/final_project/RAM_param.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/RAM_param.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:30 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/joey/courses/ece385/final_project" /home/joey/courses/ece385/final_project/RAM_param.v 
+# Start time: 15:10:49 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/RAM_param.v 
 # -- Compiling module RAM_param
 # 
 # Top level modules:
 # 	RAM_param
-# End time: 01:17:30 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:49 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlib final_project
 # ** Warning: (vlib-34) Library already exists at "final_project".
@@ -25,60 +26,60 @@
 # Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
 # vmap final_project final_project 
 # Modifying modelsim.ini
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project {/home/joey/courses/ece385/final_project/db/ip/final_project/final_project.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/final_project.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:31 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project" /home/joey/courses/ece385/final_project/db/ip/final_project/final_project.v 
+# Start time: 15:10:49 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/final_project.v 
 # -- Compiling module final_project
 # 
 # Top level modules:
 # 	final_project
-# End time: 01:17:31 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:50 on Nov 27,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_reset_controller.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_reset_controller.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:31 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_reset_controller.v 
+# Start time: 15:10:50 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_reset_controller.v 
 # -- Compiling module altera_reset_controller
 # 
 # Top level modules:
 # 	altera_reset_controller
-# End time: 01:17:31 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:50 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_reset_synchronizer.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_reset_synchronizer.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:31 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_reset_synchronizer.v 
+# Start time: 15:10:50 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_reset_synchronizer.v 
 # -- Compiling module altera_reset_synchronizer
 # 
 # Top level modules:
 # 	altera_reset_synchronizer
-# End time: 01:17:31 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:50 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/burst_read_master.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/burst_read_master.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:31 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/burst_read_master.v 
+# Start time: 15:10:50 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/burst_read_master.v 
 # -- Compiling module burst_read_master
 # 
 # Top level modules:
 # 	burst_read_master
-# End time: 01:17:31 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:50 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/custom_master.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/custom_master.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:31 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/custom_master.v 
+# Start time: 15:10:50 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/custom_master.v 
 # -- Compiling module custom_master
 # 
 # Top level modules:
 # 	custom_master
-# End time: 01:17:31 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:50 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_jtag_game_nios.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_jtag_game_nios.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:31 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_jtag_game_nios.v 
+# Start time: 15:10:50 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_jtag_game_nios.v 
 # -- Compiling module final_project_jtag_game_nios_sim_scfifo_w
 # -- Compiling module final_project_jtag_game_nios_scfifo_w
 # -- Compiling module final_project_jtag_game_nios_sim_scfifo_r
@@ -87,42 +88,42 @@
 # 
 # Top level modules:
 # 	final_project_jtag_game_nios
-# End time: 01:17:31 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:50 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:31 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0.v 
+# Start time: 15:10:50 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0.v 
 # -- Compiling module final_project_mm_interconnect_0
 # 
 # Top level modules:
 # 	final_project_mm_interconnect_0
-# End time: 01:17:31 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:50 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_avalon_st_adapter.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_avalon_st_adapter.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:31 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_avalon_st_adapter.v 
+# Start time: 15:10:50 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_avalon_st_adapter.v 
 # -- Compiling module final_project_mm_interconnect_0_avalon_st_adapter
 # 
 # Top level modules:
 # 	final_project_mm_interconnect_0_avalon_st_adapter
-# End time: 01:17:31 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:50 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:31 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0.v 
+# Start time: 15:10:50 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0.v 
 # -- Compiling module final_project_nios2_gen2_0
 # 
 # Top level modules:
 # 	final_project_nios2_gen2_0
-# End time: 01:17:31 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:50 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:31 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v 
+# Start time: 15:10:50 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v 
 # -- Compiling module final_project_nios2_gen2_0_cpu_register_bank_a_module
 # -- Compiling module final_project_nios2_gen2_0_cpu_register_bank_b_module
 # -- Compiling module final_project_nios2_gen2_0_cpu_nios2_oci_debug
@@ -148,52 +149,52 @@
 # Top level modules:
 # 	final_project_nios2_gen2_0_cpu_nios2_performance_monitors
 # 	final_project_nios2_gen2_0_cpu
-# End time: 01:17:31 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:50 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu_debug_slave_sysclk.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu_debug_slave_sysclk.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:31 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu_debug_slave_sysclk.v 
+# Start time: 15:10:50 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu_debug_slave_sysclk.v 
 # -- Compiling module final_project_nios2_gen2_0_cpu_debug_slave_sysclk
 # 
 # Top level modules:
 # 	final_project_nios2_gen2_0_cpu_debug_slave_sysclk
-# End time: 01:17:31 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:51 on Nov 27,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu_debug_slave_tck.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu_debug_slave_tck.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:31 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu_debug_slave_tck.v 
+# Start time: 15:10:51 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu_debug_slave_tck.v 
 # -- Compiling module final_project_nios2_gen2_0_cpu_debug_slave_tck
 # 
 # Top level modules:
 # 	final_project_nios2_gen2_0_cpu_debug_slave_tck
-# End time: 01:17:31 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:51 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu_debug_slave_wrapper.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu_debug_slave_wrapper.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:31 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu_debug_slave_wrapper.v 
+# Start time: 15:10:51 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu_debug_slave_wrapper.v 
 # -- Compiling module final_project_nios2_gen2_0_cpu_debug_slave_wrapper
 # 
 # Top level modules:
 # 	final_project_nios2_gen2_0_cpu_debug_slave_wrapper
-# End time: 01:17:31 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:51 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu_test_bench.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu_test_bench.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:31 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu_test_bench.v 
+# Start time: 15:10:51 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu_test_bench.v 
 # -- Compiling module final_project_nios2_gen2_0_cpu_test_bench
 # 
 # Top level modules:
 # 	final_project_nios2_gen2_0_cpu_test_bench
-# End time: 01:17:31 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:51 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_pll.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_pll.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:31 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_pll.v 
+# Start time: 15:10:51 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_pll.v 
 # -- Compiling module final_project_pll_dffpipe_l2c
 # -- Compiling module final_project_pll_stdsync_sv6
 # -- Compiling module final_project_pll_altpll_1qn2
@@ -201,194 +202,194 @@
 # 
 # Top level modules:
 # 	final_project_pll
-# End time: 01:17:31 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:51 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_sdram.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_sdram.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:31 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_sdram.v 
+# Start time: 15:10:51 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_sdram.v 
 # -- Compiling module final_project_sdram_input_efifo_module
 # -- Compiling module final_project_sdram
 # 
 # Top level modules:
 # 	final_project_sdram
-# End time: 01:17:31 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:51 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_sprite_address_pio.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_sprite_address_pio.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:31 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_sprite_address_pio.v 
+# Start time: 15:10:51 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_sprite_address_pio.v 
 # -- Compiling module final_project_sprite_address_pio
 # 
 # Top level modules:
 # 	final_project_sprite_address_pio
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:01
+# End time: 15:10:51 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_sprite_height_pio.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_sprite_height_pio.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_sprite_height_pio.v 
+# Start time: 15:10:51 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_sprite_height_pio.v 
 # -- Compiling module final_project_sprite_height_pio
 # 
 # Top level modules:
 # 	final_project_sprite_height_pio
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:51 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_sysid.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_sysid.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_sysid.v 
+# Start time: 15:10:51 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_sysid.v 
 # -- Compiling module final_project_sysid
 # 
 # Top level modules:
 # 	final_project_sysid
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:51 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/joey/courses/ece385/final_project/system_verilog {/home/joey/courses/ece385/final_project/system_verilog/sprite_controller.sv}
+# vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_controller.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/joey/courses/ece385/final_project/system_verilog" /home/joey/courses/ece385/final_project/system_verilog/sprite_controller.sv 
+# Start time: 15:10:51 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_controller.sv 
 # -- Compiling module sprite_controller
 # 
 # Top level modules:
 # 	sprite_controller
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:51 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/joey/courses/ece385/final_project/system_verilog {/home/joey/courses/ece385/final_project/system_verilog/read_frame_mux.sv}
+# vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/read_frame_mux.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/joey/courses/ece385/final_project/system_verilog" /home/joey/courses/ece385/final_project/system_verilog/read_frame_mux.sv 
+# Start time: 15:10:51 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/read_frame_mux.sv 
 # -- Compiling module read_frame_mux
 # 
 # Top level modules:
 # 	read_frame_mux
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:51 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/joey/courses/ece385/final_project/system_verilog {/home/joey/courses/ece385/final_project/system_verilog/write_frame_mux.sv}
+# vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/write_frame_mux.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/joey/courses/ece385/final_project/system_verilog" /home/joey/courses/ece385/final_project/system_verilog/write_frame_mux.sv 
+# Start time: 15:10:51 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/write_frame_mux.sv 
 # -- Compiling module write_frame_mux
 # 
 # Top level modules:
 # 	write_frame_mux
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:51 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/joey/courses/ece385/final_project/system_verilog {/home/joey/courses/ece385/final_project/system_verilog/frame_number.sv}
+# vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_number.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/joey/courses/ece385/final_project/system_verilog" /home/joey/courses/ece385/final_project/system_verilog/frame_number.sv 
+# Start time: 15:10:51 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_number.sv 
 # -- Compiling module frame_number
 # 
 # Top level modules:
 # 	frame_number
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:51 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/joey/courses/ece385/final_project/system_verilog {/home/joey/courses/ece385/final_project/system_verilog/sprite_fifo.sv}
+# vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_fifo.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/joey/courses/ece385/final_project/system_verilog" /home/joey/courses/ece385/final_project/system_verilog/sprite_fifo.sv 
+# Start time: 15:10:52 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_fifo.sv 
 # -- Compiling module sprite_fifo
 # 
 # Top level modules:
 # 	sprite_fifo
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:52 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/joey/courses/ece385/final_project/system_verilog {/home/joey/courses/ece385/final_project/system_verilog/frame_controller.sv}
+# vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_controller.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/joey/courses/ece385/final_project/system_verilog" /home/joey/courses/ece385/final_project/system_verilog/frame_controller.sv 
+# Start time: 15:10:52 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_controller.sv 
 # -- Compiling module frame_controller
 # 
 # Top level modules:
 # 	frame_controller
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:52 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/joey/courses/ece385/final_project/system_verilog {/home/joey/courses/ece385/final_project/system_verilog/VGA_controller.sv}
+# vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/VGA_controller.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/joey/courses/ece385/final_project/system_verilog" /home/joey/courses/ece385/final_project/system_verilog/VGA_controller.sv 
+# Start time: 15:10:52 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/VGA_controller.sv 
 # -- Compiling module VGA_controller
 # 
 # Top level modules:
 # 	VGA_controller
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:52 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/joey/courses/ece385/final_project/system_verilog {/home/joey/courses/ece385/final_project/system_verilog/Color_Mapper.sv}
+# vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/Color_Mapper.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/joey/courses/ece385/final_project/system_verilog" /home/joey/courses/ece385/final_project/system_verilog/Color_Mapper.sv 
+# Start time: 15:10:52 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/Color_Mapper.sv 
 # -- Compiling module Color_Mapper
 # 
 # Top level modules:
 # 	Color_Mapper
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:52 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_avalon_sc_fifo.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_avalon_sc_fifo.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_avalon_sc_fifo.v 
+# Start time: 15:10:52 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_avalon_sc_fifo.v 
 # -- Compiling module altera_avalon_sc_fifo
 # 
 # Top level modules:
 # 	altera_avalon_sc_fifo
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:52 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_avalon_st_clock_crosser.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_avalon_st_clock_crosser.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_avalon_st_clock_crosser.v 
+# Start time: 15:10:52 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_avalon_st_clock_crosser.v 
 # -- Compiling module altera_avalon_st_clock_crosser
 # 
 # Top level modules:
 # 	altera_avalon_st_clock_crosser
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:52 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_avalon_st_handshake_clock_crosser.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_avalon_st_handshake_clock_crosser.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_avalon_st_handshake_clock_crosser.v 
+# Start time: 15:10:52 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_avalon_st_handshake_clock_crosser.v 
 # -- Compiling module altera_avalon_st_handshake_clock_crosser
 # 
 # Top level modules:
 # 	altera_avalon_st_handshake_clock_crosser
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:52 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_address_alignment.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_address_alignment.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_address_alignment.sv 
+# Start time: 15:10:52 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_address_alignment.sv 
 # -- Compiling module altera_merlin_address_alignment
 # 
 # Top level modules:
 # 	altera_merlin_address_alignment
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:52 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_arbitrator.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_arbitrator.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_arbitrator.sv 
+# Start time: 15:10:52 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_arbitrator.sv 
 # -- Compiling module altera_merlin_arbitrator
 # -- Compiling module altera_merlin_arb_adder
 # 
 # Top level modules:
 # 	altera_merlin_arbitrator
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:52 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_burst_adapter.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_burst_adapter.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_burst_adapter.sv 
+# Start time: 15:10:52 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_burst_adapter.sv 
 # -- Compiling module altera_merlin_burst_adapter
 # 
 # Top level modules:
 # 	altera_merlin_burst_adapter
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:52 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_burst_adapter_13_1.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_burst_adapter_13_1.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_burst_adapter_13_1.sv 
+# Start time: 15:10:52 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_burst_adapter_13_1.sv 
 # -- Compiling module altera_merlin_burst_adapter_burstwrap_increment
 # -- Compiling module altera_merlin_burst_adapter_adder
 # -- Compiling module altera_merlin_burst_adapter_subtractor
@@ -397,298 +398,298 @@
 # 
 # Top level modules:
 # 	altera_merlin_burst_adapter_13_1
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:52 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_burst_uncompressor.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_burst_uncompressor.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_burst_uncompressor.sv 
+# Start time: 15:10:52 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_burst_uncompressor.sv 
 # -- Compiling module altera_merlin_burst_uncompressor
 # 
 # Top level modules:
 # 	altera_merlin_burst_uncompressor
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:52 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_master_agent.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_master_agent.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_master_agent.sv 
+# Start time: 15:10:52 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_master_agent.sv 
 # -- Compiling module altera_merlin_master_agent
 # 
 # Top level modules:
 # 	altera_merlin_master_agent
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:52 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_master_translator.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_master_translator.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_master_translator.sv 
+# Start time: 15:10:53 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_master_translator.sv 
 # -- Compiling module altera_merlin_master_translator
 # 
 # Top level modules:
 # 	altera_merlin_master_translator
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:53 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_slave_agent.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_slave_agent.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_slave_agent.sv 
+# Start time: 15:10:53 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_slave_agent.sv 
 # -- Compiling module altera_merlin_slave_agent
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_slave_agent.sv(618): (vlog-2186) SystemVerilog testbench feature
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_slave_agent.sv(618): (vlog-2186) SystemVerilog testbench feature
 # (randomization, coverage or assertion) detected in the design.
 # These features are only supported in Questasim.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_slave_agent.sv(488): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_slave_agent.sv(489): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_slave_agent.sv(490): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_slave_agent.sv(491): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_slave_agent.sv(34): (vlog-2186) SystemVerilog testbench feature
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_slave_agent.sv(488): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_slave_agent.sv(489): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_slave_agent.sv(490): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_slave_agent.sv(491): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_slave_agent.sv(34): (vlog-2186) SystemVerilog testbench feature
 # (randomization, coverage or assertion) detected in the design.
 # These features are only supported in Questasim.
 # 
 # Top level modules:
 # 	altera_merlin_slave_agent
-# End time: 01:17:32 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:53 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 6
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_slave_translator.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_slave_translator.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:32 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_slave_translator.sv 
+# Start time: 15:10:53 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_slave_translator.sv 
 # -- Compiling module altera_merlin_slave_translator
 # 
 # Top level modules:
 # 	altera_merlin_slave_translator
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:01
+# End time: 15:10:53 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv 
+# Start time: 15:10:53 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv 
 # -- Compiling module altera_merlin_traffic_limiter
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(531): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(602): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(603): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(604): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(605): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(606): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(607): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(612): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(614): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(617): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(618): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(644): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(646): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(647): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(648): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(649): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(650): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(655): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(657): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(660): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
-# ** Warning: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(661): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(531): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(602): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(603): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(604): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(605): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(606): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(607): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(612): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(614): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(617): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(618): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(644): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(646): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(647): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(648): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(649): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(650): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(655): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(657): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(660): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
+# ** Warning: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_traffic_limiter.sv(661): (vlog-2583) [SVCHK] - Some checking for conflicts with always_comb and always_latch variables not yet supported. Run vopt to provide additional design-level checks.
 # 
 # Top level modules:
 # 	altera_merlin_traffic_limiter
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:53 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 21
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_width_adapter.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_width_adapter.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_merlin_width_adapter.sv 
+# Start time: 15:10:53 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_merlin_width_adapter.sv 
 # -- Compiling module altera_merlin_width_adapter
 # 
 # Top level modules:
 # 	altera_merlin_width_adapter
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:53 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -vlog01compat -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_std_synchronizer_nocut.v}
+# vlog -vlog01compat -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_std_synchronizer_nocut.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/altera_std_synchronizer_nocut.v 
+# Start time: 15:10:53 on Nov 27,2018
+# vlog -reportprogress 300 -vlog01compat -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_std_synchronizer_nocut.v 
 # -- Compiling module altera_std_synchronizer_nocut
 # 
 # Top level modules:
 # 	altera_std_synchronizer_nocut
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:53 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_irq_mapper.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_irq_mapper.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_irq_mapper.sv 
+# Start time: 15:10:53 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_irq_mapper.sv 
 # -- Compiling module final_project_irq_mapper
 # 
 # Top level modules:
 # 	final_project_irq_mapper
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:53 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv 
+# Start time: 15:10:53 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv 
 # -- Compiling module final_project_mm_interconnect_0_avalon_st_adapter_error_adapter_0
 # 
 # Top level modules:
 # 	final_project_mm_interconnect_0_avalon_st_adapter_error_adapter_0
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:53 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_cmd_demux.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_cmd_demux.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_cmd_demux.sv 
+# Start time: 15:10:53 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_cmd_demux.sv 
 # -- Compiling module final_project_mm_interconnect_0_cmd_demux
 # 
 # Top level modules:
 # 	final_project_mm_interconnect_0_cmd_demux
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:53 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_cmd_demux_001.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_cmd_demux_001.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_cmd_demux_001.sv 
+# Start time: 15:10:53 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_cmd_demux_001.sv 
 # -- Compiling module final_project_mm_interconnect_0_cmd_demux_001
 # 
 # Top level modules:
 # 	final_project_mm_interconnect_0_cmd_demux_001
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:53 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_cmd_mux.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_cmd_mux.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_cmd_mux.sv 
+# Start time: 15:10:53 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_cmd_mux.sv 
 # -- Compiling module final_project_mm_interconnect_0_cmd_mux
 # 
 # Top level modules:
 # 	final_project_mm_interconnect_0_cmd_mux
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:54 on Nov 27,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_cmd_mux_004.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_cmd_mux_004.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_cmd_mux_004.sv 
+# Start time: 15:10:54 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_cmd_mux_004.sv 
 # -- Compiling module final_project_mm_interconnect_0_cmd_mux_004
 # 
 # Top level modules:
 # 	final_project_mm_interconnect_0_cmd_mux_004
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:54 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_router.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_router.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_router.sv 
+# Start time: 15:10:54 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_router.sv 
 # -- Compiling module final_project_mm_interconnect_0_router_default_decode
 # -- Compiling module final_project_mm_interconnect_0_router
 # 
 # Top level modules:
 # 	final_project_mm_interconnect_0_router
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:54 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_router_001.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_router_001.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_router_001.sv 
+# Start time: 15:10:54 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_router_001.sv 
 # -- Compiling module final_project_mm_interconnect_0_router_001_default_decode
 # -- Compiling module final_project_mm_interconnect_0_router_001
 # 
 # Top level modules:
 # 	final_project_mm_interconnect_0_router_001
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:54 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_router_003.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_router_003.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_router_003.sv 
+# Start time: 15:10:54 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_router_003.sv 
 # -- Compiling module final_project_mm_interconnect_0_router_003_default_decode
 # -- Compiling module final_project_mm_interconnect_0_router_003
 # 
 # Top level modules:
 # 	final_project_mm_interconnect_0_router_003
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:54 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_router_007.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_router_007.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_router_007.sv 
+# Start time: 15:10:54 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_router_007.sv 
 # -- Compiling module final_project_mm_interconnect_0_router_007_default_decode
 # -- Compiling module final_project_mm_interconnect_0_router_007
 # 
 # Top level modules:
 # 	final_project_mm_interconnect_0_router_007
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:54 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_demux.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_demux.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_demux.sv 
+# Start time: 15:10:54 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_demux.sv 
 # -- Compiling module final_project_mm_interconnect_0_rsp_demux
 # 
 # Top level modules:
 # 	final_project_mm_interconnect_0_rsp_demux
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:54 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_demux_004.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_demux_004.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_demux_004.sv 
+# Start time: 15:10:54 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_demux_004.sv 
 # -- Compiling module final_project_mm_interconnect_0_rsp_demux_004
 # 
 # Top level modules:
 # 	final_project_mm_interconnect_0_rsp_demux_004
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:54 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_demux_005.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_demux_005.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_demux_005.sv 
+# Start time: 15:10:54 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_demux_005.sv 
 # -- Compiling module final_project_mm_interconnect_0_rsp_demux_005
 # 
 # Top level modules:
 # 	final_project_mm_interconnect_0_rsp_demux_005
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:54 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_mux.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_mux.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_mux.sv 
+# Start time: 15:10:54 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_mux.sv 
 # -- Compiling module final_project_mm_interconnect_0_rsp_mux
 # 
 # Top level modules:
 # 	final_project_mm_interconnect_0_rsp_mux
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:54 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work final_project +incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules {/home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_mux_001.sv}
+# vlog -sv -work final_project +incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules {c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_mux_001.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work final_project "+incdir+/home/joey/courses/ece385/final_project/db/ip/final_project/submodules" /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_mux_001.sv 
+# Start time: 15:10:54 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work final_project "+incdir+c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules" c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_mm_interconnect_0_rsp_mux_001.sv 
 # -- Compiling module final_project_mm_interconnect_0_rsp_mux_001
 # 
 # Top level modules:
 # 	final_project_mm_interconnect_0_rsp_mux_001
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:54 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+/home/joey/courses/ece385/final_project/system_verilog {/home/joey/courses/ece385/final_project/system_verilog/mario_cv_game.sv}
+# vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/joey/courses/ece385/final_project/system_verilog" /home/joey/courses/ece385/final_project/system_verilog/mario_cv_game.sv 
+# Start time: 15:10:54 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv 
 # -- Compiling module mario_cv_game
 # 
 # Top level modules:
 # 	mario_cv_game
-# End time: 01:17:33 on Nov 27,2018, Elapsed time: 0:00:00
+# End time: 15:10:54 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -sv -work work +incdir+/home/joey/courses/ece385/final_project {/home/joey/courses/ece385/final_project/testbench.sv}
+# vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/testbench.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:17:33 on Nov 27,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+/home/joey/courses/ece385/final_project" /home/joey/courses/ece385/final_project/testbench.sv 
+# Start time: 15:10:54 on Nov 27,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/testbench.sv 
 # -- Compiling module testbench
 # 
 # Top level modules:
 # 	testbench
-# End time: 01:17:34 on Nov 27,2018, Elapsed time: 0:00:01
+# End time: 15:10:54 on Nov 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -L final_project -voptargs="+acc"  testbench
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -L final_project -voptargs=""+acc"" testbench 
-# Start time: 01:17:34 on Nov 27,2018
+# Start time: 15:10:54 on Nov 27,2018
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.mario_cv_game
@@ -797,105 +798,95 @@
 # Loading final_project.altera_merlin_burst_adapter_adder
 # Loading final_project.altera_reset_synchronizer
 # ** Warning: (vsim-8311) System Verilog assertions are supported only in Questasim.
-# ** Warning: (vsim-3015) /home/joey/courses/ece385/final_project/system_verilog/mario_cv_game.sv(162): [PCDPC] - Port size (12) does not match connection size (13) for port 'sdram_wire_addr'. The port definition is at: /home/joey/courses/ece385/final_project/db/ip/final_project/final_project.v(19).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/nios_system File: /home/joey/courses/ece385/final_project/db/ip/final_project/final_project.v
-# ** Warning: (vsim-3017) /home/joey/courses/ece385/final_project/db/ip/final_project/final_project.v(124): [TFMPC] - Too few port connections. Expected 12, found 10.
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/nios_system/jtag_game_nios File: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_jtag_game_nios.v
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/final_project.v(124): [TFMPC] - Missing connection for port 'dataavailable'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/final_project.v(124): [TFMPC] - Missing connection for port 'readyfordata'.
-# ** Warning: (vsim-3017) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/burst_read_master.v(238): [TFMPC] - Too few port connections. Expected 13, found 8.
+# ** Warning: (vsim-3015) C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv(162): [PCDPC] - Port size (12) does not match connection size (13) for port 'sdram_wire_addr'. The port definition is at: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/final_project.v(19).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/nios_system File: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/final_project.v
+# ** Warning: (vsim-3017) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/final_project.v(124): [TFMPC] - Too few port connections. Expected 12, found 10.
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/nios_system/jtag_game_nios File: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_jtag_game_nios.v
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/final_project.v(124): [TFMPC] - Missing connection for port 'dataavailable'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/final_project.v(124): [TFMPC] - Missing connection for port 'readyfordata'.
+# ** Warning: (vsim-3017) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/burst_read_master.v(238): [TFMPC] - Too few port connections. Expected 13, found 8.
 #    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/nios_system/master_template_0/genblk1/genblk1/a_burst_read_master/the_master_to_user_fifo File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v
-# ** Warning: (vsim-3015) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/burst_read_master.v(238): [PCDPC] - Port size (1) does not match connection size (7) for port 'usedw'. The port definition is at: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v(51682).
+# ** Warning: (vsim-3015) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/burst_read_master.v(238): [PCDPC] - Port size (1) does not match connection size (7) for port 'usedw'. The port definition is at: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v(51682).
 #    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/nios_system/master_template_0/genblk1/genblk1/a_burst_read_master/the_master_to_user_fifo File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/burst_read_master.v(238): [TFMPC] - Missing connection for port 'sclr'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/burst_read_master.v(238): [TFMPC] - Missing connection for port 'eccstatus'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/burst_read_master.v(238): [TFMPC] - Missing connection for port 'full'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/burst_read_master.v(238): [TFMPC] - Missing connection for port 'almost_full'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/burst_read_master.v(238): [TFMPC] - Missing connection for port 'almost_empty'.
-# ** Warning: (vsim-3017) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Too few port connections. Expected 23, found 6.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/burst_read_master.v(238): [TFMPC] - Missing connection for port 'sclr'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/burst_read_master.v(238): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/burst_read_master.v(238): [TFMPC] - Missing connection for port 'full'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/burst_read_master.v(238): [TFMPC] - Missing connection for port 'almost_full'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/burst_read_master.v(238): [TFMPC] - Missing connection for port 'almost_empty'.
+# ** Warning: (vsim-3017) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Too few port connections. Expected 23, found 6.
 #    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/nios_system/nios2_gen2_0/cpu/final_project_nios2_gen2_0_cpu_register_bank_a/the_altsyncram File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'wren_b'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'rden_a'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'rden_b'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'data_b'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'clock1'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'clocken0'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'clocken1'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'clocken2'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'clocken3'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'aclr0'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'aclr1'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'byteena_a'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'byteena_b'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'addressstall_a'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'addressstall_b'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'q_a'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'eccstatus'.
-# ** Warning: (vsim-3017) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Too few port connections. Expected 23, found 6.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'wren_b'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'rden_a'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'rden_b'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'data_b'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'clock1'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'clocken0'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'clocken1'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'clocken2'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'clocken3'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'aclr0'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'aclr1'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'byteena_a'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'byteena_b'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'addressstall_a'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'addressstall_b'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'q_a'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(50): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Too few port connections. Expected 23, found 6.
 #    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/nios_system/nios2_gen2_0/cpu/final_project_nios2_gen2_0_cpu_register_bank_b/the_altsyncram File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'wren_b'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'rden_a'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'rden_b'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'data_b'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'clock1'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'clocken0'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'clocken1'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'clocken2'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'clocken3'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'aclr0'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'aclr1'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'byteena_a'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'byteena_b'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'addressstall_a'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'addressstall_b'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'q_a'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'eccstatus'.
-# ** Warning: (vsim-3015) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2610): [PCDPC] - Port size (16) does not match connection size (38) for port 'jdo'. The port definition is at: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(987).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/nios_system/nios2_gen2_0/cpu/the_final_project_nios2_gen2_0_cpu_nios2_oci/the_final_project_nios2_gen2_0_cpu_nios2_oci_itrace File: /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v
-# ** Warning: (vsim-3017) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Too few port connections. Expected 23, found 7.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'wren_b'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'rden_a'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'rden_b'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'data_b'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'clock1'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'clocken0'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'clocken1'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'clocken2'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'clocken3'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'aclr0'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'aclr1'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'byteena_a'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'byteena_b'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'addressstall_a'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'addressstall_b'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'q_a'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(116): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3015) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2610): [PCDPC] - Port size (16) does not match connection size (38) for port 'jdo'. The port definition is at: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(987).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/nios_system/nios2_gen2_0/cpu/the_final_project_nios2_gen2_0_cpu_nios2_oci/the_final_project_nios2_gen2_0_cpu_nios2_oci_itrace File: c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v
+# ** Warning: (vsim-3017) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Too few port connections. Expected 23, found 7.
 #    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/nios_system/nios2_gen2_0/cpu/the_final_project_nios2_gen2_0_cpu_nios2_oci/the_final_project_nios2_gen2_0_cpu_nios2_ocimem/final_project_nios2_gen2_0_cpu_ociram_sp_ram/the_altsyncram File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'wren_b'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'rden_a'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'rden_b'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'data_b'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'address_b'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'clock1'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'clocken1'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'clocken2'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'clocken3'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'aclr0'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'aclr1'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'byteena_b'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'addressstall_a'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'addressstall_b'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'q_b'.
-# ** Warning: (vsim-3722) /home/joey/courses/ece385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'eccstatus'.
-# ** Warning: (vsim-3839) /home/joey/courses/ece385/final_project/system_verilog/mario_cv_game.sv(203): Variable '/testbench/mario_game/read_fb_addr', driven via a port connection, is multiply driven. See /home/joey/courses/ece385/final_project/system_verilog/mario_cv_game.sv(147).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/f_ctl File: /home/joey/courses/ece385/final_project/system_verilog/frame_controller.sv
-# ** Warning: (vsim-3839) /home/joey/courses/ece385/final_project/system_verilog/mario_cv_game.sv(206): Variable '/testbench/mario_game/write_fb_addr', driven via a port connection, is multiply driven. See /home/joey/courses/ece385/final_project/system_verilog/mario_cv_game.sv(157).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/s_ctl File: /home/joey/courses/ece385/final_project/system_verilog/sprite_controller.sv
-# ** Warning: (vsim-3839) /home/joey/courses/ece385/final_project/system_verilog/mario_cv_game.sv(206): Variable '/testbench/mario_game/write_fb_data_in', driven via a port connection, is multiply driven. See /home/joey/courses/ece385/final_project/system_verilog/mario_cv_game.sv(157).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/s_ctl File: /home/joey/courses/ece385/final_project/system_verilog/sprite_controller.sv
-# ** Warning: (vsim-3839) /home/joey/courses/ece385/final_project/system_verilog/mario_cv_game.sv(206): Variable '/testbench/mario_game/write_fb_write_en', driven via a port connection, is multiply driven. See /home/joey/courses/ece385/final_project/system_verilog/mario_cv_game.sv(157).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/s_ctl File: /home/joey/courses/ece385/final_project/system_verilog/sprite_controller.sv
-# ** Warning: (vsim-3839) /home/joey/courses/ece385/final_project/testbench.sv(44): Variable '/testbench/SYS_CLK', driven via a port connection, is multiply driven. See /home/joey/courses/ece385/final_project/testbench.sv(37).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench File: /home/joey/courses/ece385/final_project/testbench.sv
-# ** Warning: (vsim-3839) /home/joey/courses/ece385/final_project/testbench.sv(40): Variable '/testbench/SYS_CLK', driven via a port connection, is multiply driven. See /home/joey/courses/ece385/final_project/testbench.sv(37).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench File: /home/joey/courses/ece385/final_project/testbench.sv
-# ** Warning: Design size of 16303 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'wren_b'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'rden_a'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'rden_b'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'data_b'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'address_b'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'clock1'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'clocken1'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'clocken2'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'clocken3'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'aclr0'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'aclr1'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'byteena_b'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'addressstall_a'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'addressstall_b'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'q_b'.
+# ** Warning: (vsim-3722) c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.v(2147): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3839) C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv(203): Variable '/testbench/mario_game/read_fb_addr', driven via a port connection, is multiply driven. See C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv(147).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/f_ctl File: C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_controller.sv
+# ** Warning: (vsim-3839) C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv(206): Variable '/testbench/mario_game/write_fb_addr', driven via a port connection, is multiply driven. See C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv(157).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/s_ctl File: C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_controller.sv
+# ** Warning: (vsim-3839) C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv(206): Variable '/testbench/mario_game/write_fb_data_in', driven via a port connection, is multiply driven. See C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv(157).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/s_ctl File: C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_controller.sv
+# ** Warning: (vsim-3839) C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv(206): Variable '/testbench/mario_game/write_fb_write_en', driven via a port connection, is multiply driven. See C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv(157).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/s_ctl File: C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_controller.sv
+# ** Warning: (vsim-3839) C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/testbench.sv(49): Variable '/testbench/SYS_CLK', driven via a port connection, is multiply driven. See C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/testbench.sv(39).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench File: C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/testbench.sv
+# ** Warning: (vsim-3839) C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/testbench.sv(45): Variable '/testbench/SYS_CLK', driven via a port connection, is multiply driven. See C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/testbench.sv(39).
+#    Time: 0 ps  Iteration: 0  Instance: /testbench File: C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/testbench.sv
+# ** Warning: Design size of 16319 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # 
 # add wave *
-# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 1 times, errno 11
-# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 2 times, errno 11
-# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 3 times, errno 11
-# ** Error: Cannot lock WLF file: "vsim.wlf"
-#           errno 11: Resource temporarily unavailable.
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: joey  Hostname: Joey_PC  ProcessID: 17338
-#           Attempting to use alternate WLF file "./wlftDuO0JI".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftDuO0JI
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
@@ -917,10 +908,8 @@
 #    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/nios_system/nios2_gen2_0/cpu/final_project_nios2_gen2_0_cpu_register_bank_b/the_altsyncram/m_default/altsyncram_inst
 # Warning: DONT_CARE value for read_during_write_mode_port_a is not supported in Stratix device family, it might cause incorrect behavioural simulation result
 # Time: 0  Instance: testbench.mario_game.nios_system.nios2_gen2_0.cpu.the_final_project_nios2_gen2_0_cpu_nios2_oci.the_final_project_nios2_gen2_0_cpu_nios2_ocimem.final_project_nios2_gen2_0_cpu_ociram_sp_ram.the_altsyncram.m_default.altsyncram_inst
-# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "final_project_nios2_gen2_0_cpu_ociram_default_contents.hex" for reading.
-# No such file or directory. (errno = ENOENT)    : /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v(870)
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/nios_system/nios2_gen2_0/cpu/the_final_project_nios2_gen2_0_cpu_nios2_oci/the_final_project_nios2_gen2_0_cpu_nios2_ocimem/final_project_nios2_gen2_0_cpu_ociram_sp_ram/the_altsyncram/m_default/altsyncram_inst
-# ERROR: cannot read final_project_nios2_gen2_0_cpu_ociram_default_contents.hex.
+# WARNING: final_project_nios2_gen2_0_cpu_ociram_default_contents.hex, Intel-hex data file is empty.
+# Time: 0  Instance: testbench.mario_game.nios_system.nios2_gen2_0.cpu.the_final_project_nios2_gen2_0_cpu_nios2_oci.the_final_project_nios2_gen2_0_cpu_nios2_ocimem.final_project_nios2_gen2_0_cpu_ociram_sp_ram.the_altsyncram.m_default.altsyncram_inst.mem.convert_hex2ver.READER
 # 
 # This reference design requires a vendor simulation model.
 # To simulate accesses to SDRAM, you must:
@@ -931,7 +920,11 @@
 # 	 - Be aware that you may have to disable some timing checks in the vendor model
 # 		   (because this simulation is zero-delay based)
 # 
-# Break key hit
-# Break in NamedBeginStat READER at /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v line 1031
-# End time: 01:18:03 on Nov 27,2018, Elapsed time: 0:00:29
-# Errors: 4, Warnings: 80, Suppressed Warnings: 8
+# ** Warning: (vsim-PLI-3412) Memory address read on line 524289 of file "/Users/yeda_/Documents/ECE_385/ece-385/final_project/scripts/frame_buffer.ver" is out of bounds specified for readmem command.  (Current address [262144], address range [0:262143])    : /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v(48976)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/fb_curr/altsyncram_component/m_default/altsyncram_inst
+# ** Warning: (vsim-PLI-3412) Memory address read on line 524289 of file "/Users/yeda_/Documents/ECE_385/ece-385/final_project/scripts/frame_buffer.ver" is out of bounds specified for readmem command.  (Current address [262144], address range [0:262143])    : /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v(48976)
+#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/fb_update/altsyncram_component/m_default/altsyncram_inst
+# Warning : Illegal value 'X' detected on ARESET input
+# Time: 195000  Instance: testbench.mario_game.nios_system.pll.sd1.pll7
+# End time: 15:21:08 on Nov 27,2018, Elapsed time: 0:10:14
+# Errors: 0, Warnings: 79
