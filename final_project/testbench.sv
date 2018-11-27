@@ -42,7 +42,7 @@ module testbench();
 	end
 	always begin
 		#5 SYS_CLK = ~SYS_CLK;
-		#10 CLOCK_50 = CLOCK_50; 
+		#10 CLOCK_50 = ~CLOCK_50;
 	end
 	
 	initial begin : TEST_VGA

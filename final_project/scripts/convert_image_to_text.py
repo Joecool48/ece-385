@@ -1,5 +1,6 @@
 from PIL import Image
 import os
+import math
 path_append = "../images/"
 
 images = ["NES-Mario-and-Luigi.png", "NES-Mario-Enemies-and-Bosses.png", "NES-Mario-World1-1.png"]
@@ -23,11 +24,19 @@ for image in images:
 image_dir_str = "../images/mario_sprites/"
 
 images = os.listdir(image_dir_str)
-images.remove("NES-Mario-World1-1.png")
+#images.remove("NES-Mario-World1-1.png")
 address_offset = 0
 sprite_id_start = 1
+MAX_ADDRESSES = 770336
+DATA_WIDTH = 8
 status_file = open("status_file.txt", "w", 1)
-mem_file = open("frame_buffer.hex", "w", 1)
+mem_file = open("frame_buffer.mif", "w", 1)
+mem_file.write("DEPTH = {};\n".format(str(MAX_ADDRESSES)))
+mem_file.write("WIDTH = {};\n".format(str(DATA_WIDTH)))
+mem_file.write("ADDRESS_RADIX = HEX;\n")
+mem_file.write("DATA_RADIX = HEX;\n")
+mem_file.write("CONTENT\n")
+mem_file.write("BEGIN\n")
 for img in images:
     im = Image.open(image_dir_str + img)
     status_file.write("Name: " + img + "\n")
@@ -38,11 +47,17 @@ for img in images:
     for y in range(im.height):
         for x in range(im.width):
             if not im.getpixel((x,y)) in color_dict:
+                mem_file.write(format(address_offset, "0" + str(int(math.ceil(math.log(MAX_ADDRESSES, 16)))) + "x"))
+                mem_file.write(" : ")
                 mem_file.write("00")
             else:
+                mem_file.write(format(address_offset, "0" + str(int(math.ceil(math.log(MAX_ADDRESSES, 16)))) + "x"))
+                mem_file.write(" : ")
                 mem_file.write(format(color_dict[im.getpixel((x,y))], "02x"))
             address_offset += 1
             if address_offset % 1 == 0:
-                mem_file.write("\n")
+                mem_file.write(";\n")
     status_file.write("End Address: " + str(address_offset) + "\n\n")
+
     sprite_id_start += 1
+mem_file.write("END;")

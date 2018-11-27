@@ -63,9 +63,9 @@ module  VGA_controller (input              Clk,         // 50 MHz clock
     end
     
     // VGA control signals
-    always_ff @ (posedge VGA_CLK or posedge Reset)
+    always_ff @ (posedge VGA_CLK)
     begin
-        if (Reset)
+        if (~Reset)
         begin
             VGA_HS <= 1'b0;
             VGA_VS <= 1'b0;

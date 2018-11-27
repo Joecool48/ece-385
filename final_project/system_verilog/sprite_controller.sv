@@ -20,7 +20,7 @@ module sprite_controller (input logic Clk, Reset,
 							input logic [7:0] avalon_user_buffer_output_data, //               .buffer_output_data
 							input logic avalon_user_data_available
 );
-	logic [31:0] pix;
+	logic [17:0] pix;
 	assign pix = ((360 * sprite_x) + sprite_y);
 	
 	enum logic [5:0] {WAIT, LOAD_NEW_SPRITE, FETCH_AVALON_MEM, FETCH_FB_ROW, FETCH_FB_ROW_2, DONE} curr_state, next_state;
@@ -30,6 +30,18 @@ module sprite_controller (input logic Clk, Reset,
 		fb_write <= 1'b0;
 		done_draw <= 1'b0;
 		case (curr_state)
+			WAIT: begin
+				if (~Reset) begin
+					done_draw <= 1'b0;
+					fb_addr <= 18'b0;
+					fb_data_in <= 8'b0;
+					fb_write <= 1'b0;
+					avalon_control_read_base <= 32'b0;
+					avalon_control_read_length <= 32'b0;
+					avalon_control_go <= 1'b0;
+					avalon_user_read_buffer <= 1'b0;
+				end
+			end
 			LOAD_NEW_SPRITE: begin
 //				sprite_address <= s_address;
 //				sprite_width <= s_width;

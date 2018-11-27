@@ -200,7 +200,7 @@ module mario_cv_game (
 							);
 							
 							// Frame controller that writes to the FPGA from the selected frame buffer
-							frame_controller f_ctl (.*, .Clk(SYS_CLK), .fb_addr(read_fb_addr), .fb_data_out(read_fb_data_out), .active(read_active));
+							frame_controller f_ctl (.*, .Clk(SYS_CLK), .fb_addr(read_fb_addr), .read_fb_data_out(read_fb_data_out), .active(read_active));
 							
 							// Sprite controller for writing sprites to the frame buffer that is currently selected
 							sprite_controller s_ctl (.*, .Clk(SYS_CLK), .Reset(Reset), // .* for all avalon fabric signals

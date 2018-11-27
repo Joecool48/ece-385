@@ -16,9 +16,9 @@ logic [BUS_WIDTH - 1:0] status;
 assign e = (status == 0);
 assign f = (status == {(FIFO_DEPTH){1'd1}});
  
-always@(posedge Clk or posedge Reset)
+always@(posedge Clk or negedge Reset)
 begin
-    if(Reset)
+    if(~Reset)
     begin
         data_out <= 0;
 		  for (int i = 0; i < FIFO_DEPTH; i = i + 1) begin

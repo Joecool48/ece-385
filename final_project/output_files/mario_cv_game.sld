@@ -2,7 +2,7 @@
   <sld_infos>
     <sld_info hpath="final_project:nios_system" name="nios_system">
       <assignment_values>
-        <assignment_value text="QSYS_NAME final_project HAS_SOPCINFO 1 GENERATION_ID 1543289922"/>
+        <assignment_value text="QSYS_NAME final_project HAS_SOPCINFO 1 GENERATION_ID 1543299792"/>
       </assignment_values>
     </sld_info>
     <sld_info hpath="sld_hub:auto_hub|alt_sld_fab:\instrumentation_fabric_with_node_gen:instrumentation_fabric" library="alt_sld_fab" name="instrumentation_fabric">

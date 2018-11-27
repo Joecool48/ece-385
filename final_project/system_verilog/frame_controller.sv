@@ -5,7 +5,7 @@ module frame_controller (input logic Clk, Reset, VGA_CLK,
 								 output logic [7:0] VGA_R, VGA_G, VGA_B,
 								 input active,
 								 output logic [17:0] fb_addr,
-								 input logic [7:0] fb_data_out
+								 input logic [7:0] read_fb_data_out
 								 );
 	enum logic [3:0] {WAIT, GET_ROW, WRITE_PIXEL, DONE} curr_state, next_state; 
 	logic [7:0] curr_pix;
@@ -19,10 +19,15 @@ module frame_controller (input logic Clk, Reset, VGA_CLK,
 				fb_addr <= 18'b0;
 				curr_pix <= 8'b0;
 				counter <= 2'd0;
+				if (~Reset) begin
+					fb_addr <= 18'b0;
+					curr_pix <= 8'b0;
+					counter <= 2'd0;
+				end
 			end
 			GET_ROW: begin
 				// Get the current row
-				curr_pix <= fb_data_out;
+				curr_pix <= read_fb_data_out;
 				fb_addr <= fb_addr + 18'd1;
 			end
 			WRITE_PIXEL: begin
