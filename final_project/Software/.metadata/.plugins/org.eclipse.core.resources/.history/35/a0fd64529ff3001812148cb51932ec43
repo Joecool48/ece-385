@@ -1,0 +1,16 @@
+/*
+ * config.h
+ *
+ *  Created on: Nov 28, 2018
+ *      Author: joey
+ */
+
+#ifndef INCLUDE_CONFIG_H_
+#define INCLUDE_CONFIG_H_
+
+const unsigned SCREEN_WIDTH = 480; // Screen height and width in pixels
+const unsigned SCREEN_HEIGHT = 360;
+
+enum class Layer {BACKGROUND = 0, ITEM, PLATFORM, ENEMY, PLAYER};
+
+#endif /* INCLUDE_CONFIG_H_ */

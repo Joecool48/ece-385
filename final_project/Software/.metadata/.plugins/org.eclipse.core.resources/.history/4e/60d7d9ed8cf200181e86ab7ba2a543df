@@ -1,0 +1,17 @@
+/*
+ * Sprite.h
+ *
+ *  Created on: Nov 27, 2018
+ *      Author: joey
+ */
+
+#ifndef INCLUDE_SPRITE_H_
+#define INCLUDE_SPRITE_H_
+
+class Sprite {
+
+};
+
+
+
+#endif /* INCLUDE_SPRITE_H_ */

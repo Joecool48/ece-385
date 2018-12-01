@@ -1,0 +1,14 @@
+/*
+ * player.cpp
+ *
+ *  Created on: Nov 30, 2018
+ *      Author: joey
+ */
+#include "game_classes.h"
+
+/*
+ * Constructs a new player object (Mario). This also calls animatorSetup to make sure all the sprites are filled
+ */
+Player::Player() {
+
+}
