@@ -11,18 +11,18 @@
 // Class to store information about a image. Will be copied from this to create other sprites.
 class Image {
 public:
-	float x;
-	float y;
 	uint16_t width;
 	uint16_t height;
 	uint32_t start_address;
-	Image::Image (uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t address);
+	Image::Image (uint16_t width, uint16_t height, uint32_t address);
 	virtual ~Image () = 0;
 };
 
 // Class for each spriteframe
 class Sprite : public Image {
 public:
+	float x;
+	float y;
 	bool isVisible;
 	bool isFlipped;
 	Sprite();

@@ -1,0 +1,40 @@
+/*
+ * item.h
+ *
+ *  Created on: Dec 3, 2018
+ *      Author: joey
+ */
+#include "sprite_animator.h"
+#include "colliders.h"
+
+#ifndef INCLUDE_ITEM_H_
+#define INCLUDE_ITEM_H_
+/*
+ * Implement item setup
+ */
+class Item : public Sprite_Animator {
+public:
+	bool isCollectable;
+	Rect_Collider collider;
+	Item();
+};
+
+class Fireflower : public Item {
+	Fireflower();
+	void update();
+	void animatorSetup();
+};
+
+class Mushroom : public Item {
+	Mushroom();
+	void update();
+	void animatorSetup();
+};
+
+class Coin : public Item {
+	Coin();
+	void update();
+	void animatorSetup();
+};
+
+#endif /* INCLUDE_ITEM_H_ */

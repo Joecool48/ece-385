@@ -9,6 +9,7 @@
 #define INCLUDE_BACKGROUND_H_
 #include <vector>
 #include "colliders.h"
+#include "item.h"
 using namespace std;
 
 class Background : public Sprite {
@@ -37,11 +38,19 @@ public:
 	// No need to notify for platforms. Background will handle those physics
 	Background(); // Init background with a player
 	~Background();
-private:
+	// On any movement of the background these must be updated too
 	vector<Background_Object*> collidable_background_objects; // Objects that aren't seperate sprites, but are still collidable on the map; These update every frame with the background
 	Player * current_player;
 	vector<Enemy*> enemies;
 	vector<Item*> items;
+	vector<Fireball*> fireballs;
+};
+
+class Background_Object : public Background_Sprite {
+	Complex_Collider collider;
+	bool contains_coins;
+	uint16_t coin_amount;
+	bool contains_item;
 };
 
 

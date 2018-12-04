@@ -1,0 +1,14 @@
+/*
+ * item.cpp
+ *
+ *  Created on: Dec 3, 2018
+ *      Author: joey
+ */
+#include "item.h"
+
+Item::Item (uint16_t start_x, uint16_t start_y, uint16_t start_mode, uint16_t start_state, float start_frame) : Sprite_Animator (start_x, start_y, start_mode, uint16_t start_state, float start_frame) {
+
+}
+
+
+

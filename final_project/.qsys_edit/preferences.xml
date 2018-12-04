@@ -7,7 +7,6 @@
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Library,Library/Basic Functions,Library/Basic Functions/Bridges and Adaptors/Interrupt,Library/Basic Functions/Bridges and Adaptors,Project" />
+ <library expandedCategories="Library,Project" />
  <window width="1920" height="1025" x="0" y="27" />
 </preferences>

@@ -1,0 +1,24 @@
+/*
+ * item.cpp
+ *
+ *  Created on: Dec 3, 2018
+ *      Author: joey
+ */
+#include "item.h"
+#include <stdlib.h>
+
+Item::Item (uint16_t start_x, uint16_t start_y, uint16_t start_mode, uint16_t start_state, float start_frame, Rect_Collider rect) : Sprite_Animator (start_x, start_y, start_mode, start_state, start_frame), collider(rect){
+}
+Fireflower::Fireflower (uint16_t start_x, uint16_t start_y, uint16_t start_mode, uint16_t start_state, float start_frame, Rect_Collider rect) : Item (start_x, start_y, start_mode, start_state, start_frame, rect) {
+}
+Mushroom::Mushroom (uint16_t start_x, uint16_t start_y, uint16_t start_mode, uint16_t start_state, float start_frame, Rect_Collider rect) : Item (start_x, start_y, start_mode, start_state, start_frame, rect) {
+	travelDir = rand() % 2;
+}
+Fireball::Fireball (uint16_t start_x, uint16_t start_y, uint16_t start_mode, uint16_t start_state, float start_frame, Rect_Collider rect) : Sprite_Animator (start_x, start_y, start_mode, start_state, start_frame), collider(rect){
+}
+Coin::Coin (uint16_t start_x, uint16_t start_y, uint16_t start_mode, uint16_t start_state, float start_frame, Rect_Collider rect) : Item (start_x, start_y, start_mode, start_state, start_frame, rect) {
+}
+
+void Item::collided_with(Rect_Collider & other) {
+
+}

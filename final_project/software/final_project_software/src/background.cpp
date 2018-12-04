@@ -25,7 +25,7 @@ Background::Background() {
 	 * Initialize all the colliders, players, enemies, and item meta data
 	 */
 	screenCenterX = x + (window_width / 2); // Center starts at middle of displayable screen
-	current_player = nullptr; // Most likely Mario
+	current_player = nullptr; // Most likely Mario TODO make sure this is updated with a player
 }
 
 Background::~Background() {
@@ -39,9 +39,15 @@ Background::~Background() {
 	for (unsigned i = 0; i < items.size(); i++) {
 		if (items[i]) delete items[i];
 	}
+	for (unsigned i = 0; i < fireballs.size(); i++) {
+		if (fireballs[i]) delete fireballs[i];
+	}
 	if (current_player) delete current_player;
 }
-
+/*
+ * TODO
+ * MAKE SURE TO UPDATE THE BACKGROUND OBJECTS AS IT SCROLLS SO THAT THEY MOVE WITH IT
+ */
 void Background::scrollBackgroundX (int moveAmount) {
 	if (screenCenterX + moveAmount - (window_width / 2) < x) {
 		screenCenterX = x + (window_width / 2);
@@ -70,11 +76,8 @@ void Background::drawBackground() {
 
 
 /* TODO:
- * Draws all sprites in the layer in some rendering order.
- * Background
- * Items
- * Enemies
- * Player
+ * Draws all sprites in the layer in some rendering order. Called every frame
+ * MAKE SURE TO UPDATE THE BACKGROUND EVERY TIME IT SCROLLS
  */
 void Background::drawWindow() {
 	drawBackground();

@@ -1,0 +1,28 @@
+/*
+ * item.cpp
+ *
+ *  Created on: Dec 3, 2018
+ *      Author: joey
+ */
+#include "item.h"
+#include <stdlib.h>
+#include "colliders.h"
+#include "sprite_animator.h"
+#include "config.h"
+Item::Item (uint16_t start_x, uint16_t start_y, Rect_Collider rect) : Sprite_Animator (start_x, start_y, Item::ITEM_MODE, Item::ITEM_STATE, Item::ITEM_START_FRAME), Item::collider(rect){
+}
+Fireflower::Fireflower (uint16_t start_x, uint16_t start_y, Rect_Collider rect) : Item (start_x, start_y, ITEM_MODE, ITEM_STATE, ITEM_START_FRAME, rect) {
+}
+Mushroom::Mushroom (uint16_t start_x, uint16_t start_y, Rect_Collider rect) : Item (start_x, start_y, ITEM_MODE, ITEM_STATE, ITEM_START_FRAME, rect) {
+	travelDir = rand() % 2;
+}
+Fireball::Fireball (uint16_t start_x, uint16_t start_y, Rect_Collider rect) : Sprite_Animator (start_x, start_y, Item::ITEM_MODE, Item::ITEM_STATE, Item::ITEM_START_FRAME), Item::collider(rect){
+}
+Coin::Coin (uint16_t start_x, uint16_t start_y, Rect_Collider rect) : Item (start_x, start_y, ITEM_MODE, ITEM_STATE, ITEM_START_FRAME, rect) {
+}
+
+void Fireball::collided_with(Rect_Collider & other) {
+	if (cantGoThrough(other.collide_id)) {
+
+	}
+}

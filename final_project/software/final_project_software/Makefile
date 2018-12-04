@@ -144,7 +144,6 @@ ELF := final_project_software.elf
 # Paths to C, C++, and assembly source files.
 C_SRCS :=
 CXX_SRCS += src/main.cpp
-CXX_SRCS += src/game_classes.cpp
 CXX_SRCS += src/colliders.cpp
 CXX_SRCS += src/enemies.cpp
 CXX_SRCS += src/brain.cpp
@@ -152,6 +151,8 @@ CXX_SRCS += src/player.cpp
 CXX_SRCS += src/sprite.cpp
 CXX_SRCS += src/sprite_animator.cpp
 CXX_SRCS += src/background.cpp
+CXX_SRCS += src/item.cpp
+CXX_SRCS += src/init.cpp
 ASM_SRCS :=
 
 

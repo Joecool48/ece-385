@@ -5,9 +5,9 @@
  *      Author: joey
  */
 #include "player.h"
-#include <game_classes.h>
 #include <iostream>
 #include "config.h"
+#include "item.h"
 /*
  * TODO
  * Make sure to set background!!!
@@ -19,6 +19,34 @@ void Player::setBackground(Background * b) {
 	current_background = b;
 }
 
+/*
+ * Function to create a fireball and give it a initial velocity at that position. Only does so if mario is in fire mode,
+ * and there are less than the max fireballs out. Adds the fireball to the background vector
+ */
+void Player::throwFireball() {
+	if (current_background == nullptr) {
+		std::cout << "throwFireball: Background is null" << std::endl;
+		return;
+	}
+	if (current_anim_mode != modes::FIRE_MODE) {
+		std::cout << "throwFireball: Mario is not in fire mode" << std::endl;
+		return;
+	}
+	if (current_background->fireballs.size() >= MAX_FIREBALLS_IN_EXISTANCE) {
+		std::cout << "throwFireball: no more fire balls allowed" << std::endl;
+		return;
+	}
+	Fireball *fireball = nullptr;
+	if (isFacingLeft) {
+		fireball = new Fireball(x - FIREBALL_X_DIST_FROM_MARIO, y + FIREBALL_Y_DIST_FROM_MARIO);
+	}
+	else {
+		// Otherwise is facing right direction
+		fireball = new Fireball(x + player_collider.collide_width + FIREBALL_X_DIST_FROM_MARIO, y + FIREBALL_Y_DIST_FROM_MARIO);
+	}
+	// Add the fireball to the background
+	current_background->fireballs.push_back(fireball);
+}
 /*
  * Constructs a new player object (Mario). This also calls animatorSetup to make sure all the sprites are filled.
  * Also inits the rect collider, initial mode, and state.
@@ -66,7 +94,7 @@ void Player::update() {
 		isVisible = false;
 	}
 	if (invincibility_frames > 0) {
-		isVisible = ~isVisible; // Small animation to blink mario while invincible
+		isVisible = ~isVisible; // Small animation to blink mario while invincible TODO may need fixing here
 		invincibility_frames--;
 	}
 	else {
@@ -118,33 +146,39 @@ void Player::update() {
 }
 
 /*
- * TODO
+ *
  * Create function to draw the player
  */
 void Player::draw() {
 	getCurrentSprite().drawSprite(); // Gets the current player sprite and draws it
 }
 /*
- * TODO
+ * TODO Might be BUGGED
  * Complete player jumping function. Background must handle physics
  */
 bool Player::isInAir() {
 	return velY != 0;
 }
+
 /*
- * TODO
- * Update if more things are added
  *
- */
-bool Player::isEnemy(Collider_Id sprite_id) {
-	return true;
-}
-/*
- * TODO
  * Returns true if an enemy hit mario and it wouldnt kill the enemy
  */
 bool Player::hitByEnemy() {
-
+	if (current_background == nullptr) {
+		std::cout << "Background is null!" << std::endl;
+		return false;
+	}
+	for (int i = 0; i < current_background->enemies.size(); i++) {
+		if (current_background->enemies[i] != nullptr) {
+			// Mario got hit by an enemy, and didnt land on top of it.
+			// He takes damage when this happens
+			if (current_background->enemies[i]->collider.collides_with(player_collider) && !player_collider.collides_above(current_background->enemies[i]->collider)) {
+				return true;
+			}
+		}
+	}
+	return false;
 }
 /*
  *
@@ -433,18 +467,33 @@ void Player::crouchingState() {
 	}
 }
 
-/* TODO
+/*
  * Mario drifts at certain times. This state is for while he is drifting
  */
 void Player::slidingState() {
-
+	return_state = SLIDING;
+	if (velX < 0) {
+		velX += SLIDING_SPEED_SLOW;
+		if (velX > 0) velX = 0;
+	}
+	else if (velX > 0) {
+		velX -= SLIDING_SPEED_SLOW;
+		if (velX < 0) velX = 0;
+	}
+	if (velX == 0) {
+		current_anim_state = IDLE;
+	}
+	else if (keyboard.key_left() || keyboard.key_right()) {
+		current_anim_state = WALKING;
+	}
 }
 
 /*
  * State to play the flipping animation, and change mario's direction
  */
 void Player::flippingState() {
-	if (velX != 0) {
+	return_state = FLIPPING;
+	if (velX == 0) {
 		current_anim_state = IDLE;
 	}
 	else if (keyboard.key_left() || keyboard.key_right()) {
@@ -460,14 +509,15 @@ void Player::flippingState() {
  * Called when mario dies by being killed by an enemy
  */
 void Player::dyingState() {
-
+	std::cout << "You dead" << std::endl;
 }
 
-/* TODO
+/*
  * Called when mario throws a fireball. Must be in fire mode obviously
  */
 void Player::throwfireballState() {
-
+	throwFireball(); // Should check all the conditions for us
+	current_anim_state = return_state;
 }
 
 /* TODO

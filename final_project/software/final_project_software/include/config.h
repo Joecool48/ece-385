@@ -18,9 +18,15 @@ enum class Collider_Id {DUMMY_COLLIDER_ID,
 						FIREFLOWER,
 						MUSHROOM,
 						TURTLE,
-						TURTLE_SHELL
+						TURTLE_SHELL,
+						PLATFORM_BREAKABLE,
+						PLATFORM_UNBREAKABLE,
+						COIN_BLOCK,
+						ITEM_BLOCK
 						}; // List all the possible objects on the screen. The background tells another object when it collides, and what it should do
-
+inline bool cantGoThrough (Collider_Id id) {
+	return id == Collider_Id::PLATFORM_BREAKABLE || id == Collider_Id::PLATFORM_UNBREAKABLE || id == Collider_Id::COIN_BLOCK || id == Collider_Id::ITEM_BLOCK;
+}
 const float GRAVITY_STRENGTH = 3;
 const float TERMINAL_VELOCITY = 100;
 const uint16_t FRAMES_PER_SECOND = 60;
