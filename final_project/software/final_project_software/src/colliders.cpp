@@ -6,13 +6,13 @@
  */
 #include "colliders.h"
 
-Collidable::Collidable(uint16_t collide_id, uint16_t collide_x, uint16_t collide_y) : collide_id(collide_id), collide_x(collide_x), collide_y(collide_y) {}
+Collidable::Collidable(uint16_t collide_id, uint16_t collide_x, uint16_t collide_y, bool isTrig) : collide_id(collide_id), collide_x(collide_x), collide_y(collide_y), isTrigger(isTrig) {}
 
 Rect_Collider::Rect_Collider (uint16_t collide_id, uint16_t collide_x, uint16_t collide_y, uint16_t collide_width, uint16_t collide_height) : collide_id(collide_id), collide_x(collide_x), collide_y(collide_y), collide_width(collide_width), collide_height(collide_height) {}
 
 
 // Used as a starter, or sentinel value for the Complex_Collider
-Rect_Collider::Rect_Collider() : collide_id(0), collide_x(0), collide_y(0), collide_width(0), collide_height(0) {}
+Rect_Collider::Rect_Collider() : collide_id(Collider_Id::DUMMY_COLLIDER_ID), collide_x(0), collide_y(0), collide_width(0), collide_height(0) {}
 
 Complex_Collider::Complex_Collider(uint16_t collide_id, uint16_t collide_x, uint16_t collide_y, vector<Rect_Collider> colliders) : collide_id(collide_id), collide_x(collide_x), collide_y(collide_y), colliders(colliders) {}
 

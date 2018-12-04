@@ -11,13 +11,21 @@
 #include <unordered_map>
 
 
-
+/*TODO
+ * Implement keyboard class
+ *
+ */
 class Keyboard {
-	enum class key {};
 	void init_keyboard();
 	int getScanCode();
 	int decodeKey(int scanCode);
-	key getInputKey();
+	Key getInputKey(); // Should return NO_KEY if no key is pressed
+	bool key_jump();
+	bool key_left();
+	bool key_right();
+	bool key_crouch();
+	bool key_fireball();
+	bool multipleKeysPressed(); // Returns true if mult keys pressed
 };
 
 

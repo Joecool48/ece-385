@@ -149,6 +149,9 @@ CXX_SRCS += src/colliders.cpp
 CXX_SRCS += src/enemies.cpp
 CXX_SRCS += src/brain.cpp
 CXX_SRCS += src/player.cpp
+CXX_SRCS += src/sprite.cpp
+CXX_SRCS += src/sprite_animator.cpp
+CXX_SRCS += src/background.cpp
 ASM_SRCS :=
 
 

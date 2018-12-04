@@ -1,0 +1,23 @@
+/*
+ * sprite_animator.cpp
+ *
+ *  Created on: Dec 1, 2018
+ *      Author: joey
+ */
+#include "sprite_animator.h"
+
+void Sprite_Animator::setState(uint16_t anim_state) {
+	current_anim_state = anim_state;
+}
+void Sprite_Animator::advanceFrame() {
+	current_frame_in_state += 1;
+}
+Sprite Sprite_Animator::getCurrentSprite() {
+	return state_mode_to_frames_map[current_anim_state][current_anim_mode][current_frame_in_state];
+}
+
+Sprite_animator::Sprite_Animator (uint16_t start_x, uint16_t start_y, uint16_t start_mode, uint16_t start_state, uint16_t start_frame) {
+	x = start_x;
+	y = start_y;
+
+}

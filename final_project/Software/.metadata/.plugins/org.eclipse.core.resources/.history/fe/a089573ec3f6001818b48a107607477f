@@ -1,0 +1,65 @@
+/*
+ * Sprite.h
+ *
+ *  Created on: Nov 27, 2018
+ *      Author: joey
+ */
+
+#ifndef INCLUDE_GAME_CLASSES_H_
+#define INCLUDE_GAME_CLASSES_H_
+
+#include <vector>
+#include <stdint.h>
+#include <map>
+#include <unordered_map>
+using namespace std;
+
+
+class Background : public Sprite {
+	// Function to scroll background either right or left.
+public:
+	void scrollBackgroundX (int moveAmount);
+	void drawBackground();
+	void drawWindow(); // Draws all the sprites to the screen after the background
+	void updateBackground();
+	void initBackground(); // Initializes everything on the background
+	uint16_t deadZoneLeft; // The left and right of the dead zone.
+	uint16_t deadZoneRight;
+	uint16_t maxScrollSpeed;
+	// Center of the window in reference from (0,0) NOT X
+	uint16_t screenCenterX;
+	uint16_t window_width; // Max width in both dimensions
+	uint16_t window_height;
+	Background(); // Init background with a player
+	~Background();
+private:
+	vector<Background_Object*> collidable_background_objects; // Objects that aren't seperate sprites, but are still collidable on the map; These update every frame with the background
+	Player * current_player;
+	vector<Enemy*> enemies;
+	vector<Collider_Id, Item*> items;
+};
+
+// Base class for enemy AI
+class Brain {
+	virtual ~Brain();
+	Brain();
+};
+
+/*
+ * TODO:
+ * Create the fundamental AI for enemies
+ */
+class Enemy : public Sprite_Animator {
+	Rect_Collider collider;
+	Brain brain;
+};
+
+class Item : public Sprite_Animator {
+	bool isCollectable;
+	Item();
+};
+
+class Background_Object : public Background_Sprite {
+	Collidable *collider;
+};
+#endif /* INCLUDE_GAME_CLASSES_H_ */

@@ -1,0 +1,29 @@
+/*
+ * keyboard.h
+ *
+ *  Created on: Nov 28, 2018
+ *      Author: joey
+ */
+
+#ifndef INCLUDE_KEYBOARD_H_
+#define INCLUDE_KEYBOARD_H_
+
+#include <unordered_map>
+
+
+/*
+ *
+ */
+class Keyboard {
+	void init_keyboard();
+	int getScanCode();
+	int decodeKey(int scanCode);
+	Key getInputKey(); // Should return NO_KEY if no key is pressed
+	bool keyJump();
+	bool keyLeft();
+	bool keyRight();
+};
+
+
+
+#endif /* INCLUDE_KEYBOARD_H_ */

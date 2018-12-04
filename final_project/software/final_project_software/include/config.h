@@ -11,7 +11,21 @@
 const uint16_t SCREEN_WIDTH = 480; // Screen height and width in pixels
 const uint16_t SCREEN_HEIGHT = 360;
 
+enum class Key {KEY_LEFT, KEY_RIGHT, KEY_JUMP, KEY_CROUCH, KEY_FIREBALL, NO_KEY, KEY_PAUSE};
+enum class Collider_Id {DUMMY_COLLIDER_ID,
+						GUMBA,
+						FIREBALL,
+						FIREFLOWER,
+						MUSHROOM,
+						TURTLE,
+						TURTLE_SHELL
+						}; // List all the possible objects on the screen. The background tells another object when it collides, and what it should do
 
+const float GRAVITY_STRENGTH = 3;
+const float TERMINAL_VELOCITY = 100;
+const uint16_t FRAMES_PER_SECOND = 60;
+
+bool pause_animation =false;
 /*
  * TODO:
  * 	CHANGE THESE ADDRESSES TO REFLECT THE ACTUAL MEMORY ADDRESSES
