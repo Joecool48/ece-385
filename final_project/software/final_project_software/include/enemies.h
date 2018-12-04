@@ -20,6 +20,17 @@ public:
 	void animatorSetup();
 	void update();
 };
+/*
+ * TODO create Gumba
+ */
+class Gumba : public Enemy {
 
+};
+/*
+ * TODO create turtle which has a shell mode
+ */
+class Turtle : public Enemy {
+
+};
 
 #endif /* INCLUDE_ENEMIES_H_ */

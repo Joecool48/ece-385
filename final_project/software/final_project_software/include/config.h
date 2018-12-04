@@ -12,7 +12,7 @@ const uint16_t SCREEN_WIDTH = 480; // Screen height and width in pixels
 const uint16_t SCREEN_HEIGHT = 360;
 
 enum class Key {KEY_LEFT, KEY_RIGHT, KEY_JUMP, KEY_CROUCH, KEY_FIREBALL, NO_KEY, KEY_PAUSE};
-enum class Collider_Id {DUMMY_COLLIDER_ID,
+enum class Collider_Type {DUMMY_COLLIDER_TYPE,
 						GUMBA,
 						FIREBALL,
 						FIREFLOWER,
@@ -22,10 +22,15 @@ enum class Collider_Id {DUMMY_COLLIDER_ID,
 						PLATFORM_BREAKABLE,
 						PLATFORM_UNBREAKABLE,
 						COIN_BLOCK,
-						ITEM_BLOCK
+						ITEM_BLOCK,
+						PLAYER
 						}; // List all the possible objects on the screen. The background tells another object when it collides, and what it should do
-inline bool cantGoThrough (Collider_Id id) {
-	return id == Collider_Id::PLATFORM_BREAKABLE || id == Collider_Id::PLATFORM_UNBREAKABLE || id == Collider_Id::COIN_BLOCK || id == Collider_Id::ITEM_BLOCK;
+inline bool cantGoThrough (Collider_Type type) {
+	return type == Collider_Type::PLATFORM_BREAKABLE || type == Collider_Type::PLATFORM_UNBREAKABLE || type == Collider_Type::COIN_BLOCK || type == Collider_Type::ITEM_BLOCK;
+}
+// GUMBA, TURTLE, and TURTLE_SHELL are considered enemies
+inline bool isEnemy (Collider_Type type) {
+	return type == Collider_Type::GUMBA || type == Collider_Type::TURTLE || type == Collider_Type::TURTLE_SHELL;
 }
 const float GRAVITY_STRENGTH = 3;
 const float TERMINAL_VELOCITY = 100;

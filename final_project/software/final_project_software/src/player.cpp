@@ -38,14 +38,14 @@ void Player::throwFireball() {
 	}
 	Fireball *fireball = nullptr;
 	if (isFacingLeft) {
-		fireball = new Fireball(x - FIREBALL_X_DIST_FROM_MARIO, y + FIREBALL_Y_DIST_FROM_MARIO);
+		fireball = new Fireball(x - FIREBALL_X_DIST_FROM_MARIO, y + FIREBALL_Y_DIST_FROM_MARIO, current_background);
 	}
 	else {
 		// Otherwise is facing right direction
-		fireball = new Fireball(x + player_collider.collide_width + FIREBALL_X_DIST_FROM_MARIO, y + FIREBALL_Y_DIST_FROM_MARIO);
+		fireball = new Fireball(x + player_collider.collide_width + FIREBALL_X_DIST_FROM_MARIO, y + FIREBALL_Y_DIST_FROM_MARIO, current_background);
 	}
 	// Add the fireball to the background
-	current_background->fireballs.push_back(fireball);
+	current_background->fireballs[fireball->collider.collider_id] = fireball;
 }
 /*
  * Constructs a new player object (Mario). This also calls animatorSetup to make sure all the sprites are filled.
@@ -189,7 +189,7 @@ bool Player::getsMushroom() {
 		std::cout << "Background is null!" << std::endl;
 	}
 	Rect_Collider & rect = current_background->itemCollidedWithPlayer();
-	if (rect.collide_id == Collider_Id::MUSHROOM) {
+	if (rect.collider_type == Collider_Type::MUSHROOM) {
 		current_background->removeItemByCollider(rect);
 		return true;
 	}
@@ -204,7 +204,7 @@ bool Player::getsFireflower() {
 		std::cout << "Background is null!" << std::endl;
 	}
 	Rect_Collider & rect = current_background->itemCollidedWithPlayer();
-	if (rect.collide_id == Collider_Id::FIREFLOWER){
+	if (rect.collider_type == Collider_Type::FIREFLOWER){
 		current_background->removeItemByCollider(rect);
 		return true;
 	}

@@ -39,15 +39,15 @@ public:
 	Background(); // Init background with a player
 	~Background();
 	// On any movement of the background these must be updated too
-	vector<Background_Object*> collidable_background_objects; // Objects that aren't seperate sprites, but are still collidable on the map; These update every frame with the background
+	map<uint64_t, Background_Object*> collidable_background_objects; // Objects that aren't seperate sprites, but are still collidable on the map; These update every frame with the background
 	Player * current_player;
-	vector<Enemy*> enemies;
-	vector<Item*> items;
-	vector<Fireball*> fireballs;
+	map<uint64_t, Enemy*> enemies;
+	map<uint64_t, Item*> items;
+	map<uint64_t, Fireball*> fireballs;
 };
 
 class Background_Object : public Background_Sprite {
-	Complex_Collider collider;
+	Rect_Collider collider;
 	bool contains_coins;
 	uint16_t coin_amount;
 	bool contains_item;
