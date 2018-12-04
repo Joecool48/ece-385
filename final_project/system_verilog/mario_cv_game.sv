@@ -3,7 +3,7 @@
 module mario_cv_game (
 							input  logic             CLOCK_50,
 							input  logic      [3:0]  KEY,          //bit 0 is set up as Reset
-							output logic				  SYS_CLK, // Clock for everything in the system
+							input logic				  SYS_CLK, // Clock for everything in the system
 							// VGA Interface 
 							output logic [7:0]  VGA_R,        //VGA Red
 											VGA_G,        //VGA Green
@@ -56,8 +56,6 @@ module mario_cv_game (
 							logic avalon_user_read_buffer;        //    avalon_user.read_buffer
 							logic [7:0] avalon_user_buffer_output_data; //               .buffer_output_data
 							logic avalon_user_data_available;     //               .data_available
-							
-							
 							
 							logic [15:0] sprite_id, sprite_id_pio_export;
 							logic [15:0] sprite_x, sprite_y, sprite_x_pio_export, sprite_y_pio_export;
@@ -136,46 +134,52 @@ module mario_cv_game (
 							// Frame buffer init
 							logic fb_curr_write, fb_update_write;
 							logic [17:0] fb_curr_addr, fb_update_addr;
-							logic [7:0] fb_curr_data_in, fb_curr_data_out, fb_update_data_in, fb_update_data_out;
-							
+							logic [7:0] fb_curr_data_in, fb_curr_data_out, fb_update_data_in, fb_update_data_out;//, fb_test, fb_test2;
+//							assign fb_curr_data_out = 8'd33;
+//							assign fb_update_data_out = 8'd40;
 							// Frame buffer stats for reader
 							logic [17:0] read_fb_addr;
-							logic [7:0] read_fb_data_out;
+							logic[7:0] fb_data_out; //logic [7:0] read_fb_data_out;
 							logic frame_num;
 							logic read_active;
 							// Module to select the read frame for frame controller
-							read_frame_mux frame_read_mux (.fb_addr(read_fb_addr), .fb_data_out(read_fb_data_out), .*);
+							//read_frame_mux frame_read_mux (.fb_addr(read_fb_addr), .fb_data_out(read_fb_data_out), .*);
 							
 							// Frame buffer stats for writer
 							logic [17:0] write_fb_addr;
-							logic [7:0] write_fb_data_out;
-							logic [7:0] write_fb_data_in;
-							logic write_fb_write_en;
+							//logic [7:0] write_fb_data_out;
+							logic fb_data_in; //logic [7:0] write_fb_data_in;
+							//logic write_fb_write_en;
 							logic write_active;
 							
 							// Module to select the frame for writing sprite data to
-							write_frame_mux frame_write_mux (.*, .fb_addr(write_fb_addr), .fb_data_out(write_fb_data_out), .fb_data_in(write_fb_data_in), .fb_write(write_fb_write_en));
+							//write_frame_mux frame_write_mux (.*, .fb_addr(write_fb_addr), .fb_data_out(write_fb_data_out), .fb_data_in(write_fb_data_in), .fb_write(write_fb_write_en));
+							
+							assign fb_data_out = (frame_num == 0) ? fb_curr_data_out : fb_update_data_out;
+							assign fb_curr_addr = (frame_num == 0) ? read_fb_addr : write_fb_addr;
+							assign fb_update_addr = (frame_num == 1) ? read_fb_addr : write_fb_addr;
+							assign fb_data_in = (frame_num == 1) ? fb_curr_data_out : fb_update_data_out;
 							
 							// Tells the write buffer whether to draw a new sprite
 							logic draw_sprite, done_draw;
 							
-							final_project nios_system (
-											 .*,
-											 .clk_clk(CLOCK_50),
-											 .reset_reset_n(KEY[0]), 
-											 .sdram_wire_addr(DRAM_ADDR),    //  sdram_wire.addr
-											 .sdram_wire_ba(DRAM_BA),      	//  .ba
-											 .sdram_wire_cas_n(DRAM_CAS_N),    //  .cas_n
-											 .sdram_wire_cke(DRAM_CKE),     	//  .cke
-											 .sdram_wire_cs_n(DRAM_CS_N),      //  .cs_n
-											 .sdram_wire_dq(DRAM_DQ),      	//  .dq
-											 .sdram_wire_dqm(DRAM_DQM),     	//  .dqm
-											 .sdram_wire_ras_n(DRAM_RAS_N),    //  .ras_n
-											 .sdram_wire_we_n(DRAM_WE_N),      //  .we_n
-											 .sdram_clk_clk(DRAM_CLK),			//  clock out to SDRAM from other PLL port
-											 .sys_clk_clk(SYS_CLK)			// Clock for system
-											 // Also imports all the sprite PIO information
-							);
+//							final_project nios_system (
+//											 .*,
+//											 .clk_clk(CLOCK_50),
+//											 .reset_reset_n(KEY[0]), 
+//											 .sdram_wire_addr(DRAM_ADDR),    //  sdram_wire.addr
+//											 .sdram_wire_ba(DRAM_BA),      	//  .ba
+//											 .sdram_wire_cas_n(DRAM_CAS_N),    //  .cas_n
+//											 .sdram_wire_cke(DRAM_CKE),     	//  .cke
+//											 .sdram_wire_cs_n(DRAM_CS_N),      //  .cs_n
+//											 .sdram_wire_dq(DRAM_DQ),      	//  .dq
+//											 .sdram_wire_dqm(DRAM_DQM),     	//  .dqm
+//											 .sdram_wire_ras_n(DRAM_RAS_N),    //  .ras_n
+//											 .sdram_wire_we_n(DRAM_WE_N),      //  .we_n
+//											 .sdram_clk_clk(DRAM_CLK),			//  clock out to SDRAM from other PLL port
+//											 .sys_clk_clk(SYS_CLK)			// Clock for system
+//											 // Also imports all the sprite PIO information
+//							);
 
 							// Module instantiated to keep track of frame number based on VS input
 							frame_number f_num (.Clk(SYS_CLK), .*);
@@ -185,32 +189,36 @@ module mario_cv_game (
 							// Inferred on chip memory for frame buffers 480 * 360
 							RAM_param fb_curr (
 																	.clock(SYS_CLK),
-																	.wren(fb_curr_write), 
-																	.address(fb_curr_addr),
-																	.data(fb_curr_data_in), 
+																	.wren(~frame_num),//.wren(fb_curr_write), 
+																	.rden(frame_num),
+																	.rdaddress(fb_curr_addr),
+																	.wraddress(fb_curr_addr),
+																	.data(fb_data_in),  //.data(fb_curr_data_in), 
 																	.q(fb_curr_data_out)
 							);
 							// Inferred on chip memory for frame buffers 480 * 360
-							RAM_param fb_update  (
+							RAM_param fb_update (
 																	.clock(SYS_CLK),
-																	.wren(fb_update_write), 
-																	.address(fb_update_addr),
-																	.data(fb_update_data_in), 
+																	.wren(frame_num),//.wren(fb_update_write),
+																	.rden(~frame_num),
+																	.rdaddress(fb_update_addr),
+																	.wraddress(fb_update_addr),
+																	.data(fb_data_in), //.data(fb_update_data_in), 
 																	.q(fb_update_data_out)
 							);
 							
 							// Frame controller that writes to the FPGA from the selected frame buffer
-							frame_controller f_ctl (.*, .Clk(SYS_CLK), .fb_addr(read_fb_addr), .read_fb_data_out(read_fb_data_out), .active(read_active));
+							frame_controller f_ctl (.*, .Clk(SYS_CLK), .fb_addr(read_fb_addr), .read_fb_data_out(fb_data_out), .active(read_active));
 							
 							// Sprite controller for writing sprites to the frame buffer that is currently selected
-							sprite_controller s_ctl (.*, .Clk(SYS_CLK), .Reset(Reset), // .* for all avalon fabric signals
-							.fb_addr(write_fb_addr),
-							.fb_data_in(write_fb_data_in), 
-							.fb_data_out(write_fb_data_out),
-							.fb_write(write_fb_write_en), // Signal a write to the current frame buffer
-							.draw_sprite(draw_sprite),
-							.done_draw(done_draw)
-							);
+//							sprite_controller s_ctl (.*, .Clk(SYS_CLK), .Reset(Reset), // .* for all avalon fabric signals
+//							.fb_addr(write_fb_addr),
+//							.fb_data_in(write_fb_data_in), 
+//							.fb_data_out(write_fb_data_out),
+//							.fb_write(write_fb_write_en), // Signal a write to the current frame buffer
+//							.draw_sprite(draw_sprite),
+//							.done_draw(done_draw)
+//							);
 							// For controlling the reading and writing to the fifo queues
 							enum logic [3:0] {WAIT, READ, READ1, READ2, READ3, WRITE, WRITE1, WRITE2, WRITE3, DONE} fifo_curr_state, fifo_next_state;
 							logic [15:0] last_sprite_id;
@@ -304,4 +312,6 @@ module mario_cv_game (
 							always_ff @ (posedge SYS_CLK) begin
 								fifo_curr_state <= fifo_next_state;
 							end
+							
+							
 endmodule

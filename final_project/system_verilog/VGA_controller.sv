@@ -50,10 +50,10 @@ module  VGA_controller (input              Clk,         // 50 MHz clock
     assign DrawY = v_counter;
 
     // Generate VGA_CLK
-    always_ff @ (posedge Clk or negedge Reset)
+    always_ff @ (posedge Clk)
     begin
         if (~Reset)
-        begin
+		  begin
             VGA_CLK <= 1'b0;
 				VGA_COUNTER <= 1'b0;
         end
@@ -62,15 +62,15 @@ module  VGA_controller (input              Clk,         // 50 MHz clock
 				if (VGA_COUNTER == 1) begin
 					VGA_CLK <= ~VGA_CLK;
 				end
-				VGA_COUNTER <= VGA_COUNTER + 1;
+				VGA_COUNTER <= VGA_COUNTER + 1'b1;
         end
     end
     
     // VGA control signals
-    always_ff @ (posedge VGA_CLK or negedge Reset)
-    begin
-        if (~Reset)
-        begin
+    always_ff @ (posedge VGA_CLK or negedge Reset) 
+	 begin
+        if (~Reset) 
+		  begin
             VGA_HS <= 1'b0;
             VGA_VS <= 1'b0;
             VGA_BLANK_N <= 1'b0;

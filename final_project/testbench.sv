@@ -34,23 +34,47 @@ module testbench();
 					DRAM_CLK; //SDRAM Clock
 	logic[9:0] DrawX;
 	logic[9:0] DrawY;
-	logic Reset;
+	logic[1:0] State;
+	logic[7:0] Pix;
+	logic[1:0] Count;
+	logic[17:0] Addr; 
+	logic frame_num;
+	logic[7:0] fb_data_out;
+	logic[17:0] fb_addr;
+	logic[7:0] ram_d, ram_q;
+	logic[17:0] ram_raddr, ram_waddr;
+	logic ram_ren;
 	
 	mario_cv_game mario_game (.*);
-	assign DrawX = mario_game.vga_controller.DrawX;
-	assign DrawY = mario_game.vga_controller.DrawY;
-	assign Reset = mario_game.vga_controller.Reset;
+	
+	assign DrawX = mario_game.f_ctl.DrawX;
+	assign DrawY = mario_game.f_ctl.DrawY;
+	assign State = mario_game.f_ctl.curr_state;
+	assign Pix = mario_game.f_ctl.curr_pix;
+	assign Count = mario_game.f_ctl.counter;
+	assign Addr = mario_game.f_ctl.fb_addr;
+	assign frame_num = mario_game.frame_read_mux.frame_num;
+	assign fb_data_out = mario_game.frame_read_mux.fb_data_out;
+	assign fb_addr = mario_game.frame_read_mux.fb_addr;
+	assign ram_d = mario_game.fb_curr.data;
+	assign ram_q = mario_game.fb_curr.q;
+	assign ram_raddr = mario_game.fb_curr.rdaddress;
+	assign ram_waddr = mario_game.fb_curr.wraddress;
+	assign ram_ren = mario_game.fb_curr.rden; 
 	
 	initial begin
 		CLOCK_50 = 1'b0;
+		SYS_CLK = 1'b0;
 	end
 	always begin
 		#10 CLOCK_50 = ~CLOCK_50;
 	end
-	
+	always begin
+		#5 SYS_CLK = ~SYS_CLK;
+	end
 	initial begin : TEST_VGA
 			KEY = 4'b0000;
-			#5 KEY = 4'b1111;
+			#10 KEY = 4'b1111;
 	end
 
 endmodule
