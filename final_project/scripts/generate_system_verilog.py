@@ -1,16 +1,24 @@
 from PIL import Image
-
+import os
 path_append = "../images/"
 
-images = ["NES-Mario-and-Luigi.png", "NES-Mario-Enemies-and-Bosses.png", "NES-Mario-World1-1.png"]
+img_dirs = ["backgrounds", "enemy_sprites", "fire-mario", "items", "mario_sprites", "mini-mario"]
+images = []
+for path in img_dirs:
+    img_path = path_append + path
+    dir_list = os.listdir(img_path)
+    for i in dir_list:
+        images.append(img_path + "/" + i)
 
 color_dict = {}
 counter = 1
 for image in images:
-    image = path_append + image
     im = Image.open(image)
+    im = im.convert("RGBA")
     for x in range(im.width):
         for y in range(im.height):
+            if len(im.getpixel((x,y))) == 4 and im.getpixel((x,y))[3] != 0 and im.getpixel((x,y))[3] != 255:
+                print("Uh-oh")
             if not im.getpixel((x,y)) in color_dict and len(im.getpixel((x,y))) == 4 and im.getpixel((x,y))[3] == 0:
                 pass
             elif len(im.getpixel((x,y))) == 4 and im.getpixel((x,y))[3] != 0:
