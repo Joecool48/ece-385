@@ -28,13 +28,14 @@ module final_project (
 		output wire [31:0] sprite_address_pio_export,      // sprite_address_pio.export
 		output wire [15:0] sprite_height_pio_export,       //  sprite_height_pio.export
 		output wire [15:0] sprite_id_pio_export,           //      sprite_id_pio.export
+		output wire [1:0]  sprite_rotate_pio_export,       //  sprite_rotate_pio.export
 		output wire [15:0] sprite_width_pio_export,        //   sprite_width_pio.export
 		output wire [15:0] sprite_x_pio_export,            //       sprite_x_pio.export
 		output wire [15:0] sprite_y_pio_export,            //       sprite_y_pio.export
 		output wire        sys_clk_clk                     //            sys_clk.clk
 	);
 
-	wire         pll_c0_clk;                                                     // pll:c0 -> [irq_mapper:clk, jtag_game_nios:clk, master_template_0:clk, mm_interconnect_0:pll_c0_clk, nios2_gen2_0:clk, rst_controller:clk, sdram:clk, sprite_address_pio:clk, sprite_height_pio:clk, sprite_id_pio:clk, sprite_width_pio:clk, sprite_x_pio:clk, sprite_y_pio:clk, sysid:clock]
+	wire         pll_c0_clk;                                                     // pll:c0 -> [irq_mapper:clk, jtag_game_nios:clk, master_template_0:clk, mm_interconnect_0:pll_c0_clk, nios2_gen2_0:clk, rst_controller:clk, sdram:clk, sprite_address_pio:clk, sprite_height_pio:clk, sprite_id_pio:clk, sprite_rotate_pio:clk, sprite_width_pio:clk, sprite_x_pio:clk, sprite_y_pio:clk, sysid:clock]
 	wire   [7:0] master_template_0_avalon_master_readdata;                       // mm_interconnect_0:master_template_0_avalon_master_readdata -> master_template_0:master_readdata
 	wire         master_template_0_avalon_master_waitrequest;                    // mm_interconnect_0:master_template_0_avalon_master_waitrequest -> master_template_0:master_waitrequest
 	wire  [31:0] master_template_0_avalon_master_address;                        // master_template_0:master_address -> mm_interconnect_0:master_template_0_avalon_master_address
@@ -115,9 +116,14 @@ module final_project (
 	wire   [1:0] mm_interconnect_0_sprite_y_pio_s1_address;                      // mm_interconnect_0:sprite_y_pio_s1_address -> sprite_y_pio:address
 	wire         mm_interconnect_0_sprite_y_pio_s1_write;                        // mm_interconnect_0:sprite_y_pio_s1_write -> sprite_y_pio:write_n
 	wire  [31:0] mm_interconnect_0_sprite_y_pio_s1_writedata;                    // mm_interconnect_0:sprite_y_pio_s1_writedata -> sprite_y_pio:writedata
+	wire         mm_interconnect_0_sprite_rotate_pio_s1_chipselect;              // mm_interconnect_0:sprite_rotate_pio_s1_chipselect -> sprite_rotate_pio:chipselect
+	wire  [31:0] mm_interconnect_0_sprite_rotate_pio_s1_readdata;                // sprite_rotate_pio:readdata -> mm_interconnect_0:sprite_rotate_pio_s1_readdata
+	wire   [1:0] mm_interconnect_0_sprite_rotate_pio_s1_address;                 // mm_interconnect_0:sprite_rotate_pio_s1_address -> sprite_rotate_pio:address
+	wire         mm_interconnect_0_sprite_rotate_pio_s1_write;                   // mm_interconnect_0:sprite_rotate_pio_s1_write -> sprite_rotate_pio:write_n
+	wire  [31:0] mm_interconnect_0_sprite_rotate_pio_s1_writedata;               // mm_interconnect_0:sprite_rotate_pio_s1_writedata -> sprite_rotate_pio:writedata
 	wire         irq_mapper_receiver0_irq;                                       // jtag_game_nios:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] nios2_gen2_0_irq_irq;                                           // irq_mapper:sender_irq -> nios2_gen2_0:irq
-	wire         rst_controller_reset_out_reset;                                 // rst_controller:reset_out -> [irq_mapper:reset, jtag_game_nios:rst_n, master_template_0:reset, mm_interconnect_0:master_template_0_clock_reset_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, rst_translator:in_reset, sdram:reset_n, sprite_address_pio:reset_n, sprite_height_pio:reset_n, sprite_id_pio:reset_n, sprite_width_pio:reset_n, sprite_x_pio:reset_n, sprite_y_pio:reset_n, sysid:reset_n]
+	wire         rst_controller_reset_out_reset;                                 // rst_controller:reset_out -> [irq_mapper:reset, jtag_game_nios:rst_n, master_template_0:reset, mm_interconnect_0:master_template_0_clock_reset_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, rst_translator:in_reset, sdram:reset_n, sprite_address_pio:reset_n, sprite_height_pio:reset_n, sprite_id_pio:reset_n, sprite_rotate_pio:reset_n, sprite_width_pio:reset_n, sprite_x_pio:reset_n, sprite_y_pio:reset_n, sysid:reset_n]
 	wire         rst_controller_reset_out_reset_req;                             // rst_controller:reset_req -> [nios2_gen2_0:reset_req, rst_translator:reset_req_in]
 	wire         rst_controller_001_reset_out_reset;                             // rst_controller_001:reset_out -> [mm_interconnect_0:pll_inclk_interface_reset_reset_bridge_in_reset_reset, pll:reset]
 
@@ -283,6 +289,17 @@ module final_project (
 		.out_port   (sprite_id_pio_export)                           // external_connection.export
 	);
 
+	final_project_sprite_rotate_pio sprite_rotate_pio (
+		.clk        (pll_c0_clk),                                        //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),                   //               reset.reset_n
+		.address    (mm_interconnect_0_sprite_rotate_pio_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_sprite_rotate_pio_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_sprite_rotate_pio_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_sprite_rotate_pio_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_sprite_rotate_pio_s1_readdata),   //                    .readdata
+		.out_port   (sprite_rotate_pio_export)                           // external_connection.export
+	);
+
 	final_project_sprite_height_pio sprite_width_pio (
 		.clk        (pll_c0_clk),                                       //                 clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),                  //               reset.reset_n
@@ -391,6 +408,11 @@ module final_project (
 		.sprite_id_pio_s1_readdata                                       (mm_interconnect_0_sprite_id_pio_s1_readdata),                    //                                                          .readdata
 		.sprite_id_pio_s1_writedata                                      (mm_interconnect_0_sprite_id_pio_s1_writedata),                   //                                                          .writedata
 		.sprite_id_pio_s1_chipselect                                     (mm_interconnect_0_sprite_id_pio_s1_chipselect),                  //                                                          .chipselect
+		.sprite_rotate_pio_s1_address                                    (mm_interconnect_0_sprite_rotate_pio_s1_address),                 //                                      sprite_rotate_pio_s1.address
+		.sprite_rotate_pio_s1_write                                      (mm_interconnect_0_sprite_rotate_pio_s1_write),                   //                                                          .write
+		.sprite_rotate_pio_s1_readdata                                   (mm_interconnect_0_sprite_rotate_pio_s1_readdata),                //                                                          .readdata
+		.sprite_rotate_pio_s1_writedata                                  (mm_interconnect_0_sprite_rotate_pio_s1_writedata),               //                                                          .writedata
+		.sprite_rotate_pio_s1_chipselect                                 (mm_interconnect_0_sprite_rotate_pio_s1_chipselect),              //                                                          .chipselect
 		.sprite_width_pio_s1_address                                     (mm_interconnect_0_sprite_width_pio_s1_address),                  //                                       sprite_width_pio_s1.address
 		.sprite_width_pio_s1_write                                       (mm_interconnect_0_sprite_width_pio_s1_write),                    //                                                          .write
 		.sprite_width_pio_s1_readdata                                    (mm_interconnect_0_sprite_width_pio_s1_readdata),                 //                                                          .readdata

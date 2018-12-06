@@ -5,15 +5,13 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -vlog01compat -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/RAM_param.v}
 vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_controller.sv}
-vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/read_frame_mux.sv}
-vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/write_frame_mux.sv}
 vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_number.sv}
 vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_fifo.sv}
 vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_controller.sv}
 vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/VGA_controller.sv}
 vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/Color_Mapper.sv}
+vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/RAM_param.sv}
 vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv}
 vlib final_project
 vmap final_project final_project

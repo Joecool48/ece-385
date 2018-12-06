@@ -1,16 +1,19 @@
 
 State Machine - |mario_cv_game|fifo_curr_state
-Name fifo_curr_state.DONE fifo_curr_state.WRITE3 fifo_curr_state.WRITE2 fifo_curr_state.WRITE1 fifo_curr_state.WRITE fifo_curr_state.READ3 fifo_curr_state.READ2 fifo_curr_state.READ1 fifo_curr_state.READ fifo_curr_state.WAIT 
-fifo_curr_state.WAIT 0 0 0 0 0 0 0 0 0 0 
-fifo_curr_state.READ 0 0 0 0 0 0 0 0 1 1 
-fifo_curr_state.READ1 0 0 0 0 0 0 0 1 0 1 
-fifo_curr_state.READ2 0 0 0 0 0 0 1 0 0 1 
-fifo_curr_state.READ3 0 0 0 0 0 1 0 0 0 1 
-fifo_curr_state.WRITE 0 0 0 0 1 0 0 0 0 1 
-fifo_curr_state.WRITE1 0 0 0 1 0 0 0 0 0 1 
-fifo_curr_state.WRITE2 0 0 1 0 0 0 0 0 0 1 
-fifo_curr_state.WRITE3 0 1 0 0 0 0 0 0 0 1 
-fifo_curr_state.DONE 1 0 0 0 0 0 0 0 0 1 
+Name fifo_curr_state.DONE fifo_curr_state.WRITE fifo_curr_state.READ fifo_curr_state.WAIT 
+fifo_curr_state.WAIT 0 0 0 0 
+fifo_curr_state.READ 0 0 1 1 
+fifo_curr_state.WRITE 0 1 0 1 
+fifo_curr_state.DONE 1 0 0 1 
+
+State Machine - |mario_cv_game|sprite_controller:s_ctl|curr_state
+Name curr_state.DONE curr_state.FETCH_FB_ROW_2 curr_state.FETCH_FB_ROW curr_state.FETCH_AVALON_MEM curr_state.LOAD_NEW_SPRITE curr_state.WAIT 
+curr_state.WAIT 0 0 0 0 0 0 
+curr_state.LOAD_NEW_SPRITE 0 0 0 0 1 1 
+curr_state.FETCH_AVALON_MEM 0 0 0 1 0 1 
+curr_state.FETCH_FB_ROW 0 0 1 0 0 1 
+curr_state.FETCH_FB_ROW_2 0 1 0 0 0 1 
+curr_state.DONE 1 0 0 0 0 1 
 
 State Machine - |mario_cv_game|frame_controller:f_ctl|curr_state
 Name curr_state.DONE curr_state.WRITE_PIXEL curr_state.GET_ROW curr_state.WAIT 

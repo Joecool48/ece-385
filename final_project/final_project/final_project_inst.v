@@ -26,6 +26,7 @@
 		.sprite_width_pio_export        (<connected-to-sprite_width_pio_export>),        //   sprite_width_pio.export
 		.sprite_x_pio_export            (<connected-to-sprite_x_pio_export>),            //       sprite_x_pio.export
 		.sprite_y_pio_export            (<connected-to-sprite_y_pio_export>),            //       sprite_y_pio.export
-		.sys_clk_clk                    (<connected-to-sys_clk_clk>)                     //            sys_clk.clk
+		.sys_clk_clk                    (<connected-to-sys_clk_clk>),                    //            sys_clk.clk
+		.sprite_rotate_pio_export       (<connected-to-sprite_rotate_pio_export>)        //  sprite_rotate_pio.export
 	);
 

@@ -27,7 +27,8 @@ module final_project (
 	sprite_width_pio_export,
 	sprite_x_pio_export,
 	sprite_y_pio_export,
-	sys_clk_clk);	
+	sys_clk_clk,
+	sprite_rotate_pio_export);	
 
 	input		avalon_control_fixed_location;
 	input	[31:0]	avalon_control_read_base;
@@ -57,4 +58,5 @@ module final_project (
 	output	[15:0]	sprite_x_pio_export;
 	output	[15:0]	sprite_y_pio_export;
 	output		sys_clk_clk;
+	output	[1:0]	sprite_rotate_pio_export;
 endmodule

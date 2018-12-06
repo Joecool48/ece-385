@@ -24,6 +24,7 @@
 			sprite_address_pio_export      : out   std_logic_vector(31 downto 0);                    -- export
 			sprite_height_pio_export       : out   std_logic_vector(15 downto 0);                    -- export
 			sprite_id_pio_export           : out   std_logic_vector(15 downto 0);                    -- export
+			sprite_rotate_pio_export       : out   std_logic_vector(1 downto 0);                     -- export
 			sprite_width_pio_export        : out   std_logic_vector(15 downto 0);                    -- export
 			sprite_x_pio_export            : out   std_logic_vector(15 downto 0);                    -- export
 			sprite_y_pio_export            : out   std_logic_vector(15 downto 0);                    -- export

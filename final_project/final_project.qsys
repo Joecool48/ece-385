@@ -137,6 +137,22 @@
          type = "String";
       }
    }
+   element sprite_rotate_pio
+   {
+      datum _sortIndex
+      {
+         value = "13";
+         type = "int";
+      }
+   }
+   element sprite_rotate_pio.s1
+   {
+      datum baseAddress
+      {
+         value = "16779376";
+         type = "String";
+      }
+   }
    element sprite_width_pio
    {
       datum _sortIndex
@@ -252,6 +268,11 @@
    type="conduit"
    dir="end" />
  <interface
+   name="sprite_rotate_pio"
+   internal="sprite_rotate_pio.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
    name="sprite_width_pio"
    internal="sprite_width_pio.external_connection"
    type="conduit"
@@ -333,7 +354,7 @@
   <parameter name="dataAddrWidth" value="25" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x1000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x1000000' end='0x1000800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='sysid.control_slave' start='0x1000800' end='0x1000808' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_game_nios.avalon_jtag_slave' start='0x1000808' end='0x1000810' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sprite_y_pio.s1' start='0x1000880' end='0x1000890' type='altera_avalon_pio.s1' /><slave name='sprite_x_pio.s1' start='0x1000890' end='0x10008A0' type='altera_avalon_pio.s1' /><slave name='sprite_height_pio.s1' start='0x10008A0' end='0x10008B0' type='altera_avalon_pio.s1' /><slave name='sprite_width_pio.s1' start='0x10008B0' end='0x10008C0' type='altera_avalon_pio.s1' /><slave name='sprite_address_pio.s1' start='0x10008C0' end='0x10008D0' type='altera_avalon_pio.s1' /><slave name='sprite_id_pio.s1' start='0x10008D0' end='0x10008E0' type='altera_avalon_pio.s1' /><slave name='pll.pll_slave' start='0x10008E0' end='0x10008F0' type='altpll.pll_slave' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x1000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x1000000' end='0x1000800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='sysid.control_slave' start='0x1000800' end='0x1000808' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_game_nios.avalon_jtag_slave' start='0x1000808' end='0x1000810' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sprite_rotate_pio.s1' start='0x1000870' end='0x1000880' type='altera_avalon_pio.s1' /><slave name='sprite_y_pio.s1' start='0x1000880' end='0x1000890' type='altera_avalon_pio.s1' /><slave name='sprite_x_pio.s1' start='0x1000890' end='0x10008A0' type='altera_avalon_pio.s1' /><slave name='sprite_height_pio.s1' start='0x10008A0' end='0x10008B0' type='altera_avalon_pio.s1' /><slave name='sprite_width_pio.s1' start='0x10008B0' end='0x10008C0' type='altera_avalon_pio.s1' /><slave name='sprite_address_pio.s1' start='0x10008C0' end='0x10008D0' type='altera_avalon_pio.s1' /><slave name='sprite_id_pio.s1' start='0x10008D0' end='0x10008E0' type='altera_avalon_pio.s1' /><slave name='pll.pll_slave' start='0x10008E0' end='0x10008F0' type='altpll.pll_slave' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -372,7 +393,7 @@
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Tiny" />
   <parameter name="instAddrWidth" value="25" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x1000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x1000000' end='0x1000800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='sysid.control_slave' start='0x1000800' end='0x1000808' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_game_nios.avalon_jtag_slave' start='0x1000808' end='0x1000810' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sprite_y_pio.s1' start='0x1000880' end='0x1000890' type='altera_avalon_pio.s1' /><slave name='sprite_x_pio.s1' start='0x1000890' end='0x10008A0' type='altera_avalon_pio.s1' /><slave name='sprite_height_pio.s1' start='0x10008A0' end='0x10008B0' type='altera_avalon_pio.s1' /><slave name='sprite_width_pio.s1' start='0x10008B0' end='0x10008C0' type='altera_avalon_pio.s1' /><slave name='sprite_address_pio.s1' start='0x10008C0' end='0x10008D0' type='altera_avalon_pio.s1' /><slave name='sprite_id_pio.s1' start='0x10008D0' end='0x10008E0' type='altera_avalon_pio.s1' /><slave name='pll.pll_slave' start='0x10008E0' end='0x10008F0' type='altpll.pll_slave' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x1000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x1000000' end='0x1000800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='sysid.control_slave' start='0x1000800' end='0x1000808' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_game_nios.avalon_jtag_slave' start='0x1000808' end='0x1000810' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sprite_rotate_pio.s1' start='0x1000870' end='0x1000880' type='altera_avalon_pio.s1' /><slave name='sprite_y_pio.s1' start='0x1000880' end='0x1000890' type='altera_avalon_pio.s1' /><slave name='sprite_x_pio.s1' start='0x1000890' end='0x10008A0' type='altera_avalon_pio.s1' /><slave name='sprite_height_pio.s1' start='0x10008A0' end='0x10008B0' type='altera_avalon_pio.s1' /><slave name='sprite_width_pio.s1' start='0x10008B0' end='0x10008C0' type='altera_avalon_pio.s1' /><slave name='sprite_address_pio.s1' start='0x10008C0' end='0x10008D0' type='altera_avalon_pio.s1' /><slave name='sprite_id_pio.s1' start='0x10008D0' end='0x10008E0' type='altera_avalon_pio.s1' /><slave name='pll.pll_slave' start='0x10008E0' end='0x10008F0' type='altpll.pll_slave' /></address-map>]]></parameter>
   <parameter name="instructionMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="instructionMasterHighPerformanceMapParam" value="" />
   <parameter name="instruction_master_high_performance_paddr_base" value="0" />
@@ -742,6 +763,24 @@
   <parameter name="width" value="16" />
  </module>
  <module
+   name="sprite_rotate_pio"
+   kind="altera_avalon_pio"
+   version="18.1"
+   enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="100000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="2" />
+ </module>
+ <module
    name="sprite_width_pio"
    kind="altera_avalon_pio"
    version="18.1"
@@ -940,6 +979,15 @@
  <connection
    kind="avalon"
    version="18.1"
+   start="nios2_gen2_0.data_master"
+   end="sprite_rotate_pio.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01000870" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
    start="nios2_gen2_0.instruction_master"
    end="jtag_game_nios.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -1036,6 +1084,15 @@
   <parameter name="baseAddress" value="0x01000880" />
   <parameter name="defaultConnection" value="false" />
  </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios2_gen2_0.instruction_master"
+   end="sprite_rotate_pio.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01000870" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
  <connection kind="clock" version="18.1" start="pll.c0" end="nios2_gen2_0.clk" />
  <connection kind="clock" version="18.1" start="pll.c0" end="sdram.clk" />
  <connection kind="clock" version="18.1" start="pll.c0" end="sysid.clk" />
@@ -1054,6 +1111,11 @@
    end="sprite_height_pio.clk" />
  <connection kind="clock" version="18.1" start="pll.c0" end="sprite_x_pio.clk" />
  <connection kind="clock" version="18.1" start="pll.c0" end="sprite_y_pio.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="pll.c0"
+   end="sprite_rotate_pio.clk" />
  <connection
    kind="clock"
    version="18.1"
@@ -1123,6 +1185,11 @@
    version="18.1"
    start="clk_0.clk_reset"
    end="sprite_y_pio.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="sprite_rotate_pio.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />

@@ -3,7 +3,11 @@
 module mario_cv_game (
 							input  logic             CLOCK_50,
 							input  logic      [3:0]  KEY,          //bit 0 is set up as Reset
-							input logic				  SYS_CLK, // Clock for everything in the system
+							output logic				  SYS_CLK, // Clock for everything in the system
+//							input logic [7:0] S_D,
+//							input logic [15:0] S_X, S_Y, S_W, S_H, S_ID,
+//							input logic [17:0] S_A,
+//							input logic S_DO, S_AV,
 							// VGA Interface 
 							output logic [7:0]  VGA_R,        //VGA Red
 											VGA_G,        //VGA Green
@@ -44,8 +48,7 @@ module mario_cv_game (
 							
 							// Set it to 0 to make the bus burst
 							logic avalon_control_fixed_location;  // avalon_control.fixed_location
-							assign avalon_control_fixed_location = 1'b0;
-							
+							assign avalon_control_fixed_location = 1'b0;							
 							
 							// Avalon bus arbitrates to allow us to access sprite data
 							logic [31:0] avalon_control_read_base;       //               .read_base
@@ -61,6 +64,18 @@ module mario_cv_game (
 							logic [15:0] sprite_x, sprite_y, sprite_x_pio_export, sprite_y_pio_export;
 							logic [31:0] sprite_address, sprite_address_pio_export;
 							logic [15:0] sprite_width, sprite_height, sprite_width_pio_export, sprite_height_pio_export;
+							logic [15:0] sprite_x_test, sprite_y_test, sprite_width_test, sprite_height_test;
+							assign sprite_x_test = 0;
+							assign sprite_y_test = 0;
+							assign sprite_height_test = 16'd224;
+							assign sprite_width_test = 16'd480;
+							//logic [1:0] sprite_rotate;
+//							assign sprite_id_pio_export = S_ID;
+//							assign sprite_x_pio_export = S_X;
+//							assign sprite_y_pio_export = S_Y;
+//							assign sprite_address_pio_export = S_A;
+//							assign sprite_width_pio_export = S_W;
+//							assign sprite_height_pio_export = S_H;
 							
 							logic [5:0] empty;
 							logic [5:0] full;
@@ -81,7 +96,7 @@ module mario_cv_game (
 																												
 							sprite_fifo #(.FIFO_DEPTH(128), .BUS_WIDTH(16)) sprite_x_fifo (.Clk(SYS_CLK), 
 																												.Reset(Reset), 
-																												.data_in(sprite_x_pio_export), 
+																												.data_in(sprite_x_test), 
 																												.re(fifo_re), 
 																												.we(fifo_we),
 																												.f(full[1]),
@@ -91,7 +106,7 @@ module mario_cv_game (
 														
 							sprite_fifo #(.FIFO_DEPTH(128), .BUS_WIDTH(16)) sprite_y_fifo (.Clk(SYS_CLK), 
 																												.Reset(Reset), 
-																												.data_in(sprite_y_pio_export), 
+																												.data_in(sprite_y_test), 
 																												.re(fifo_re), 
 																												.we(fifo_we),
 																												.f(full[2]),
@@ -101,7 +116,7 @@ module mario_cv_game (
 														
 							sprite_fifo #(.FIFO_DEPTH(128), .BUS_WIDTH(16)) sprite_width_fifo (.Clk(SYS_CLK),
 																												.Reset(Reset), 
-																												.data_in(sprite_width_pio_export), 
+																												.data_in(sprite_width_test), 
 																												.re(fifo_re), 
 																												.we(fifo_we),
 																												.f(full[3]),
@@ -110,7 +125,7 @@ module mario_cv_game (
 																												
 							sprite_fifo #(.FIFO_DEPTH(128), .BUS_WIDTH(16)) sprite_height_fifo (.Clk(SYS_CLK),
 																												.Reset(Reset), 
-																												.data_in(sprite_height_pio_export), 
+																												.data_in(sprite_height_test), 
 																												.re(fifo_re), 
 																												.we(fifo_we),
 																												.f(full[4]),
@@ -126,60 +141,57 @@ module mario_cv_game (
 																												.e(empty[5]),
 																												.data_out(sprite_address));
 							
-
+//							sprite_fifo #(.FIFO_DEPTH(128), .BUS_WIDTH(2)) sprite_rotate_fifo (.Clk(SYS_CLK), 
+//																												.Reset(Reset), 
+//																												.data_in(sprite_rotate_pio_export), 
+//																												.re(fifo_re), 
+//																												.we(fifo_we), 
+//																												.f(full[6]),
+//																												.e(empty[6]), 
+//																												.data_out(sprite_rotate));
+																							
 							
 							// VGA controller current position
 							logic [9:0] DrawX, DrawY;
 							
 							// Frame buffer init
-							logic fb_curr_write, fb_update_write;
 							logic [17:0] fb_curr_addr, fb_update_addr;
-							logic [7:0] fb_curr_data_in, fb_curr_data_out, fb_update_data_in, fb_update_data_out;//, fb_test, fb_test2;
-//							assign fb_curr_data_out = 8'd33;
-//							assign fb_update_data_out = 8'd40;
+							logic [7:0] fb_curr_data_out, fb_update_data_out;
+							logic frame_num;
+							logic write_fb_write_en;
 							// Frame buffer stats for reader
 							logic [17:0] read_fb_addr;
-							logic[7:0] fb_data_out; //logic [7:0] read_fb_data_out;
-							logic frame_num;
+							logic[7:0] fb_data_out;
 							logic read_active;
-							// Module to select the read frame for frame controller
-							//read_frame_mux frame_read_mux (.fb_addr(read_fb_addr), .fb_data_out(read_fb_data_out), .*);
 							
 							// Frame buffer stats for writer
 							logic [17:0] write_fb_addr;
-							//logic [7:0] write_fb_data_out;
-							logic fb_data_in; //logic [7:0] write_fb_data_in;
-							//logic write_fb_write_en;
+							logic [7:0] fb_data_in;
 							logic write_active;
 							
-							// Module to select the frame for writing sprite data to
-							//write_frame_mux frame_write_mux (.*, .fb_addr(write_fb_addr), .fb_data_out(write_fb_data_out), .fb_data_in(write_fb_data_in), .fb_write(write_fb_write_en));
-							
-							assign fb_data_out = (frame_num == 0) ? fb_curr_data_out : fb_update_data_out;
-							assign fb_curr_addr = (frame_num == 0) ? read_fb_addr : write_fb_addr;
-							assign fb_update_addr = (frame_num == 1) ? read_fb_addr : write_fb_addr;
-							assign fb_data_in = (frame_num == 1) ? fb_curr_data_out : fb_update_data_out;
+							assign fb_data_out = (frame_num == 1) ? fb_curr_data_out : fb_update_data_out;
+							assign fb_curr_addr = (frame_num == 1) ? read_fb_addr : write_fb_addr;
+							assign fb_update_addr = (frame_num == 0) ? read_fb_addr : write_fb_addr;
 							
 							// Tells the write buffer whether to draw a new sprite
 							logic draw_sprite, done_draw;
-							
-//							final_project nios_system (
-//											 .*,
-//											 .clk_clk(CLOCK_50),
-//											 .reset_reset_n(KEY[0]), 
-//											 .sdram_wire_addr(DRAM_ADDR),    //  sdram_wire.addr
-//											 .sdram_wire_ba(DRAM_BA),      	//  .ba
-//											 .sdram_wire_cas_n(DRAM_CAS_N),    //  .cas_n
-//											 .sdram_wire_cke(DRAM_CKE),     	//  .cke
-//											 .sdram_wire_cs_n(DRAM_CS_N),      //  .cs_n
-//											 .sdram_wire_dq(DRAM_DQ),      	//  .dq
-//											 .sdram_wire_dqm(DRAM_DQM),     	//  .dqm
-//											 .sdram_wire_ras_n(DRAM_RAS_N),    //  .ras_n
-//											 .sdram_wire_we_n(DRAM_WE_N),      //  .we_n
-//											 .sdram_clk_clk(DRAM_CLK),			//  clock out to SDRAM from other PLL port
-//											 .sys_clk_clk(SYS_CLK)			// Clock for system
-//											 // Also imports all the sprite PIO information
-//							);
+							final_project nios_system (
+											 .*,
+											 .clk_clk(CLOCK_50),
+											 .reset_reset_n(KEY[0]), 
+											 .sdram_wire_addr(DRAM_ADDR),    //  sdram_wire.addr
+											 .sdram_wire_ba(DRAM_BA),      	//  .ba
+											 .sdram_wire_cas_n(DRAM_CAS_N),    //  .cas_n
+											 .sdram_wire_cke(DRAM_CKE),     	//  .cke
+											 .sdram_wire_cs_n(DRAM_CS_N),      //  .cs_n
+											 .sdram_wire_dq(DRAM_DQ),      	//  .dq
+											 .sdram_wire_dqm(DRAM_DQM),     	//  .dqm
+											 .sdram_wire_ras_n(DRAM_RAS_N),    //  .ras_n
+											 .sdram_wire_we_n(DRAM_WE_N),      //  .we_n
+											 .sdram_clk_clk(DRAM_CLK),			//  clock out to SDRAM from other PLL port
+											 .sys_clk_clk(SYS_CLK)			// Clock for system
+											 // Also imports all the sprite PIO information
+							);
 
 							// Module instantiated to keep track of frame number based on VS input
 							frame_number f_num (.Clk(SYS_CLK), .*);
@@ -188,22 +200,18 @@ module mario_cv_game (
 
 							// Inferred on chip memory for frame buffers 480 * 360
 							RAM_param fb_curr (
-																	.clock(SYS_CLK),
-																	.wren(~frame_num),//.wren(fb_curr_write), 
-																	.rden(frame_num),
-																	.rdaddress(fb_curr_addr),
-																	.wraddress(fb_curr_addr),
-																	.data(fb_data_in),  //.data(fb_curr_data_in), 
+																	.clk(SYS_CLK),
+																	.wren(~frame_num & write_fb_write_en),
+																	.address(fb_curr_addr),
+																	.data(fb_data_in),
 																	.q(fb_curr_data_out)
 							);
 							// Inferred on chip memory for frame buffers 480 * 360
 							RAM_param fb_update (
-																	.clock(SYS_CLK),
-																	.wren(frame_num),//.wren(fb_update_write),
-																	.rden(~frame_num),
-																	.rdaddress(fb_update_addr),
-																	.wraddress(fb_update_addr),
-																	.data(fb_data_in), //.data(fb_update_data_in), 
+																	.clk(SYS_CLK),
+																	.wren(frame_num & write_fb_write_en),
+																	.address(fb_update_addr),
+																	.data(fb_data_in),
 																	.q(fb_update_data_out)
 							);
 							
@@ -211,17 +219,17 @@ module mario_cv_game (
 							frame_controller f_ctl (.*, .Clk(SYS_CLK), .fb_addr(read_fb_addr), .read_fb_data_out(fb_data_out), .active(read_active));
 							
 							// Sprite controller for writing sprites to the frame buffer that is currently selected
-//							sprite_controller s_ctl (.*, .Clk(SYS_CLK), .Reset(Reset), // .* for all avalon fabric signals
-//							.fb_addr(write_fb_addr),
-//							.fb_data_in(write_fb_data_in), 
-//							.fb_data_out(write_fb_data_out),
-//							.fb_write(write_fb_write_en), // Signal a write to the current frame buffer
-//							.draw_sprite(draw_sprite),
-//							.done_draw(done_draw)
-//							);
+							sprite_controller s_ctl (.*, .Clk(SYS_CLK), .Reset(Reset), // .* for all avalon fabric signals
+							.fb_addr(write_fb_addr),
+							.fb_data_in(fb_data_in), 
+							.fb_write(write_fb_write_en), // Signal a write to the current frame buffer
+							.draw_sprite(draw_sprite),
+							.done_draw(done_draw)
+							);
 							// For controlling the reading and writing to the fifo queues
-							enum logic [3:0] {WAIT, READ, READ1, READ2, READ3, WRITE, WRITE1, WRITE2, WRITE3, DONE} fifo_curr_state, fifo_next_state;
+							enum logic [1:0] {WAIT, READ, WRITE, DONE} fifo_curr_state, fifo_next_state;
 							logic [15:0] last_sprite_id;
+							logic [1:0] rd_counter, wr_counter;
 							// System to manage the draw_sprite, done_draw, read_active, and fifo_re/fifo_we signals
 							
 							// TODO:
@@ -248,17 +256,11 @@ module mario_cv_game (
 								fifo_next_state = fifo_curr_state;
 								case (fifo_curr_state)
 									WAIT: begin
-										if (last_sprite_id != sprite_id_pio_export) fifo_next_state = WRITE;
+										if (last_sprite_id != sprite_id_pio_export && !fifo_full) fifo_next_state = WRITE;
 										else if (done_draw && !fifo_empty) fifo_next_state = READ;
 									end
-									READ: fifo_next_state = READ1;
-									READ1: fifo_next_state = READ2;
-									READ2: fifo_next_state = READ3;
-									READ3: fifo_next_state = DONE;
-									WRITE: fifo_next_state = WRITE1;
-									WRITE1: fifo_next_state = WRITE2;
-									WRITE2: fifo_next_state = WRITE3;
-									WRITE3: fifo_next_state = DONE;
+									READ: if(rd_counter == 2'd3) fifo_next_state = DONE;
+									WRITE: if(wr_counter == 2'd3) fifo_next_state = DONE;
 									DONE: fifo_next_state = WAIT;
 									default: fifo_next_state = WAIT;
 								endcase
@@ -268,7 +270,10 @@ module mario_cv_game (
 							always_ff @ (posedge SYS_CLK) begin
 								case (fifo_curr_state)
 									WAIT: begin
-										if (last_sprite_id != sprite_id_pio_export) begin
+										if(~Reset) last_sprite_id <= 0;
+										rd_counter <= 2'd0;
+										wr_counter <= 2'd0;
+										if (last_sprite_id != sprite_id_pio_export && !fifo_full) begin
 											last_sprite_id  <= sprite_id_pio_export;
 											fifo_we <= 1'b1;
 										end
@@ -282,25 +287,14 @@ module mario_cv_game (
 											draw_sprite <= 1'b0;
 										end
 									end
-									READ: fifo_re <= 1'b1;
-									READ1: fifo_re <= 1'b1;
-									READ2: fifo_re <= 1'b1;
-									READ3: fifo_re <= 1'b1;
+									READ: begin
+										rd_counter <= rd_counter + 2'd1;
+										fifo_re <= 1'b1;
+										draw_sprite <= 1'b1;
+									end
 									WRITE: begin
+										wr_counter <= wr_counter + 2'd1;
 										fifo_we <= 1'b1;
-										draw_sprite <= 1'b1;
-									end
-									WRITE1: begin
-										fifo_we <= 1'b1;
-										draw_sprite <= 1'b1;
-									end
-									WRITE2: begin
-										fifo_we <= 1'b1;
-										draw_sprite <= 1'b1;
-									end
-									WRITE3: begin
-										fifo_we <= 1'b1;
-										draw_sprite <= 1'b1;
 									end
 									DONE: begin
 										fifo_re = 1'b0;

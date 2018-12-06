@@ -1,5 +1,5 @@
 Timing Analyzer report for mario_cv_game
-Tue Dec 04 00:22:14 2018
+Wed Dec 05 08:59:27 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -99,14 +99,13 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.05        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.3%      ;
-;     Processor 3            ;   1.3%      ;
-;     Processor 4            ;   1.0%      ;
+;     Processor 2            ;   0.3%      ;
+;     Processors 3-4         ;   0.3%      ;
 +----------------------------+-------------+
 
 
@@ -115,10 +114,10 @@ refer to the applicable agreement for further details.
 +------------------------------------------------------------------------------------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                                                                                                      ; Status ; Read at                  ;
 +------------------------------------------------------------------------------------------------------------------------------------+--------+--------------------------+
-; output_files/mario_cv_game.sdc                                                                                                     ; OK     ; Tue Dec 04 00:22:12 2018 ;
-; c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_avalon_st_handshake_clock_crosser.sdc ; OK     ; Tue Dec 04 00:22:12 2018 ;
-; c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_reset_controller.sdc                  ; OK     ; Tue Dec 04 00:22:12 2018 ;
-; c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.sdc           ; OK     ; Tue Dec 04 00:22:12 2018 ;
+; output_files/mario_cv_game.sdc                                                                                                     ; OK     ; Wed Dec 05 08:59:26 2018 ;
+; c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_avalon_st_handshake_clock_crosser.sdc ; OK     ; Wed Dec 05 08:59:26 2018 ;
+; c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/altera_reset_controller.sdc                  ; OK     ; Wed Dec 05 08:59:26 2018 ;
+; c:/users/yeda_/documents/ece_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.sdc           ; OK     ; Wed Dec 05 08:59:26 2018 ;
 +------------------------------------------------------------------------------------------------------------------------------------+--------+--------------------------+
 
 
@@ -132,13 +131,13 @@ refer to the applicable agreement for further details.
 +------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
 
 
-+--------------------------------------------------+
-; Slow 1200mV 85C Model Fmax Summary               ;
-+------------+-----------------+------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
-+------------+-----------------+------------+------+
-; 190.26 MHz ; 190.26 MHz      ; SYS_CLK    ;      ;
-+------------+-----------------+------------+------+
++------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                         ;
++-------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax        ; Restricted Fmax ; Clock Name ; Note                                                          ;
++-------------+-----------------+------------+---------------------------------------------------------------+
+; 1203.37 MHz ; 250.0 MHz       ; SYS_CLK    ; limit due to minimum period restriction (max I/O toggle rate) ;
++-------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -153,7 +152,7 @@ HTML report is unavailable in plain text report export.
 +---------+-------+-------------------+
 ; Clock   ; Slack ; End Point TNS     ;
 +---------+-------+-------------------+
-; SYS_CLK ; 4.744 ; 0.000             ;
+; SYS_CLK ; 9.169 ; 0.000             ;
 +---------+-------+-------------------+
 
 
@@ -162,7 +161,7 @@ HTML report is unavailable in plain text report export.
 +---------+-------+------------------+
 ; Clock   ; Slack ; End Point TNS    ;
 +---------+-------+------------------+
-; SYS_CLK ; 0.402 ; 0.000            ;
+; SYS_CLK ; 0.440 ; 0.000            ;
 +---------+-------+------------------+
 
 
@@ -183,225 +182,31 @@ No paths to report.
 +----------+--------+-------------------------------+
 ; Clock    ; Slack  ; End Point TNS                 ;
 +----------+--------+-------------------------------+
-; SYS_CLK  ; 4.626  ; 0.000                         ;
+; SYS_CLK  ; 4.747  ; 0.000                         ;
 ; CLOCK_50 ; 16.000 ; 0.000                         ;
 +----------+--------+-------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Setup: 'SYS_CLK'                                                                                                                                                                                                ;
-+-------+------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                          ; To Node                                                                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 4.744 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.188      ; 5.502      ;
-; 4.744 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.188      ; 5.502      ;
-; 4.765 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.188      ; 5.481      ;
-; 4.765 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.188      ; 5.481      ;
-; 4.776 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.251      ; 5.533      ;
-; 4.776 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.251      ; 5.533      ;
-; 4.789 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.188      ; 5.457      ;
-; 4.789 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.188      ; 5.457      ;
-; 4.797 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.251      ; 5.512      ;
-; 4.797 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.251      ; 5.512      ;
-; 4.821 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.251      ; 5.488      ;
-; 4.821 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.251      ; 5.488      ;
-; 4.968 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_we_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.319      ; 5.409      ;
-; 4.968 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.319      ; 5.409      ;
-; 4.969 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_datain_reg0  ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.325      ; 5.414      ;
-; 4.994 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_we_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.319      ; 5.383      ;
-; 4.994 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.319      ; 5.383      ;
-; 4.995 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_datain_reg0  ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.325      ; 5.388      ;
-; 4.998 ; frame_controller:f_ctl|fb_addr[17] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.175      ; 5.235      ;
-; 4.998 ; frame_controller:f_ctl|fb_addr[17] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.175      ; 5.235      ;
-; 5.004 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.203      ; 5.257      ;
-; 5.004 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.203      ; 5.257      ;
-; 5.005 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.203      ; 5.256      ;
-; 5.005 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.203      ; 5.256      ;
-; 5.013 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.204      ; 5.249      ;
-; 5.013 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.204      ; 5.249      ;
-; 5.015 ; frame_controller:f_ctl|fb_addr[17] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.238      ; 5.281      ;
-; 5.015 ; frame_controller:f_ctl|fb_addr[17] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.238      ; 5.281      ;
-; 5.022 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.187      ; 5.223      ;
-; 5.022 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.187      ; 5.223      ;
-; 5.023 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.188      ; 5.223      ;
-; 5.023 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.188      ; 5.223      ;
-; 5.025 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.203      ; 5.236      ;
-; 5.025 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.203      ; 5.236      ;
-; 5.026 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.203      ; 5.235      ;
-; 5.026 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.203      ; 5.235      ;
-; 5.034 ; frame_controller:f_ctl|fb_addr[15] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.175      ; 5.199      ;
-; 5.034 ; frame_controller:f_ctl|fb_addr[15] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.175      ; 5.199      ;
-; 5.034 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.204      ; 5.228      ;
-; 5.034 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.204      ; 5.228      ;
-; 5.043 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.187      ; 5.202      ;
-; 5.043 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.187      ; 5.202      ;
-; 5.044 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.188      ; 5.202      ;
-; 5.044 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.188      ; 5.202      ;
-; 5.049 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.203      ; 5.212      ;
-; 5.049 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.203      ; 5.212      ;
-; 5.050 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.203      ; 5.211      ;
-; 5.050 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.203      ; 5.211      ;
-; 5.051 ; frame_controller:f_ctl|fb_addr[15] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.238      ; 5.245      ;
-; 5.051 ; frame_controller:f_ctl|fb_addr[15] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.238      ; 5.245      ;
-; 5.057 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~porta_we_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.308      ; 5.309      ;
-; 5.057 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.308      ; 5.309      ;
-; 5.058 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~porta_datain_reg0    ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.314      ; 5.314      ;
-; 5.058 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.204      ; 5.204      ;
-; 5.058 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.204      ; 5.204      ;
-; 5.067 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.187      ; 5.178      ;
-; 5.067 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.187      ; 5.178      ;
-; 5.068 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.188      ; 5.178      ;
-; 5.068 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.188      ; 5.178      ;
-; 5.078 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.240      ; 5.220      ;
-; 5.078 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.240      ; 5.220      ;
-; 5.079 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~porta_we_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.308      ; 5.287      ;
-; 5.079 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.308      ; 5.287      ;
-; 5.080 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~porta_datain_reg0    ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.314      ; 5.292      ;
-; 5.093 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.239      ; 5.204      ;
-; 5.093 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.239      ; 5.204      ;
-; 5.098 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_we_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.307      ; 5.267      ;
-; 5.098 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.307      ; 5.267      ;
-; 5.099 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_datain_reg0    ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.313      ; 5.272      ;
-; 5.100 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.240      ; 5.198      ;
-; 5.100 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.240      ; 5.198      ;
-; 5.102 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.236      ; 5.192      ;
-; 5.102 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.236      ; 5.192      ;
-; 5.102 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_we_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.306      ; 5.262      ;
-; 5.102 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.306      ; 5.262      ;
-; 5.103 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_datain_reg0    ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.312      ; 5.267      ;
-; 5.115 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.239      ; 5.182      ;
-; 5.115 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.239      ; 5.182      ;
-; 5.120 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_we_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.307      ; 5.245      ;
-; 5.120 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.307      ; 5.245      ;
-; 5.121 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_datain_reg0    ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.313      ; 5.250      ;
-; 5.123 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.236      ; 5.171      ;
-; 5.123 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.236      ; 5.171      ;
-; 5.124 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.238      ; 5.172      ;
-; 5.124 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.238      ; 5.172      ;
-; 5.124 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_we_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.306      ; 5.240      ;
-; 5.124 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.306      ; 5.240      ;
-; 5.125 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_datain_reg0    ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.312      ; 5.245      ;
-; 5.146 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.238      ; 5.150      ;
-; 5.146 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.238      ; 5.150      ;
-; 5.147 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.236      ; 5.147      ;
-; 5.147 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.236      ; 5.147      ;
-; 5.203 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_we_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.271      ; 5.126      ;
-; 5.203 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.271      ; 5.126      ;
-; 5.204 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_datain_reg0  ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.277      ; 5.131      ;
-; 5.214 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~porta_we_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.271      ; 5.115      ;
-; 5.214 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.271      ; 5.115      ;
-; 5.216 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~porta_datain_reg0  ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.277      ; 5.119      ;
-; 5.218 ; frame_controller:f_ctl|fb_addr[15] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_we_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.306      ; 5.146      ;
-; 5.218 ; frame_controller:f_ctl|fb_addr[15] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.306      ; 5.146      ;
-+-------+------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'SYS_CLK'                                                                                                                              ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                 ; To Node                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 9.169 ; VGA_controller:vga_controller|VGA_COUNTER ; VGA_controller:vga_controller|VGA_CLK     ; SYS_CLK      ; SYS_CLK     ; 10.000       ; -0.050     ; 0.799      ;
+; 9.210 ; VGA_controller:vga_controller|VGA_COUNTER ; VGA_controller:vga_controller|VGA_COUNTER ; SYS_CLK      ; SYS_CLK     ; 10.000       ; -0.043     ; 0.765      ;
+; 9.210 ; VGA_controller:vga_controller|VGA_CLK     ; VGA_controller:vga_controller|VGA_CLK     ; SYS_CLK      ; SYS_CLK     ; 10.000       ; -0.043     ; 0.765      ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Hold: 'SYS_CLK'                                                                                                                                                                                                            ;
-+-------+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                                     ; To Node                                                                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.402 ; frame_number:f_num|frame_reg                  ; frame_number:f_num|frame_reg                                                                                       ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; frame_controller:f_ctl|fb_addr[12]            ; frame_controller:f_ctl|fb_addr[12]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; frame_controller:f_ctl|fb_addr[13]            ; frame_controller:f_ctl|fb_addr[13]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; frame_controller:f_ctl|fb_addr[16]            ; frame_controller:f_ctl|fb_addr[16]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; frame_controller:f_ctl|fb_addr[17]            ; frame_controller:f_ctl|fb_addr[17]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; frame_controller:f_ctl|fb_addr[15]            ; frame_controller:f_ctl|fb_addr[15]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; frame_controller:f_ctl|fb_addr[14]            ; frame_controller:f_ctl|fb_addr[14]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; frame_controller:f_ctl|fb_addr[11]            ; frame_controller:f_ctl|fb_addr[11]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; frame_controller:f_ctl|fb_addr[10]            ; frame_controller:f_ctl|fb_addr[10]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; frame_controller:f_ctl|fb_addr[9]             ; frame_controller:f_ctl|fb_addr[9]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; frame_controller:f_ctl|fb_addr[8]             ; frame_controller:f_ctl|fb_addr[8]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; frame_controller:f_ctl|fb_addr[7]             ; frame_controller:f_ctl|fb_addr[7]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.081      ; 0.669      ;
-; 0.403 ; frame_controller:f_ctl|fb_addr[6]             ; frame_controller:f_ctl|fb_addr[6]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; frame_controller:f_ctl|fb_addr[5]             ; frame_controller:f_ctl|fb_addr[5]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; frame_controller:f_ctl|fb_addr[4]             ; frame_controller:f_ctl|fb_addr[4]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; frame_controller:f_ctl|fb_addr[3]             ; frame_controller:f_ctl|fb_addr[3]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; frame_controller:f_ctl|fb_addr[2]             ; frame_controller:f_ctl|fb_addr[2]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; frame_controller:f_ctl|fb_addr[1]             ; frame_controller:f_ctl|fb_addr[1]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.080      ; 0.669      ;
-; 0.403 ; frame_controller:f_ctl|fb_addr[0]             ; frame_controller:f_ctl|fb_addr[0]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.080      ; 0.669      ;
-; 0.404 ; frame_controller:f_ctl|curr_pix[7]            ; frame_controller:f_ctl|curr_pix[7]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; frame_controller:f_ctl|curr_pix[6]            ; frame_controller:f_ctl|curr_pix[6]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; frame_controller:f_ctl|curr_pix[1]            ; frame_controller:f_ctl|curr_pix[1]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; frame_controller:f_ctl|curr_pix[2]            ; frame_controller:f_ctl|curr_pix[2]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; frame_controller:f_ctl|curr_pix[5]            ; frame_controller:f_ctl|curr_pix[5]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; frame_controller:f_ctl|curr_pix[4]            ; frame_controller:f_ctl|curr_pix[4]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; frame_controller:f_ctl|curr_pix[3]            ; frame_controller:f_ctl|curr_pix[3]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; frame_controller:f_ctl|curr_pix[0]            ; frame_controller:f_ctl|curr_pix[0]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; frame_controller:f_ctl|counter[1]             ; frame_controller:f_ctl|counter[1]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; frame_controller:f_ctl|curr_state.WAIT        ; frame_controller:f_ctl|curr_state.WAIT                                                                             ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 0.669      ;
-; 0.405 ; VGA_controller:vga_controller|VGA_COUNTER     ; VGA_controller:vga_controller|VGA_COUNTER                                                                          ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.083      ; 0.674      ;
-; 0.409 ; frame_controller:f_ctl|counter[0]             ; frame_controller:f_ctl|counter[0]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 0.674      ;
-; 0.437 ; frame_controller:f_ctl|counter[0]             ; frame_controller:f_ctl|counter[1]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 0.702      ;
-; 0.440 ; VGA_controller:vga_controller|VGA_CLK         ; VGA_controller:vga_controller|VGA_CLK                                                                              ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.043      ; 0.669      ;
-; 0.453 ; frame_controller:f_ctl|curr_state.WAIT        ; frame_controller:f_ctl|counter[0]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 0.718      ;
-; 0.666 ; frame_controller:f_ctl|curr_state.WAIT        ; frame_controller:f_ctl|counter[1]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 0.931      ;
-; 0.707 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|curr_state.WRITE_PIXEL                                                                      ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 0.972      ;
-; 0.708 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|curr_state.DONE                                                                             ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 0.973      ;
-; 0.711 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_state.WAIT                                                                             ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 0.976      ;
-; 0.792 ; frame_controller:f_ctl|curr_state.WAIT        ; frame_controller:f_ctl|curr_state.GET_ROW                                                                          ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 1.057      ;
-; 0.823 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.435      ; 1.480      ;
-; 0.893 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.366      ; 1.481      ;
-; 0.923 ; frame_number:f_num|frame_reg                  ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.380      ; 1.525      ;
-; 0.938 ; frame_controller:f_ctl|curr_state.WRITE_PIXEL ; frame_controller:f_ctl|curr_state.GET_ROW                                                                          ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 1.203      ;
-; 1.017 ; frame_controller:f_ctl|curr_state.WRITE_PIXEL ; frame_controller:f_ctl|curr_pix[5]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.078      ; 1.281      ;
-; 1.018 ; frame_controller:f_ctl|curr_state.WRITE_PIXEL ; frame_controller:f_ctl|curr_pix[1]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.078      ; 1.282      ;
-; 1.035 ; frame_controller:f_ctl|fb_addr[7]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.435      ; 1.692      ;
-; 1.041 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_state.GET_ROW                                                                          ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 1.306      ;
-; 1.074 ; frame_controller:f_ctl|counter[0]             ; frame_controller:f_ctl|curr_state.GET_ROW                                                                          ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 1.339      ;
-; 1.096 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.446      ; 1.764      ;
-; 1.103 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.433      ; 1.758      ;
-; 1.105 ; frame_controller:f_ctl|fb_addr[7]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.366      ; 1.693      ;
-; 1.132 ; frame_number:f_num|frame_reg                  ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.366      ; 1.720      ;
-; 1.156 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.433      ; 1.811      ;
-; 1.166 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.377      ; 1.765      ;
-; 1.167 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.433      ; 1.822      ;
-; 1.173 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.364      ; 1.759      ;
-; 1.190 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[0]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.116      ; 1.492      ;
-; 1.190 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[1]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.116      ; 1.492      ;
-; 1.190 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[2]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.116      ; 1.492      ;
-; 1.190 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[3]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.116      ; 1.492      ;
-; 1.190 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[5]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.116      ; 1.492      ;
-; 1.190 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[6]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.116      ; 1.492      ;
-; 1.191 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[4]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.116      ; 1.493      ;
-; 1.204 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[10]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.115      ; 1.505      ;
-; 1.205 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[12]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.115      ; 1.506      ;
-; 1.205 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[11]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.115      ; 1.506      ;
-; 1.206 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[9]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.115      ; 1.507      ;
-; 1.207 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[14]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.115      ; 1.508      ;
-; 1.208 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[13]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.115      ; 1.509      ;
-; 1.209 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[16]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.115      ; 1.510      ;
-; 1.210 ; frame_controller:f_ctl|fb_addr[3]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.448      ; 1.880      ;
-; 1.215 ; frame_controller:f_ctl|fb_addr[0]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.448      ; 1.885      ;
-; 1.216 ; frame_controller:f_ctl|fb_addr[4]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.448      ; 1.886      ;
-; 1.217 ; frame_controller:f_ctl|fb_addr[12]            ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.450      ; 1.889      ;
-; 1.221 ; frame_number:f_num|frame_reg                  ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|rden_b_store                    ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.061      ; 1.468      ;
-; 1.226 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.364      ; 1.812      ;
-; 1.235 ; frame_number:f_num|frame_reg                  ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.368      ; 1.825      ;
-; 1.237 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.364      ; 1.823      ;
-; 1.237 ; frame_controller:f_ctl|fb_addr[12]            ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.462      ; 1.921      ;
-; 1.244 ; frame_controller:f_ctl|fb_addr[10]            ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.450      ; 1.916      ;
-; 1.280 ; frame_controller:f_ctl|fb_addr[3]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.379      ; 1.881      ;
-; 1.280 ; frame_number:f_num|frame_reg                  ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.379      ; 1.881      ;
-; 1.282 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[6]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.078      ; 1.546      ;
-; 1.282 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[3]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.078      ; 1.546      ;
-; 1.283 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[0]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.078      ; 1.547      ;
-; 1.284 ; frame_controller:f_ctl|fb_addr[4]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.379      ; 1.885      ;
-; 1.285 ; frame_controller:f_ctl|fb_addr[0]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.379      ; 1.886      ;
-; 1.287 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[2]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.078      ; 1.551      ;
-; 1.287 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[5]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.078      ; 1.551      ;
-; 1.287 ; frame_controller:f_ctl|fb_addr[12]            ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.381      ; 1.890      ;
-; 1.288 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[1]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.078      ; 1.552      ;
-; 1.288 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[4]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.078      ; 1.552      ;
-; 1.289 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[7]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.078      ; 1.553      ;
-; 1.297 ; frame_number:f_num|frame_reg                  ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.379      ; 1.898      ;
-; 1.299 ; frame_controller:f_ctl|curr_state.WRITE_PIXEL ; frame_controller:f_ctl|curr_pix[6]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.078      ; 1.563      ;
-; 1.299 ; frame_controller:f_ctl|curr_state.WRITE_PIXEL ; frame_controller:f_ctl|curr_pix[3]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.078      ; 1.563      ;
-; 1.301 ; frame_controller:f_ctl|curr_state.WRITE_PIXEL ; frame_controller:f_ctl|curr_pix[0]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.078      ; 1.565      ;
-; 1.303 ; frame_controller:f_ctl|counter[1]             ; frame_controller:f_ctl|curr_state.GET_ROW                                                                          ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.079      ; 1.568      ;
-; 1.306 ; frame_controller:f_ctl|curr_state.WRITE_PIXEL ; frame_controller:f_ctl|curr_pix[2]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.078      ; 1.570      ;
-; 1.306 ; frame_number:f_num|frame_reg                  ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.380      ; 1.908      ;
-+-------+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'SYS_CLK'                                                                                                                               ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                 ; To Node                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.440 ; VGA_controller:vga_controller|VGA_CLK     ; VGA_controller:vga_controller|VGA_CLK     ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.043      ; 0.669      ;
+; 0.445 ; VGA_controller:vga_controller|VGA_COUNTER ; VGA_controller:vga_controller|VGA_COUNTER ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.043      ; 0.674      ;
+; 0.452 ; VGA_controller:vga_controller|VGA_COUNTER ; VGA_controller:vga_controller|VGA_CLK     ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.050      ; 0.688      ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 -----------------------------------------------
@@ -410,13 +215,13 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+--------------------------------------------------+
-; Slow 1200mV 0C Model Fmax Summary                ;
-+------------+-----------------+------------+------+
-; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
-+------------+-----------------+------------+------+
-; 208.55 MHz ; 208.55 MHz      ; SYS_CLK    ;      ;
-+------------+-----------------+------------+------+
++------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                          ;
++-------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax        ; Restricted Fmax ; Clock Name ; Note                                                          ;
++-------------+-----------------+------------+---------------------------------------------------------------+
+; 1329.79 MHz ; 250.0 MHz       ; SYS_CLK    ; limit due to minimum period restriction (max I/O toggle rate) ;
++-------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -425,7 +230,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------+-------+------------------+
 ; Clock   ; Slack ; End Point TNS    ;
 +---------+-------+------------------+
-; SYS_CLK ; 5.205 ; 0.000            ;
+; SYS_CLK ; 9.248 ; 0.000            ;
 +---------+-------+------------------+
 
 
@@ -434,7 +239,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------+-------+-----------------+
 ; Clock   ; Slack ; End Point TNS   ;
 +---------+-------+-----------------+
-; SYS_CLK ; 0.354 ; 0.000           ;
+; SYS_CLK ; 0.387 ; 0.000           ;
 +---------+-------+-----------------+
 
 
@@ -455,225 +260,31 @@ No paths to report.
 +----------+--------+------------------------------+
 ; Clock    ; Slack  ; End Point TNS                ;
 +----------+--------+------------------------------+
-; SYS_CLK  ; 4.647  ; 0.000                        ;
+; SYS_CLK  ; 4.788  ; 0.000                        ;
 ; CLOCK_50 ; 16.000 ; 0.000                        ;
 +----------+--------+------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Setup: 'SYS_CLK'                                                                                                                                                                                                 ;
-+-------+------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                          ; To Node                                                                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 5.205 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.163      ; 5.008      ;
-; 5.205 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.163      ; 5.008      ;
-; 5.218 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.163      ; 4.995      ;
-; 5.218 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.163      ; 4.995      ;
-; 5.235 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.225      ; 5.040      ;
-; 5.235 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.225      ; 5.040      ;
-; 5.246 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.163      ; 4.967      ;
-; 5.246 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.163      ; 4.967      ;
-; 5.248 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.225      ; 5.027      ;
-; 5.248 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.225      ; 5.027      ;
-; 5.276 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.225      ; 4.999      ;
-; 5.276 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.225      ; 4.999      ;
-; 5.414 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_we_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.284      ; 4.920      ;
-; 5.414 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_datain_reg0  ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.289      ; 4.925      ;
-; 5.414 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.284      ; 4.920      ;
-; 5.425 ; frame_controller:f_ctl|fb_addr[17] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.149      ; 4.774      ;
-; 5.425 ; frame_controller:f_ctl|fb_addr[17] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.149      ; 4.774      ;
-; 5.428 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_we_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.284      ; 4.906      ;
-; 5.428 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.284      ; 4.906      ;
-; 5.430 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_datain_reg0  ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.289      ; 4.909      ;
-; 5.442 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.180      ; 4.788      ;
-; 5.442 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.180      ; 4.788      ;
-; 5.442 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.180      ; 4.788      ;
-; 5.442 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.180      ; 4.788      ;
-; 5.443 ; frame_controller:f_ctl|fb_addr[17] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.211      ; 4.818      ;
-; 5.443 ; frame_controller:f_ctl|fb_addr[17] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.211      ; 4.818      ;
-; 5.451 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.181      ; 4.780      ;
-; 5.451 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.181      ; 4.780      ;
-; 5.455 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.180      ; 4.775      ;
-; 5.455 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.180      ; 4.775      ;
-; 5.455 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.180      ; 4.775      ;
-; 5.455 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.180      ; 4.775      ;
-; 5.459 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.163      ; 4.754      ;
-; 5.459 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.163      ; 4.754      ;
-; 5.459 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.163      ; 4.754      ;
-; 5.459 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.163      ; 4.754      ;
-; 5.462 ; frame_controller:f_ctl|fb_addr[15] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.149      ; 4.737      ;
-; 5.462 ; frame_controller:f_ctl|fb_addr[15] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.149      ; 4.737      ;
-; 5.464 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.181      ; 4.767      ;
-; 5.464 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.181      ; 4.767      ;
-; 5.472 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.163      ; 4.741      ;
-; 5.472 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.163      ; 4.741      ;
-; 5.472 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.163      ; 4.741      ;
-; 5.472 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.163      ; 4.741      ;
-; 5.480 ; frame_controller:f_ctl|fb_addr[15] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.211      ; 4.781      ;
-; 5.480 ; frame_controller:f_ctl|fb_addr[15] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.211      ; 4.781      ;
-; 5.481 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~porta_we_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.274      ; 4.843      ;
-; 5.481 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~porta_datain_reg0    ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.279      ; 4.848      ;
-; 5.481 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.274      ; 4.843      ;
-; 5.483 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.180      ; 4.747      ;
-; 5.483 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.180      ; 4.747      ;
-; 5.483 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.180      ; 4.747      ;
-; 5.483 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.180      ; 4.747      ;
-; 5.492 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.181      ; 4.739      ;
-; 5.492 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.181      ; 4.739      ;
-; 5.500 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.163      ; 4.713      ;
-; 5.500 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.163      ; 4.713      ;
-; 5.500 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.163      ; 4.713      ;
-; 5.500 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.163      ; 4.713      ;
-; 5.500 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~porta_we_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.274      ; 4.824      ;
-; 5.500 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~porta_datain_reg0    ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.279      ; 4.829      ;
-; 5.500 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.274      ; 4.824      ;
-; 5.507 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.215      ; 4.758      ;
-; 5.507 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.215      ; 4.758      ;
-; 5.520 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_we_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.273      ; 4.803      ;
-; 5.520 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_datain_reg0    ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.278      ; 4.808      ;
-; 5.520 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.273      ; 4.803      ;
-; 5.522 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.214      ; 4.742      ;
-; 5.522 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.214      ; 4.742      ;
-; 5.524 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_we_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.272      ; 4.798      ;
-; 5.524 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_datain_reg0    ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.277      ; 4.803      ;
-; 5.524 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.272      ; 4.798      ;
-; 5.526 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.215      ; 4.739      ;
-; 5.526 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.215      ; 4.739      ;
-; 5.533 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.208      ; 4.725      ;
-; 5.533 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.208      ; 4.725      ;
-; 5.539 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_we_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.273      ; 4.784      ;
-; 5.539 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_datain_reg0    ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.278      ; 4.789      ;
-; 5.539 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.273      ; 4.784      ;
-; 5.541 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.214      ; 4.723      ;
-; 5.541 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.214      ; 4.723      ;
-; 5.543 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_we_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.272      ; 4.779      ;
-; 5.543 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_datain_reg0    ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.277      ; 4.784      ;
-; 5.543 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.272      ; 4.779      ;
-; 5.546 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.212      ; 4.716      ;
-; 5.546 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.212      ; 4.716      ;
-; 5.546 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.208      ; 4.712      ;
-; 5.546 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.208      ; 4.712      ;
-; 5.565 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.212      ; 4.697      ;
-; 5.565 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.212      ; 4.697      ;
-; 5.574 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.208      ; 4.684      ;
-; 5.574 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.208      ; 4.684      ;
-; 5.576 ; frame_number:f_num|frame_reg       ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.170      ; 4.644      ;
-; 5.604 ; frame_number:f_num|frame_reg       ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.214      ; 4.660      ;
-; 5.615 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_we_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.239      ; 4.674      ;
-; 5.615 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.239      ; 4.674      ;
-; 5.617 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_datain_reg0  ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.244      ; 4.677      ;
-; 5.623 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~porta_we_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.239      ; 4.666      ;
-; 5.623 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.239      ; 4.666      ;
-; 5.625 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~porta_datain_reg0  ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.244      ; 4.669      ;
-+-------+------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'SYS_CLK'                                                                                                                               ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                 ; To Node                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 9.248 ; VGA_controller:vga_controller|VGA_COUNTER ; VGA_controller:vga_controller|VGA_CLK     ; SYS_CLK      ; SYS_CLK     ; 10.000       ; -0.045     ; 0.726      ;
+; 9.297 ; VGA_controller:vga_controller|VGA_COUNTER ; VGA_controller:vga_controller|VGA_COUNTER ; SYS_CLK      ; SYS_CLK     ; 10.000       ; -0.039     ; 0.683      ;
+; 9.297 ; VGA_controller:vga_controller|VGA_CLK     ; VGA_controller:vga_controller|VGA_CLK     ; SYS_CLK      ; SYS_CLK     ; 10.000       ; -0.039     ; 0.683      ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Hold: 'SYS_CLK'                                                                                                                                                                                                             ;
-+-------+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                                     ; To Node                                                                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.354 ; frame_number:f_num|frame_reg                  ; frame_number:f_num|frame_reg                                                                                       ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; frame_controller:f_ctl|fb_addr[12]            ; frame_controller:f_ctl|fb_addr[12]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; frame_controller:f_ctl|fb_addr[13]            ; frame_controller:f_ctl|fb_addr[13]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; frame_controller:f_ctl|fb_addr[16]            ; frame_controller:f_ctl|fb_addr[16]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; frame_controller:f_ctl|fb_addr[17]            ; frame_controller:f_ctl|fb_addr[17]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; frame_controller:f_ctl|fb_addr[15]            ; frame_controller:f_ctl|fb_addr[15]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; frame_controller:f_ctl|fb_addr[14]            ; frame_controller:f_ctl|fb_addr[14]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; frame_controller:f_ctl|fb_addr[11]            ; frame_controller:f_ctl|fb_addr[11]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; frame_controller:f_ctl|fb_addr[10]            ; frame_controller:f_ctl|fb_addr[10]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; frame_controller:f_ctl|fb_addr[9]             ; frame_controller:f_ctl|fb_addr[9]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; frame_controller:f_ctl|fb_addr[8]             ; frame_controller:f_ctl|fb_addr[8]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; frame_controller:f_ctl|fb_addr[7]             ; frame_controller:f_ctl|fb_addr[7]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; frame_controller:f_ctl|fb_addr[6]             ; frame_controller:f_ctl|fb_addr[6]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; frame_controller:f_ctl|fb_addr[5]             ; frame_controller:f_ctl|fb_addr[5]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; frame_controller:f_ctl|fb_addr[4]             ; frame_controller:f_ctl|fb_addr[4]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; frame_controller:f_ctl|fb_addr[3]             ; frame_controller:f_ctl|fb_addr[3]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; frame_controller:f_ctl|fb_addr[2]             ; frame_controller:f_ctl|fb_addr[2]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; frame_controller:f_ctl|fb_addr[1]             ; frame_controller:f_ctl|fb_addr[1]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; frame_controller:f_ctl|fb_addr[0]             ; frame_controller:f_ctl|fb_addr[0]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.072      ; 0.597      ;
-; 0.355 ; frame_controller:f_ctl|curr_pix[7]            ; frame_controller:f_ctl|curr_pix[7]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; frame_controller:f_ctl|curr_pix[6]            ; frame_controller:f_ctl|curr_pix[6]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; frame_controller:f_ctl|curr_pix[1]            ; frame_controller:f_ctl|curr_pix[1]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; frame_controller:f_ctl|curr_pix[2]            ; frame_controller:f_ctl|curr_pix[2]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; frame_controller:f_ctl|curr_pix[5]            ; frame_controller:f_ctl|curr_pix[5]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; frame_controller:f_ctl|curr_pix[4]            ; frame_controller:f_ctl|curr_pix[4]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; frame_controller:f_ctl|curr_pix[3]            ; frame_controller:f_ctl|curr_pix[3]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; frame_controller:f_ctl|curr_pix[0]            ; frame_controller:f_ctl|curr_pix[0]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; frame_controller:f_ctl|counter[1]             ; frame_controller:f_ctl|counter[1]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 0.597      ;
-; 0.355 ; frame_controller:f_ctl|curr_state.WAIT        ; frame_controller:f_ctl|curr_state.WAIT                                                                             ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 0.597      ;
-; 0.363 ; VGA_controller:vga_controller|VGA_COUNTER     ; VGA_controller:vga_controller|VGA_COUNTER                                                                          ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.074      ; 0.608      ;
-; 0.366 ; frame_controller:f_ctl|counter[0]             ; frame_controller:f_ctl|counter[0]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 0.608      ;
-; 0.387 ; VGA_controller:vga_controller|VGA_CLK         ; VGA_controller:vga_controller|VGA_CLK                                                                              ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.039      ; 0.597      ;
-; 0.395 ; frame_controller:f_ctl|counter[0]             ; frame_controller:f_ctl|counter[1]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 0.637      ;
-; 0.417 ; frame_controller:f_ctl|curr_state.WAIT        ; frame_controller:f_ctl|counter[0]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 0.659      ;
-; 0.608 ; frame_controller:f_ctl|curr_state.WAIT        ; frame_controller:f_ctl|counter[1]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 0.850      ;
-; 0.644 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|curr_state.WRITE_PIXEL                                                                      ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 0.886      ;
-; 0.645 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|curr_state.DONE                                                                             ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 0.887      ;
-; 0.648 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_state.WAIT                                                                             ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 0.890      ;
-; 0.723 ; frame_controller:f_ctl|curr_state.WAIT        ; frame_controller:f_ctl|curr_state.GET_ROW                                                                          ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 0.965      ;
-; 0.796 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.387      ; 1.384      ;
-; 0.846 ; frame_number:f_num|frame_reg                  ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.337      ; 1.384      ;
-; 0.852 ; frame_controller:f_ctl|curr_state.WRITE_PIXEL ; frame_controller:f_ctl|curr_state.GET_ROW                                                                          ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 1.094      ;
-; 0.864 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.321      ; 1.386      ;
-; 0.950 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_state.GET_ROW                                                                          ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 1.192      ;
-; 0.952 ; frame_controller:f_ctl|curr_state.WRITE_PIXEL ; frame_controller:f_ctl|curr_pix[5]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.070      ; 1.193      ;
-; 0.953 ; frame_controller:f_ctl|curr_state.WRITE_PIXEL ; frame_controller:f_ctl|curr_pix[1]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.070      ; 1.194      ;
-; 0.970 ; frame_controller:f_ctl|counter[0]             ; frame_controller:f_ctl|curr_state.GET_ROW                                                                          ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 1.212      ;
-; 0.997 ; frame_controller:f_ctl|fb_addr[7]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.387      ; 1.585      ;
-; 1.031 ; frame_number:f_num|frame_reg                  ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.324      ; 1.556      ;
-; 1.051 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.394      ; 1.646      ;
-; 1.056 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.384      ; 1.641      ;
-; 1.064 ; frame_controller:f_ctl|fb_addr[7]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.321      ; 1.586      ;
-; 1.105 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.385      ; 1.691      ;
-; 1.106 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[2]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.106      ; 1.383      ;
-; 1.106 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[5]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.106      ; 1.383      ;
-; 1.106 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.386      ; 1.693      ;
-; 1.107 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[0]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.106      ; 1.384      ;
-; 1.107 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[1]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.106      ; 1.384      ;
-; 1.107 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[3]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.106      ; 1.384      ;
-; 1.107 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[4]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.106      ; 1.384      ;
-; 1.107 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[6]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.106      ; 1.384      ;
-; 1.110 ; frame_controller:f_ctl|fb_addr[0]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.402      ; 1.713      ;
-; 1.111 ; frame_controller:f_ctl|fb_addr[3]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.402      ; 1.714      ;
-; 1.113 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[10]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.105      ; 1.389      ;
-; 1.113 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[11]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.105      ; 1.389      ;
-; 1.114 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[12]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.105      ; 1.390      ;
-; 1.115 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[9]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.105      ; 1.391      ;
-; 1.116 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[14]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.105      ; 1.392      ;
-; 1.117 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[13]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.105      ; 1.393      ;
-; 1.118 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[16]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.105      ; 1.394      ;
-; 1.119 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.328      ; 1.648      ;
-; 1.119 ; frame_controller:f_ctl|fb_addr[4]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.402      ; 1.722      ;
-; 1.123 ; frame_controller:f_ctl|fb_addr[12]            ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.403      ; 1.727      ;
-; 1.124 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.318      ; 1.643      ;
-; 1.125 ; frame_number:f_num|frame_reg                  ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|rden_b_store                    ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.054      ; 1.350      ;
-; 1.127 ; frame_number:f_num|frame_reg                  ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.326      ; 1.654      ;
-; 1.136 ; frame_controller:f_ctl|fb_addr[12]            ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.414      ; 1.751      ;
-; 1.149 ; frame_controller:f_ctl|fb_addr[10]            ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.403      ; 1.753      ;
-; 1.173 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.319      ; 1.693      ;
-; 1.173 ; frame_number:f_num|frame_reg                  ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.333      ; 1.707      ;
-; 1.174 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.320      ; 1.695      ;
-; 1.176 ; frame_controller:f_ctl|fb_addr[0]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.336      ; 1.713      ;
-; 1.177 ; frame_controller:f_ctl|fb_addr[3]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.336      ; 1.714      ;
-; 1.179 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[3]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.070      ; 1.420      ;
-; 1.180 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[6]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.070      ; 1.421      ;
-; 1.181 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[0]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.070      ; 1.422      ;
-; 1.185 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[5]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.070      ; 1.426      ;
-; 1.185 ; frame_controller:f_ctl|counter[1]             ; frame_controller:f_ctl|curr_state.GET_ROW                                                                          ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.071      ; 1.427      ;
-; 1.186 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[2]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.070      ; 1.427      ;
-; 1.186 ; frame_controller:f_ctl|fb_addr[4]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.336      ; 1.723      ;
-; 1.186 ; frame_number:f_num|frame_reg                  ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.333      ; 1.720      ;
-; 1.187 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[1]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.070      ; 1.428      ;
-; 1.187 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[4]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.070      ; 1.428      ;
-; 1.188 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[7]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.070      ; 1.429      ;
-; 1.189 ; frame_controller:f_ctl|fb_addr[12]            ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.337      ; 1.727      ;
-; 1.200 ; frame_number:f_num|frame_reg                  ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_we_reg       ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.403      ; 1.804      ;
-; 1.201 ; frame_controller:f_ctl|curr_state.WRITE_PIXEL ; frame_controller:f_ctl|curr_pix[6]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.070      ; 1.442      ;
-; 1.201 ; frame_controller:f_ctl|curr_state.WRITE_PIXEL ; frame_controller:f_ctl|curr_pix[3]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.070      ; 1.442      ;
-; 1.202 ; frame_controller:f_ctl|fb_addr[12]            ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.348      ; 1.751      ;
-; 1.203 ; frame_controller:f_ctl|curr_state.WRITE_PIXEL ; frame_controller:f_ctl|curr_pix[0]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.070      ; 1.444      ;
-+-------+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'SYS_CLK'                                                                                                                                ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                 ; To Node                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.387 ; VGA_controller:vga_controller|VGA_CLK     ; VGA_controller:vga_controller|VGA_CLK     ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.039      ; 0.597      ;
+; 0.398 ; VGA_controller:vga_controller|VGA_COUNTER ; VGA_controller:vga_controller|VGA_COUNTER ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.039      ; 0.608      ;
+; 0.409 ; VGA_controller:vga_controller|VGA_COUNTER ; VGA_controller:vga_controller|VGA_CLK     ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.045      ; 0.625      ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 ----------------------------------------------
@@ -687,7 +298,7 @@ No synchronizer chains to report.
 +---------+-------+------------------+
 ; Clock   ; Slack ; End Point TNS    ;
 +---------+-------+------------------+
-; SYS_CLK ; 7.389 ; 0.000            ;
+; SYS_CLK ; 9.610 ; 0.000            ;
 +---------+-------+------------------+
 
 
@@ -696,7 +307,7 @@ No synchronizer chains to report.
 +---------+-------+-----------------+
 ; Clock   ; Slack ; End Point TNS   ;
 +---------+-------+-----------------+
-; SYS_CLK ; 0.181 ; 0.000           ;
+; SYS_CLK ; 0.201 ; 0.000           ;
 +---------+-------+-----------------+
 
 
@@ -717,225 +328,31 @@ No paths to report.
 +----------+--------+------------------------------+
 ; Clock    ; Slack  ; End Point TNS                ;
 +----------+--------+------------------------------+
-; SYS_CLK  ; 4.373  ; 0.000                        ;
+; SYS_CLK  ; 4.368  ; 0.000                        ;
 ; CLOCK_50 ; 16.000 ; 0.000                        ;
 +----------+--------+------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Setup: 'SYS_CLK'                                                                                                                                                                                                 ;
-+-------+------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                          ; To Node                                                                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 7.389 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.090      ; 2.730      ;
-; 7.389 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.090      ; 2.730      ;
-; 7.394 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.090      ; 2.725      ;
-; 7.394 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.090      ; 2.725      ;
-; 7.397 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.090      ; 2.722      ;
-; 7.397 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.090      ; 2.722      ;
-; 7.413 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.138      ; 2.754      ;
-; 7.413 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.138      ; 2.754      ;
-; 7.418 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.138      ; 2.749      ;
-; 7.418 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.138      ; 2.749      ;
-; 7.421 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.138      ; 2.746      ;
-; 7.421 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.138      ; 2.746      ;
-; 7.444 ; frame_number:f_num|frame_reg       ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.104      ; 2.689      ;
-; 7.459 ; frame_number:f_num|frame_reg       ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.134      ; 2.704      ;
-; 7.476 ; frame_number:f_num|frame_reg       ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.136      ; 2.689      ;
-; 7.479 ; frame_controller:f_ctl|fb_addr[17] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.076      ; 2.626      ;
-; 7.479 ; frame_controller:f_ctl|fb_addr[17] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.076      ; 2.626      ;
-; 7.490 ; frame_controller:f_ctl|fb_addr[15] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.076      ; 2.615      ;
-; 7.490 ; frame_controller:f_ctl|fb_addr[15] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.076      ; 2.615      ;
-; 7.491 ; frame_number:f_num|frame_reg       ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.166      ; 2.704      ;
-; 7.492 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_we_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.170      ; 2.707      ;
-; 7.492 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.170      ; 2.707      ;
-; 7.494 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_datain_reg0  ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.173      ; 2.708      ;
-; 7.500 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_we_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.170      ; 2.699      ;
-; 7.500 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.170      ; 2.699      ;
-; 7.502 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_datain_reg0  ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.173      ; 2.700      ;
-; 7.503 ; frame_controller:f_ctl|fb_addr[17] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.124      ; 2.650      ;
-; 7.503 ; frame_controller:f_ctl|fb_addr[17] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.124      ; 2.650      ;
-; 7.514 ; frame_controller:f_ctl|fb_addr[15] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.124      ; 2.639      ;
-; 7.514 ; frame_controller:f_ctl|fb_addr[15] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.124      ; 2.639      ;
-; 7.529 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.107      ; 2.607      ;
-; 7.529 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.107      ; 2.607      ;
-; 7.530 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.108      ; 2.607      ;
-; 7.530 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.108      ; 2.607      ;
-; 7.534 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.107      ; 2.602      ;
-; 7.534 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.107      ; 2.602      ;
-; 7.535 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.108      ; 2.602      ;
-; 7.535 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.108      ; 2.602      ;
-; 7.537 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.107      ; 2.599      ;
-; 7.537 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.107      ; 2.599      ;
-; 7.538 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.108      ; 2.599      ;
-; 7.538 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.108      ; 2.599      ;
-; 7.538 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.108      ; 2.599      ;
-; 7.538 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.108      ; 2.599      ;
-; 7.543 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.108      ; 2.594      ;
-; 7.543 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.108      ; 2.594      ;
-; 7.545 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.090      ; 2.574      ;
-; 7.545 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.090      ; 2.574      ;
-; 7.546 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.090      ; 2.573      ;
-; 7.546 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.090      ; 2.573      ;
-; 7.546 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.108      ; 2.591      ;
-; 7.546 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.108      ; 2.591      ;
-; 7.550 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.090      ; 2.569      ;
-; 7.550 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.090      ; 2.569      ;
-; 7.551 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.090      ; 2.568      ;
-; 7.551 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.090      ; 2.568      ;
-; 7.553 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.090      ; 2.566      ;
-; 7.553 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.090      ; 2.566      ;
-; 7.554 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.090      ; 2.565      ;
-; 7.554 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.090      ; 2.565      ;
-; 7.555 ; frame_number:f_num|frame_reg       ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.128      ; 2.602      ;
-; 7.555 ; frame_number:f_num|frame_reg       ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.128      ; 2.602      ;
-; 7.569 ; frame_number:f_num|frame_reg       ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.128      ; 2.588      ;
-; 7.569 ; frame_number:f_num|frame_reg       ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.128      ; 2.588      ;
-; 7.569 ; frame_number:f_num|frame_reg       ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.125      ; 2.585      ;
-; 7.569 ; frame_number:f_num|frame_reg       ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.125      ; 2.585      ;
-; 7.593 ; frame_controller:f_ctl|fb_addr[15] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_we_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.156      ; 2.592      ;
-; 7.593 ; frame_controller:f_ctl|fb_addr[15] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.156      ; 2.592      ;
-; 7.595 ; frame_controller:f_ctl|fb_addr[15] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a6~porta_datain_reg0  ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.159      ; 2.593      ;
-; 7.604 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.120      ; 2.545      ;
-; 7.604 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.120      ; 2.545      ;
-; 7.609 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_we_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.140      ; 2.560      ;
-; 7.609 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.140      ; 2.560      ;
-; 7.609 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.120      ; 2.540      ;
-; 7.609 ; frame_controller:f_ctl|fb_addr[16] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.120      ; 2.540      ;
-; 7.611 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~porta_we_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.164      ; 2.582      ;
-; 7.611 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.164      ; 2.582      ;
-; 7.611 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_datain_reg0  ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.143      ; 2.561      ;
-; 7.612 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.120      ; 2.537      ;
-; 7.612 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.120      ; 2.537      ;
-; 7.613 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~porta_datain_reg0    ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.167      ; 2.583      ;
-; 7.613 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~porta_we_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.139      ; 2.555      ;
-; 7.613 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.139      ; 2.555      ;
-; 7.615 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~porta_datain_reg0  ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.142      ; 2.556      ;
-; 7.617 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_we_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.140      ; 2.552      ;
-; 7.617 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.140      ; 2.552      ;
-; 7.619 ; frame_controller:f_ctl|fb_addr[17] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.093      ; 2.503      ;
-; 7.619 ; frame_controller:f_ctl|fb_addr[17] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.093      ; 2.503      ;
-; 7.619 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~porta_we_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.164      ; 2.574      ;
-; 7.619 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.164      ; 2.574      ;
-; 7.619 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~porta_datain_reg0  ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.143      ; 2.553      ;
-; 7.620 ; frame_controller:f_ctl|fb_addr[17] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.094      ; 2.503      ;
-; 7.620 ; frame_controller:f_ctl|fb_addr[17] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a3~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.094      ; 2.503      ;
-; 7.621 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~porta_datain_reg0    ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.167      ; 2.575      ;
-; 7.621 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~porta_we_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.139      ; 2.547      ;
-; 7.621 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.139      ; 2.547      ;
-; 7.623 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~porta_we_reg       ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.140      ; 2.546      ;
-; 7.623 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.140      ; 2.546      ;
-; 7.623 ; frame_controller:f_ctl|fb_addr[14] ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~porta_datain_reg0  ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.142      ; 2.548      ;
-; 7.624 ; frame_controller:f_ctl|fb_addr[13] ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a7~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 10.000       ; 0.132      ; 2.537      ;
-+-------+------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'SYS_CLK'                                                                                                                               ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                 ; To Node                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 9.610 ; VGA_controller:vga_controller|VGA_COUNTER ; VGA_controller:vga_controller|VGA_CLK     ; SYS_CLK      ; SYS_CLK     ; 10.000       ; -0.023     ; 0.374      ;
+; 9.626 ; VGA_controller:vga_controller|VGA_COUNTER ; VGA_controller:vga_controller|VGA_COUNTER ; SYS_CLK      ; SYS_CLK     ; 10.000       ; -0.022     ; 0.359      ;
+; 9.626 ; VGA_controller:vga_controller|VGA_CLK     ; VGA_controller:vga_controller|VGA_CLK     ; SYS_CLK      ; SYS_CLK     ; 10.000       ; -0.022     ; 0.359      ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Hold: 'SYS_CLK'                                                                                                                                                                                                             ;
-+-------+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                                     ; To Node                                                                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.181 ; frame_controller:f_ctl|fb_addr[17]            ; frame_controller:f_ctl|fb_addr[17]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.042      ; 0.307      ;
-; 0.181 ; frame_controller:f_ctl|fb_addr[15]            ; frame_controller:f_ctl|fb_addr[15]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.042      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|curr_pix[7]            ; frame_controller:f_ctl|curr_pix[7]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|curr_pix[6]            ; frame_controller:f_ctl|curr_pix[6]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|curr_pix[1]            ; frame_controller:f_ctl|curr_pix[1]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|curr_pix[2]            ; frame_controller:f_ctl|curr_pix[2]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|curr_pix[5]            ; frame_controller:f_ctl|curr_pix[5]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|curr_pix[4]            ; frame_controller:f_ctl|curr_pix[4]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|curr_pix[3]            ; frame_controller:f_ctl|curr_pix[3]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|curr_pix[0]            ; frame_controller:f_ctl|curr_pix[0]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|counter[1]             ; frame_controller:f_ctl|counter[1]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|curr_state.WAIT        ; frame_controller:f_ctl|curr_state.WAIT                                                                             ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_number:f_num|frame_reg                  ; frame_number:f_num|frame_reg                                                                                       ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|fb_addr[12]            ; frame_controller:f_ctl|fb_addr[12]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|fb_addr[13]            ; frame_controller:f_ctl|fb_addr[13]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|fb_addr[16]            ; frame_controller:f_ctl|fb_addr[16]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|fb_addr[14]            ; frame_controller:f_ctl|fb_addr[14]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|fb_addr[11]            ; frame_controller:f_ctl|fb_addr[11]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|fb_addr[10]            ; frame_controller:f_ctl|fb_addr[10]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|fb_addr[9]             ; frame_controller:f_ctl|fb_addr[9]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|fb_addr[8]             ; frame_controller:f_ctl|fb_addr[8]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|fb_addr[7]             ; frame_controller:f_ctl|fb_addr[7]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|fb_addr[6]             ; frame_controller:f_ctl|fb_addr[6]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|fb_addr[5]             ; frame_controller:f_ctl|fb_addr[5]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|fb_addr[4]             ; frame_controller:f_ctl|fb_addr[4]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|fb_addr[3]             ; frame_controller:f_ctl|fb_addr[3]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|fb_addr[2]             ; frame_controller:f_ctl|fb_addr[2]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|fb_addr[1]             ; frame_controller:f_ctl|fb_addr[1]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; frame_controller:f_ctl|fb_addr[0]             ; frame_controller:f_ctl|fb_addr[0]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.307      ;
-; 0.188 ; VGA_controller:vga_controller|VGA_COUNTER     ; VGA_controller:vga_controller|VGA_COUNTER                                                                          ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.042      ; 0.314      ;
-; 0.189 ; frame_controller:f_ctl|counter[0]             ; frame_controller:f_ctl|counter[0]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.314      ;
-; 0.196 ; frame_controller:f_ctl|counter[0]             ; frame_controller:f_ctl|counter[1]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.321      ;
-; 0.201 ; VGA_controller:vga_controller|VGA_CLK         ; VGA_controller:vga_controller|VGA_CLK                                                                              ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.022      ; 0.307      ;
-; 0.201 ; frame_controller:f_ctl|curr_state.WAIT        ; frame_controller:f_ctl|counter[0]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.326      ;
-; 0.306 ; frame_controller:f_ctl|curr_state.WAIT        ; frame_controller:f_ctl|counter[1]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.431      ;
-; 0.328 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_state.WAIT                                                                             ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.453      ;
-; 0.331 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|curr_state.WRITE_PIXEL                                                                      ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.456      ;
-; 0.331 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|curr_state.DONE                                                                             ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.456      ;
-; 0.359 ; frame_controller:f_ctl|curr_state.WAIT        ; frame_controller:f_ctl|curr_state.GET_ROW                                                                          ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.484      ;
-; 0.366 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.222      ; 0.692      ;
-; 0.408 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.181      ; 0.693      ;
-; 0.437 ; frame_controller:f_ctl|curr_state.WRITE_PIXEL ; frame_controller:f_ctl|curr_state.GET_ROW                                                                          ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.562      ;
-; 0.455 ; frame_number:f_num|frame_reg                  ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_re_reg       ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.197      ; 0.756      ;
-; 0.464 ; frame_controller:f_ctl|fb_addr[7]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.222      ; 0.790      ;
-; 0.466 ; frame_controller:f_ctl|curr_state.WRITE_PIXEL ; frame_controller:f_ctl|curr_pix[5]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.040      ; 0.590      ;
-; 0.467 ; frame_controller:f_ctl|curr_state.WRITE_PIXEL ; frame_controller:f_ctl|curr_pix[1]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.040      ; 0.591      ;
-; 0.479 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_state.GET_ROW                                                                          ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.604      ;
-; 0.506 ; frame_controller:f_ctl|fb_addr[7]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.181      ; 0.791      ;
-; 0.511 ; frame_controller:f_ctl|counter[0]             ; frame_controller:f_ctl|curr_state.GET_ROW                                                                          ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.636      ;
-; 0.516 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.227      ; 0.847      ;
-; 0.520 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.219      ; 0.843      ;
-; 0.535 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.221      ; 0.860      ;
-; 0.536 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.220      ; 0.860      ;
-; 0.539 ; frame_controller:f_ctl|fb_addr[0]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.236      ; 0.879      ;
-; 0.539 ; frame_controller:f_ctl|fb_addr[4]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.236      ; 0.879      ;
-; 0.541 ; frame_controller:f_ctl|fb_addr[3]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.236      ; 0.881      ;
-; 0.541 ; frame_controller:f_ctl|fb_addr[12]            ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.237      ; 0.882      ;
-; 0.551 ; frame_number:f_num|frame_reg                  ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.190      ; 0.845      ;
-; 0.552 ; frame_controller:f_ctl|fb_addr[12]            ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.242      ; 0.898      ;
-; 0.555 ; frame_controller:f_ctl|fb_addr[10]            ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.237      ; 0.896      ;
-; 0.558 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a2~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.186      ; 0.848      ;
-; 0.559 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[2]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.065      ; 0.708      ;
-; 0.559 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[5]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.065      ; 0.708      ;
-; 0.560 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[0]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.065      ; 0.709      ;
-; 0.560 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[1]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.065      ; 0.709      ;
-; 0.560 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[3]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.065      ; 0.709      ;
-; 0.560 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[4]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.065      ; 0.709      ;
-; 0.560 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[6]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.065      ; 0.709      ;
-; 0.562 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a4~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.178      ; 0.844      ;
-; 0.563 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[10]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.064      ; 0.711      ;
-; 0.564 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[11]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.064      ; 0.712      ;
-; 0.565 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[12]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.064      ; 0.713      ;
-; 0.566 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[9]                                                                                  ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.064      ; 0.714      ;
-; 0.566 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[14]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.064      ; 0.714      ;
-; 0.567 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[13]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.064      ; 0.715      ;
-; 0.567 ; frame_number:f_num|frame_reg                  ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|rden_b_store                    ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.030      ; 0.681      ;
-; 0.568 ; frame_controller:f_ctl|curr_state.GET_ROW     ; frame_controller:f_ctl|fb_addr[16]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.064      ; 0.716      ;
-; 0.575 ; frame_number:f_num|frame_reg                  ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.197      ; 0.876      ;
-; 0.577 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.180      ; 0.861      ;
-; 0.578 ; frame_controller:f_ctl|fb_addr[8]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a1~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.179      ; 0.861      ;
-; 0.581 ; frame_controller:f_ctl|fb_addr[0]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.195      ; 0.880      ;
-; 0.581 ; frame_controller:f_ctl|fb_addr[4]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.195      ; 0.880      ;
-; 0.583 ; frame_controller:f_ctl|fb_addr[3]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.195      ; 0.882      ;
-; 0.583 ; frame_controller:f_ctl|fb_addr[12]            ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.196      ; 0.883      ;
-; 0.594 ; frame_controller:f_ctl|fb_addr[12]            ; RAM_param:fb_update|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.201      ; 0.899      ;
-; 0.597 ; frame_controller:f_ctl|fb_addr[10]            ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.196      ; 0.897      ;
-; 0.598 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[6]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.040      ; 0.722      ;
-; 0.598 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[3]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.040      ; 0.722      ;
-; 0.599 ; frame_controller:f_ctl|curr_state.WRITE_PIXEL ; frame_controller:f_ctl|curr_pix[3]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.040      ; 0.723      ;
-; 0.599 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[0]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.040      ; 0.723      ;
-; 0.600 ; frame_controller:f_ctl|curr_state.WRITE_PIXEL ; frame_controller:f_ctl|curr_pix[6]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.040      ; 0.724      ;
-; 0.601 ; frame_controller:f_ctl|curr_state.WRITE_PIXEL ; frame_controller:f_ctl|curr_pix[0]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.040      ; 0.725      ;
-; 0.602 ; frame_number:f_num|frame_reg                  ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a0~portb_re_reg         ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.192      ; 0.898      ;
-; 0.604 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[2]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.040      ; 0.728      ;
-; 0.604 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[5]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.040      ; 0.728      ;
-; 0.604 ; frame_controller:f_ctl|fb_addr[7]             ; RAM_param:fb_curr|altsyncram:altsyncram_component|altsyncram_jcu1:auto_generated|ram_block1a5~porta_address_reg0   ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.221      ; 0.929      ;
-; 0.605 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[1]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.040      ; 0.729      ;
-; 0.605 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[4]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.040      ; 0.729      ;
-; 0.605 ; frame_controller:f_ctl|fb_addr[9]             ; frame_controller:f_ctl|fb_addr[10]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.041      ; 0.730      ;
-; 0.606 ; frame_controller:f_ctl|curr_state.DONE        ; frame_controller:f_ctl|curr_pix[7]                                                                                 ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.040      ; 0.730      ;
-+-------+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'SYS_CLK'                                                                                                                                ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                 ; To Node                                   ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.201 ; VGA_controller:vga_controller|VGA_CLK     ; VGA_controller:vga_controller|VGA_CLK     ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.022      ; 0.307      ;
+; 0.208 ; VGA_controller:vga_controller|VGA_COUNTER ; VGA_controller:vga_controller|VGA_COUNTER ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.022      ; 0.314      ;
+; 0.209 ; VGA_controller:vga_controller|VGA_COUNTER ; VGA_controller:vga_controller|VGA_CLK     ; SYS_CLK      ; SYS_CLK     ; 0.000        ; 0.023      ; 0.316      ;
++-------+-------------------------------------------+-------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 ----------------------------------------------
@@ -949,9 +366,9 @@ No synchronizer chains to report.
 +------------------+-------+-------+----------+---------+---------------------+
 ; Clock            ; Setup ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+-------+-------+----------+---------+---------------------+
-; Worst-case Slack ; 4.744 ; 0.181 ; N/A      ; N/A     ; 4.373               ;
+; Worst-case Slack ; 9.169 ; 0.201 ; N/A      ; N/A     ; 4.368               ;
 ;  CLOCK_50        ; N/A   ; N/A   ; N/A      ; N/A     ; 16.000              ;
-;  SYS_CLK         ; 4.744 ; 0.181 ; N/A      ; N/A     ; 4.373               ;
+;  SYS_CLK         ; 9.169 ; 0.201 ; N/A      ; N/A     ; 4.368               ;
 ; Design-wide TNS  ; 0.0   ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
 ;  CLOCK_50        ; N/A   ; N/A   ; N/A      ; N/A     ; 0.000               ;
 ;  SYS_CLK         ; 0.000 ; 0.000 ; N/A      ; N/A     ; 0.000               ;
@@ -1085,8 +502,116 @@ No synchronizer chains to report.
 ; KEY[1]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; KEY[2]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; KEY[3]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_D[0]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_D[1]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_D[2]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_D[3]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_D[4]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_D[5]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_D[6]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_D[7]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_X[0]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_X[1]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_X[2]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_X[3]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_X[4]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_X[5]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_X[6]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_X[7]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_X[8]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_X[9]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_X[10]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_X[11]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_X[12]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_X[13]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_X[14]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_X[15]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_Y[0]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_Y[1]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_Y[2]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_Y[3]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_Y[4]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_Y[5]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_Y[6]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_Y[7]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_Y[8]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_Y[9]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_Y[10]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_Y[11]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_Y[12]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_Y[13]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_Y[14]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_Y[15]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_A[0]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_A[1]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_A[2]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_A[3]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_A[4]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_A[5]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_A[6]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_A[7]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_A[8]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_A[9]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_A[10]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_A[11]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_A[12]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_A[13]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_A[14]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_A[15]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_A[16]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_A[17]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; OTG_INT[0]              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; OTG_INT[1]              ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_ID[15]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_ID[14]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_ID[13]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_ID[12]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_ID[11]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_ID[10]                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_ID[9]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_ID[8]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_ID[7]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_ID[6]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_ID[5]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_ID[4]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_ID[3]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_ID[2]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_ID[1]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_ID[0]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_AV                    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_DO                    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_H[0]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_H[1]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_H[2]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_H[3]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_H[4]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_H[5]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_H[6]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_H[7]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_H[8]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_H[9]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_H[10]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_H[11]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_H[12]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_H[13]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_H[14]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_H[15]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_W[0]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_W[1]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_W[2]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_W[3]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_W[4]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_W[5]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_W[6]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_W[7]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_W[8]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_W[9]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_W[10]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_W[11]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_W[12]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_W[13]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_W[14]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; S_W[15]                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; OTG_DATA[0]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; OTG_DATA[1]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; OTG_DATA[2]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
@@ -1502,7 +1027,7 @@ No synchronizer chains to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; SYS_CLK    ; SYS_CLK  ; 1908     ; 0        ; 0        ; 0        ;
+; SYS_CLK    ; SYS_CLK  ; 3        ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1512,7 +1037,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; SYS_CLK    ; SYS_CLK  ; 1908     ; 0        ; 0        ; 0        ;
+; SYS_CLK    ; SYS_CLK  ; 3        ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1537,9 +1062,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 1     ; 1    ;
 ; Unconstrained Input Ports       ; 1     ; 1    ;
-; Unconstrained Input Port Paths  ; 26    ; 26   ;
-; Unconstrained Output Ports      ; 28    ; 28   ;
-; Unconstrained Output Port Paths ; 196   ; 196  ;
+; Unconstrained Input Port Paths  ; 25    ; 25   ;
+; Unconstrained Output Ports      ; 4     ; 4    ;
+; Unconstrained Output Port Paths ; 4     ; 4    ;
 +---------------------------------+-------+------+
 
 
@@ -1569,32 +1094,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Output Port ; Comment                                                                               ;
 +-------------+---------------------------------------------------------------------------------------+
 ; VGA_BLANK_N ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_B[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_B[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_B[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_B[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_B[4]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_B[5]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_B[6]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_B[7]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_CLK     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_G[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_G[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_G[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_G[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_G[4]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_G[5]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_G[6]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_G[7]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_HS      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_R[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_R[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_R[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_R[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_R[4]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_R[5]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_R[6]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_R[7]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_VS      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
 
@@ -1614,32 +1115,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Output Port ; Comment                                                                               ;
 +-------------+---------------------------------------------------------------------------------------+
 ; VGA_BLANK_N ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_B[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_B[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_B[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_B[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_B[4]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_B[5]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_B[6]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_B[7]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_CLK     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_G[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_G[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_G[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_G[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_G[4]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_G[5]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_G[6]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_G[7]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_HS      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_R[0]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_R[1]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_R[2]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_R[3]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_R[4]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_R[5]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_R[6]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; VGA_R[7]    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_VS      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
 
@@ -1650,7 +1127,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Dec 04 00:22:11 2018
+    Info: Processing started: Wed Dec 05 08:59:24 2018
 Info: Command: quartus_sta mario_cv_game -c mario_cv_game
 Info: qsta_default_script.tcl version: #1
 Info (20032): Parallel compilation is enabled and will use up to 4 processors
@@ -1726,74 +1203,74 @@ Warning (332049): Ignored set_false_path at final_project_nios2_gen2_0_cpu.sdc(5
     Info (332050): set_false_path -from sld_hub:*|sld_shadow_jsm:shadow_jsm|state[1] -to *$final_project_nios2_gen2_0_cpu_oci_debug_path|monitor_go File: C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.sdc Line: 53
 Warning (332049): Ignored set_false_path at final_project_nios2_gen2_0_cpu.sdc(53): Argument <to> is not an object ID File: C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/db/ip/final_project/submodules/final_project_nios2_gen2_0_cpu.sdc Line: 53
 Warning (332060): Node: VGA_controller:vga_controller|VGA_CLK was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register read_active is being clocked by VGA_controller:vga_controller|VGA_CLK
+    Info (13166): Register VGA_controller:vga_controller|h_counter[0] is being clocked by VGA_controller:vga_controller|VGA_CLK
 Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
     Critical Warning (332169): From SYS_CLK (Rise) to SYS_CLK (Rise) (setup and hold)
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
-Info (332146): Worst-case setup slack is 4.744
+Info (332146): Worst-case setup slack is 9.169
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     4.744               0.000 SYS_CLK 
-Info (332146): Worst-case hold slack is 0.402
+    Info (332119):     9.169               0.000 SYS_CLK 
+Info (332146): Worst-case hold slack is 0.440
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.402               0.000 SYS_CLK 
+    Info (332119):     0.440               0.000 SYS_CLK 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 4.626
+Info (332146): Worst-case minimum pulse width slack is 4.747
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     4.626               0.000 SYS_CLK 
+    Info (332119):     4.747               0.000 SYS_CLK 
     Info (332119):    16.000               0.000 CLOCK_50 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Warning (332060): Node: VGA_controller:vga_controller|VGA_CLK was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register read_active is being clocked by VGA_controller:vga_controller|VGA_CLK
+    Info (13166): Register VGA_controller:vga_controller|h_counter[0] is being clocked by VGA_controller:vga_controller|VGA_CLK
 Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
     Critical Warning (332169): From SYS_CLK (Rise) to SYS_CLK (Rise) (setup and hold)
-Info (332146): Worst-case setup slack is 5.205
+Info (332146): Worst-case setup slack is 9.248
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     5.205               0.000 SYS_CLK 
-Info (332146): Worst-case hold slack is 0.354
+    Info (332119):     9.248               0.000 SYS_CLK 
+Info (332146): Worst-case hold slack is 0.387
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.354               0.000 SYS_CLK 
+    Info (332119):     0.387               0.000 SYS_CLK 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 4.647
+Info (332146): Worst-case minimum pulse width slack is 4.788
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     4.647               0.000 SYS_CLK 
+    Info (332119):     4.788               0.000 SYS_CLK 
     Info (332119):    16.000               0.000 CLOCK_50 
 Info: Analyzing Fast 1200mV 0C Model
 Warning (332060): Node: VGA_controller:vga_controller|VGA_CLK was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register read_active is being clocked by VGA_controller:vga_controller|VGA_CLK
+    Info (13166): Register VGA_controller:vga_controller|h_counter[0] is being clocked by VGA_controller:vga_controller|VGA_CLK
 Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
     Critical Warning (332169): From SYS_CLK (Rise) to SYS_CLK (Rise) (setup and hold)
-Info (332146): Worst-case setup slack is 7.389
+Info (332146): Worst-case setup slack is 9.610
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     7.389               0.000 SYS_CLK 
-Info (332146): Worst-case hold slack is 0.181
+    Info (332119):     9.610               0.000 SYS_CLK 
+Info (332146): Worst-case hold slack is 0.201
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.181               0.000 SYS_CLK 
+    Info (332119):     0.201               0.000 SYS_CLK 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 4.373
+Info (332146): Worst-case minimum pulse width slack is 4.368
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     4.373               0.000 SYS_CLK 
+    Info (332119):     4.368               0.000 SYS_CLK 
     Info (332119):    16.000               0.000 CLOCK_50 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 56 warnings
-    Info: Peak virtual memory: 4895 megabytes
-    Info: Processing ended: Tue Dec 04 00:22:14 2018
+    Info: Peak virtual memory: 4868 megabytes
+    Info: Processing ended: Wed Dec 05 08:59:27 2018
     Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 

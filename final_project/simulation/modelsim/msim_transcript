@@ -10,105 +10,85 @@
 # Copying C:/Quartus/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/RAM_param.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:24:43 on Dec 02,2018
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/RAM_param.v 
-# -- Compiling module RAM_param
-# 
-# Top level modules:
-# 	RAM_param
-# End time: 01:24:43 on Dec 02,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_controller.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:24:43 on Dec 02,2018
+# Start time: 09:01:09 on Dec 05,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_controller.sv 
 # -- Compiling module sprite_controller
 # 
 # Top level modules:
 # 	sprite_controller
-# End time: 01:24:43 on Dec 02,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/read_frame_mux.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:24:44 on Dec 02,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/read_frame_mux.sv 
-# -- Compiling module read_frame_mux
-# 
-# Top level modules:
-# 	read_frame_mux
-# End time: 01:24:44 on Dec 02,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/write_frame_mux.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:24:44 on Dec 02,2018
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/write_frame_mux.sv 
-# -- Compiling module write_frame_mux
-# 
-# Top level modules:
-# 	write_frame_mux
-# End time: 01:24:44 on Dec 02,2018, Elapsed time: 0:00:00
+# End time: 09:01:09 on Dec 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_number.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:24:44 on Dec 02,2018
+# Start time: 09:01:09 on Dec 05,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_number.sv 
 # -- Compiling module frame_number
 # 
 # Top level modules:
 # 	frame_number
-# End time: 01:24:44 on Dec 02,2018, Elapsed time: 0:00:00
+# End time: 09:01:09 on Dec 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_fifo.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:24:44 on Dec 02,2018
+# Start time: 09:01:09 on Dec 05,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_fifo.sv 
 # -- Compiling module sprite_fifo
 # 
 # Top level modules:
 # 	sprite_fifo
-# End time: 01:24:44 on Dec 02,2018, Elapsed time: 0:00:00
+# End time: 09:01:09 on Dec 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_controller.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:24:44 on Dec 02,2018
+# Start time: 09:01:09 on Dec 05,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_controller.sv 
 # -- Compiling module frame_controller
 # 
 # Top level modules:
 # 	frame_controller
-# End time: 01:24:44 on Dec 02,2018, Elapsed time: 0:00:00
+# End time: 09:01:09 on Dec 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/VGA_controller.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:24:44 on Dec 02,2018
+# Start time: 09:01:09 on Dec 05,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/VGA_controller.sv 
 # -- Compiling module VGA_controller
 # 
 # Top level modules:
 # 	VGA_controller
-# End time: 01:24:44 on Dec 02,2018, Elapsed time: 0:00:00
+# End time: 09:01:09 on Dec 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/Color_Mapper.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:24:44 on Dec 02,2018
+# Start time: 09:01:09 on Dec 05,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/Color_Mapper.sv 
 # -- Compiling module Color_Mapper
 # 
 # Top level modules:
 # 	Color_Mapper
-# End time: 01:24:44 on Dec 02,2018, Elapsed time: 0:00:00
+# End time: 09:01:09 on Dec 05,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/RAM_param.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:01:09 on Dec 05,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/RAM_param.sv 
+# -- Compiling module RAM_param
+# 
+# Top level modules:
+# 	RAM_param
+# End time: 09:01:09 on Dec 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:24:44 on Dec 02,2018
+# Start time: 09:01:09 on Dec 05,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv 
 # -- Compiling module mario_cv_game
 # 
 # Top level modules:
 # 	mario_cv_game
-# End time: 01:24:44 on Dec 02,2018, Elapsed time: 0:00:00
+# End time: 09:01:09 on Dec 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlib final_project
 # ** Warning: (vlib-34) Library already exists at "final_project".
@@ -119,42 +99,28 @@
 # 
 # vlog -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project {C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/testbench.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:24:44 on Dec 02,2018
+# Start time: 09:01:09 on Dec 05,2018
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project" C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/testbench.sv 
 # -- Compiling module testbench
 # 
 # Top level modules:
 # 	testbench
-# End time: 01:24:44 on Dec 02,2018, Elapsed time: 0:00:00
+# End time: 09:01:09 on Dec 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -L final_project -voptargs="+acc"  testbench
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -L final_project -voptargs=""+acc"" testbench 
-# Start time: 01:24:44 on Dec 02,2018
+# Start time: 09:01:10 on Dec 05,2018
 # Loading sv_std.std
 # Loading work.testbench
 # Loading work.mario_cv_game
 # Loading work.sprite_fifo
-# Loading work.read_frame_mux
-# Loading work.write_frame_mux
 # Loading work.frame_number
 # Loading work.VGA_controller
 # Loading work.RAM_param
-# Loading altera_mf_ver.altsyncram
 # Loading work.frame_controller
 # Loading work.Color_Mapper
 # Loading work.sprite_controller
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3839) C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv(202): Variable '/testbench/mario_game/read_fb_addr', driven via a port connection, is multiply driven. See C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv(146).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/f_ctl File: C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_controller.sv
-# ** Warning: (vsim-3839) C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv(205): Variable '/testbench/mario_game/write_fb_addr', driven via a port connection, is multiply driven. See C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv(156).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/s_ctl File: C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_controller.sv
-# ** Warning: (vsim-3839) C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv(205): Variable '/testbench/mario_game/write_fb_data_in', driven via a port connection, is multiply driven. See C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv(156).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/s_ctl File: C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_controller.sv
-# ** Warning: (vsim-3839) C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv(205): Variable '/testbench/mario_game/write_fb_write_en', driven via a port connection, is multiply driven. See C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv(156).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/s_ctl File: C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_controller.sv
 # 
 # add wave *
 # view structure
@@ -162,9 +128,6 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run 20 ms
-# ** Warning: (vsim-PLI-3412) Memory address read on line 524289 of file "/Users/yeda_/Documents/ECE_385/ece-385/final_project/scripts/frame_buffer.ver" is out of bounds specified for readmem command.  (Current address [262144], address range [0:262143])    : /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v(48976)
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/fb_curr/altsyncram_component/m_default/altsyncram_inst
-# ** Warning: (vsim-PLI-3412) Memory address read on line 524289 of file "/Users/yeda_/Documents/ECE_385/ece-385/final_project/scripts/frame_buffer.ver" is out of bounds specified for readmem command.  (Current address [262144], address range [0:262143])    : /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_mf.v(48976)
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/mario_game/fb_update/altsyncram_component/m_default/altsyncram_inst
-# End time: 04:05:13 on Dec 02,2018, Elapsed time: 2:40:29
-# Errors: 0, Warnings: 6
+# WARNING: No extended dataflow license exists
+# End time: 17:49:19 on Dec 05,2018, Elapsed time: 8:48:09
+# Errors: 0, Warnings: 1

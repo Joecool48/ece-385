@@ -27,7 +27,8 @@
 			sprite_width_pio_export        : out   std_logic_vector(15 downto 0);                    -- export
 			sprite_x_pio_export            : out   std_logic_vector(15 downto 0);                    -- export
 			sprite_y_pio_export            : out   std_logic_vector(15 downto 0);                    -- export
-			sys_clk_clk                    : out   std_logic                                         -- clk
+			sys_clk_clk                    : out   std_logic;                                        -- clk
+			sprite_rotate_pio_export       : out   std_logic_vector(1 downto 0)                      -- export
 		);
 	end component final_project;
 
@@ -60,6 +61,7 @@
 			sprite_width_pio_export        => CONNECTED_TO_sprite_width_pio_export,        --   sprite_width_pio.export
 			sprite_x_pio_export            => CONNECTED_TO_sprite_x_pio_export,            --       sprite_x_pio.export
 			sprite_y_pio_export            => CONNECTED_TO_sprite_y_pio_export,            --       sprite_y_pio.export
-			sys_clk_clk                    => CONNECTED_TO_sys_clk_clk                     --            sys_clk.clk
+			sys_clk_clk                    => CONNECTED_TO_sys_clk_clk,                    --            sys_clk.clk
+			sprite_rotate_pio_export       => CONNECTED_TO_sprite_rotate_pio_export        --  sprite_rotate_pio.export
 		);
 
