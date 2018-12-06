@@ -34,7 +34,7 @@ for image in images:
     im.close()
 
 # Converts the image to a 8 hex width column major order text file
-
+sprite_file = open("sprite_file.txt", "w", 1)
 address_offset = 0
 sprite_id_start = 1
 MAX_ADDRESSES = pixel_count
@@ -55,9 +55,9 @@ for img in images:
     status_file.write("Width: " + str(im.width) + "\n")
     status_file.write("Height: " + str(im.height) + "\n")
     status_file.write("Start Address " + str(address_offset) + "\n")
+    sprite_file.write("Sprite " + img[img.rfind("/") + 1: img.rfind(".")] + " (0, 0, " + str(im.width) + ", " + str(im.height) + ", " + "ADDRESS_OFFSET + " + str(address_offset) + ");\n")
     for x in range(im.width):
         for y in range(im.height):
-            print(img, im.getpixel((x,y)))
             pix = im.getpixel((x,y))
             if not (pix[0], pix[1], pix[2]) in color_dict and pix[3] == 0:
                 mem_file.write(format(address_offset, "0" + str(int(math.ceil(math.log(MAX_ADDRESSES, 16)))) + "x"))

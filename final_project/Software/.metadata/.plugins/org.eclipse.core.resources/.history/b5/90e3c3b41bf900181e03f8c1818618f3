@@ -123,24 +123,10 @@ void Player::animatorSetup() {
 	Sprite mini_mario2 (0, 0, 16, 16, ADDRESS_OFFSET + 789401);
 	Sprite mini_mario10 (0, 0, 16, 16, ADDRESS_OFFSET + 789658);
 	Sprite mini_mario11 (0, 0, 16, 16, ADDRESS_OFFSET + 789915);
-	// Init normal mario sprites
 	state_mode_to_frames_map[IDLE][NORMAL_MODE].push_back(sprite1);
-	state_mode_to_frames_map[WALKING][NORMAL_MODE].push_back(sprite2);
-	state_mode_to_frames_map[WALKING][NORMAL_MODE].push_back(sprite3);
-	state_mode_to_frames_map[WALKING][NORMAL_MODE].push_back(sprite4);
-	state_mode_to_frames_map[FLIPPING][NORMAL_MODE].push_back(sprite5);
-	state_mode_to_frames_map[JUMPING][NORMAL_MODE].push_back(sprite6);
-	state_mode_to_frames_map[CROUCHING][NORMAL_MODE].push_back(sprite7);
-	// Init mini-mario sprites
-	state_mode_to_frames_map[IDLE][MINI_MODE].push_back(sprite1);
-	state_mode_to_frames_map[WALKING][MINI_MODE].push_back(sprite2);
-	state_mode_to_frames_map[WALKING][MINI_MODE].push_back(sprite3);
-	state_mode_to_frames_map[WALKING][MINI_MODE].push_back(sprite4);
-	state_mode_to_frames_map[FLIPPING][MINI_MODE].push_back(sprite5);
-	state_mode_to_frames_map[JUMPING][MINI_MODE].push_back(sprite6);
-	state_mode_to_frames_map[CROUCHING][MINI_MODE].push_back(sprite7);
-}
+	state_mode_to_frames_map[IDLE][NORMAL_MODE].push_back(sprite1);
 
+}
 /*
  * getKey returns NO_KEY if enablePlayerControl is off
  */

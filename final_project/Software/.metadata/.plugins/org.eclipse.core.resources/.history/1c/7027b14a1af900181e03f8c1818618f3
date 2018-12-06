@@ -8,7 +8,6 @@
 #include <iostream>
 #include "config.h"
 #include "item.h"
-#include "sprite.h"
 /*
  * TODO
  * Make sure to set background!!!
@@ -67,80 +66,29 @@ Player::Player() {
  * Maps all the states and modes to their respective series of sprite frames
  */
 void Player::animatorSetup() {
-	Sprite sprite9 (0, 0, 16, 32, ADDRESS_OFFSET + 775801);
-	Sprite sprite13 (0, 0, 16, 32, ADDRESS_OFFSET + 776314);
-	Sprite sprite17 (0, 0, 16, 32, ADDRESS_OFFSET + 776827);
-	Sprite sprite21 (0, 0, 16, 32, ADDRESS_OFFSET + 777340);
-	Sprite sprite2 (0, 0, 16, 32, ADDRESS_OFFSET + 777853);
-	Sprite sprite19 (0, 0, 16, 32, ADDRESS_OFFSET + 778366);
-	Sprite sprite7 (0, 0, 16, 32, ADDRESS_OFFSET + 778879);
-	Sprite sprite12 (0, 0, 16, 32, ADDRESS_OFFSET + 779392);
-	Sprite sprite4 (0, 0, 16, 32, ADDRESS_OFFSET + 779905);
-	Sprite sprite3 (0, 0, 16, 32, ADDRESS_OFFSET + 780418);
-	Sprite sprite1 (0, 0, 16, 32, ADDRESS_OFFSET + 780931);
-	Sprite sprite16 (0, 0, 16, 32, ADDRESS_OFFSET + 781444);
-	Sprite sprite11 (0, 0, 16, 32, ADDRESS_OFFSET + 781957);
-	Sprite sprite14 (0, 0, 16, 32, ADDRESS_OFFSET + 782470);
-	Sprite sprite5 (0, 0, 16, 32, ADDRESS_OFFSET + 782983);
-	Sprite sprite8 (0, 0, 16, 32, ADDRESS_OFFSET + 783496);
-	Sprite sprite20 (0, 0, 16, 32, ADDRESS_OFFSET + 784009);
-	Sprite sprite6 (0, 0, 16, 32, ADDRESS_OFFSET + 784522);
-	Sprite sprite15 (0, 0, 16, 32, ADDRESS_OFFSET + 785035);
-	Sprite sprite18 (0, 0, 16, 32, ADDRESS_OFFSET + 785548);
-	Sprite sprite10 (0, 0, 16, 32, ADDRESS_OFFSET + 786061);
-	Sprite fire_mario21 (0, 0, 16, 31, ADDRESS_OFFSET + 763176);
-	Sprite fire_mario3 (0, 0, 16, 31, ADDRESS_OFFSET + 763673);
-	Sprite fire_mario13 (0, 0, 16, 31, ADDRESS_OFFSET + 764170);
-	Sprite fire_mario4 (0, 0, 16, 31, ADDRESS_OFFSET + 764667);
-	Sprite fire_mario10 (0, 0, 16, 31, ADDRESS_OFFSET + 765164);
-	Sprite fire_mario2 (0, 0, 16, 31, ADDRESS_OFFSET + 765661);
-	Sprite fire_mario17 (0, 0, 16, 31, ADDRESS_OFFSET + 766158);
-	Sprite fire_mario1 (0, 0, 16, 31, ADDRESS_OFFSET + 766655);
-	Sprite fire_mario5 (0, 0, 16, 31, ADDRESS_OFFSET + 767152);
-	Sprite fire_mario12 (0, 0, 16, 31, ADDRESS_OFFSET + 767649);
-	Sprite fire_mario20 (0, 0, 16, 31, ADDRESS_OFFSET + 768146);
-	Sprite fire_mario19 (0, 0, 16, 31, ADDRESS_OFFSET + 768643);
-	Sprite fire_mario8 (0, 0, 16, 31, ADDRESS_OFFSET + 769140);
-	Sprite fire_mario18 (0, 0, 16, 31, ADDRESS_OFFSET + 769637);
-	Sprite fire_mario6 (0, 0, 16, 31, ADDRESS_OFFSET + 770134);
-	Sprite fire_mario9 (0, 0, 16, 31, ADDRESS_OFFSET + 770631);
-	Sprite fire_mario11 (0, 0, 16, 31, ADDRESS_OFFSET + 771128);
-	Sprite fire_mario14 (0, 0, 16, 31, ADDRESS_OFFSET + 771625);
-	Sprite fire_mario15 (0, 0, 16, 31, ADDRESS_OFFSET + 772122);
-	Sprite fire_mario16 (0, 0, 16, 31, ADDRESS_OFFSET + 772619);
-	Sprite fire_mario7 (0, 0, 16, 31, ADDRESS_OFFSET + 773116);
-	Sprite mini_mario13 (0, 0, 16, 16, ADDRESS_OFFSET + 786574);
-	Sprite mini_mario7 (0, 0, 16, 16, ADDRESS_OFFSET + 786831);
-	Sprite mini_mario12 (0, 0, 16, 16, ADDRESS_OFFSET + 787088);
-	Sprite mini_mario8 (0, 0, 16, 16, ADDRESS_OFFSET + 787345);
-	Sprite mini_mario14 (0, 0, 16, 16, ADDRESS_OFFSET + 787602);
-	Sprite mini_mario1 (0, 0, 16, 16, ADDRESS_OFFSET + 787859);
-	Sprite mini_mario9 (0, 0, 16, 16, ADDRESS_OFFSET + 788116);
-	Sprite mini_mario4 (0, 0, 16, 16, ADDRESS_OFFSET + 788373);
-	Sprite mini_mario5 (0, 0, 16, 16, ADDRESS_OFFSET + 788630);
-	Sprite mini_mario6 (0, 0, 16, 16, ADDRESS_OFFSET + 788887);
-	Sprite mini_mario3 (0, 0, 16, 16, ADDRESS_OFFSET + 789144);
-	Sprite mini_mario2 (0, 0, 16, 16, ADDRESS_OFFSET + 789401);
-	Sprite mini_mario10 (0, 0, 16, 16, ADDRESS_OFFSET + 789658);
-	Sprite mini_mario11 (0, 0, 16, 16, ADDRESS_OFFSET + 789915);
-	// Init normal mario sprites
-	state_mode_to_frames_map[IDLE][NORMAL_MODE].push_back(sprite1);
-	state_mode_to_frames_map[WALKING][NORMAL_MODE].push_back(sprite2);
-	state_mode_to_frames_map[WALKING][NORMAL_MODE].push_back(sprite3);
-	state_mode_to_frames_map[WALKING][NORMAL_MODE].push_back(sprite4);
-	state_mode_to_frames_map[FLIPPING][NORMAL_MODE].push_back(sprite5);
-	state_mode_to_frames_map[JUMPING][NORMAL_MODE].push_back(sprite6);
-	state_mode_to_frames_map[CROUCHING][NORMAL_MODE].push_back(sprite7);
-	// Init mini-mario sprites
-	state_mode_to_frames_map[IDLE][MINI_MODE].push_back(sprite1);
-	state_mode_to_frames_map[WALKING][MINI_MODE].push_back(sprite2);
-	state_mode_to_frames_map[WALKING][MINI_MODE].push_back(sprite3);
-	state_mode_to_frames_map[WALKING][MINI_MODE].push_back(sprite4);
-	state_mode_to_frames_map[FLIPPING][MINI_MODE].push_back(sprite5);
-	state_mode_to_frames_map[JUMPING][MINI_MODE].push_back(sprite6);
-	state_mode_to_frames_map[CROUCHING][MINI_MODE].push_back(sprite7);
-}
+	Sprite sprite9(0, 0 16, 32, ADDRESS_OFFSET + 775801);
+	Sprite sprite13(0, 0 16, 32, ADDRESS_OFFSET + 776314);
+	Sprite sprite17(0, 0 16, 32, ADDRESS_OFFSET + 776827);
+	Sprite sprite21(0, 0 16, 32, ADDRESS_OFFSET + 777340);
+	Sprite sprite2(0, 0 16, 32, ADDRESS_OFFSET + 777853);
+	Sprite sprite19(0, 0 16, 32, ADDRESS_OFFSET + 778366);
+	Sprite sprite7(0, 0 16, 32, ADDRESS_OFFSET + 778879);
+	Sprite sprite12(0, 0 16, 32, ADDRESS_OFFSET + 779392);
+	Sprite sprite4(0, 0 16, 32, ADDRESS_OFFSET + 779905);
+	Sprite sprite3(0, 0 16, 32, ADDRESS_OFFSET + 780418);
+	Sprite sprite1(0, 0 16, 32, ADDRESS_OFFSET + 780931);
+	Sprite sprite16(0, 0 16, 32, ADDRESS_OFFSET + 781444);
+	Sprite sprite11(0, 0 16, 32, ADDRESS_OFFSET + 781957);
+	Sprite sprite14(0, 0 16, 32, ADDRESS_OFFSET + 782470);
+	Sprite sprite5(0, 0 16, 32, ADDRESS_OFFSET + 782983);
+	Sprite sprite8(0, 0 16, 32, ADDRESS_OFFSET + 783496);
+	Sprite sprite20(0, 0 16, 32, ADDRESS_OFFSET + 784009);
+	Sprite sprite6(0, 0 16, 32, ADDRESS_OFFSET + 784522);
+	Sprite sprite15(0, 0 16, 32, ADDRESS_OFFSET + 785035);
+	Sprite sprite18(0, 0 16, 32, ADDRESS_OFFSET + 785548);
+	Sprite sprite10(0, 0 16, 32, ADDRESS_OFFSET + 786061);
 
+}
 /*
  * getKey returns NO_KEY if enablePlayerControl is off
  */
