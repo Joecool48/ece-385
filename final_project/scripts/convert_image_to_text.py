@@ -35,7 +35,7 @@ for image in images:
 
 # Converts the image to a 8 hex width column major order text file
 sprite_file = open("sprite_file.txt", "w", 1)
-address_offset = 0
+address_offset = 30000000
 sprite_id_start = 1
 MAX_ADDRESSES = pixel_count
 DATA_WIDTH = 8
