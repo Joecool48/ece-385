@@ -71,7 +71,7 @@ for img in images:
             if address_offset % 1 == 0:
                 mem_file.write(";\n")
     status_file.write("End Address: " + str(address_offset) + "\n\n")
-
+    address_offset += 1
     sprite_id_start += 1
 mem_file.write("END;\n")
 
