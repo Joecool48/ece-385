@@ -66,7 +66,18 @@ Player::Player() {
  * Maps all the states and modes to their respective series of sprite frames
  */
 void Player::animatorSetup() {
-
+	// Sprite1.png
+	Sprite idle_frame(x, y, 16, 32, ADDRESS_OFFSET + 780884);
+	state_mode_to_frames_map[IDLE][NORMAL_MODE].push_back(idle_frame);
+	// Sprite2.png
+	Sprite walk_frame_1(x, y, 16, 32, ADDRESS_OFFSET + 780884);
+	state_mode_to_frames_map[WALKING][NORMAL_MODE].push_back(walk_frame_1);
+	// Sprite3.png
+	Sprite walk_frame_2(x, y, 16, 32, ADDRESS_OFFSET + 780884);
+	state_mode_to_frames_map[WALKING][NORMAL_MODE].push_back(walk_frame_2);
+	// Sprite4.png
+	Sprite walk_frame_3(x, y, 16, 32, ADDRESS_OFFSET + 780884);
+	state_mode_to_frames_map[WALKING][NORMAL_MODE].push_back(walk_frame_3);
 
 }
 /*

@@ -165,5 +165,3 @@ void Background::removeEnemyByCollider(Rect_Collider & collider) {
 
 
 
-
-

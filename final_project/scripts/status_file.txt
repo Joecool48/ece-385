@@ -208,283 +208,297 @@ Height: 16
 Start Address 773584
 End Address: 773840
 
-Name: ../images/items/fireball_frame_1.png
+Name: ../images/items/fireball_explosion_frame_1.png
 Start Id: 31
 Width: 18
 Height: 17
 Start Address 773840
 End Address: 774146
 
-Name: ../images/items/fireflower_frame_1.png
+Name: ../images/items/fireball_frame_1.png
 Start Id: 32
-Width: 16
-Height: 16
+Width: 18
+Height: 17
 Start Address 774146
-End Address: 774402
+End Address: 774452
 
-Name: ../images/items/fireflower_frame_2.png
+Name: ../images/items/fireflower_frame_1.png
 Start Id: 33
 Width: 16
 Height: 16
-Start Address 774402
-End Address: 774658
+Start Address 774452
+End Address: 774708
 
-Name: ../images/items/mushroom_frame_1.png
+Name: ../images/items/fireflower_frame_2.png
 Start Id: 34
 Width: 16
-Height: 17
-Start Address 774658
-End Address: 774930
+Height: 16
+Start Address 774708
+End Address: 774964
 
-Name: ../images/items/fireflower_frame_4.png
+Name: ../images/items/mushroom_frame_1.png
 Start Id: 35
 Width: 16
-Height: 16
-Start Address 774930
-End Address: 775186
+Height: 17
+Start Address 774964
+End Address: 775236
 
-Name: ../images/mario_sprites/sprite9.png
+Name: ../images/items/fireflower_frame_4.png
 Start Id: 36
 Width: 16
-Height: 32
-Start Address 775186
-End Address: 775698
+Height: 16
+Start Address 775236
+End Address: 775492
 
-Name: ../images/mario_sprites/sprite13.png
+Name: ../images/items/fireball_explosion_frame_2.png
 Start Id: 37
 Width: 16
-Height: 32
-Start Address 775698
-End Address: 776210
+Height: 17
+Start Address 775492
+End Address: 775764
 
-Name: ../images/mario_sprites/sprite17.png
+Name: ../images/mario_sprites/sprite9.png
 Start Id: 38
 Width: 16
 Height: 32
-Start Address 776210
-End Address: 776722
+Start Address 775764
+End Address: 776276
 
-Name: ../images/mario_sprites/sprite21.png
+Name: ../images/mario_sprites/sprite13.png
 Start Id: 39
 Width: 16
 Height: 32
-Start Address 776722
-End Address: 777234
+Start Address 776276
+End Address: 776788
 
-Name: ../images/mario_sprites/sprite2.png
+Name: ../images/mario_sprites/sprite17.png
 Start Id: 40
 Width: 16
 Height: 32
-Start Address 777234
-End Address: 777746
+Start Address 776788
+End Address: 777300
 
-Name: ../images/mario_sprites/sprite19.png
+Name: ../images/mario_sprites/sprite21.png
 Start Id: 41
 Width: 16
 Height: 32
-Start Address 777746
-End Address: 778258
+Start Address 777300
+End Address: 777812
 
-Name: ../images/mario_sprites/sprite7.png
+Name: ../images/mario_sprites/sprite2.png
 Start Id: 42
 Width: 16
 Height: 32
-Start Address 778258
-End Address: 778770
+Start Address 777812
+End Address: 778324
 
-Name: ../images/mario_sprites/sprite12.png
+Name: ../images/mario_sprites/sprite19.png
 Start Id: 43
 Width: 16
 Height: 32
-Start Address 778770
-End Address: 779282
+Start Address 778324
+End Address: 778836
 
-Name: ../images/mario_sprites/sprite4.png
+Name: ../images/mario_sprites/sprite7.png
 Start Id: 44
 Width: 16
 Height: 32
-Start Address 779282
-End Address: 779794
+Start Address 778836
+End Address: 779348
 
-Name: ../images/mario_sprites/sprite3.png
+Name: ../images/mario_sprites/sprite12.png
 Start Id: 45
 Width: 16
 Height: 32
-Start Address 779794
-End Address: 780306
+Start Address 779348
+End Address: 779860
 
-Name: ../images/mario_sprites/sprite1.png
+Name: ../images/mario_sprites/sprite4.png
 Start Id: 46
 Width: 16
 Height: 32
-Start Address 780306
-End Address: 780818
+Start Address 779860
+End Address: 780372
 
-Name: ../images/mario_sprites/sprite16.png
+Name: ../images/mario_sprites/sprite3.png
 Start Id: 47
 Width: 16
 Height: 32
-Start Address 780818
-End Address: 781330
+Start Address 780372
+End Address: 780884
 
-Name: ../images/mario_sprites/sprite11.png
+Name: ../images/mario_sprites/sprite1.png
 Start Id: 48
 Width: 16
 Height: 32
-Start Address 781330
-End Address: 781842
+Start Address 780884
+End Address: 781396
 
-Name: ../images/mario_sprites/sprite14.png
+Name: ../images/mario_sprites/sprite16.png
 Start Id: 49
 Width: 16
 Height: 32
-Start Address 781842
-End Address: 782354
+Start Address 781396
+End Address: 781908
 
-Name: ../images/mario_sprites/sprite5.png
+Name: ../images/mario_sprites/sprite11.png
 Start Id: 50
 Width: 16
 Height: 32
-Start Address 782354
-End Address: 782866
+Start Address 781908
+End Address: 782420
 
-Name: ../images/mario_sprites/sprite8.png
+Name: ../images/mario_sprites/sprite14.png
 Start Id: 51
 Width: 16
 Height: 32
-Start Address 782866
-End Address: 783378
+Start Address 782420
+End Address: 782932
 
-Name: ../images/mario_sprites/sprite20.png
+Name: ../images/mario_sprites/sprite5.png
 Start Id: 52
 Width: 16
 Height: 32
-Start Address 783378
-End Address: 783890
+Start Address 782932
+End Address: 783444
 
-Name: ../images/mario_sprites/sprite6.png
+Name: ../images/mario_sprites/sprite8.png
 Start Id: 53
 Width: 16
 Height: 32
-Start Address 783890
-End Address: 784402
+Start Address 783444
+End Address: 783956
 
-Name: ../images/mario_sprites/sprite15.png
+Name: ../images/mario_sprites/sprite20.png
 Start Id: 54
 Width: 16
 Height: 32
-Start Address 784402
-End Address: 784914
+Start Address 783956
+End Address: 784468
 
-Name: ../images/mario_sprites/sprite18.png
+Name: ../images/mario_sprites/sprite6.png
 Start Id: 55
 Width: 16
 Height: 32
-Start Address 784914
-End Address: 785426
+Start Address 784468
+End Address: 784980
 
-Name: ../images/mario_sprites/sprite10.png
+Name: ../images/mario_sprites/sprite15.png
 Start Id: 56
 Width: 16
 Height: 32
-Start Address 785426
-End Address: 785938
+Start Address 784980
+End Address: 785492
 
-Name: ../images/mini-mario/mini-mario13.png
+Name: ../images/mario_sprites/sprite18.png
 Start Id: 57
 Width: 16
-Height: 16
-Start Address 785938
-End Address: 786194
+Height: 32
+Start Address 785492
+End Address: 786004
 
-Name: ../images/mini-mario/mini-mario7.png
+Name: ../images/mario_sprites/sprite10.png
 Start Id: 58
 Width: 16
-Height: 16
-Start Address 786194
-End Address: 786450
+Height: 32
+Start Address 786004
+End Address: 786516
 
-Name: ../images/mini-mario/mini-mario12.png
+Name: ../images/mini-mario/mini-mario13.png
 Start Id: 59
 Width: 16
 Height: 16
-Start Address 786450
-End Address: 786706
+Start Address 786516
+End Address: 786772
 
-Name: ../images/mini-mario/mini-mario8.png
+Name: ../images/mini-mario/mini-mario7.png
 Start Id: 60
 Width: 16
 Height: 16
-Start Address 786706
-End Address: 786962
+Start Address 786772
+End Address: 787028
 
-Name: ../images/mini-mario/mini-mario14.png
+Name: ../images/mini-mario/mini-mario12.png
 Start Id: 61
 Width: 16
 Height: 16
-Start Address 786962
-End Address: 787218
+Start Address 787028
+End Address: 787284
 
-Name: ../images/mini-mario/mini-mario1.png
+Name: ../images/mini-mario/mini-mario8.png
 Start Id: 62
 Width: 16
 Height: 16
-Start Address 787218
-End Address: 787474
+Start Address 787284
+End Address: 787540
 
-Name: ../images/mini-mario/mini-mario9.png
+Name: ../images/mini-mario/mini-mario14.png
 Start Id: 63
 Width: 16
 Height: 16
-Start Address 787474
-End Address: 787730
+Start Address 787540
+End Address: 787796
 
-Name: ../images/mini-mario/mini-mario4.png
+Name: ../images/mini-mario/mini-mario1.png
 Start Id: 64
 Width: 16
 Height: 16
-Start Address 787730
-End Address: 787986
+Start Address 787796
+End Address: 788052
 
-Name: ../images/mini-mario/mini-mario5.png
+Name: ../images/mini-mario/mini-mario9.png
 Start Id: 65
 Width: 16
 Height: 16
-Start Address 787986
-End Address: 788242
+Start Address 788052
+End Address: 788308
 
-Name: ../images/mini-mario/mini-mario6.png
+Name: ../images/mini-mario/mini-mario4.png
 Start Id: 66
 Width: 16
 Height: 16
-Start Address 788242
-End Address: 788498
+Start Address 788308
+End Address: 788564
 
-Name: ../images/mini-mario/mini-mario3.png
+Name: ../images/mini-mario/mini-mario5.png
 Start Id: 67
 Width: 16
 Height: 16
-Start Address 788498
-End Address: 788754
+Start Address 788564
+End Address: 788820
 
-Name: ../images/mini-mario/mini-mario2.png
+Name: ../images/mini-mario/mini-mario6.png
 Start Id: 68
 Width: 16
 Height: 16
-Start Address 788754
-End Address: 789010
+Start Address 788820
+End Address: 789076
 
-Name: ../images/mini-mario/mini-mario10.png
+Name: ../images/mini-mario/mini-mario3.png
 Start Id: 69
 Width: 16
 Height: 16
-Start Address 789010
-End Address: 789266
+Start Address 789076
+End Address: 789332
 
-Name: ../images/mini-mario/mini-mario11.png
+Name: ../images/mini-mario/mini-mario2.png
 Start Id: 70
 Width: 16
 Height: 16
-Start Address 789266
-End Address: 789522
+Start Address 789332
+End Address: 789588
+
+Name: ../images/mini-mario/mini-mario10.png
+Start Id: 71
+Width: 16
+Height: 16
+Start Address 789588
+End Address: 789844
+
+Name: ../images/mini-mario/mini-mario11.png
+Start Id: 72
+Width: 16
+Height: 16
+Start Address 789844
+End Address: 790100
 

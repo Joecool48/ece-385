@@ -76,6 +76,13 @@ void Fireball::update() {
  * Add animator setup for frames
  */
 void Fireball::animatorSetup() {
+	// Items dont have modes, or rather I'm not making them, so ITEM_MODE is default
+	Sprite fireball_bounce(x, y, 18, 17, ADDRESS_OFFSET + 774146);
+	Sprite fireball_explode_1(x, y, 18, 17, ADDRESS_OFFSET + 773840);
+	Sprite fireball_explode_2(x, y, 16, 17, ADDRESS_OFFSET + 775492);
+	state_mode_to_frames_map[STATE_BOUNCE][Item::ITEM_MODE].push_back(fireball_bounce);
+	state_mode_to_frames_map[STATE_EXPLODE][Item::ITEM_MODE].push_back(fireball_explode_1);
+	state_mode_to_frames_map[STATE_EXPLODE][Item::ITEM_MODE].push_back(fireball_explode_2);
 
 }
 /*
@@ -102,7 +109,8 @@ void Mushroom::update() {
  * Add animator setup for Mushroom sprite
  */
 void Mushroom::animatorSetup() {
-
+	Sprite mushroom_frame_1(x, y, 16, 17, ADDRESS_OFFSET + 774964);
+	state_mode_to_frames_map[ITEM_STATE][ITEM_MODE].push_back(mushroom_frame_1);
 }
 
 /*
@@ -118,5 +126,12 @@ void Fireflower::update() {
  * TODO Initialize fireflower sprites in animSetup
  */
 void Fireflower::animatorSetup() {
-
+	Sprite fireflower_1(x, y, 16, 16, ADDRESS_OFFSET + 774452);
+	Sprite fireflower_2(x, y, 16, 16, ADDRESS_OFFSET + 774708);
+	Sprite fireflower_3(x, y, 16, 16, ADDRESS_OFFSET + 773584);
+	Sprite fireflower_4(x, y, 16, 16, ADDRESS_OFFSET + 774236);
+	state_mode_to_frames_map[ITEM_STATE][ITEM_MODE].push_back(fireflower_1);
+	state_mode_to_frames_map[ITEM_STATE][ITEM_MODE].push_back(fireflower_2);
+	state_mode_to_frames_map[ITEM_STATE][ITEM_MODE].push_back(fireflower_3);
+	state_mode_to_frames_map[ITEM_STATE][ITEM_MODE].push_back(fireflower_4);
 }

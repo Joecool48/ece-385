@@ -23,7 +23,7 @@ protected:
 	bool isVisible;
 	// Constructor to init animator
 	Sprite_Animator (uint16_t start_x, uint16_t start_y, uint16_t start_mode, uint16_t start_state, float start_frame);
-	virtual void animatorSetup();
+	virtual void animatorSetup(); // Inits the map with the modes and states of whatever the animation is
 	// State first, then mode map to sprites
 	map <uint16_t, map<uint16_t, vector<Sprite>>> state_mode_to_frames_map; // Different subclasses must define own states
 	// Change the animation type

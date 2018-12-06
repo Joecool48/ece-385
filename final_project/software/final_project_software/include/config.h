@@ -7,9 +7,17 @@
 
 #ifndef INCLUDE_CONFIG_H_
 #define INCLUDE_CONFIG_H_
+/*
+ * TODO
+ * Add real address offset here
+ */
+const uint32_t ADDRESS_OFFSET = 0x312313; // Place where the memory is initialized in SDRAM
+
 
 const uint16_t SCREEN_WIDTH = 480; // Screen height and width in pixels
 const uint16_t SCREEN_HEIGHT = 360;
+
+const uint16_t FRAMES_PER_SECOND = 60;
 
 enum class Key {KEY_LEFT, KEY_RIGHT, KEY_JUMP, KEY_CROUCH, KEY_FIREBALL, NO_KEY, KEY_PAUSE};
 enum class Collider_Type {DUMMY_COLLIDER_TYPE,
@@ -34,7 +42,6 @@ inline bool isEnemy (Collider_Type type) {
 }
 const float GRAVITY_STRENGTH = 3;
 const float TERMINAL_VELOCITY = 100;
-const uint16_t FRAMES_PER_SECOND = 60;
 
 bool pause_animation =false;
 /*

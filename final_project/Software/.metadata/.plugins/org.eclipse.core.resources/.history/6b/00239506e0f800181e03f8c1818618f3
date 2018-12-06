@@ -1,0 +1,18 @@
+/*
+ * enemies.cpp
+ *
+ *  Created on: Nov 29, 2018
+ *      Author: joey
+ */
+#include "enemies.h"
+
+
+void Gumba::animatorSetup() {
+	state_mode_to_frames_map[WALKING][NORMAL_MODE] = Sprite()
+}
+
+void Turtle::animatorSetup() {
+	state_mode_to_frames_map[WALKING][NORMAL_MODE].push_back(Sprite(x, y, 16, 32, 759584));
+	state_mode_to_frames_map[]
+}
+
