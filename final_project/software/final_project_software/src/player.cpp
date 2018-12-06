@@ -63,7 +63,7 @@ Player::Player() {
 	return_state = IDLE;
 	current_background = nullptr;
 }
-/* TODO:
+/*
  * Maps all the states and modes to their respective series of sprite frames
  */
 void Player::animatorSetup() {
@@ -132,13 +132,22 @@ void Player::animatorSetup() {
 	state_mode_to_frames_map[JUMPING][NORMAL_MODE].push_back(sprite6);
 	state_mode_to_frames_map[CROUCHING][NORMAL_MODE].push_back(sprite7);
 	// Init mini-mario sprites
-	state_mode_to_frames_map[IDLE][MINI_MODE].push_back(sprite1);
-	state_mode_to_frames_map[WALKING][MINI_MODE].push_back(sprite2);
-	state_mode_to_frames_map[WALKING][MINI_MODE].push_back(sprite3);
-	state_mode_to_frames_map[WALKING][MINI_MODE].push_back(sprite4);
-	state_mode_to_frames_map[FLIPPING][MINI_MODE].push_back(sprite5);
-	state_mode_to_frames_map[JUMPING][MINI_MODE].push_back(sprite6);
-	state_mode_to_frames_map[CROUCHING][MINI_MODE].push_back(sprite7);
+	state_mode_to_frames_map[IDLE][MINI_MODE].push_back(mini_mario1);
+	state_mode_to_frames_map[WALKING][MINI_MODE].push_back(mini_mario2);
+	state_mode_to_frames_map[WALKING][MINI_MODE].push_back(mini_mario3);
+	state_mode_to_frames_map[WALKING][MINI_MODE].push_back(mini_mario4);
+	state_mode_to_frames_map[FLIPPING][MINI_MODE].push_back(mini_mario5);
+	state_mode_to_frames_map[JUMPING][MINI_MODE].push_back(mini_mario6);
+	state_mode_to_frames_map[DYING][MINI_MODE].push_back(mini_mario7);
+	// Init fire-mario sprites
+	state_mode_to_frames_map[IDLE][FIRE_MODE].push_back(fire_mario1);
+	state_mode_to_frames_map[WALKING][FIRE_MODE].push_back(mini_mario2);
+	state_mode_to_frames_map[WALKING][FIRE_MODE].push_back(mini_mario3);
+	state_mode_to_frames_map[WALKING][FIRE_MODE].push_back(mini_mario4);
+	state_mode_to_frames_map[FLIPPING][FIRE_MODE].push_back(mini_mario5);
+	state_mode_to_frames_map[JUMPING][FIRE_MODE].push_back(mini_mario6);
+	state_mode_to_frames_map[CROUCHING][FIRE_MODE].push_back(mini_mario7);
+
 }
 
 /*

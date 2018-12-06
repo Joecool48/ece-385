@@ -24,7 +24,7 @@ public:
  */
 class Gumba : public Enemy {
 	uint16_t NORMAL_MODE = 0;
-	enum states {WALKING, DESTROY};
+	enum states {WALKING, DYING, DYING_FIREBALL, DESTROY};
 	void animatorSetup();
 	void update();
 };
@@ -34,7 +34,7 @@ class Gumba : public Enemy {
  */
 class Turtle : public Enemy {
 	uint16_t NORMAL_MODE = 0;
-	enum states {WALKING, SHELL, SHELL_MOVING, GET_UP, DESTROY};
+	enum states {WALKING, SHELL, SHELL_MOVING, GET_UP, DYING_FIREBALL, DESTROY};
 	void animatorSetup();
 	void update();
 };
