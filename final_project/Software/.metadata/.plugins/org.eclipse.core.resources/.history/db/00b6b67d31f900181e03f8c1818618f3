@@ -46,10 +46,10 @@ public:
 	map<uint64_t, Fireball*> fireballs;
 };
 
-class Background_Object {
-public:
+class Background_Object : public Background_Sprite {
 	Rect_Collider collider;
-	Background_Object (Rect_Collider collider, bool contains_item);
+	bool contains_coins;
+	uint16_t coin_amount;
 	bool contains_item;
 };
 

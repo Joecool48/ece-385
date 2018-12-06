@@ -47,9 +47,8 @@ public:
 };
 
 class Background_Object {
-public:
 	Rect_Collider collider;
-	Background_Object (Rect_Collider collider, bool contains_item);
+	Background_Object ()
 	bool contains_item;
 };
 

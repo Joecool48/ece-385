@@ -9,7 +9,6 @@
 
 Background_Object::Background_Object(Rect_Collider collider, bool contains_item) {
 	this->collider = collider;
-	this->contains_item = contains_item;
 }
 
 /*
