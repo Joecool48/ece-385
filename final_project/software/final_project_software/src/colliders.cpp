@@ -4,14 +4,25 @@
  *  Created on: Nov 29, 2018
  *      Author: joey
  */
-#include "colliders.h"
+#include "../include/colliders.h"
 
-Collidable::Collidable(Collider_Type collide_type, uint16_t collide_x, uint16_t collide_y) : collider_type(collide_type), collide_x(collide_x), collide_y(collide_y) {
+bool cantGoThrough (Collider_Type type) {
+	return type == Collider_Type::PLATFORM_UNBREAKABLE || type == Collider_Type::ITEM_BLOCK;
+}
+bool isEnemy (Collider_Type type) {
+	return type == Collider_Type::GUMBA || type == Collider_Type::TURTLE || type == Collider_Type::TURTLE_SHELL;
+}
+
+Collidable::~Collidable() {}
+
+uint64_t Collidable::current_id = 0;
+
+Collidable::Collidable(Collider_Type collider_type, uint16_t collide_x, uint16_t collide_y) : collide_type(collider_type), collide_x(collide_x), collide_y(collide_y) {
 	current_id++;
 	collider_id = current_id;
 }
 
-Rect_Collider::Rect_Collider (Collider_Type collide_type, uint16_t collide_x, uint16_t collide_y, uint16_t collide_width, uint16_t collide_height) : Collidable(collide_type, collide_x, collide_y), collide_width(collide_width), collide_height(collide_height) {}
+Rect_Collider::Rect_Collider (Collider_Type collider_type, uint16_t collide_x, uint16_t collide_y, uint16_t collide_width, uint16_t collide_height) : Collidable(collider_type, collide_x, collide_y), collide_width(collide_width), collide_height(collide_height) {}
 
 
 // Used as a starter, or sentinel value for the Complex_Collider

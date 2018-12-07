@@ -7,7 +7,7 @@
 
 #ifndef INCLUDE_KEYBOARD_H_
 #define INCLUDE_KEYBOARD_H_
-
+#include "../include/config.h"
 
 
 /*TODO
@@ -15,6 +15,7 @@
  *
  */
 class Keyboard {
+public:
 	void init_keyboard();
 	int getScanCode();
 	int decodeKey(int scanCode);

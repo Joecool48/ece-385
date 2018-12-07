@@ -7,27 +7,16 @@
 
 #ifndef INCLUDE_SPRITE_H_
 #define INCLUDE_SPRITE_H_
-#include "config.h"
-// Class to store information about a image. Will be copied from this to create other sprites.
-class Image {
-public:
-	uint16_t width;
-	uint16_t height;
-	uint32_t start_address;
-	Image::Image (uint16_t width, uint16_t height, uint32_t address);
-	virtual ~Image () = 0;
-};
+#include "../include/config.h"
 
 // Class for each spriteframe
-class Sprite : public Image {
+class Sprite {
 public:
-	float x;
-	float y;
-	bool isVisible;
-	uint8_t flipped_mode;
 	Sprite();
-	Sprite(float x, float y, uint16_t width, uint16_t height, uint32_t address);
-	void drawSprite();
+	Sprite(uint16_t width, uint16_t height, uint32_t address);
+	void drawSprite(uint16_t xx, uint16_t yy, uint8_t flip_mode, bool isVis);
+	uint32_t start_address;
+	uint16_t width, height;
 };
 
 

@@ -7,13 +7,22 @@
 
 #ifndef INCLUDE_PLAYER_H_
 #define INCLUDE_PLAYER_H_
-#include "sprite_animator.h"
-#include "config.h"
-#include "keyboard.h"
-#include <unordered_set>
+
+
+#include "../include/config.h"
+#include "../include/keyboard.h"
+#include <iostream>
+#include "../include/item.h"
+#include "../include/sprite.h"
+#include "../include/sprite_animator.h"
+
 using namespace std;
+
+class Background;
+class Sprite_Animator;
+
 // Represents a playable character
-class Player : Sprite_Animator {
+class Player : public Sprite_Animator {
 public:
 	const float MAX_WALK_SPEED = 1; // Max amount that can be added per frame
 	const float WALK_ACCEL = .1;
@@ -32,6 +41,7 @@ public:
 	const uint16_t FIREBALL_Y_DIST_FROM_MARIO = 15;
 	const float FIREBALL_X_VEL = .3;
 	const float FIREBALL_Y_VEL = .2;
+	const uint16_t PLAYER_JUMP_ON_ENEMY_BOOST = 3; // Speed jump boost when mario lands on a enemy
 	Rect_Collider player_collider;
 	enum modes {NORMAL_MODE = 0, MINI_MODE, FIRE_MODE, INVINCIBLE_MODE}; // Mario power up states
 	enum states {IDLE = 0, WALKING, JUMPING, CROUCHING, SHRINKING, FLAGDOWN, ENLARGING, FLIPPING, DYING, THROWFIREBALL, SLIDING};
@@ -41,10 +51,9 @@ public:
 	bool enemyCanKill;
 	bool noCollide;
 	uint16_t invincibility_frames;
-	bool isFacingLeft; // Set to true if facing left
 	bool hasJumped; // bool to determine if he has jumped before. Set to false when he hits the ground
 	uint16_t return_state; // Only used by enlarge and shrink states when mario gets hit. Returns to this state after the pause and animation
-	Player(Rect_Collider collider);
+	Player(uint16_t x, uint16_t y, Rect_Collider collider);
 	void animatorSetup(); // Initialize all the animation states of the sprite
 	void draw(); // function to draw player. Called AFTER update
 	void update(); // player state machine

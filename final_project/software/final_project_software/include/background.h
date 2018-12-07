@@ -11,11 +11,24 @@
 #include "colliders.h"
 #include "item.h"
 #include <map>
+#include "../include/config.h"
+#include "../include/player.h"
+#include "../include/enemies.h"
+
 using namespace std;
+
+class Background_Object;
+class Enemy;
+class Player;
+class Item;
+class Fireball;
+
 
 class Background : public Sprite {
 	// Function to scroll background either right or left.
 public:
+
+	uint16_t x, y;
 	void scrollBackgroundX (int moveAmount);
 	void drawBackground();
 	void drawWindow(); // Draws all the sprites to the screen after the background
@@ -59,6 +72,5 @@ public:
 	void collided_with(Rect_Collider & other, Background * back); // TODO implement collider method to do stuff when it collides
 	bool contains_item;
 };
-
 
 #endif /* INCLUDE_BACKGROUND_H_ */

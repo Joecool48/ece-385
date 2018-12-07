@@ -4,7 +4,7 @@
  *  Created on: Dec 1, 2018
  *      Author: joey
  */
-#include "sprite_animator.h"
+#include "../include/sprite_animator.h"
 
 void Sprite_Animator::setState(uint16_t anim_state) {
 	current_anim_state = anim_state;
@@ -12,11 +12,11 @@ void Sprite_Animator::setState(uint16_t anim_state) {
 void Sprite_Animator::setMode(uint16_t mode) {
 	current_anim_mode = mode;
 }
-void Sprite_Animator::Sprite_Animator (float frame) {
-	current_frame_in_state = frame;
-}
 void Sprite_Animator::advanceFrames(float timeAmount) {
 	current_frame_in_state += timeAmount;
+}
+void Sprite_Animator::setFrame(float frame) {
+	current_frame_in_state = frame;
 }
 Sprite Sprite_Animator::getCurrentSprite() {
 	// Select the state based on current time and modulus the current size of the number of sprites
@@ -31,7 +31,15 @@ Sprite_Animator::Sprite_Animator (uint16_t start_x, uint16_t start_y, uint16_t s
 	current_frame_in_state = start_frame;
 	wait_frames = 0;
 	isVisible = true;
-	animatorSetup(); // Called differently for every subclass
+	flipped_mode = NO_FLIP;
+}
+
+uint16_t Sprite_Animator::getMode() {
+	return current_anim_mode;
+}
+
+uint16_t Sprite_Animator::getState() {
+	return current_anim_state;
 }
 
 // Update function is implemented by every subclass. Essentially the animators state machine.

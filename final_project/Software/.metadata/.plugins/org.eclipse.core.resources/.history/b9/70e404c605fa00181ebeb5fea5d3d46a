@@ -1,0 +1,17 @@
+/*
+ * background_object.h
+ *
+ *  Created on: Dec 7, 2018
+ *      Author: joey
+ */
+
+#ifndef INCLUDE_BACKGROUND_OBJECT_H_
+#define INCLUDE_BACKGROUND_OBJECT_H_
+
+#include "../include/background.h"
+
+
+
+
+
+#endif /* INCLUDE_BACKGROUND_OBJECT_H_ */

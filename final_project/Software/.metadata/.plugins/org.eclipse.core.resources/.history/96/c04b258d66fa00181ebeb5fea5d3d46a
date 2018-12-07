@@ -1,0 +1,20 @@
+/*
+ * keyboard.cpp
+ *
+ *  Created on: Dec 7, 2018
+ *      Author: joey
+ */
+
+#include "../include/keyboard.h"
+
+
+void init_keyboard() {}
+int getScanCode(return 1);
+int decodeKey(int scanCode);
+Key getInputKey(); // Should return NO_KEY if no key is pressed
+bool key_jump();
+bool key_left();
+bool key_right();
+bool key_crouch();
+bool key_fireball();
+bool multipleKeysPressed(); // Returns true if mult keys pressed

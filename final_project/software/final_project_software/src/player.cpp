@@ -4,11 +4,8 @@
  *  Created on: Nov 30, 2018
  *      Author: joey
  */
-#include "player.h"
-#include <iostream>
-#include "config.h"
-#include "item.h"
-#include "sprite.h"
+#include "../include/player.h"
+
 /*
  * TODO
  * Make sure to set background!!!
@@ -38,7 +35,7 @@ void Player::throwFireball() {
 		return;
 	}
 	Fireball *fireball = nullptr;
-	if (isFacingLeft) {
+	if (flipped_mode) {
 		fireball = new Fireball(x - FIREBALL_X_DIST_FROM_MARIO, y + FIREBALL_Y_DIST_FROM_MARIO, current_background);
 	}
 	else {
@@ -52,15 +49,15 @@ void Player::throwFireball() {
  * Constructs a new player object (Mario). This also calls animatorSetup to make sure all the sprites are filled.
  * Also inits the rect collider, initial mode, and state.
  */
-Player::Player(Rect_Collider collider) {
+Player::Player(uint16_t x, uint16_t y, Rect_Collider collider) : Sprite_Animator (x, y, NORMAL_MODE, IDLE, 0) {
 	enablePlayerControl = true;
 	enemyCanKill = true;
-	collider.collider_type = Collider_Type::PLAYER;
+	collider.collide_type = Collider_Type::PLAYER;
 	player_collider = collider;
 	accelX = 0, accelY = 0;
 	velX = 0, velY = 0;
 	invincibility_frames = 0;
-	isFacingLeft = false;
+	flipped_mode = false;
 	hasJumped = false;
 	return_state = IDLE;
 	current_background = nullptr;
@@ -73,62 +70,62 @@ Player::Player(Rect_Collider collider) {
  * Maps all the states and modes to their respective series of sprite frames
  */
 void Player::animatorSetup() {
-	Sprite sprite9 (0, 0, 16, 32, ADDRESS_OFFSET + 775801);
-	Sprite sprite13 (0, 0, 16, 32, ADDRESS_OFFSET + 776314);
-	Sprite sprite17 (0, 0, 16, 32, ADDRESS_OFFSET + 776827);
-	Sprite sprite21 (0, 0, 16, 32, ADDRESS_OFFSET + 777340);
-	Sprite sprite2 (0, 0, 16, 32, ADDRESS_OFFSET + 777853);
-	Sprite sprite19 (0, 0, 16, 32, ADDRESS_OFFSET + 778366);
-	Sprite sprite7 (0, 0, 16, 32, ADDRESS_OFFSET + 778879);
-	Sprite sprite12 (0, 0, 16, 32, ADDRESS_OFFSET + 779392);
-	Sprite sprite4 (0, 0, 16, 32, ADDRESS_OFFSET + 779905);
-	Sprite sprite3 (0, 0, 16, 32, ADDRESS_OFFSET + 780418);
-	Sprite sprite1 (0, 0, 16, 32, ADDRESS_OFFSET + 780931);
-	Sprite sprite16 (0, 0, 16, 32, ADDRESS_OFFSET + 781444);
-	Sprite sprite11 (0, 0, 16, 32, ADDRESS_OFFSET + 781957);
-	Sprite sprite14 (0, 0, 16, 32, ADDRESS_OFFSET + 782470);
-	Sprite sprite5 (0, 0, 16, 32, ADDRESS_OFFSET + 782983);
-	Sprite sprite8 (0, 0, 16, 32, ADDRESS_OFFSET + 783496);
-	Sprite sprite20 (0, 0, 16, 32, ADDRESS_OFFSET + 784009);
-	Sprite sprite6 (0, 0, 16, 32, ADDRESS_OFFSET + 784522);
-	Sprite sprite15 (0, 0, 16, 32, ADDRESS_OFFSET + 785035);
-	Sprite sprite18 (0, 0, 16, 32, ADDRESS_OFFSET + 785548);
-	Sprite sprite10 (0, 0, 16, 32, ADDRESS_OFFSET + 786061);
-	Sprite fire_mario21 (0, 0, 16, 31, ADDRESS_OFFSET + 763176);
-	Sprite fire_mario3 (0, 0, 16, 31, ADDRESS_OFFSET + 763673);
-	Sprite fire_mario13 (0, 0, 16, 31, ADDRESS_OFFSET + 764170);
-	Sprite fire_mario4 (0, 0, 16, 31, ADDRESS_OFFSET + 764667);
-	Sprite fire_mario10 (0, 0, 16, 31, ADDRESS_OFFSET + 765164);
-	Sprite fire_mario2 (0, 0, 16, 31, ADDRESS_OFFSET + 765661);
-	Sprite fire_mario17 (0, 0, 16, 31, ADDRESS_OFFSET + 766158);
-	Sprite fire_mario1 (0, 0, 16, 31, ADDRESS_OFFSET + 766655);
-	Sprite fire_mario5 (0, 0, 16, 31, ADDRESS_OFFSET + 767152);
-	Sprite fire_mario12 (0, 0, 16, 31, ADDRESS_OFFSET + 767649);
-	Sprite fire_mario20 (0, 0, 16, 31, ADDRESS_OFFSET + 768146);
-	Sprite fire_mario19 (0, 0, 16, 31, ADDRESS_OFFSET + 768643);
-	Sprite fire_mario8 (0, 0, 16, 31, ADDRESS_OFFSET + 769140);
-	Sprite fire_mario18 (0, 0, 16, 31, ADDRESS_OFFSET + 769637);
-	Sprite fire_mario6 (0, 0, 16, 31, ADDRESS_OFFSET + 770134);
-	Sprite fire_mario9 (0, 0, 16, 31, ADDRESS_OFFSET + 770631);
-	Sprite fire_mario11 (0, 0, 16, 31, ADDRESS_OFFSET + 771128);
-	Sprite fire_mario14 (0, 0, 16, 31, ADDRESS_OFFSET + 771625);
-	Sprite fire_mario15 (0, 0, 16, 31, ADDRESS_OFFSET + 772122);
-	Sprite fire_mario16 (0, 0, 16, 31, ADDRESS_OFFSET + 772619);
-	Sprite fire_mario7 (0, 0, 16, 31, ADDRESS_OFFSET + 773116);
-	Sprite mini_mario13 (0, 0, 16, 16, ADDRESS_OFFSET + 786574);
-	Sprite mini_mario7 (0, 0, 16, 16, ADDRESS_OFFSET + 786831);
-	Sprite mini_mario12 (0, 0, 16, 16, ADDRESS_OFFSET + 787088);
-	Sprite mini_mario8 (0, 0, 16, 16, ADDRESS_OFFSET + 787345);
-	Sprite mini_mario14 (0, 0, 16, 16, ADDRESS_OFFSET + 787602);
-	Sprite mini_mario1 (0, 0, 16, 16, ADDRESS_OFFSET + 787859);
-	Sprite mini_mario9 (0, 0, 16, 16, ADDRESS_OFFSET + 788116);
-	Sprite mini_mario4 (0, 0, 16, 16, ADDRESS_OFFSET + 788373);
-	Sprite mini_mario5 (0, 0, 16, 16, ADDRESS_OFFSET + 788630);
-	Sprite mini_mario6 (0, 0, 16, 16, ADDRESS_OFFSET + 788887);
-	Sprite mini_mario3 (0, 0, 16, 16, ADDRESS_OFFSET + 789144);
-	Sprite mini_mario2 (0, 0, 16, 16, ADDRESS_OFFSET + 789401);
-	Sprite mini_mario10 (0, 0, 16, 16, ADDRESS_OFFSET + 789658);
-	Sprite mini_mario11 (0, 0, 16, 16, ADDRESS_OFFSET + 789915);
+	Sprite sprite9 (16, 32, ADDRESS_OFFSET + 775801);
+	Sprite sprite13 (16, 32, ADDRESS_OFFSET + 776314);
+	Sprite sprite17 (16, 32, ADDRESS_OFFSET + 776827);
+	Sprite sprite21 (16, 32, ADDRESS_OFFSET + 777340);
+	Sprite sprite2 (16, 32, ADDRESS_OFFSET + 777853);
+	Sprite sprite19 (16, 32, ADDRESS_OFFSET + 778366);
+	Sprite sprite7 (16, 32, ADDRESS_OFFSET + 778879);
+	Sprite sprite12 (16, 32, ADDRESS_OFFSET + 779392);
+	Sprite sprite4 (16, 32, ADDRESS_OFFSET + 779905);
+	Sprite sprite3 (16, 32, ADDRESS_OFFSET + 780418);
+	Sprite sprite1 (16, 32, ADDRESS_OFFSET + 780931);
+	Sprite sprite16 (16, 32, ADDRESS_OFFSET + 781444);
+	Sprite sprite11 (16, 32, ADDRESS_OFFSET + 781957);
+	Sprite sprite14 (16, 32, ADDRESS_OFFSET + 782470);
+	Sprite sprite5 (16, 32, ADDRESS_OFFSET + 782983);
+	Sprite sprite8 (16, 32, ADDRESS_OFFSET + 783496);
+	Sprite sprite20 (16, 32, ADDRESS_OFFSET + 784009);
+	Sprite sprite6 (16, 32, ADDRESS_OFFSET + 784522);
+	Sprite sprite15 (16, 32, ADDRESS_OFFSET + 785035);
+	Sprite sprite18 (16, 32, ADDRESS_OFFSET + 785548);
+	Sprite sprite10 (16, 32, ADDRESS_OFFSET + 786061);
+	Sprite fire_mario21 (16, 31, ADDRESS_OFFSET + 763176);
+	Sprite fire_mario3 (16, 31, ADDRESS_OFFSET + 763673);
+	Sprite fire_mario13 (16, 31, ADDRESS_OFFSET + 764170);
+	Sprite fire_mario4 (16, 31, ADDRESS_OFFSET + 764667);
+	Sprite fire_mario10 (16, 31, ADDRESS_OFFSET + 765164);
+	Sprite fire_mario2 (16, 31, ADDRESS_OFFSET + 765661);
+	Sprite fire_mario17 (16, 31, ADDRESS_OFFSET + 766158);
+	Sprite fire_mario1 (16, 31, ADDRESS_OFFSET + 766655);
+	Sprite fire_mario5 (16, 31, ADDRESS_OFFSET + 767152);
+	Sprite fire_mario12 (16, 31, ADDRESS_OFFSET + 767649);
+	Sprite fire_mario20 (16, 31, ADDRESS_OFFSET + 768146);
+	Sprite fire_mario19 (16, 31, ADDRESS_OFFSET + 768643);
+	Sprite fire_mario8 (16, 31, ADDRESS_OFFSET + 769140);
+	Sprite fire_mario18 (16, 31, ADDRESS_OFFSET + 769637);
+	Sprite fire_mario6 (16, 31, ADDRESS_OFFSET + 770134);
+	Sprite fire_mario9 (16, 31, ADDRESS_OFFSET + 770631);
+	Sprite fire_mario11 (16, 31, ADDRESS_OFFSET + 771128);
+	Sprite fire_mario14 (16, 31, ADDRESS_OFFSET + 771625);
+	Sprite fire_mario15 (16, 31, ADDRESS_OFFSET + 772122);
+	Sprite fire_mario16 (16, 31, ADDRESS_OFFSET + 772619);
+	Sprite fire_mario7 (16, 31, ADDRESS_OFFSET + 773116);
+	Sprite mini_mario13 (16, 16, ADDRESS_OFFSET + 786574);
+	Sprite mini_mario7 (16, 16, ADDRESS_OFFSET + 786831);
+	Sprite mini_mario12 (16, 16, ADDRESS_OFFSET + 787088);
+	Sprite mini_mario8 (16, 16, ADDRESS_OFFSET + 787345);
+	Sprite mini_mario14 (16, 16, ADDRESS_OFFSET + 787602);
+	Sprite mini_mario1 (16, 16, ADDRESS_OFFSET + 787859);
+	Sprite mini_mario9 (16, 16, ADDRESS_OFFSET + 788116);
+	Sprite mini_mario4 (16, 16, ADDRESS_OFFSET + 788373);
+	Sprite mini_mario5 (16, 16, ADDRESS_OFFSET + 788630);
+	Sprite mini_mario6 (16, 16, ADDRESS_OFFSET + 788887);
+	Sprite mini_mario3 (16, 16, ADDRESS_OFFSET + 789144);
+	Sprite mini_mario2 (16, 16, ADDRESS_OFFSET + 789401);
+	Sprite mini_mario10 (16, 16, ADDRESS_OFFSET + 789658);
+	Sprite mini_mario11 (16, 16, ADDRESS_OFFSET + 789915);
 	// Init normal mario sprites
 	state_mode_to_frames_map[IDLE][NORMAL_MODE].push_back(sprite1);
 	state_mode_to_frames_map[WALKING][NORMAL_MODE].push_back(sprite2);
@@ -168,8 +165,8 @@ Key Player::getKey() {
 	return key;
 }
 /*
- * TODO
- * Create player state machine
+ *
+ * Player state machine
  */
 void Player::update() {
 	if (wait_frames) {
@@ -218,9 +215,6 @@ void Player::update() {
 	case ENLARGING: // Enlarging state to large mode
 		enlargingState();
 		break;
-	case FLAGDOWN:
-		flagdownState();
-		break;
 	case THROWFIREBALL:
 		throwfireballState();
 		break;
@@ -237,7 +231,14 @@ void Player::update() {
  * Create function to draw the player
  */
 void Player::draw() {
-	getCurrentSprite().drawSprite(); // Gets the current player sprite and draws it
+	// Choose whether to flip the sprite based on private variable
+	Sprite s = getCurrentSprite();
+	// Update the rect collider!!!
+	player_collider.collide_x = static_cast<uint16_t>(x); // Convert the floats to uints
+	player_collider.collide_y = static_cast<uint16_t> (y);
+	player_collider.collide_width = s.width;
+	player_collider.collide_height = s.height;
+	s.drawSprite(static_cast<uint16_t>(x), static_cast<uint16_t> (y), flipped_mode ? FLIP_HORIZONTAL : NO_FLIP, isVisible); // Gets the current player sprite and draws it
 }
 /*
  * TODO Might be BUGGED
@@ -263,14 +264,18 @@ bool Player::hitByEnemy() {
  *
  */
 void Player::collided_with(Rect_Collider & other) {
-	if (other.collider_type == Collider_Type::MUSHROOM) {
+	if (other.collide_type == Collider_Type::MUSHROOM) {
 		gotMushroom = true;
 	}
-	else if (other.collider_type == Collider_Type::FIREFLOWER) {
+	else if (other.collide_type == Collider_Type::FIREFLOWER) {
 		gotFireflower = true;
 	}
-	else if (isEnemy(other.collider_type) && !player_collider.collides_above(other)) {
+	else if (isEnemy(other.collide_type) && !player_collider.collides_above(other)) {
 		gotHitByEnemy = true;
+	}
+	else if (isEnemy(other.collide_type) && player_collider.collides_above(other)) {
+		velY -= PLAYER_JUMP_ON_ENEMY_BOOST;
+		current_anim_state = JUMPING; // They are technically in the air now
 	}
 }
 
@@ -293,8 +298,8 @@ bool Player::getsFireflower() {
 	if (current_background == nullptr) {
 		std::cout << "Background is null!" << std::endl;
 	}
-	Rect_Collider & rect = current_background->itemCollidedWithPlayer();
-	if (rect.collider_type == Collider_Type::FIREFLOWER){
+	Rect_Collider rect = current_background->itemCollidedWithPlayer();
+	if (rect.collide_type == Collider_Type::FIREFLOWER){
 		current_background->removeItemById(rect.collider_id);
 		return true;
 	}
@@ -327,14 +332,14 @@ void Player::idleState () {
 		current_anim_state = CROUCHING;
 	}
 	else if (keyboard.key_right()) {
-		if (isFacingLeft)
+		if (flipped_mode)
 			current_anim_state = FLIPPING;
 		else
 			current_anim_state = WALKING;
 	}
 	else if (keyboard.key_left()) {
 		// Must flip in order to go left because sprite faces right
-		if (isFacingLeft)
+		if (flipped_mode)
 			current_anim_state = WALKING;
 		else
 			current_anim_state = FLIPPING;
@@ -377,10 +382,10 @@ void Player::walkingState() {
 	if (keyboard.multipleKeysPressed()) {
 		current_anim_state = SLIDING;
 	}
-	else if (isFacingLeft && keyboard.key_right()) {
+	else if (flipped_mode && keyboard.key_right()) {
 		current_anim_state = FLIPPING;
 	}
-	else if (!isFacingLeft && keyboard.key_left()) {
+	else if (!flipped_mode && keyboard.key_left()) {
 		current_anim_state = FLIPPING;
 	}
 	else if (keyboard.key_jump() || isInAir()) {
@@ -459,9 +464,9 @@ void Player::jumpingState() {
 	else if (!isInAir() && velX != 0) {
 		hasJumped = false;
 		velY = 0;
-		if (velX > 0 && isFacingLeft) current_anim_state = FLIPPING;
-		else if (velX > 0 && isFacingLeft) current_anim_state = SLIDING;
-		else if (velX < 0 && !isFacingLeft) current_anim_state = FLIPPING;
+		if (velX > 0 && flipped_mode) current_anim_state = FLIPPING;
+		else if (velX > 0 && flipped_mode) current_anim_state = SLIDING;
+		else if (velX < 0 && !flipped_mode) current_anim_state = FLIPPING;
 		else current_anim_state = SLIDING;
 	}
 	// Allow for slight changes of movement while in midair
@@ -592,7 +597,7 @@ void Player::flippingState() {
 	else {
 		current_anim_state = SLIDING;
 	}
-	isFacingLeft = !isFacingLeft;
+	flipped_mode = flipped_mode ? NO_FLIP : FLIP_HORIZONTAL;
 }
 
 /* TODO

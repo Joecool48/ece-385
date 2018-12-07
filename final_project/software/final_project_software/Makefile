@@ -153,6 +153,8 @@ CXX_SRCS += src/sprite_animator.cpp
 CXX_SRCS += src/background.cpp
 CXX_SRCS += src/item.cpp
 CXX_SRCS += src/init.cpp
+CXX_SRCS += src/config.cpp
+CXX_SRCS += src/keyboard.cpp
 ASM_SRCS :=
 
 
@@ -174,7 +176,7 @@ APP_CFLAGS_UNDEFINED_SYMBOLS :=
 APP_CFLAGS_OPTIMIZATION := -O0
 APP_CFLAGS_DEBUG_LEVEL := -g
 APP_CFLAGS_WARNINGS := -Wall
-APP_CFLAGS_USER_FLAGS :=
+APP_CFLAGS_USER_FLAGS := -std=gnu++0x -std=gnu++14
 
 APP_ASFLAGS_USER :=
 APP_LDFLAGS_USER :=

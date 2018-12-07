@@ -4,8 +4,7 @@
  *  Created on: Dec 3, 2018
  *      Author: joey
  */
-#include "init.h"
-#include "config.h"
+#include "../include/init.h"
 
 /*
  *
@@ -15,7 +14,7 @@
  */
 void setBackgroundObjectWorld1(Background * b) {
 	// Set the start address and width of background sprite
-	if (b == nullptr || b->collidable_background_objects == nullptr) {
+	if (b == nullptr) {
 		std::cout << "You tried to init a nullptr" << std::endl;
 	}
 	b->x = 0;

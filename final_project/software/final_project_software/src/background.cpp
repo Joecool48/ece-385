@@ -4,12 +4,39 @@
  *  Created on: Dec 3, 2018
  *      Author: joey
  */
-#include "background.h"
-#include "config.h"
+
+#include "../include/background.h"
+
+#include <cstdint>
+#include <iostream>
+
+#include "../include/enemies.h"
+#include "../include/player.h"
+#include "../include/colliders.h"
+
 
 Background_Object::Background_Object(Rect_Collider collider, bool contains_item) {
 	this->collider = collider;
 	this->contains_item = contains_item;
+}
+
+int16_t overlapX (const Rect_Collider & rect1, const Rect_Collider & rect2) {
+	int16_t dist1 = 0, dist2 = 0;
+	dist1 = rect2.collide_x + rect2.collide_width - rect1.collide_x;
+	if (dist1 > 0) return dist1;
+	dist2 = rect1.collide_x + rect1.collide_width - rect2.collide_x;
+	if (dist2 > 0) return -dist2;
+	return 0;
+
+}
+// Returns how much to offset rect1 first param
+int16_t overlapY (const Rect_Collider & rect1, const Rect_Collider & rect2) {
+	int16_t dist1 = 0, dist2 = 0;
+	dist1 = rect1.collide_y + rect1.collide_height - rect2.collide_y;
+	if (dist1 > 0) return -dist1;
+	dist2 = rect2.collide_y + rect2.collide_height - rect1.collide_y;
+	if (dist2 > 0) return dist2;
+	return 0;
 }
 
 /*
@@ -66,6 +93,9 @@ void Background::scrollBackgroundX (int moveAmount) {
 	else {
 		screenCenterX += moveAmount;
 	}
+	for (auto it = collidable_background_objects.begin(); it != collidable_background_objects.end(); it++) {
+		it->second->collider.collide_x -= moveAmount;
+	}
 }
 
 
@@ -94,21 +124,21 @@ void Background::drawWindow() {
 	// Draw all the enemies at the current frame
 	for (auto it = enemies.begin(); it != enemies.end(); it++) {
 		if (it->second != nullptr)
-			it->second->getCurrentSprite().drawSprite();
+			it->second->draw();
 	}
 	// Draw all the items on the screen
 	for (auto it = items.begin(); it != items.end(); it++) {
 		if (it->second != nullptr)
-			it->second->getCurrentSprite().drawSprite();
+			it->second->draw();
 	}
 	// Draw all fireballs thrown by the player
 	for (auto it = fireballs.begin(); it != fireballs.end(); it++) {
 		if (it->second != nullptr)
-			it->second->getCurrentSprite().drawSprite();
+			it->second->draw();
 	}
 	// Just draw the player
 	if (current_player != nullptr)
-		current_player->getCurrentSprite().drawSprite();
+		current_player->draw();
 	else
 		std::cout << "Player is null when trying to draw him :(" << std::endl;
 }
@@ -140,7 +170,8 @@ Rect_Collider Background::itemCollidedWithPlayer() {
 Rect_Collider Background::enemyCollidedWithPlayer() {
 	// Return sentinel value if the current_player is null
 	if (current_player == nullptr) return Rect_Collider();
-	for (auto it = enemies.begin(); it != enemies.end();) {
+	auto it = enemies.begin();
+	while(it != enemies.end()) {
 		// Delete the element if it is null. Clears up some space
 		if (it->second == nullptr) {
 			it = enemies.erase(it);
@@ -194,8 +225,8 @@ void Background::updateBackground() {
 			it = items.erase(it);
 		}
 		else {
-			it->second->gravity();
 			it->second->update();
+			it->second->gravity();
 			it++;
 		}
 	}
@@ -204,8 +235,8 @@ void Background::updateBackground() {
 			it = enemies.erase(it);
 		}
 		else {
-			it->second->gravity();
 			it->second->update();
+			it->second->gravity();
 			it++;
 		}
 	}
@@ -214,13 +245,13 @@ void Background::updateBackground() {
 			it = fireballs.erase(it);
 		}
 		else {
-			it->second->gravity();
 			it->second->update();
+			it->second->gravity();
 			it++;
 		}
 	}
-	current_player->gravity();
 	current_player->update();
+	current_player->gravity();
 	resolveCollisions();
 	drawWindow();
 }
@@ -300,7 +331,7 @@ void Background::resolveCollisions() {
 	for (auto itemsIt = items.begin(); itemsIt != items.end(); itemsIt++) {
 		if (itemsIt->second->collider.collides_with(current_player->player_collider)) {
 			itemsIt->second->collided_with(current_player->player_collider);
-			current_player->player_collider(itemsIt->second->collider);
+			current_player->collided_with(itemsIt->second->collider);
 		}
 	}
 	for (auto enemiesIt = enemies.begin(); enemiesIt != enemies.end(); enemiesIt++) {
@@ -308,7 +339,7 @@ void Background::resolveCollisions() {
 			enemiesIt->second->collided_with(current_player->player_collider);
 			current_player->collided_with(enemiesIt->second->collider);
 		}
-		for (auto fireballsIt = fireballs.begin(); fireballsIt != fireballs.end(); fireballsIt) {
+		for (auto fireballsIt = fireballs.begin(); fireballsIt != fireballs.end(); fireballsIt++) {
 			if (enemiesIt->second->collider.collides_with(fireballsIt->second->collider)) {
 				enemiesIt->second->collided_with(fireballsIt->second->collider);
 				fireballsIt->second->collided_with(enemiesIt->second->collider);
@@ -318,11 +349,11 @@ void Background::resolveCollisions() {
 }
 
 void Background_Object::collided_with(Rect_Collider & other, Background * back) {
-	if (other.collider_type == Collider_Type::PLAYER && other.collides_below(this->collider)) {
-		if (this->collider.collider_type == Collider_Type::ITEM_BLOCK && contains_item) {
+	if (other.collide_type == Collider_Type::PLAYER && other.collides_below(this->collider)) {
+		if (this->collider.collide_type == Collider_Type::ITEM_BLOCK && contains_item) {
 			contains_item = false;
 			// Dispense item based on player mode
-			if (back->current_player->current_anim_mode == Player::MINI_MODE) {
+			if (back->current_player->getMode() == Player::MINI_MODE) {
 				Mushroom *mush = new Mushroom(this->collider.collide_x, this->collider.collide_y - Mushroom::MUSHROOM_COLLIDER_HEIGHT);
 				back->items[mush->collider.collider_id] = mush;
 			}

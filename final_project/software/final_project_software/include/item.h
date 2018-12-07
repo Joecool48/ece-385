@@ -4,63 +4,71 @@
  *  Created on: Dec 3, 2018
  *      Author: joey
  */
-#include "sprite_animator.h"
-#include "colliders.h"
-#include "background.h"
-#include <stdlib.h>
-#include "colliders.h"
-#include "sprite_animator.h"
-#include "config.h"
+
 
 #ifndef INCLUDE_ITEM_H_
 #define INCLUDE_ITEM_H_
+
+#include "../include/sprite_animator.h"
+#include "../include/colliders.h"
+#include "../include/background.h"
+#include <stdlib.h>
+#include "../include/colliders.h"
+#include "../include/sprite_animator.h"
+#include "../include/config.h"
+
+class Background;
+class Collidable;
+class Rect_Collider;
+class Sprite_Animator;
+
+
 /* TODO
  * Implement item setups
  */
 class Item : public Sprite_Animator {
 public:
-	const float ITEM_START_FRAME = 0;
-	const uint16_t ITEM_MODE = 0;
+	static const float ITEM_START_FRAME;
+	enum modes {ITEM_MODE = 0};
 	Rect_Collider collider;
 	float velX = 0, velY = 0;
-	const uint16_t ITEM_STATE = 3;
+	enum states {ITEM_STATE = 0};
 	Background *current_background;
 	// Used to sent a signal telling the item it collided. No physics implemented, just special actions
 	virtual void collided_with (Rect_Collider & other) = 0;
 	void destroyInBackground();
 	void setBackground(Background *b);
 	void gravity();
-	Item(uint16_t start_x, uint16_t start_y, Rect_Collider rect);
+	void draw();
+	Item(uint16_t start_x, uint16_t start_y, uint16_t mode, uint16_t state, float curr_frame, Rect_Collider rect);
 };
 /*
- * TODO
- * Add real values for the collider width and height
+ *
+ * Class for representing a fireflower that mario can pick up
  */
 class Fireflower : public Item {
 public:
-	const uint16_t FIREFLOWER_EXIST = 1;
-	const uint16_t FIREFLOWER_DESTROY = 2;
+	enum states {FIREFLOWER_EXIST, FIREFLOWER_DESTROY};
 	Fireflower(uint16_t start_x, uint16_t start_y);
-	const uint16_t FIREFLOWER_COLLIDER_WIDTH = 30;
-	const uint16_t FIREFLOWER_COLLIDER_HEIGHT = 15;
+	const static uint16_t FIREFLOWER_COLLIDER_WIDTH = 16;
+	const static uint16_t FIREFLOWER_COLLIDER_HEIGHT = 16;
 	void update();
 	void animatorSetup();
 	void collided_with(Rect_Collider & other);
 };
 /*
- * TODO
- * Add real values for the collider width and height
+ *
+ * Class for representing a mushroom that mario can pick up. This one moves
  */
 class Mushroom : public Item {
 public:
 	Mushroom(uint16_t start_x, uint16_t start_y);
-	const uint16_t MUSHROOM_MOVE = 1;
-	const uint16_t MUSHROOM_DESTROY = 2;
-	const bool LEFT = 0;
-	const bool RIGHT = 1;
-	const uint16_t MUSHROOM_COLLIDER_WIDTH = 30;
-	const uint16_t MUSHROOM_COLLIDER_HEIGHT = 15;
-	const float MUSHROOM_TRAVEL_SPEED = .2;
+	enum states {MUSHROOM_MOVE, MUSHROOM_DESTROY};
+	const static bool LEFT = 0;
+	const static bool RIGHT = 1;
+	const static uint16_t MUSHROOM_COLLIDER_WIDTH = 16;
+	const static uint16_t MUSHROOM_COLLIDER_HEIGHT = 17;
+	static const float MUSHROOM_TRAVEL_SPEED;
 	bool travelDir;
 	void collided_with(Rect_Collider & other);
 	void update();
@@ -80,28 +88,27 @@ public:
 //	void animatorSetup();
 //};
 /*
- * TODO Create animator setup func
- * Add real values for the collider width and height
+ *
+ * Fireball class. Mario instantiates these objects to represent his projectiles
  */
 class Fireball : public Sprite_Animator {
 public:
-	const uint16_t EXPLODE_FRAMES = 2;
-	const uint16_t STATE_DESTROY = 1;
-	const uint16_t STATE_BOUNCE = 2;
-	const uint16_t STATE_EXPLODE = 3;
+	const static uint16_t EXPLODE_FRAMES = 2;
+	enum {STATE_BOUNCE, STATE_EXPLODE, STATE_DESTROY};
 	Background * current_background;
 	Fireball(uint16_t start_x, uint16_t start_y, Background * b);
 	Rect_Collider collider;
 	float velX, velY;
-	const float FIREBALL_SPEED_BOUNCE = .5;
-	const uint16_t FIREBALL_COLLIDER_WIDTH = 10;
-	const uint16_t FIREBALL_COLLIDER_HEIGHT = 10;
+	static const float FIREBALL_SPEED_BOUNCE;
+	const static uint16_t FIREBALL_COLLIDER_WIDTH = 18;
+	const static uint16_t FIREBALL_COLLIDER_HEIGHT = 17;
 	void collided_with(Rect_Collider & other);
 	void update();
 	void animatorSetup();
 	// Function to set the state to exploding
 	void setToExplode();
 	void gravity();
+	void draw();
 	void destroyInBackground();
 };
 

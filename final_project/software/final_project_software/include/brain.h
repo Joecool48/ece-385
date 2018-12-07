@@ -11,6 +11,7 @@
 
 // Base class for enemy AI
 class Brain {
+public:
 	virtual ~Brain();
 	Brain();
 };

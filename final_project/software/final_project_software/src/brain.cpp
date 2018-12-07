@@ -4,6 +4,11 @@
  *  Created on: Nov 29, 2018
  *      Author: joey
  */
-#include "brain.h"
+#include "../include/brain.h"
 
+Brain::Brain() {
 
+}
+Brain::~Brain() {
+
+}

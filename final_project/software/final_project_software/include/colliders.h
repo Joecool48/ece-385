@@ -9,7 +9,10 @@
 #define INCLUDE_COLLIDERS_H_
 
 #include <vector>
-using namespace std;
+#include <stdint.h>
+#include "../include/config.h"
+
+
 /*
  * TODO:
  * 	ADD MORE COLLIDERS AND FIX THE FACT THAT COLLIDERS OF DIFFERENT TYPES CANT BE CHECKED
@@ -18,14 +21,30 @@ using namespace std;
  * TODO make sure to set isTrigger when putting item sprites on screen
  * Triggering means it doesnt move other objects
  */
+enum class Collider_Type {DUMMY_COLLIDER_TYPE,
+						GUMBA,
+						FIREBALL,
+						FIREFLOWER,
+						MUSHROOM,
+						TURTLE,
+						TURTLE_SHELL,
+						PLATFORM_UNBREAKABLE,
+						ITEM_BLOCK,
+						PLAYER
+						}; // List all the possible objects on the screen. The background tells another object when it collides, and what it should do
+
+bool cantGoThrough (Collider_Type type);
+// GUMBA, TURTLE, and TURTLE_SHELL are considered enemies
+bool isEnemy (Collider_Type type);
+
 class Collidable {
 public:
 	static uint64_t current_id;
 	uint64_t collider_id;
-	Collider_Type collider_type;
+	Collider_Type collide_type;
 	uint16_t collide_x;
 	uint16_t collide_y;
-	Collidable (Collider_Type collide_type, uint16_t collide_x, uint16_t collide_y);
+	Collidable (Collider_Type collider_type, uint16_t collide_x, uint16_t collide_y);
 	virtual ~Collidable();
 };
 
