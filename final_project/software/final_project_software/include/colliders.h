@@ -37,9 +37,9 @@ public:
 	Rect_Collider();
 	bool collides_with (Rect_Collider & other);
 	bool collides_above (Rect_Collider & other);
-//	bool collides_below (Rect_Collider & other);
-//	bool collides_left (Rect_Collider & other);
-//	bool collides_right (Rect_Collider & other);
+	bool collides_below (Rect_Collider & other);
+	bool collides_left (Rect_Collider & other);
+	bool collides_right (Rect_Collider & other);
 //	// Implement method to check for equality between rects
 //	bool equals(Rect_Collider & other);
 };

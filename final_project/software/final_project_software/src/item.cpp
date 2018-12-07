@@ -5,28 +5,26 @@
  *      Author: joey
  */
 #include "item.h"
-#include <stdlib.h>
-#include "colliders.h"
-#include "sprite_animator.h"
 #include "config.h"
-#include "background.h"
 Item::Item (uint16_t start_x, uint16_t start_y, Rect_Collider rect) : Sprite_Animator (start_x, start_y, Item::ITEM_MODE, Item::ITEM_STATE, Item::ITEM_START_FRAME), Item::collider(Rect_Collider(rect)){
 	current_background = nullptr;
 }
-Fireflower::Fireflower (uint16_t start_x, uint16_t start_y) : Sprite_Animator (start_x, start_y, Item::ITEM_MODE, Item::ITEM_STATE, Item::ITEM_START_FRAME), Item::collider(Rect_Collider(start_x, start_y, FIREFLOWER_COLLIDER_WIDTH, FIREFLOWER_COLLIDER_HEIGHT)) {
+Fireflower::Fireflower (uint16_t start_x, uint16_t start_y) : Sprite_Animator (start_x, start_y, Item::ITEM_MODE, FIREFLOWER_EXIST, Item::ITEM_START_FRAME), Item::collider(Rect_Collider(Collider_Type::FIREFLOWER, start_x, start_y, FIREFLOWER_COLLIDER_WIDTH, FIREFLOWER_COLLIDER_HEIGHT)) {
 }
-Mushroom::Mushroom (uint16_t start_x, uint16_t start_y) : Sprite_Animator (start_x, start_y, Item::ITEM_MODE, Item::ITEM_STATE, Item::ITEM_START_FRAME), Item::collider(Rect_Collider(start_x, start_y, MUSHROOM_COLLIDER_WIDTH, MUSHROOM_COLLIDER_HEIGHT)) {
+Mushroom::Mushroom (uint16_t start_x, uint16_t start_y) : Sprite_Animator (start_x, start_y, Item::ITEM_MODE, MUSHROOM_MOVE, Item::ITEM_START_FRAME), Item::collider(Rect_Collider(Collider_Type::MUSHROOM, start_x, start_y, MUSHROOM_COLLIDER_WIDTH, MUSHROOM_COLLIDER_HEIGHT)) {
 	travelDir = rand() % 2;
 }
-Fireball::Fireball (uint16_t start_x, uint16_t start_y, Background * b) : Sprite_Animator (start_x, start_y, Item::ITEM_MODE, STATE_BOUNCE, Item::ITEM_START_FRAME), Item::collider(Rect_Collider(start_x, start_y, FIREBALL_COLLIDER_WIDTH, FIREBALL_COLLIDER_HEIGHT)){
+Fireball::Fireball (uint16_t start_x, uint16_t start_y, Background * b) : Sprite_Animator (start_x, start_y, Item::ITEM_MODE, STATE_BOUNCE, Item::ITEM_START_FRAME), Item::collider(Rect_Collider(Collider_Type::FIREBALL, start_x, start_y, FIREBALL_COLLIDER_WIDTH, FIREBALL_COLLIDER_HEIGHT)){
 	if (b == nullptr) {
 		std::cout << "Fireball wont be displayed. Null background!" << std::endl;
 		return;
 	}
+	velX = 0;
+	velY = 0;
 	current_background = b;
 }
-Coin::Coin (uint16_t start_x, uint16_t start_y) : Sprite_Animator (start_x, start_y, Item::ITEM_MODE, Item::ITEM_STATE, Item::ITEM_START_FRAME), Item::collider(Rect_Collider(start_x, start_y, COIN_COLLIDER_WIDTH, COIN_COLLIDER_HEIGHT)) {
-}
+//Coin::Coin (uint16_t start_x, uint16_t start_y) : Sprite_Animator (start_x, start_y, Item::ITEM_MODE, Item::ITEM_STATE, Item::ITEM_START_FRAME), Item::collider(Rect_Collider(Collider_Type::COIN, start_x, start_y, COIN_COLLIDER_WIDTH, COIN_COLLIDER_HEIGHT)) {
+//}
 void Item::setBackground(Background *b) {
 	current_background = b;
 }
@@ -65,14 +63,32 @@ void Fireball::update() {
 	}
 	case STATE_DESTROY:
 		// Delete the object then remove it from the background. This will decrease map size too
-		delete current_background->fireballs[collider.collider_id];
-		current_background->fireballs.erase(collider.collider_id);
+		destroyInBackground();
 		break;
 	default:
 		std::cout << "Unrecognized state in Fireball::update" << std::endl;
 }
+
+void Fireball::destroyInBackground() {
+	if (current_background == nullptr || current_background->fireballs.find(collider.collider_id) == current_background->fireballs.end()) {
+		std::cout << "Problem finding the fireball to destroy" << std::endl;
+		return;
+	}
+	delete current_background->fireballs[collider.collider_id];
+	current_background->fireballs.erase(collider.collider_id);
+}
+
+void Item::destroyInBackground() {
+	if (current_background == nullptr || current_background->items.find(collider.collider_id) == current_background->items.end()) {
+		std::cout << "Problem finding the Item to destroy" << std::endl;
+		return;
+	}
+	delete current_background->items[collider.collider_id];
+	current_background->items.erase(collider.collider_id);
+}
+
 /*
- * TODO
+ *
  * Add animator setup for frames
  */
 void Fireball::animatorSetup() {
@@ -99,18 +115,28 @@ void Mushroom::collided_with(Rect_Collider & other) {
  * Simple update to determine which way it should go
  */
 void Mushroom::update() {
-	current_anim_state = ITEM_STATE;
 	current_anim_mode = ITEM_MODE;
-	if (travelDir == RIGHT) velX = MUSHROOM_TRAVEL_SPEED;
-	else velX = -MUSHROOM_TRAVEL_SPEED;
+	if (wait_frames) {
+		wait_frames--;
+		return;
+	}
+	switch (current_anim_state) {
+	case MUSHROOM_MOVE:
+		if (travelDir == RIGHT) velX = MUSHROOM_TRAVEL_SPEED;
+		else velX = -MUSHROOM_TRAVEL_SPEED;
+		break;
+	case MUSHROOM_DESTROY:
+		destroyInBackground();
+		break;
+	}
 }
 /*
- * TODO
- * Add animator setup for Mushroom sprite
+ *
+ * Init animator setup for Mushroom sprite
  */
 void Mushroom::animatorSetup() {
 	Sprite mushroom_frame_1(x, y, 16, 17, ADDRESS_OFFSET + 774964);
-	state_mode_to_frames_map[ITEM_STATE][ITEM_MODE].push_back(mushroom_frame_1);
+	state_mode_to_frames_map[MUSHROOM_MOVE][ITEM_MODE].push_back(mushroom_frame_1);
 }
 
 /*
@@ -118,20 +144,39 @@ void Mushroom::animatorSetup() {
  * Fireflower update function super simple.
  */
 void Fireflower::update() {
-	current_anim_state = ITEM_STATE;
+	if (wait_frames) {
+		wait_frames--;
+		return;
+	}
 	current_anim_mode = ITEM_MODE;
+	switch (current_anim_state) {
+	// Simply exist. That is all we can ask of you
+	case FIREFLOWER_EXIST:
+		break;
+	case FIREFLOWER_DESTROY:
+		destroyInBackground();
+	}
 }
 
 /*
- * TODO Initialize fireflower sprites in animSetup
+ * Initialize fireflower sprites in animSetup
  */
 void Fireflower::animatorSetup() {
 	Sprite fireflower_1(x, y, 16, 16, ADDRESS_OFFSET + 774452);
 	Sprite fireflower_2(x, y, 16, 16, ADDRESS_OFFSET + 774708);
 	Sprite fireflower_3(x, y, 16, 16, ADDRESS_OFFSET + 773584);
 	Sprite fireflower_4(x, y, 16, 16, ADDRESS_OFFSET + 774236);
-	state_mode_to_frames_map[ITEM_STATE][ITEM_MODE].push_back(fireflower_1);
-	state_mode_to_frames_map[ITEM_STATE][ITEM_MODE].push_back(fireflower_2);
-	state_mode_to_frames_map[ITEM_STATE][ITEM_MODE].push_back(fireflower_3);
-	state_mode_to_frames_map[ITEM_STATE][ITEM_MODE].push_back(fireflower_4);
+	state_mode_to_frames_map[FIREFLOWER_EXIST][ITEM_MODE].push_back(fireflower_1);
+	state_mode_to_frames_map[FIREFLOWER_EXIST][ITEM_MODE].push_back(fireflower_2);
+	state_mode_to_frames_map[FIREFLOWER_EXIST][ITEM_MODE].push_back(fireflower_3);
+	state_mode_to_frames_map[FIREFLOWER_EXIST][ITEM_MODE].push_back(fireflower_4);
 }
+
+void Item::gravity() {
+	velY += GRAVITY_STRENGTH;
+}
+
+void Fireball::gravity() {
+	velY += GRAVITY_STRENGTH;
+}
+

@@ -10,6 +10,7 @@
 #include <vector>
 #include "colliders.h"
 #include "item.h"
+#include <map>
 using namespace std;
 
 class Background : public Sprite {
@@ -18,7 +19,7 @@ public:
 	void scrollBackgroundX (int moveAmount);
 	void drawBackground();
 	void drawWindow(); // Draws all the sprites to the screen after the background
-	void updateBackground();
+	void updateBackground(); // Calls update on everything, and cleans up things out of bounds. Resolves collisions, draws background, and does physics
 	void initBackground(); // Initializes everything on the background
 	uint16_t deadZoneLeft; // The left and right of the dead zone.
 	uint16_t deadZoneRight;
@@ -32,8 +33,8 @@ public:
 	// Returns a rect_collider if an enemy collides with the player
 	Rect_Collider enemyCollidedWithPlayer();
 	// Remove said item from rendering
-	void removeItemByCollider(Rect_Collider & collider);
-	void removeEnemyByCollider(Rect_Collider & collider);
+	void removeItemById(uint64_t id);
+	void removeEnemyById(uint64_t id);
 	Rect_Collider collidedWithEnemy();
 	// No need to notify for platforms. Background will handle those physics
 	Background(); // Init background with a player
@@ -44,12 +45,17 @@ public:
 	map<uint64_t, Enemy*> enemies;
 	map<uint64_t, Item*> items;
 	map<uint64_t, Fireball*> fireballs;
+	void setPlayer (Player *curr_player);
+	bool outOfBounds(Rect_Collider & other);
+	void resolveCollisions(); // Function called after update to resolve collisions
+
 };
 
 class Background_Object {
 public:
 	Rect_Collider collider;
 	Background_Object (Rect_Collider collider, bool contains_item);
+	void collided_with(Rect_Collider & other); // TODO implement collider method to do stuff when it collides
 	bool contains_item;
 };
 

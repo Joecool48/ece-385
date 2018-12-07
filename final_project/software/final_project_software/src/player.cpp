@@ -52,9 +52,11 @@ void Player::throwFireball() {
  * Constructs a new player object (Mario). This also calls animatorSetup to make sure all the sprites are filled.
  * Also inits the rect collider, initial mode, and state.
  */
-Player::Player() {
+Player::Player(Rect_Collider collider) {
 	enablePlayerControl = true;
 	enemyCanKill = true;
+	collider.collider_type = Collider_Type::PLAYER;
+	player_collider = collider;
 	accelX = 0, accelY = 0;
 	velX = 0, velY = 0;
 	invincibility_frames = 0;
@@ -62,6 +64,9 @@ Player::Player() {
 	hasJumped = false;
 	return_state = IDLE;
 	current_background = nullptr;
+	gotMushroom = false;
+	gotFireflower = false;
+	gotHitByEnemy = false;
 }
 /*
  * Maps all the states and modes to their respective series of sprite frames
@@ -246,32 +251,35 @@ bool Player::isInAir() {
  * Returns true if an enemy hit mario and it wouldnt kill the enemy
  */
 bool Player::hitByEnemy() {
-	if (current_background == nullptr) {
-		std::cout << "Background is null!" << std::endl;
-		return false;
-	}
-	for (int i = 0; i < current_background->enemies.size(); i++) {
-		if (current_background->enemies[i] != nullptr) {
-			// Mario got hit by an enemy, and didnt land on top of it.
-			// He takes damage when this happens
-			if (current_background->enemies[i]->collider.collides_with(player_collider) && !player_collider.collides_above(current_background->enemies[i]->collider)) {
-				return true;
-			}
-		}
+	if (gotHitByEnemy) {
+		gotHitByEnemy = false;
+		return true;
 	}
 	return false;
 }
+/* TODO maybe implement
+ * Called if something collides with the player
+ *
+ */
+void Player::collided_with(Rect_Collider & other) {
+	if (other.collider_type == Collider_Type::MUSHROOM) {
+		gotMushroom = true;
+	}
+	else if (other.collider_type == Collider_Type::FIREFLOWER) {
+		gotFireflower = true;
+	}
+	else if (isEnemy(other.collider_type) && !player_collider.collides_above(other)) {
+		gotHitByEnemy = true;
+	}
+}
+
 /*
  *
  * Implement this method to return true if the player gets a mushroom. Mushroom should also disappear when returning true
  */
 bool Player::getsMushroom() {
-	if (current_background == nullptr) {
-		std::cout << "Background is null!" << std::endl;
-	}
-	Rect_Collider & rect = current_background->itemCollidedWithPlayer();
-	if (rect.collider_type == Collider_Type::MUSHROOM) {
-		current_background->removeItemByCollider(rect);
+	if (gotMushroom) {
+		gotMushroom = false;
 		return true;
 	}
 	return false;
@@ -286,7 +294,7 @@ bool Player::getsFireflower() {
 	}
 	Rect_Collider & rect = current_background->itemCollidedWithPlayer();
 	if (rect.collider_type == Collider_Type::FIREFLOWER){
-		current_background->removeItemByCollider(rect);
+		current_background->removeItemById(rect.collider_id);
 		return true;
 	}
 	return false;
@@ -607,3 +615,9 @@ void Player::throwfireballState() {
 void Player::flagdownState() {
 
 }
+
+void Player::gravity() {
+	velY += GRAVITY_STRENGTH;
+}
+
+

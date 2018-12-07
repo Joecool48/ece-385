@@ -34,19 +34,23 @@ Background::Background() {
 
 Background::~Background() {
 	// Clean up all the memory used for keeping track of screen data
-	for (unsigned i = 0; i < collidable_background_objects.size(); i++) {
-		if (collidable_background_objects[i]) delete collidable_background_objects[i];
+	for (auto it = enemies.begin(); it != enemies.end(); it++) {
+		if (it->second != nullptr)
+			delete it->second;
 	}
-	for (unsigned i = 0; i < enemies.size(); i++) {
-		if (enemies[i]) delete enemies[i];
+	// Draw all the items on the screen
+	for (auto it = items.begin(); it != items.end(); it++) {
+		if (it->second != nullptr)
+			delete it->second;
 	}
-	for (unsigned i = 0; i < items.size(); i++) {
-		if (items[i]) delete items[i];
+	// Draw all fireballs thrown by the player
+	for (auto it = fireballs.begin(); it != fireballs.end(); it++) {
+		if (it->second != nullptr)
+			delete it->second;
 	}
-	for (unsigned i = 0; i < fireballs.size(); i++) {
-		if (fireballs[i]) delete fireballs[i];
-	}
-	if (current_player) delete current_player;
+	// Just draw the player
+	if (current_player != nullptr)
+		delete current_player;
 }
 /*
  * TODO
@@ -79,24 +83,34 @@ void Background::drawBackground() {
 
 
 
-/* TODO:
+/*:
  * Draws all sprites in the layer in some rendering order. Called every frame
- * MAKE SURE TO UPDATE THE BACKGROUND EVERY TIME IT SCROLLS
+ * Blindly updates. Doesnt check for anything
+ *
  */
 void Background::drawWindow() {
 	drawBackground();
 	// Don't need to draw background objects
 	// Draw all the enemies at the current frame
-	for (unsigned i = 0; i < enemies.size(); i++) {
-		enemies[i]->getCurrentSprite().drawSprite();
+	for (auto it = enemies.begin(); it != enemies.end(); it++) {
+		if (it->second != nullptr)
+			it->second->getCurrentSprite().drawSprite();
 	}
 	// Draw all the items on the screen
-	for (unsigned i = 0; i < items.size(); i++) {
-		items[i]->getCurrentSprite().drawSprite();
+	for (auto it = items.begin(); it != items.end(); it++) {
+		if (it->second != nullptr)
+			it->second->getCurrentSprite().drawSprite();
 	}
-
+	// Draw all fireballs thrown by the player
+	for (auto it = fireballs.begin(); it != fireballs.end(); it++) {
+		if (it->second != nullptr)
+			it->second->getCurrentSprite().drawSprite();
+	}
 	// Just draw the player
-	current_player->getCurrentSprite().drawSprite();
+	if (current_player != nullptr)
+		current_player->getCurrentSprite().drawSprite();
+	else
+		std::cout << "Player is null when trying to draw him :(" << std::endl;
 }
 
 /*
@@ -106,15 +120,14 @@ void Background::drawWindow() {
 Rect_Collider Background::itemCollidedWithPlayer() {
 	// Return sentinel value if the current_player is null
 	if (current_player == nullptr) return Rect_Collider();
-	unsigned i = 0;
-	while (i < items.size()) {
+	for (auto it = items.begin(); it != items.end();) {
 		// Delete the element if it is null. Clears up some space
-		if (items[i] == nullptr) {
-			items.erase(items.begin() + i);
+		if (it->second == nullptr) {
+			it = items.erase(it);
 		}
 		else {
-			if (items[i]->collider.collides_with(current_player->player_collider)) return items[i]->collider;
-			i++;
+			if (it->second->collider.collides_with(current_player->player_collider)) return it->second->collider;
+			it++;
 		}
 	}
 	return Rect_Collider();
@@ -127,45 +140,142 @@ Rect_Collider Background::itemCollidedWithPlayer() {
 Rect_Collider Background::enemyCollidedWithPlayer() {
 	// Return sentinel value if the current_player is null
 	if (current_player == nullptr) return Rect_Collider();
-	unsigned i = 0;
-	while (i < enemies.size()) {
+	for (auto it = enemies.begin(); it != enemies.end();) {
 		// Delete the element if it is null. Clears up some space
-		if (enemies[i] == nullptr) {
-			enemies.erase(enemies.begin() + i);
+		if (it->second == nullptr) {
+			it = enemies.erase(it);
 		}
 		else {
-			if (enemies[i]->collider.collides_with(current_player->player_collider)) return enemies[i]->collider;
-			i++;
+			if (it->second->collider.collides_with(current_player->player_collider)) return it->second->collider;
+			it++;
 		}
 	}
 	return Rect_Collider();
 }
-
+/*
+ * TODO set player in background
+ */
+void Background::setPlayer(Player *curr_player) {
+	if (curr_player == nullptr) {
+		std::cout << "Setting current_player to null in setPlayer" << std::endl;
+		return;
+	}
+	current_player = curr_player;
+}
 
 /*
- * These two methods remove stuff in the background vector by rect_collider reference.
- * Uses rect_collider equals method
+ * These two methods remove stuff in the background vector by rect_collider id.
+ *
  */
-void Background::removeItemByCollider(Rect_Collider & collider) {
-	for (unsigned i = 0; i < items.size(); i++) {
-		if (items[i] != nullptr && items[i]->collider.equals(collider)) {
-			items.erase(items.begin() + i);
-			return;
+void Background::removeItemById(uint64_t id) {
+	if (items.find(id) != items.end()) {
+		if (items[id] != nullptr) {
+			delete items[id];
+		}
+		items.erase(id);
+	}
+}
+void Background::removeEnemyById(uint64_t id) {
+	if (enemies.find(id) != enemies.end()) {
+		if (enemies[id] != nullptr) {
+			delete enemies[id];
+		}
+		enemies.erase(id);
+	}
+}
+
+bool Background::outOfBounds(Rect_Collider & other) {
+	return (other.collide_x + other.collide_width < 0 || other.collide_x >= width || other.collide_y >= height || other.collide_y + other.collide_y < 0);
+}
+
+void Background::updateBackground() {
+	for (auto it = enemies.begin(); it != enemies.end();) {
+		if (it->second == nullptr || outOfBounds(it->second->collider)) {
+			it = enemies.erase(it);
+		}
+		else {
+			it->second->gravity();
+			it->second->update();
+			it++;
+		}
+	}
+	// Draw all the items on the screen
+	for (auto it = items.begin(); it != items.end(); it++) {
+		if (it->second == nullptr || outOfBounds(it->second->collider)) {
+			it = items.erase(it);
+		}
+		else {
+			it->second->gravity();
+			it->second->update();
+			it++;
+		}
+	}
+	// Draw all fireballs thrown by the player
+	for (auto it = fireballs.begin(); it != fireballs.end(); it++) {
+		if (it->second == nullptr || outOfBounds(it->second->collider)) {
+			it = fireballs.erase(it);
+		}
+		else {
+			it->second->gravity();
+			it->second->update();
+			it++;
+		}
+	}
+	current_player->gravity();
+	current_player->update();
+	resolveCollisions();
+}
+
+
+// Checks and update all the collisions
+void Background::resolveCollisions() {
+//	map<uint64_t, Background_Object*> collidable_background_objects; // Objects that aren't seperate sprites, but are still collidable on the map; These update every frame with the background
+//	Player * current_player;
+//	map<uint64_t, Enemy*> enemies;
+//	map<uint64_t, Item*> items;
+//	map<uint64_t, Fireball*> fireballs;
+
+	for (auto backgroundIt = collidable_background_objects.begin(); backgroundIt != collidable_background_objects.end(); backgroundIt++) {
+		if (backgroundIt->second == nullptr) continue;
+		for (auto enemiesIt = enemies.begin(); enemiesIt != enemies.end(); enemiesIt++) {
+			if (!enemiesIt->second->noCollide && enemiesIt->second->collider.collides_with(backgroundIt->second->collider)) {
+				resolve(enemiesIt->second->collider, backgroundIt->second->collider); // Shunts the enemy off to the right position
+			}
+		}
+		if (current_player != nullptr && current_player->player_collider.collides_with(backgroundIt->second->collider) && !current_player->noCollide) {
+			resolve(current_player->player_collider, backgroundIt->second->collider);
+		}
+		for (auto itemsIt = items.begin(); itemsIt != items.end(); itemsIt++) {
+			if (itemsIt->second->collider.collides_with(backgroundIt->second->collider)) {
+				resolve(itemsIt->second->collider, backgroundIt->second->collider); // Shunts item off
+			}
+		}
+		for (auto fireballsIt = fireballs.begin(); fireballsIt != fireballs.end(); fireballsIt++) {
+			if (fireballsIt->second->collider.collides_with(backgroundIt->second->collider)) {
+				resolve(fireballsIt->second->collider, backgroundIt->second->collider);
+				fireballsIt->second->collided_with(backgroundIt->second->collider); // Let fireball know that it collided with the platform
+			}
+		}
+	}
+	for (auto itemsIt = items.begin(); itemsIt != items.end(); itemsIt++) {
+		if (itemsIt->second->collider.collides_with(current_player->player_collider)) {
+			itemsIt->second->collided_with(current_player->player_collider);
+			current_player->player_collider(itemsIt->second->collider);
+		}
+	}
+	for (auto enemiesIt = enemies.begin(); enemiesIt != enemies.end(); enemiesIt++) {
+		if (enemiesIt->second->collider.collides_with(current_player->player_collider)) {
+			enemiesIt->second->collided_with(current_player->player_collider);
+			current_player->collided_with(enemiesIt->second->collider);
+		}
+		for (auto fireballsIt = fireballs.begin(); fireballsIt != fireballs.end(); fireballsIt) {
+			if (enemiesIt->second->collider.collides_with(fireballsIt->second->collider)) {
+				enemiesIt->second->collided_with(fireballsIt->second->collider);
+				fireballsIt->second->collided_with(enemiesIt->second->collider);
+			}
 		}
 	}
 }
-void Background::removeEnemyByCollider(Rect_Collider & collider) {
-	for (unsigned i = 0; i < enemies.size(); i++) {
-		if (enemies[i] != nullptr && enemies[i]->collider.equals(collider)) {
-			enemies.erase(enemies.begin() + i);
-			return;
-		}
-	}
-}
-
-
-
-
 
 
 

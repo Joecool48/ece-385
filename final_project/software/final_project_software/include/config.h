@@ -27,23 +27,43 @@ enum class Collider_Type {DUMMY_COLLIDER_TYPE,
 						MUSHROOM,
 						TURTLE,
 						TURTLE_SHELL,
-						PLATFORM_BREAKABLE,
 						PLATFORM_UNBREAKABLE,
-						COIN_BLOCK,
 						ITEM_BLOCK,
 						PLAYER
 						}; // List all the possible objects on the screen. The background tells another object when it collides, and what it should do
 inline bool cantGoThrough (Collider_Type type) {
-	return type == Collider_Type::PLATFORM_BREAKABLE || type == Collider_Type::PLATFORM_UNBREAKABLE || type == Collider_Type::COIN_BLOCK || type == Collider_Type::ITEM_BLOCK;
+	return type == Collider_Type::PLATFORM_UNBREAKABLE || type == Collider_Type::ITEM_BLOCK;
 }
 // GUMBA, TURTLE, and TURTLE_SHELL are considered enemies
 inline bool isEnemy (Collider_Type type) {
 	return type == Collider_Type::GUMBA || type == Collider_Type::TURTLE || type == Collider_Type::TURTLE_SHELL;
 }
-const float GRAVITY_STRENGTH = 3;
+const float GRAVITY_STRENGTH = .2;
 const float TERMINAL_VELOCITY = 100;
+// Returns how much to offset rect1 first param
+void resolve (Rect_Collider & rect1, Rect_Collider & rect2) {
+	rect1.collide_x += overlapX(rect1, rect2);
+	rect1.collide_y += overlapY(rect1, rect2);
+}
+int16_t overlapX (const Rect_Collider & rect1, const Rect_Collider & rect2) {
+	int16_t dist1 = 0, dist2 = 0;
+	dist1 = rect2.collide_x + rect2.collide_width - rect1.collide_x;
+	if (dist1 > 0) return dist1;
+	dist2 = rect1.collide_x + rect1.collide_width - rect2.collide_x;
+	if (dist2 > 0) return -dist2;
+	return 0;
 
-bool pause_animation =false;
+}
+// Returns how much to offset rect1 first param
+int16_t overlapY (const Rect_Collider & rect1, const Rect_Collider & rect2) {
+	int16_t dist1 = 0, dist2 = 0;
+	dist1 = rect1.collide_y + rect1.collide_height - rect2.collide_y;
+	if (dist1 > 0) return -dist1;
+	dist2 = rect2.collide_y + rect2.collide_height - rect1.collide_y;
+	if (dist2 > 0) return dist2;
+	return 0;
+}
+bool pause_animation = false;
 /*
  * TODO:
  * 	CHANGE THESE ADDRESSES TO REFLECT THE ACTUAL MEMORY ADDRESSES

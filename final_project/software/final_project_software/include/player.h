@@ -39,17 +39,19 @@ public:
 	float velX, velY;
 	bool enablePlayerControl;
 	bool enemyCanKill;
+	bool noCollide;
 	uint16_t invincibility_frames;
 	bool isFacingLeft; // Set to true if facing left
 	bool hasJumped; // bool to determine if he has jumped before. Set to false when he hits the ground
 	uint16_t return_state; // Only used by enlarge and shrink states when mario gets hit. Returns to this state after the pause and animation
-	Player();
+	Player(Rect_Collider collider);
 	void animatorSetup(); // Initialize all the animation states of the sprite
 	void draw(); // function to draw player. Called AFTER update
 	void update(); // player state machine
 	bool isInAir(); // Function for if Mario is in  midair
 	Keyboard keyboard;
 	Background * current_background;
+	void collided_with(Rect_Collider & other);
 	void setBackground(Background * b);
 	void throwFireball();
 	Key getKey();
@@ -67,6 +69,8 @@ public:
 	bool hitByEnemy();
 	bool getsMushroom();
 	bool getsFireflower();
+	void gravity(); // Does gravity ooo
+	bool gotMushroom, gotFireflower, gotHitByEnemy;
 };
 
 

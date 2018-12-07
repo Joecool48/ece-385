@@ -35,31 +35,29 @@ bool Rect_Collider::collides_above(Rect_Collider & other) {
 			&& collide_y + collide_height < other.collide_y + other.collide_height / 2);
 }
 
-///* TODO:
-// * Determines whether the one collider is on left of the other.
-// * For detecting whether Mario jumped on a enemy
-// */
-//bool Rect_Collider::collides_left(Rect_Collider & other) {
-//	// fix
-//	return (collides_with(other) && collide_x + collide_width / 2 >= other.collide_x
-//			&& collide_y + collide_height < other.collide_y + other.collide_height / 2);
-//}
-//
-///* TODO:
-// * Determines whether the one collider is on right of the other.
-// * For detecting whether Mario jumped on a enemy
-// */
-//bool Rect_Collider::collides_right(Rect_Collider & other) {
-//	return true;
-//}
-//
-///* TODO:
-// * Determines whether the one collider is on down of the other.
-// * For detecting whether Mario jumped on a enemy
-// */
-//bool Rect_Collider::collides_below(Rect_Collider & other) {
-//	return true;
-//}
+/* TODO:
+ * Determines whether the one collider is on left of the other.
+ * For detecting whether Mario jumped on a enemy
+ */
+bool Rect_Collider::collides_left(Rect_Collider & other) {
+	return (collides_with(other) && collide_x + collide_width / 2 >= other.collide_x && collide_x + collide_width < other.collide_x + other.collide_width / 2);
+}
+
+/* TODO:
+ * Determines whether the one collider is on right of the other.
+ * For detecting whether Mario jumped on a enemy
+ */
+bool Rect_Collider::collides_right(Rect_Collider & other) {
+	return other.collides_left(*this);
+}
+
+/* TODO:
+ * Determines whether the one collider is on down of the other.
+ * For detecting whether Mario jumped on a enemy
+ */
+bool Rect_Collider::collides_below(Rect_Collider & other) {
+	return other.collides_above(*this);
+}
 
 ///*
 // * Determines if the complex collider collides with any other rect, and if so which one
