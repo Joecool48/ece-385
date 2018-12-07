@@ -12,7 +12,7 @@
 #include "background.h"
 
 /*
- * TODO:
+ * TODO
  * Create the fundamental AI for enemies
  */
 class Enemy : public Sprite_Animator {

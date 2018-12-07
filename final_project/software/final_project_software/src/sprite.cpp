@@ -6,17 +6,19 @@
  */
 #include "sprite.h"
 #include <iostream>
+
 /* TODO: Make function warn when it is drawing out of range
  * Draws a sprite at a specified location by placing it in memory
  */
 
 void Sprite::drawSprite() {
 	if (isVisible) {
-		*SPRITE_X_PIO = (uint16_t) x;
-		*SPRITE_Y_PIO = (uint16_t) y;
+		*SPRITE_X_PIO = x;
+		*SPRITE_Y_PIO =  y;
 		*SPRITE_ADDRESS_PIO = start_address;
 		*SPRITE_WIDTH_PIO = width;
 		*SPRITE_HEIGHT_PIO = height;
+		*SPRITE_FLIP_MODE_PIO = flipped_mode;
 		*SPRITE_ID_PIO = ++(*SPRITE_ID_PIO);
 	}
 	else {
@@ -34,5 +36,5 @@ Sprite::Sprite(float x, float y, uint16_t width, uint16_t height, uint32_t addre
 	this->x = x;
 	this->y = y;
 	isVisible = true;
-	isFlipped = false; // Variable for if the sprite is flipped. Also used in player for walking left
+	flipped_mode = NO_FLIP;
 }

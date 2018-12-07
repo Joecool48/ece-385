@@ -7,7 +7,7 @@
 
 #ifndef INCLUDE_SPRITE_H_
 #define INCLUDE_SPRITE_H_
-
+#include "config.h"
 // Class to store information about a image. Will be copied from this to create other sprites.
 class Image {
 public:
@@ -24,7 +24,7 @@ public:
 	float x;
 	float y;
 	bool isVisible;
-	bool isFlipped;
+	uint8_t flipped_mode;
 	Sprite();
 	Sprite(float x, float y, uint16_t width, uint16_t height, uint32_t address);
 	void drawSprite();

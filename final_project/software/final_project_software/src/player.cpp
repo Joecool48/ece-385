@@ -67,6 +67,7 @@ Player::Player(Rect_Collider collider) {
 	gotMushroom = false;
 	gotFireflower = false;
 	gotHitByEnemy = false;
+	noCollide = false;
 }
 /*
  * Maps all the states and modes to their respective series of sprite frames
@@ -598,7 +599,9 @@ void Player::flippingState() {
  * Called when mario dies by being killed by an enemy
  */
 void Player::dyingState() {
-	std::cout << "You dead" << std::endl;
+	noCollide = true;
+	enablePlayerControl = false;
+	std::cout << "Game over" << std::endl;
 }
 
 /*
@@ -609,12 +612,12 @@ void Player::throwfireballState() {
 	current_anim_state = return_state;
 }
 
-/* TODO
- * Called when mario slides down the flag poll
- */
-void Player::flagdownState() {
-
-}
+///*
+// * Called when mario slides down the flag poll
+// */
+//void Player::flagdownState() {
+//
+//}
 
 void Player::gravity() {
 	velY += GRAVITY_STRENGTH;

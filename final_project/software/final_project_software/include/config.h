@@ -40,11 +40,8 @@ inline bool isEnemy (Collider_Type type) {
 }
 const float GRAVITY_STRENGTH = .2;
 const float TERMINAL_VELOCITY = 100;
+
 // Returns how much to offset rect1 first param
-void resolve (Rect_Collider & rect1, Rect_Collider & rect2) {
-	rect1.collide_x += overlapX(rect1, rect2);
-	rect1.collide_y += overlapY(rect1, rect2);
-}
 int16_t overlapX (const Rect_Collider & rect1, const Rect_Collider & rect2) {
 	int16_t dist1 = 0, dist2 = 0;
 	dist1 = rect2.collide_x + rect2.collide_width - rect1.collide_x;
@@ -64,16 +61,19 @@ int16_t overlapY (const Rect_Collider & rect1, const Rect_Collider & rect2) {
 	return 0;
 }
 bool pause_animation = false;
-/*
- * TODO:
- * 	CHANGE THESE ADDRESSES TO REFLECT THE ACTUAL MEMORY ADDRESSES
- */
+
+const uint8_t NO_FLIP = 0;
+const uint8_t FLIP_HORIZONTAL = 1;
+const uint8_t FLIP_VERTICAL = 2;
+
+
 // Sprite PIO Start Addresses
-volatile uint16_t * SPRITE_X_PIO = 0x12345678;
-volatile uint16_t * SPRITE_Y_PIO = 0x12345678;
-volatile uint16_t * SPRITE_WIDTH_PIO = 0x12345678;
-volatile uint16_t * SPRITE_HEIGHT_PIO = 0x12345678;
-volatile uint16_t * SPRITE_ID_PIO = 0x12345678;
-volatile uint32_t * SPRITE_ADDRESS_PIO = 0x12345678;
+volatile uint16_t * SPRITE_X_PIO = 0x01000890;
+volatile uint16_t * SPRITE_Y_PIO = 0x01000880;
+volatile uint16_t * SPRITE_WIDTH_PIO = 0x010008b0;
+volatile uint16_t * SPRITE_HEIGHT_PIO = 0x010008a0;
+volatile uint16_t * SPRITE_ID_PIO = 0x010008d0;
+volatile uint32_t * SPRITE_ADDRESS_PIO = 0x010008c0;
+volatile uint8_t * SPRITE_FLIP_MODE_PIO = 0x01000870;
 
 #endif /* INCLUDE_CONFIG_H_ */

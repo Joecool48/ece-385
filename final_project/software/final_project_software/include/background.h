@@ -55,7 +55,8 @@ class Background_Object {
 public:
 	Rect_Collider collider;
 	Background_Object (Rect_Collider collider, bool contains_item);
-	void collided_with(Rect_Collider & other); // TODO implement collider method to do stuff when it collides
+	// TODO Implement collided_with for background objects
+	void collided_with(Rect_Collider & other, Background * back); // TODO implement collider method to do stuff when it collides
 	bool contains_item;
 };
 

@@ -45,6 +45,7 @@ public:
 	const uint16_t FIREFLOWER_COLLIDER_HEIGHT = 15;
 	void update();
 	void animatorSetup();
+	void collided_with(Rect_Collider & other);
 };
 /*
  * TODO
