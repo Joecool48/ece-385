@@ -5,7 +5,7 @@
  *      Author: joey
  */
 #include "../include/player.h"
-
+#include "../include/keyboard.h"
 /*
  * TODO
  * Make sure to set background!!!
@@ -34,30 +34,30 @@ void Player::throwFireball() {
 		std::cout << "throwFireball: no more fire balls allowed" << std::endl;
 		return;
 	}
+	std::cout << "Creating fireball" << std::endl;
 	Fireball *fireball = nullptr;
-	if (flipped_mode) {
-		fireball = new Fireball(x - FIREBALL_X_DIST_FROM_MARIO, y + FIREBALL_Y_DIST_FROM_MARIO, current_background);
+	if (flipped_mode) { // If flipped horizontally, throw the fireball on his left side
+		fireball = new Fireball(player_collider.collide_x - FIREBALL_X_DIST_FROM_MARIO, player_collider.collide_y + FIREBALL_Y_DIST_FROM_MARIO, current_background);
 	}
 	else {
 		// Otherwise is facing right direction
-		fireball = new Fireball(x + player_collider.collide_width + FIREBALL_X_DIST_FROM_MARIO, y + FIREBALL_Y_DIST_FROM_MARIO, current_background);
+		fireball = new Fireball(player_collider.collide_x + player_collider.collide_width + FIREBALL_X_DIST_FROM_MARIO, player_collider.collide_y + FIREBALL_Y_DIST_FROM_MARIO, current_background);
 	}
 	// Add the fireball to the background
 	current_background->fireballs[fireball->collider.collider_id] = fireball;
 }
 /*
- * Constructs a new player object (Mario). This also calls animatorSetup to make sure all the sprites are filled.
+ * Constructs a new player object (Mario). This also calls animatorSetup to make sure all the sprites are filled. Always starts in normal mode and idle state
  * Also inits the rect collider, initial mode, and state.
  */
-Player::Player(uint16_t x, uint16_t y, Rect_Collider collider) : Sprite_Animator (x, y, NORMAL_MODE, IDLE, 0) {
+Player::Player(uint16_t x, uint16_t y) : Sprite_Animator (NORMAL_MODE, IDLE, 0) {
 	enablePlayerControl = true;
 	enemyCanKill = true;
-	collider.collide_type = Collider_Type::PLAYER;
-	player_collider = collider;
+	player_collider = Rect_Collider(Collider_Type::PLAYER, x, y, PLAYER_COLLIDER_WIDTH, PLAYER_COLLIDER_HEIGHT);
 	accelX = 0, accelY = 0;
 	velX = 0, velY = 0;
 	invincibility_frames = 0;
-	flipped_mode = false;
+	flipped_mode = NO_FLIP;
 	hasJumped = false;
 	return_state = IDLE;
 	current_background = nullptr;
@@ -65,6 +65,8 @@ Player::Player(uint16_t x, uint16_t y, Rect_Collider collider) : Sprite_Animator
 	gotFireflower = false;
 	gotHitByEnemy = false;
 	noCollide = false;
+	inAir = true;
+	animatorSetup();
 }
 /*
  * Maps all the states and modes to their respective series of sprite frames
@@ -154,21 +156,14 @@ void Player::animatorSetup() {
 }
 
 /*
- * getKey returns NO_KEY if enablePlayerControl is off
- */
-Key Player::getKey() {
-	Key key = keyboard.getInputKey();
-	if (key == Key::KEY_PAUSE || key == Key::NO_KEY) return key;
-	if (!enablePlayerControl) {
-		return Key::NO_KEY;
-	}
-	return key;
-}
-/*
  *
  * Player state machine
  */
 void Player::update() {
+	std::cout << "Current player state is " << current_anim_state << std::endl;
+	std::cout << "Player velx = " << velX << std::endl;
+	std::cout << "Player vely = " << velY << std::endl;
+	std::cout << "Keys pressed " << Keyboard::keys_pressed() << std::endl;
 	if (wait_frames) {
 		wait_frames--;
 		return;
@@ -190,6 +185,7 @@ void Player::update() {
 	 */
 	switch (current_anim_state) {
 	case IDLE:
+		setFrame(0);
 		idleState();
 		break;
 	case WALKING:
@@ -206,6 +202,7 @@ void Player::update() {
 		break;
 	case CROUCHING:
 		crouchingState();
+		break;
 	case DYING:
 		dyingState();
 		break;
@@ -231,21 +228,30 @@ void Player::update() {
  * Create function to draw the player
  */
 void Player::draw() {
+	std::cout << "Start draw Player" << std::endl;
 	// Choose whether to flip the sprite based on private variable
 	Sprite s = getCurrentSprite();
+	std::cout << "After get current" << std::endl;
 	// Update the rect collider!!!
-	player_collider.collide_x = static_cast<uint16_t>(x); // Convert the floats to uints
-	player_collider.collide_y = static_cast<uint16_t> (y);
+	//player_collider.collide_x = static_cast<int16_t>(x); // Convert the floats to ints
+	//player_collider.collide_y = static_cast<int16_t> (y);
+
 	player_collider.collide_width = s.width;
 	player_collider.collide_height = s.height;
-	s.drawSprite(static_cast<uint16_t>(x), static_cast<uint16_t> (y), flipped_mode ? FLIP_HORIZONTAL : NO_FLIP, isVisible); // Gets the current player sprite and draws it
+	std::cout << "Before static cast" << std::endl;
+	std::cout << player_collider.collide_x << " " << player_collider.collide_y << std::endl;
+	s.drawSprite(static_cast<int16_t>(player_collider.collide_x), static_cast<int16_t> (player_collider.collide_y), flipped_mode ? FLIP_HORIZONTAL : NO_FLIP, isVisible); // Gets the current player sprite and draws it
+	std::cout << "After draw player" << std::endl;
 }
 /*
  * TODO Might be BUGGED
  * Complete player jumping function. Background must handle physics
  */
 bool Player::isInAir() {
-	return velY != 0;
+	// Allow for one frame of misalign
+	if (inAir || (abs(velY) > GRAVITY_STRENGTH)) return true;
+	else inAir = false;
+	return false;
 }
 
 /*
@@ -270,12 +276,15 @@ void Player::collided_with(Rect_Collider & other) {
 	else if (other.collide_type == Collider_Type::FIREFLOWER) {
 		gotFireflower = true;
 	}
-	else if (isEnemy(other.collide_type) && !player_collider.collides_above(other)) {
+	else if (Collidable::isEnemy(other.collide_type) && !player_collider.collides_above(other)) {
 		gotHitByEnemy = true;
 	}
-	else if (isEnemy(other.collide_type) && player_collider.collides_above(other)) {
+	else if (Collidable::isEnemy(other.collide_type) && player_collider.collides_above(other)) {
 		velY -= PLAYER_JUMP_ON_ENEMY_BOOST;
 		current_anim_state = JUMPING; // They are technically in the air now
+	}
+	else if (other.collide_type == Collider_Type::PLATFORM_UNBREAKABLE) {
+		inAir = false;
 	}
 }
 
@@ -295,12 +304,8 @@ bool Player::getsMushroom() {
  * Implement this method to return true if the player gets a fireflower. Fireflower should disappear when returning true;
  */
 bool Player::getsFireflower() {
-	if (current_background == nullptr) {
-		std::cout << "Background is null!" << std::endl;
-	}
-	Rect_Collider rect = current_background->itemCollidedWithPlayer();
-	if (rect.collide_type == Collider_Type::FIREFLOWER){
-		current_background->removeItemById(rect.collider_id);
+	if (gotFireflower) {
+		gotFireflower = false;
 		return true;
 	}
 	return false;
@@ -311,40 +316,41 @@ void Player::idleState () {
 	// Stop movement slowly if in idle state (Mario slides)
 	if (velX != 0) {
 		if (velX > 0) {
-			x -= velX;
+			player_collider.collide_x -= velX;
 			velX -= WALK_ACCEL;
 			if (velX < 0) {
 				velX = 0;
 			}
 		}
 		if (velX < 0) {
-			x += velX;
+			player_collider.collide_x += velX;
 			velX += WALK_ACCEL;
 			if (velX > 0) {
 				velX = 0;
 			}
 		}
 	}
-	else if (keyboard.key_jump() || isInAir()) {
+	else if (Keyboard::key_jump(enablePlayerControl)) {
 		current_anim_state = JUMPING;
 	}
-	else if (keyboard.key_crouch() && current_anim_mode != MINI_MODE) {
+	else if (Keyboard::key_crouch(enablePlayerControl) && current_anim_mode != MINI_MODE && !isInAir()) {
 		current_anim_state = CROUCHING;
 	}
-	else if (keyboard.key_right()) {
+	else if (Keyboard::key_right(enablePlayerControl)) {
 		if (flipped_mode)
 			current_anim_state = FLIPPING;
 		else
 			current_anim_state = WALKING;
 	}
-	else if (keyboard.key_left()) {
+	else if (Keyboard::key_left(enablePlayerControl)) {
 		// Must flip in order to go left because sprite faces right
 		if (flipped_mode)
 			current_anim_state = WALKING;
 		else
 			current_anim_state = FLIPPING;
 	}
-	else if (keyboard.key_fireball() && current_anim_mode == FIRE_MODE) {
+	else if (Keyboard::key_fireball(enablePlayerControl) && current_anim_mode == FIRE_MODE) {
+		std::cout << "Throwing fire" << std::endl;
 		current_anim_state = THROWFIREBALL;
 	}
 	else if (hitByEnemy() && enemyCanKill) {
@@ -370,7 +376,7 @@ void Player::idleState () {
 			wait_frames = FIREFLOWER_NUM_FRAMES;
 		}
 	}
-	else if (keyboard.multipleKeysPressed()) {
+	else if (Keyboard::multipleKeysPressed()) {
 		current_anim_state = SLIDING;
 	}
 }
@@ -379,25 +385,26 @@ void Player::idleState () {
  */
 void Player::walkingState() {
 	return_state = WALKING;
-	if (keyboard.multipleKeysPressed()) {
+
+	if (Keyboard::multipleKeysPressed()) {
 		current_anim_state = SLIDING;
 	}
-	else if (flipped_mode && keyboard.key_right()) {
+	else if (flipped_mode && Keyboard::key_right(enablePlayerControl)) {
 		current_anim_state = FLIPPING;
 	}
-	else if (!flipped_mode && keyboard.key_left()) {
+	else if (!flipped_mode && Keyboard::key_left(enablePlayerControl)) {
 		current_anim_state = FLIPPING;
 	}
-	else if (keyboard.key_jump() || isInAir()) {
+	else if (Keyboard::key_jump(enablePlayerControl)) {
 		current_anim_state = JUMPING;
 	}
-	else if (keyboard.key_crouch() && current_anim_mode != MINI_MODE) {
+	else if (Keyboard::key_crouch(enablePlayerControl) && current_anim_mode != MINI_MODE) {
 		current_anim_state = CROUCHING;
 	}
-	else if (keyboard.key_crouch() && current_anim_mode == MINI_MODE) {
+	else if (Keyboard::key_crouch(enablePlayerControl) && current_anim_mode == MINI_MODE) {
 		current_anim_state = SLIDING;
 	}
-	else if (keyboard.key_fireball() && current_anim_mode == FIRE_MODE) {
+	else if (Keyboard::key_fireball(enablePlayerControl) && current_anim_mode == FIRE_MODE) {
 		current_anim_state = THROWFIREBALL;
 	}
 	else if (hitByEnemy() && enemyCanKill) {
@@ -423,19 +430,41 @@ void Player::walkingState() {
 			wait_frames = FIREFLOWER_NUM_FRAMES;
 		}
 	}
-	else if (!keyboard.key_left() && !keyboard.key_right()) {
+	else if (!Keyboard::key_left(enablePlayerControl) && !Keyboard::key_right(enablePlayerControl)) {
 		current_anim_state = IDLE;
 	}
-	else if (velX < 0 && keyboard.key_left()) {
+	else if (velX == 0) {
+		if (Keyboard::key_left(enablePlayerControl)) {
+			if (velX > -MAX_WALK_SPEED) {
+				velX -= WALK_ACCEL;
+				if (velX < -MAX_WALK_SPEED) {
+					velX = -MAX_WALK_SPEED;
+				}
+			}
+			player_collider.collide_x += velX;
+		}
+		else if (Keyboard::key_right(enablePlayerControl)) {
+			if (velX < MAX_WALK_SPEED) {
+				velX += WALK_ACCEL;
+				if (velX < MAX_WALK_SPEED) {
+					if (velX > MAX_WALK_SPEED) {
+						velX = MAX_WALK_SPEED;
+					}
+				}
+			}
+			player_collider.collide_x += velX;
+		}
+	}
+	else if (velX < 0 && Keyboard::key_left(enablePlayerControl)) {
 		if (velX > -MAX_WALK_SPEED) {
 			velX -= WALK_ACCEL;
 			if (velX < -MAX_WALK_SPEED) {
 				velX = -MAX_WALK_SPEED;
 			}
 		}
-		x += velX;
+		player_collider.collide_x += velX;
 	}
-	else if (velX > 0 && keyboard.key_right()) {
+	else if (velX > 0 && Keyboard::key_right(enablePlayerControl)) {
 		if (velX < MAX_WALK_SPEED) {
 			velX += WALK_ACCEL;
 			if (velX < MAX_WALK_SPEED) {
@@ -444,7 +473,7 @@ void Player::walkingState() {
 				}
 			}
 		}
-		x += velX;
+		player_collider.collide_x += velX;
 	}
 }
 
@@ -454,10 +483,11 @@ void Player::walkingState() {
  */
 void Player::jumpingState() {
 	return_state = JUMPING;
-
+	std::cout << "In jumping state and vely = " << velY << std::endl;
 	// If you were moving when jumping and hit the ground
-	if (!hasJumped) {
-		velY = JUMP_VEL;
+	std::cout << "IsInAir = " << isInAir() << std::endl;
+	if (!hasJumped && !isInAir() && Keyboard::key_jump(enablePlayerControl)) {
+		velY = -JUMP_VEL;
 		hasJumped = true;
 	}
 	// Determines how mario lands whether he slides or flips first
@@ -469,24 +499,28 @@ void Player::jumpingState() {
 		else if (velX < 0 && !flipped_mode) current_anim_state = FLIPPING;
 		else current_anim_state = SLIDING;
 	}
+	else if (!isInAir()) {
+		hasJumped = false;
+		current_anim_state = IDLE;
+	}
 	// Allow for slight changes of movement while in midair
-	else if (isInAir() && !keyboard.multipleKeysPressed()) {
-		if (keyboard.key_left()) {
+	else if (isInAir() && !Keyboard::multipleKeysPressed()) {
+		if (Keyboard::key_left(enablePlayerControl)) {
 			velX -= JUMP_MOVE_ACCEL;
 			if (velX < -MAX_JUMP_MOVE_SPEED) {
 				velX = -MAX_JUMP_MOVE_SPEED;
 			}
-			x += velX;
+			player_collider.collide_x += velX;
 		}
-		else if (keyboard.key_right()) {
+		else if (Keyboard::key_right(enablePlayerControl)) {
 			velX += JUMP_MOVE_ACCEL;
 			if (velX > MAX_JUMP_MOVE_SPEED) {
 				velX = MAX_JUMP_MOVE_SPEED;
 			}
-			x += velX;
+			player_collider.collide_x += velX;
 		}
 	}
-	else if (keyboard.key_fireball() && current_anim_mode == FIRE_MODE) {
+	else if (Keyboard::key_fireball(enablePlayerControl) && current_anim_mode == FIRE_MODE) {
 		current_anim_state = THROWFIREBALL;
 	}
 	else if (hitByEnemy() && enemyCanKill) {
@@ -539,11 +573,12 @@ void Player::enlargingState() {
  * State for when the player crouches. Can be only when he is on the ground and not in mini mode
  */
 void Player::crouchingState() {
+	std::cout << "In crouching" << std::endl;
 	return_state = CROUCHING;
 	velX = 0;
 	velY = 0;
-	if (!keyboard.key_crouch() || current_anim_state == MINI_MODE) {
-		current_anim_mode = IDLE;
+	if (!Keyboard::key_crouch(enablePlayerControl) || current_anim_mode == MINI_MODE) {
+		current_anim_state = IDLE;
 	}
 	else if (getsMushroom()) {
 		// Do nothing, but need to call the method to get rid of the mushroom. Can't become big while crouching cause he already is
@@ -578,7 +613,7 @@ void Player::slidingState() {
 	if (velX == 0) {
 		current_anim_state = IDLE;
 	}
-	else if (keyboard.key_left() || keyboard.key_right()) {
+	else if (Keyboard::key_left(enablePlayerControl) || Keyboard::key_right(enablePlayerControl)) {
 		current_anim_state = WALKING;
 	}
 }
@@ -591,7 +626,7 @@ void Player::flippingState() {
 	if (velX == 0) {
 		current_anim_state = IDLE;
 	}
-	else if (keyboard.key_left() || keyboard.key_right()) {
+	else if (Keyboard::key_left(enablePlayerControl) || Keyboard::key_right(enablePlayerControl)) {
 		current_anim_state = WALKING;
 	}
 	else {
@@ -604,7 +639,7 @@ void Player::flippingState() {
  * Called when mario dies by being killed by an enemy
  */
 void Player::dyingState() {
-	noCollide = true;
+	noCollide = true; // Make him fall through the world and display his dying frame when he is small
 	enablePlayerControl = false;
 	std::cout << "Game over" << std::endl;
 }
@@ -625,6 +660,8 @@ void Player::throwfireballState() {
 //}
 
 void Player::gravity() {
+	player_collider.collide_x += velX;
+	player_collider.collide_y += velY;
 	velY += GRAVITY_STRENGTH;
 }
 

@@ -11,16 +11,12 @@
 #include <stdint.h>
 #include "../include/colliders.h"
 
-class Rect_Collider;
-class Enemy;
-class Player;
-
 using namespace std;
 /*
  * TODO
  * Add real address offset here
  */
-const uint32_t ADDRESS_OFFSET = 0x312313; // Place where the memory is initialized in SDRAM
+const uint32_t ADDRESS_OFFSET = 0x0; // Place where the memory is initialized in SDRAM
 
 
 const uint16_t SCREEN_WIDTH = 480; // Screen height and width in pixels
@@ -40,14 +36,5 @@ const uint8_t NO_FLIP = 0; // Hardcoded for player
 const uint8_t FLIP_HORIZONTAL = 1;
 const uint8_t FLIP_VERTICAL = 2;
 
-
-// Sprite PIO Start Addresses
-volatile uint32_t * const SPRITE_X_PIO = (uint32_t*) 0x01000890;
-volatile uint32_t * const SPRITE_Y_PIO = (uint32_t*) 0x01000880;
-volatile uint32_t * const SPRITE_WIDTH_PIO = (uint32_t*) 0x010008b0;
-volatile uint32_t * const SPRITE_HEIGHT_PIO = (uint32_t*) 0x010008a0;
-volatile uint32_t * const SPRITE_ID_PIO = (uint32_t*) 0x010008d0;
-volatile uint32_t * const SPRITE_ADDRESS_PIO = (uint32_t*) 0x010008c0;
-volatile uint32_t * const SPRITE_FLIP_MODE_PIO = (uint32_t*) 0x01000870;
 
 #endif /* INCLUDE_CONFIG_H_ */

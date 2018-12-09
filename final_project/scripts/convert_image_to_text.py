@@ -34,8 +34,12 @@ for image in images:
     im.close()
 
 # Converts the image to a 8 hex width column major order text file
+python_hardware_sim = open("python_hardware_sim_code", "w", 1)
+python_hardware_sim.write("address_to_sprite_map = {}\n")
+
+
 sprite_file = open("sprite_file.txt", "w", 1)
-address_offset = 30000000
+address_offset = 0
 sprite_id_start = 1
 MAX_ADDRESSES = pixel_count
 DATA_WIDTH = 8
@@ -50,6 +54,7 @@ mem_file.write("BEGIN\n")
 for img in images:
     im = Image.open(img)
     im = im.convert("RGBA")
+    python_hardware_sim.write("address_to_sprite_map[{}] = '{}'\n".format(address_offset, img[img.rfind("/") + 1:]))
     status_file.write("Name: " + img + "\n")
     status_file.write("Start Id: " + str(sprite_id_start) + "\n")
     status_file.write("Width: " + str(im.width) + "\n")
@@ -84,5 +89,7 @@ for key in color_dict.keys():
     sv_file.write("            green = 8'd{};\n".format(key[1]))
     sv_file.write("            blue = 8'd{};\n".format(key[2]))
     sv_file.write("        end\n")
+
+
 
 

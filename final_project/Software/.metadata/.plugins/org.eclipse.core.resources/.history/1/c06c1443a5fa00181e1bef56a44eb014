@@ -1,0 +1,35 @@
+/*
+ * keyboard.h
+ *
+ *  Created on: Nov 28, 2018
+ *      Author: joey
+ */
+
+#ifndef INCLUDE_KEYBOARD_H_
+#define INCLUDE_KEYBOARD_H_
+#include "../include/config.h"
+#include <map>
+#include <set>
+
+/*TODO
+ * Implement keyboard class
+ *
+ */
+class Keyboard {
+public:
+	static uint8_t getScanCode();
+	static void updateKeys(); // Should return NO_KEY if no key is pressed
+	static bool key_jump();
+	static bool key_left();
+	static bool key_right();
+	static bool key_crouch();
+	static bool key_fireball();
+	static bool key_pause();
+	static bool multipleKeysPressed(); // Returns true if mult keys pressed
+private:
+	static set<Key> keys;
+};
+
+
+
+#endif /* INCLUDE_KEYBOARD_H_ */

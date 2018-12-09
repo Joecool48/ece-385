@@ -1,4 +1,5 @@
 import linecache
+
 write_file_name = "background_codified.txt"
 read_file_name = "../images/background_objects.txt"
 

@@ -7,7 +7,7 @@
 #include "../include/enemies.h"
 #include "../include/config.h"
 
-Enemy::Enemy() : Sprite_Animator (0, 0, ENEMY_MODE, ENEMY_STATE, 0) {
+Enemy::Enemy() : Sprite_Animator (ENEMY_MODE, ENEMY_STATE, 0) {
 	velX = 0;
 	velY = 0;
 	noCollide = false;
@@ -169,15 +169,15 @@ void Turtle::update() {
 
 
 void Enemy::gravity() {
+	collider.collide_y += velY;
+	collider.collide_x += velX;
 	velY += GRAVITY_STRENGTH;
 }
 
 void Enemy::draw() {
 	Sprite s = getCurrentSprite();
-	// Update the rect collider!!!
-	collider.collide_x = static_cast<uint16_t>(x); // Convert the floats to uints
-	collider.collide_y = static_cast<uint16_t> (y);
+	// Update the rect collider!!!s
 	collider.collide_width = s.width;
 	collider.collide_height = s.height;
-	s.drawSprite(static_cast<uint16_t>(x), static_cast<uint16_t> (y), flipped_mode ? FLIP_HORIZONTAL : NO_FLIP, isVisible); // Gets the current sprite and draws
+	s.drawSprite(collider.collide_x, collider.collide_y, flipped_mode ? FLIP_HORIZONTAL : NO_FLIP, isVisible); // Gets the current sprite and draws
 }

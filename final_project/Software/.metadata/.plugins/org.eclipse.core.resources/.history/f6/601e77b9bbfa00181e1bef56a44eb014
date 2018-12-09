@@ -1,0 +1,11 @@
+/*
+ * sim.cpp
+ *
+ *  Created on: Dec 8, 2018
+ *      Author: joey
+ */
+
+#include "../include/sim.h"
+
+
+fstream Sim::software_done_file, Sim::hardware_done_file, Sim::sprite_x_file, Sim::sprite_y_file, Sim::sprite_width_file, Sim::sprite_height_file, Sim::scancode_file, Sim::sprite_address_file, Sim::sprite_id_file, Sim::sprite_flip_mode_file;

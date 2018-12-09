@@ -1,0 +1,24 @@
+/*
+ * sim.cpp
+ *
+ *  Created on: Dec 8, 2018
+ *      Author: joey
+ */
+
+#include "../include/sim.h"
+
+
+ifstream Sim::software_done_file, Sim::sprite_x_file, Sim::sprite_y_file, Sim::sprite_width_file, Sim::sprite_height_file, Sim::sprite_address_file, Sim::sprite_id_file, Sim::sprite_flip_mode_file;
+ofstream Sim::hardware_done_file, Sim::scancode_file
+void Sim::initSim() {
+	software_done_file.open(prefix_path + "SOFTWARE_DONE");
+	hardware_done_file.open(prefix_path + "HARDWARE_DONE");
+	sprite_x_file.open(prefix_path + "SPRITE_X_PIO");
+	sprite_y_file.open(prefix_path + "SPRITE_Y_PIO");
+	sprite_width_file.open(prefix_path + "SPRITE_WIDTH_PIO");
+	sprite_height_file.open(prefix_path + "SPRITE_HEIGHT_PIO");
+	sprite_id_file.open(prefix_path + "SPRITE_ID_PIO");
+	sprite_flip_mode_file.open(prefix_path + "SPRITE_FLIP_MODE_PIO");
+	scancode_file.open(prefix_path + "SCANCODE_PIO");
+	sprite_address_file.open(prefix_path + "SPRITE_ADDRESS_PIO");
+}

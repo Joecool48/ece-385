@@ -1,0 +1,12 @@
+/*
+ * config.cpp
+ *
+ *  Created on: Dec 8, 2018
+ *      Author: joey
+ */
+
+#include "../include/config.h"
+
+extern uint16_t sprite_x, sprite_y, sprite_width, sprite_height, sprite_id;
+extern uint32_t sprite_address;
+extern uint8_t sprite_flip_mode, scancode, hardware_done, software_done;

@@ -1,0 +1,41 @@
+/*
+ * sprite.cpp
+ *
+ *  Created on: Dec 1, 2018
+ *      Author: joey
+ */
+#include "../include/sprite.h"
+#include <iostream>
+#include <string>
+#include "../include/sim.h"
+using namespace std;
+
+/* TODO: Make function warn when it is drawing out of range
+ * Draws a sprite at a specified location by placing it in memory
+ */
+
+void Sprite::drawSprite(uint16_t xx, uint16_t yy, uint8_t flip_mode, bool isVis) {
+	if (isVis) {
+		*SPRITE_X_PIO = xx;
+		*SPRITE_Y_PIO = yy;
+		*SPRITE_ADDRESS_PIO = start_address;
+		*SPRITE_WIDTH_PIO = width;
+		*SPRITE_HEIGHT_PIO = height;
+		*SPRITE_FLIP_MODE_PIO = flip_mode;
+		*SPRITE_ID_PIO = ++(*SPRITE_ID_PIO);
+	}
+	else {
+		std::cout << "Sprite at " << xx << ", " << yy << " is not visible" << std::endl;
+	}
+}
+Sprite::Sprite() {
+	width = 0;
+	height = 0;
+	start_address = 0;
+}
+
+Sprite::Sprite(uint16_t width, uint16_t height, uint32_t address) {
+	this->width = width;
+	this->height = height;
+	this->start_address = address;
+}

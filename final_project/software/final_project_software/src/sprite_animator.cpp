@@ -5,7 +5,7 @@
  *      Author: joey
  */
 #include "../include/sprite_animator.h"
-
+#include <iostream>
 void Sprite_Animator::setState(uint16_t anim_state) {
 	current_anim_state = anim_state;
 }
@@ -20,12 +20,13 @@ void Sprite_Animator::setFrame(float frame) {
 }
 Sprite Sprite_Animator::getCurrentSprite() {
 	// Select the state based on current time and modulus the current size of the number of sprites
-	return state_mode_to_frames_map[current_anim_state][current_anim_mode][((uint16_t)current_frame_in_state) % state_mode_to_frames_map[current_anim_state][current_anim_mode].size()];
+	unsigned u = static_cast<unsigned>(current_frame_in_state);
+	unsigned size = unsigned(state_mode_to_frames_map[current_anim_state][current_anim_mode].size());
+	if (size == 0) return Sprite();
+	return state_mode_to_frames_map[current_anim_state][current_anim_mode][u % size];
 }
 
-Sprite_Animator::Sprite_Animator (uint16_t start_x, uint16_t start_y, uint16_t start_mode, uint16_t start_state, float start_frame) {
-	x = start_x;
-	y = start_y;
+Sprite_Animator::Sprite_Animator (uint16_t start_mode, uint16_t start_state, float start_frame) {
 	current_anim_state = start_state;
 	current_anim_mode = start_mode;
 	current_frame_in_state = start_frame;

@@ -1,0 +1,43 @@
+
+#include <stdio.h>
+#include "../include/background.h"
+#include "../include/init.h"
+#include "../include/config.h"
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <stdlib.h>
+#include "../include/sim.h"
+using namespace std;
+
+
+
+int main ()
+{
+	// Init the simulator
+	initSim(software_done_file, hardware_done_file, sprite_x_file, sprite_y_file, sprite_width_file, sprite_height_file, scancode_file, sprite_address_file, sprite_id_file, sprite_flip_mode_file);
+	Background * background = new Background ();
+	Player * player = new Player(30, 30); // Make a player at 30, 30
+	background->setPlayer(player); // Each contains the other
+	player->setBackground(background);
+	setBackgroundObjectWorld1(background); // Add the world 1 object colliders
+	Keyboard::initKeyboard(); // Startup the keyboard
+	while (true) {
+		string str;
+		scancode_file >> str;
+		scancode = atoi((str == "" ? "0" : str).c_str());
+		Keyboard::updateKeys();
+		background->updateBackground(); // Function that does everything in the game.
+
+		// Wait for hardware, and signal that you're done
+		*SOFTWARE_DONE = 1;
+		software_done_file << 1;
+		while (!(*HARDWARE_DONE)) { // Should update at 60ish fps
+			hardware_done_file >> str;
+			*HARDWARE_DONE = atoi(str.c_str());
+		}
+		*SOFTWARE_DONE = 0;
+		software_done_file << 0;
+	}
+	return 0;
+}

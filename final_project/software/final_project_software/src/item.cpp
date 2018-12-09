@@ -10,7 +10,7 @@ const float Fireball::FIREBALL_SPEED_BOUNCE = .5;
 const float Mushroom::MUSHROOM_TRAVEL_SPEED = .2;
 const float Item::ITEM_START_FRAME = 0;
 
-Item::Item (uint16_t start_x, uint16_t start_y, uint16_t mode, uint16_t state, float start_frame, Rect_Collider rect) : Sprite_Animator (start_x, start_y, mode, state, start_frame){
+Item::Item (uint16_t start_x, uint16_t start_y, uint16_t mode, uint16_t state, float start_frame, Rect_Collider rect) : Sprite_Animator (mode, state, start_frame){
 	collider = rect;
 	current_background = nullptr;
 }
@@ -23,7 +23,7 @@ Sprite_Animator::~Sprite_Animator() {
 
 }
 
-Fireball::Fireball (uint16_t start_x, uint16_t start_y, Background * b) : Sprite_Animator (start_x, start_y, Item::ITEM_MODE, STATE_BOUNCE, Item::ITEM_START_FRAME){
+Fireball::Fireball (uint16_t start_x, uint16_t start_y, Background * b) : Sprite_Animator (Item::ITEM_MODE, STATE_BOUNCE, Item::ITEM_START_FRAME){
 	if (b == nullptr) {
 		std::cout << "Fireball wont be displayed. Null background!" << std::endl;
 		return;
@@ -49,7 +49,7 @@ void Fireball::setToExplode() {
  */
 void Fireball::collided_with(Rect_Collider & other) {
 	// Make sure the fireball either hits the side, or it hits an enemy before it is destroyed. Background will recycle outside objects
-	if ((cantGoThrough(other.collide_type) && !collider.collides_above(other)) || isEnemy(other.collide_type)) {
+	if ((Collidable::cantGoThrough(other.collide_type) && !collider.collides_above(other)) || Collidable::isEnemy(other.collide_type)) {
 		setToExplode();
 	}
 }
@@ -116,7 +116,7 @@ void Fireball::animatorSetup() {
  * collisions and platform collisions
  */
 void Mushroom::collided_with(Rect_Collider & other) {
-	if (cantGoThrough(other.collide_type) && !collider.collides_above(other)) {
+	if (Collidable::cantGoThrough(other.collide_type) && !collider.collides_above(other)) {
 		travelDir = !travelDir;
 	}
 	// Player checks if he got the sprite
@@ -181,36 +181,36 @@ void Fireflower::animatorSetup() {
 	state_mode_to_frames_map[FIREFLOWER_EXIST][ITEM_MODE].push_back(fireflower_3);
 	state_mode_to_frames_map[FIREFLOWER_EXIST][ITEM_MODE].push_back(fireflower_4);
 }
-
+// This method does nothing and is never called. Just there so the pure virtual is implemented
 void Fireflower::collided_with(Rect_Collider &other) {
 
 }
 
 void Item::gravity() {
 	velY += GRAVITY_STRENGTH;
+	collider.collide_y += velY;
+	collider.collide_x += velX;
 }
 
 void Fireball::gravity() {
+	collider.collide_y += velY;
+	collider.collide_x += velX;
 	velY += GRAVITY_STRENGTH;
 }
 
 void Item::draw() {
 	Sprite s = getCurrentSprite();
 	// Update the rect collider!!!
-	collider.collide_x = static_cast<uint16_t>(x); // Convert the floats to uints
-	collider.collide_y = static_cast<uint16_t> (y);
 	collider.collide_width = s.width;
 	collider.collide_height = s.height;
-	s.drawSprite(static_cast<uint16_t>(x), static_cast<uint16_t> (y), flipped_mode ? FLIP_HORIZONTAL : NO_FLIP, isVisible); // Gets the current player sprite and draws
+	s.drawSprite(collider.collide_x, collider.collide_y, flipped_mode ? FLIP_HORIZONTAL : NO_FLIP, isVisible); // Gets the current player sprite and draws
 }
 
 void Fireball::draw() {
 	Sprite s = getCurrentSprite();
 	// Update the rect collider!!!
-	collider.collide_x = static_cast<uint16_t>(x); // Convert the floats to uints
-	collider.collide_y = static_cast<uint16_t> (y);
 	collider.collide_width = s.width;
 	collider.collide_height = s.height;
-	s.drawSprite(static_cast<uint16_t>(x), static_cast<uint16_t> (y), flipped_mode ? FLIP_HORIZONTAL : NO_FLIP, isVisible); // Gets the current player sprite and draws
+	s.drawSprite(collider.collide_x, collider.collide_y, flipped_mode ? FLIP_HORIZONTAL : NO_FLIP, isVisible); // Gets the current player sprite and draws
 }
 

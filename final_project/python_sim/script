@@ -1,0 +1,5 @@
+while true 
+do
+echo -e "`cat SCANCODE_PIO`\n"
+sleep 1
+done

@@ -15,8 +15,8 @@ using namespace std;
 // Animator which is the base class for anything that moves
 class Sprite_Animator {
 public:
-	float x;
-	float y;
+//	float x;
+//	float y;
 	uint16_t wait_frames; // When set the state machine will continue in its current state until wait_frames is 0
 	virtual ~Sprite_Animator();
 	uint16_t getMode();
@@ -27,7 +27,7 @@ public:
 	bool isVisible;
 	uint8_t flipped_mode; // Hardcoded for player TODO
 	// Constructor to init animator
-	Sprite_Animator (uint16_t start_x, uint16_t start_y, uint16_t start_mode, uint16_t start_state, float start_frame);
+	Sprite_Animator (uint16_t start_mode, uint16_t start_state, float start_frame);
 	virtual void animatorSetup() = 0; // Inits the map with the modes and states of whatever the animation is
 	// State first, then mode map to sprites
 	map <uint16_t, map<uint16_t, vector<Sprite>>> state_mode_to_frames_map; // Different subclasses must define own states

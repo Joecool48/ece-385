@@ -1,0 +1,20 @@
+/*
+ * sim.h
+ *
+ *  Created on: Dec 8, 2018
+ *      Author: joey
+ */
+
+#ifndef INCLUDE_SIM_H_
+#define INCLUDE_SIM_H_
+#include <string>
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+string prefix_path = "/home/joey/courses/ece385/final_project/python_sim";
+fstream software_done_file, hardware_done_file, sprite_x_file, sprite_y_file, sprite_width_file, sprite_height_file, scancode_file, sprite_address_file, sprite_id_file, sprite_flip_mode_file;
+
+initSim(fstream & software_done_file, fstream & hardware_done_file, fstream & sprite_x_file, fstream & sprite_y_file, fstream & sprite_width_file, sprite_height_file, scancode_file, sprite_address_file, sprite_id_file, sprite_flip_mode_file;fstream software_done_file)
+
+#endif /* INCLUDE_SIM_H_ */

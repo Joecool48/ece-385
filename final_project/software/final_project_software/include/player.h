@@ -10,12 +10,11 @@
 
 
 #include "../include/config.h"
-#include "../include/keyboard.h"
 #include <iostream>
 #include "../include/item.h"
 #include "../include/sprite.h"
 #include "../include/sprite_animator.h"
-
+#include "../include/keyboard.h"
 using namespace std;
 
 class Background;
@@ -50,20 +49,21 @@ public:
 	bool enablePlayerControl;
 	bool enemyCanKill;
 	bool noCollide;
+	bool inAir;
 	uint16_t invincibility_frames;
 	bool hasJumped; // bool to determine if he has jumped before. Set to false when he hits the ground
 	uint16_t return_state; // Only used by enlarge and shrink states when mario gets hit. Returns to this state after the pause and animation
-	Player(uint16_t x, uint16_t y, Rect_Collider collider);
+	Player(uint16_t x, uint16_t y);
+	const static uint16_t PLAYER_COLLIDER_WIDTH = 16;
+	const static uint16_t PLAYER_COLLIDER_HEIGHT = 32;
 	void animatorSetup(); // Initialize all the animation states of the sprite
 	void draw(); // function to draw player. Called AFTER update
 	void update(); // player state machine
 	bool isInAir(); // Function for if Mario is in  midair
-	Keyboard keyboard;
-	Background * current_background;
+	Background * current_background; // Init keyboard at beginning
 	void collided_with(Rect_Collider & other);
 	void setBackground(Background * b);
 	void throwFireball();
-	Key getKey();
 	void idleState();
 	void walkingState();
 	void jumpingState();

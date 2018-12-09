@@ -2,503 +2,503 @@ Name: ../images/backgrounds/NES-Mario-World1-1.png
 Start Id: 1
 Width: 3391
 Height: 224
-Start Address 30000000
-End Address: 30759584
+Start Address 0
+End Address: 759584
 
 Name: ../images/enemy_sprites/turtle_get_up_frame_1.png
 Start Id: 2
 Width: 16
 Height: 32
-Start Address 30759585
-End Address: 30760097
+Start Address 759585
+End Address: 760097
 
 Name: ../images/enemy_sprites/turtle_walk_frame_2.png
 Start Id: 3
 Width: 16
 Height: 32
-Start Address 30760098
-End Address: 30760610
+Start Address 760098
+End Address: 760610
 
 Name: ../images/enemy_sprites/turtle_shell_frame_1.png
 Start Id: 4
 Width: 16
 Height: 32
-Start Address 30760611
-End Address: 30761123
+Start Address 760611
+End Address: 761123
 
 Name: ../images/enemy_sprites/goomba_walk_frame_2.png
 Start Id: 5
 Width: 16
 Height: 32
-Start Address 30761124
-End Address: 30761636
+Start Address 761124
+End Address: 761636
 
 Name: ../images/enemy_sprites/turtle_walk_frame_1.png
 Start Id: 6
 Width: 16
 Height: 32
-Start Address 30761637
-End Address: 30762149
+Start Address 761637
+End Address: 762149
 
 Name: ../images/enemy_sprites/goomba_die_frame_1.png
 Start Id: 7
 Width: 16
 Height: 32
-Start Address 30762150
-End Address: 30762662
+Start Address 762150
+End Address: 762662
 
 Name: ../images/enemy_sprites/goomba_walk_frame_1.png
 Start Id: 8
 Width: 16
 Height: 32
-Start Address 30762663
-End Address: 30763175
+Start Address 762663
+End Address: 763175
 
 Name: ../images/fire-mario/fire-mario21.png
 Start Id: 9
 Width: 16
 Height: 31
-Start Address 30763176
-End Address: 30763672
+Start Address 763176
+End Address: 763672
 
 Name: ../images/fire-mario/fire-mario3.png
 Start Id: 10
 Width: 16
 Height: 31
-Start Address 30763673
-End Address: 30764169
+Start Address 763673
+End Address: 764169
 
 Name: ../images/fire-mario/fire-mario13.png
 Start Id: 11
 Width: 16
 Height: 31
-Start Address 30764170
-End Address: 30764666
+Start Address 764170
+End Address: 764666
 
 Name: ../images/fire-mario/fire-mario4.png
 Start Id: 12
 Width: 16
 Height: 31
-Start Address 30764667
-End Address: 30765163
+Start Address 764667
+End Address: 765163
 
 Name: ../images/fire-mario/fire-mario10.png
 Start Id: 13
 Width: 16
 Height: 31
-Start Address 30765164
-End Address: 30765660
+Start Address 765164
+End Address: 765660
 
 Name: ../images/fire-mario/fire-mario2.png
 Start Id: 14
 Width: 16
 Height: 31
-Start Address 30765661
-End Address: 30766157
+Start Address 765661
+End Address: 766157
 
 Name: ../images/fire-mario/fire-mario17.png
 Start Id: 15
 Width: 16
 Height: 31
-Start Address 30766158
-End Address: 30766654
+Start Address 766158
+End Address: 766654
 
 Name: ../images/fire-mario/fire-mario1.png
 Start Id: 16
 Width: 16
 Height: 31
-Start Address 30766655
-End Address: 30767151
+Start Address 766655
+End Address: 767151
 
 Name: ../images/fire-mario/fire-mario5.png
 Start Id: 17
 Width: 16
 Height: 31
-Start Address 30767152
-End Address: 30767648
+Start Address 767152
+End Address: 767648
 
 Name: ../images/fire-mario/fire-mario12.png
 Start Id: 18
 Width: 16
 Height: 31
-Start Address 30767649
-End Address: 30768145
+Start Address 767649
+End Address: 768145
 
 Name: ../images/fire-mario/fire-mario20.png
 Start Id: 19
 Width: 16
 Height: 31
-Start Address 30768146
-End Address: 30768642
+Start Address 768146
+End Address: 768642
 
 Name: ../images/fire-mario/fire-mario19.png
 Start Id: 20
 Width: 16
 Height: 31
-Start Address 30768643
-End Address: 30769139
+Start Address 768643
+End Address: 769139
 
 Name: ../images/fire-mario/fire-mario8.png
 Start Id: 21
 Width: 16
 Height: 31
-Start Address 30769140
-End Address: 30769636
+Start Address 769140
+End Address: 769636
 
 Name: ../images/fire-mario/fire-mario18.png
 Start Id: 22
 Width: 16
 Height: 31
-Start Address 30769637
-End Address: 30770133
+Start Address 769637
+End Address: 770133
 
 Name: ../images/fire-mario/fire-mario6.png
 Start Id: 23
 Width: 16
 Height: 31
-Start Address 30770134
-End Address: 30770630
+Start Address 770134
+End Address: 770630
 
 Name: ../images/fire-mario/fire-mario9.png
 Start Id: 24
 Width: 16
 Height: 31
-Start Address 30770631
-End Address: 30771127
+Start Address 770631
+End Address: 771127
 
 Name: ../images/fire-mario/fire-mario11.png
 Start Id: 25
 Width: 16
 Height: 31
-Start Address 30771128
-End Address: 30771624
+Start Address 771128
+End Address: 771624
 
 Name: ../images/fire-mario/fire-mario14.png
 Start Id: 26
 Width: 16
 Height: 31
-Start Address 30771625
-End Address: 30772121
+Start Address 771625
+End Address: 772121
 
 Name: ../images/fire-mario/fire-mario15.png
 Start Id: 27
 Width: 16
 Height: 31
-Start Address 30772122
-End Address: 30772618
+Start Address 772122
+End Address: 772618
 
 Name: ../images/fire-mario/fire-mario16.png
 Start Id: 28
 Width: 16
 Height: 31
-Start Address 30772619
-End Address: 30773115
+Start Address 772619
+End Address: 773115
 
 Name: ../images/fire-mario/fire-mario7.png
 Start Id: 29
 Width: 16
 Height: 31
-Start Address 30773116
-End Address: 30773612
+Start Address 773116
+End Address: 773612
 
 Name: ../images/items/fireflower_frame_3.png
 Start Id: 30
 Width: 16
 Height: 16
-Start Address 30773613
-End Address: 30773869
+Start Address 773613
+End Address: 773869
 
 Name: ../images/items/fireball_explosion_frame_1.png
 Start Id: 31
 Width: 18
 Height: 17
-Start Address 30773870
-End Address: 30774176
+Start Address 773870
+End Address: 774176
 
 Name: ../images/items/fireball_frame_1.png
 Start Id: 32
 Width: 18
 Height: 17
-Start Address 30774177
-End Address: 30774483
+Start Address 774177
+End Address: 774483
 
 Name: ../images/items/fireflower_frame_1.png
 Start Id: 33
 Width: 16
 Height: 16
-Start Address 30774484
-End Address: 30774740
+Start Address 774484
+End Address: 774740
 
 Name: ../images/items/fireflower_frame_2.png
 Start Id: 34
 Width: 16
 Height: 16
-Start Address 30774741
-End Address: 30774997
+Start Address 774741
+End Address: 774997
 
 Name: ../images/items/mushroom_frame_1.png
 Start Id: 35
 Width: 16
 Height: 17
-Start Address 30774998
-End Address: 30775270
+Start Address 774998
+End Address: 775270
 
 Name: ../images/items/fireflower_frame_4.png
 Start Id: 36
 Width: 16
 Height: 16
-Start Address 30775271
-End Address: 30775527
+Start Address 775271
+End Address: 775527
 
 Name: ../images/items/fireball_explosion_frame_2.png
 Start Id: 37
 Width: 16
 Height: 17
-Start Address 30775528
-End Address: 30775800
+Start Address 775528
+End Address: 775800
 
 Name: ../images/mario_sprites/sprite9.png
 Start Id: 38
 Width: 16
 Height: 32
-Start Address 30775801
-End Address: 30776313
+Start Address 775801
+End Address: 776313
 
 Name: ../images/mario_sprites/sprite13.png
 Start Id: 39
 Width: 16
 Height: 32
-Start Address 30776314
-End Address: 30776826
+Start Address 776314
+End Address: 776826
 
 Name: ../images/mario_sprites/sprite17.png
 Start Id: 40
 Width: 16
 Height: 32
-Start Address 30776827
-End Address: 30777339
+Start Address 776827
+End Address: 777339
 
 Name: ../images/mario_sprites/sprite21.png
 Start Id: 41
 Width: 16
 Height: 32
-Start Address 30777340
-End Address: 30777852
+Start Address 777340
+End Address: 777852
 
 Name: ../images/mario_sprites/sprite2.png
 Start Id: 42
 Width: 16
 Height: 32
-Start Address 30777853
-End Address: 30778365
+Start Address 777853
+End Address: 778365
 
 Name: ../images/mario_sprites/sprite19.png
 Start Id: 43
 Width: 16
 Height: 32
-Start Address 30778366
-End Address: 30778878
+Start Address 778366
+End Address: 778878
 
 Name: ../images/mario_sprites/sprite7.png
 Start Id: 44
 Width: 16
 Height: 32
-Start Address 30778879
-End Address: 30779391
+Start Address 778879
+End Address: 779391
 
 Name: ../images/mario_sprites/sprite12.png
 Start Id: 45
 Width: 16
 Height: 32
-Start Address 30779392
-End Address: 30779904
+Start Address 779392
+End Address: 779904
 
 Name: ../images/mario_sprites/sprite4.png
 Start Id: 46
 Width: 16
 Height: 32
-Start Address 30779905
-End Address: 30780417
+Start Address 779905
+End Address: 780417
 
 Name: ../images/mario_sprites/sprite3.png
 Start Id: 47
 Width: 16
 Height: 32
-Start Address 30780418
-End Address: 30780930
+Start Address 780418
+End Address: 780930
 
 Name: ../images/mario_sprites/sprite1.png
 Start Id: 48
 Width: 16
 Height: 32
-Start Address 30780931
-End Address: 30781443
+Start Address 780931
+End Address: 781443
 
 Name: ../images/mario_sprites/sprite16.png
 Start Id: 49
 Width: 16
 Height: 32
-Start Address 30781444
-End Address: 30781956
+Start Address 781444
+End Address: 781956
 
 Name: ../images/mario_sprites/sprite11.png
 Start Id: 50
 Width: 16
 Height: 32
-Start Address 30781957
-End Address: 30782469
+Start Address 781957
+End Address: 782469
 
 Name: ../images/mario_sprites/sprite14.png
 Start Id: 51
 Width: 16
 Height: 32
-Start Address 30782470
-End Address: 30782982
+Start Address 782470
+End Address: 782982
 
 Name: ../images/mario_sprites/sprite5.png
 Start Id: 52
 Width: 16
 Height: 32
-Start Address 30782983
-End Address: 30783495
+Start Address 782983
+End Address: 783495
 
 Name: ../images/mario_sprites/sprite8.png
 Start Id: 53
 Width: 16
 Height: 32
-Start Address 30783496
-End Address: 30784008
+Start Address 783496
+End Address: 784008
 
 Name: ../images/mario_sprites/sprite20.png
 Start Id: 54
 Width: 16
 Height: 32
-Start Address 30784009
-End Address: 30784521
+Start Address 784009
+End Address: 784521
 
 Name: ../images/mario_sprites/sprite6.png
 Start Id: 55
 Width: 16
 Height: 32
-Start Address 30784522
-End Address: 30785034
+Start Address 784522
+End Address: 785034
 
 Name: ../images/mario_sprites/sprite15.png
 Start Id: 56
 Width: 16
 Height: 32
-Start Address 30785035
-End Address: 30785547
+Start Address 785035
+End Address: 785547
 
 Name: ../images/mario_sprites/sprite18.png
 Start Id: 57
 Width: 16
 Height: 32
-Start Address 30785548
-End Address: 30786060
+Start Address 785548
+End Address: 786060
 
 Name: ../images/mario_sprites/sprite10.png
 Start Id: 58
 Width: 16
 Height: 32
-Start Address 30786061
-End Address: 30786573
+Start Address 786061
+End Address: 786573
 
 Name: ../images/mini-mario/mini-mario13.png
 Start Id: 59
 Width: 16
 Height: 16
-Start Address 30786574
-End Address: 30786830
+Start Address 786574
+End Address: 786830
 
 Name: ../images/mini-mario/mini-mario7.png
 Start Id: 60
 Width: 16
 Height: 16
-Start Address 30786831
-End Address: 30787087
+Start Address 786831
+End Address: 787087
 
 Name: ../images/mini-mario/mini-mario12.png
 Start Id: 61
 Width: 16
 Height: 16
-Start Address 30787088
-End Address: 30787344
+Start Address 787088
+End Address: 787344
 
 Name: ../images/mini-mario/mini-mario8.png
 Start Id: 62
 Width: 16
 Height: 16
-Start Address 30787345
-End Address: 30787601
+Start Address 787345
+End Address: 787601
 
 Name: ../images/mini-mario/mini-mario14.png
 Start Id: 63
 Width: 16
 Height: 16
-Start Address 30787602
-End Address: 30787858
+Start Address 787602
+End Address: 787858
 
 Name: ../images/mini-mario/mini-mario1.png
 Start Id: 64
 Width: 16
 Height: 16
-Start Address 30787859
-End Address: 30788115
+Start Address 787859
+End Address: 788115
 
 Name: ../images/mini-mario/mini-mario9.png
 Start Id: 65
 Width: 16
 Height: 16
-Start Address 30788116
-End Address: 30788372
+Start Address 788116
+End Address: 788372
 
 Name: ../images/mini-mario/mini-mario4.png
 Start Id: 66
 Width: 16
 Height: 16
-Start Address 30788373
-End Address: 30788629
+Start Address 788373
+End Address: 788629
 
 Name: ../images/mini-mario/mini-mario5.png
 Start Id: 67
 Width: 16
 Height: 16
-Start Address 30788630
-End Address: 30788886
+Start Address 788630
+End Address: 788886
 
 Name: ../images/mini-mario/mini-mario6.png
 Start Id: 68
 Width: 16
 Height: 16
-Start Address 30788887
-End Address: 30789143
+Start Address 788887
+End Address: 789143
 
 Name: ../images/mini-mario/mini-mario3.png
 Start Id: 69
 Width: 16
 Height: 16
-Start Address 30789144
-End Address: 30789400
+Start Address 789144
+End Address: 789400
 
 Name: ../images/mini-mario/mini-mario2.png
 Start Id: 70
 Width: 16
 Height: 16
-Start Address 30789401
-End Address: 30789657
+Start Address 789401
+End Address: 789657
 
 Name: ../images/mini-mario/mini-mario10.png
 Start Id: 71
 Width: 16
 Height: 16
-Start Address 30789658
-End Address: 30789914
+Start Address 789658
+End Address: 789914
 
 Name: ../images/mini-mario/mini-mario11.png
 Start Id: 72
 Width: 16
 Height: 16
-Start Address 30789915
-End Address: 30790171
+Start Address 789915
+End Address: 790171
 

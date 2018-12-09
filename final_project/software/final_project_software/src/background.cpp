@@ -10,37 +10,39 @@
 #include <cstdint>
 #include <iostream>
 
-#include "../include/enemies.h"
-#include "../include/player.h"
-#include "../include/colliders.h"
-
-
 Background_Object::Background_Object(Rect_Collider collider, bool contains_item) {
 	this->collider = collider;
 	this->contains_item = contains_item;
 }
-
-int16_t overlapX (const Rect_Collider & rect1, const Rect_Collider & rect2) {
-	int16_t dist1 = 0, dist2 = 0;
+// TODO Fix later
+float overlapX (Rect_Collider & rect1, Rect_Collider & rect2) {
+	return 0;
+	if (!rect1.collides_left(rect2) && !rect1.collides_right(rect2)) {
+		return 0;
+	}
+	float dist1 = 0, dist2 = 0;
 	dist1 = rect2.collide_x + rect2.collide_width - rect1.collide_x;
-	if (dist1 > 0) return dist1;
+	if (dist1 >= 0) return dist1;
 	dist2 = rect1.collide_x + rect1.collide_width - rect2.collide_x;
-	if (dist2 > 0) return -dist2;
+	if (dist2 >= 0) return -dist2;
 	return 0;
 
 }
 // Returns how much to offset rect1 first param
-int16_t overlapY (const Rect_Collider & rect1, const Rect_Collider & rect2) {
-	int16_t dist1 = 0, dist2 = 0;
+float overlapY (Rect_Collider & rect1, Rect_Collider & rect2) {
+	if (!rect1.collides_above(rect2) && !rect1.collides_below(rect2)) {
+		return 0;
+	}
+	float dist1 = 0, dist2 = 0;
 	dist1 = rect1.collide_y + rect1.collide_height - rect2.collide_y;
-	if (dist1 > 0) return -dist1;
+	if (dist1 >= 0) return -dist1;
 	dist2 = rect2.collide_y + rect2.collide_height - rect1.collide_y;
-	if (dist2 > 0) return dist2;
+	if (dist2 <= 0) return dist2;
 	return 0;
 }
 
 /*
- * TODO update current_player in constructor
+ *
  */
 Background::Background() {
 	// Make sure width can fit on screen on that location
@@ -100,13 +102,15 @@ void Background::scrollBackgroundX (int moveAmount) {
 
 
 void Background::drawBackground() {
-	*SPRITE_X_PIO = x;
-	*SPRITE_Y_PIO = y;
+	std::cout << "DrawBackground" << std::endl;
+	*Sprite::SPRITE_X_PIO = static_cast<uint16_t>(x);
+	*Sprite::SPRITE_Y_PIO = static_cast<uint16_t>(y);
 	// Stored column major order in memory
-	*SPRITE_ADDRESS_PIO = start_address + height * (screenCenterX - (window_width / 2));
-	*SPRITE_HEIGHT_PIO = height;
-	*SPRITE_WIDTH_PIO = window_width;
-	*SPRITE_ID_PIO = ++(*SPRITE_ID_PIO); // Make sure hardware sees change
+	*Sprite::SPRITE_ADDRESS_PIO = start_address + height * (screenCenterX - (window_width / 2));
+	*Sprite::SPRITE_HEIGHT_PIO = height;
+	*Sprite::SPRITE_WIDTH_PIO = window_width;
+	*Sprite::SPRITE_ID_PIO = ++(*Sprite::SPRITE_ID_PIO); // Make sure hardware sees change
+	std::cout << "End draw Background" << std::endl;
 }
 
 
@@ -220,7 +224,12 @@ bool Background::outOfBounds(Rect_Collider & other) {
 }
 
 void Background::updateBackground() {
-	for (auto it = items.begin(); it != items.end(); it++) {
+	// Move the background based on player pos
+	std::cout << "Player mode " << unsigned(current_player->getMode()) << std::endl;
+	std::cout << "Player frame " << unsigned(current_player->current_frame_in_state) << std::endl;
+	if (current_player != nullptr)
+		scrollBackgroundX(current_player->velX);
+	for (auto it = items.begin(); it != items.end();) {
 		if (it->second == nullptr || outOfBounds(it->second->collider)) {
 			it = items.erase(it);
 		}
@@ -240,7 +249,7 @@ void Background::updateBackground() {
 			it++;
 		}
 	}
-	for (auto it = fireballs.begin(); it != fireballs.end(); it++) {
+	for (auto it = fireballs.begin(); it != fireballs.end();) {
 		if (it->second == nullptr || outOfBounds(it->second->collider)) {
 			it = fireballs.erase(it);
 		}
@@ -260,13 +269,14 @@ void Background::updateBackground() {
 
 // Checks and update all the collisions
 void Background::resolveCollisions() {
+	std::cout << "Started resolveCollisions" << std::endl;
 //	map<uint64_t, Background_Object*> collidable_background_objects; // Objects that aren't seperate sprites, but are still collidable on the map; These update every frame with the background
 //	Player * current_player;
 //	map<uint64_t, Enemy*> enemies;
 //	map<uint64_t, Item*> items;
 //	map<uint64_t, Fireball*> fireballs;
-	int16_t shiftX = 0;
-	int16_t shiftY = 0;
+	float shiftX = 0;
+	float shiftY = 0;
 	for (auto backgroundIt = collidable_background_objects.begin(); backgroundIt != collidable_background_objects.end(); backgroundIt++) {
 		if (backgroundIt->second == nullptr) continue;
 		for (auto enemiesIt = enemies.begin(); enemiesIt != enemies.end(); enemiesIt++) {
@@ -284,8 +294,10 @@ void Background::resolveCollisions() {
 			}
 		}
 		if (current_player != nullptr && current_player->player_collider.collides_with(backgroundIt->second->collider) && !current_player->noCollide) {
+			std::cout << "Player collided with background object" << std::endl;
 			shiftX = overlapX(current_player->player_collider, backgroundIt->second->collider);
 			shiftY = overlapY(current_player->player_collider, backgroundIt->second->collider);
+			std::cout << shiftX << " " << shiftY << std::endl;
 			if (shiftX != 0) {
 				current_player->player_collider.collide_x += shiftX;
 				current_player->velX = 0;
@@ -296,6 +308,7 @@ void Background::resolveCollisions() {
 			}
 			// Pass in background too
 			backgroundIt->second->collided_with(current_player->player_collider, this);
+			current_player->collided_with(backgroundIt->second->collider);
 		}
 		for (auto itemsIt = items.begin(); itemsIt != items.end(); itemsIt++) {
 			if (itemsIt->second->collider.collides_with(backgroundIt->second->collider)) {

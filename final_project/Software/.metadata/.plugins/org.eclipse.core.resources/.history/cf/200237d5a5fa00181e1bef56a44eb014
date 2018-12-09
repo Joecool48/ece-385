@@ -1,0 +1,75 @@
+/*
+ * keyboard.cpp
+ *
+ *  Created on: Dec 7, 2018
+ *      Author: joey
+ */
+
+#include "../include/keyboard.h"
+
+// TODO implement keyboard methods
+
+/*
+ * Left KEY_A
+ * UP 0x9e
+ * DOWN 0x1e
+ *
+ * CROUCH KEY_S
+ * UP 0x9f
+ * DOWN 0x1f
+ *
+ * Right KEY_D
+ * UP 0xa0
+ * DOWN 0x20
+ *
+ * JUMP KEY_W
+ * UP 0x91
+ * DOWN 0x11
+ *
+ * FIREBALL KEY_SPACE
+ * UP 0xb9
+ * DOWN 0x39
+ *
+ * PAUSE KEY_ESC
+ * UP 0x81
+ * DOWN 0x01
+ */
+
+
+uint8_t Keyboard::getScanCode() {
+	return *SCANCODE_PIO;
+}
+
+void Keyboard::initKeyboard() {
+	key_ups.insert(0x9e);
+	key_ups.insert(0x9f);
+	key_ups.insert(0xa0);
+	key_ups.insert(0x91);
+	key_ups.insert(0xb9);
+}
+
+void Keyboard::updateKeys() {
+
+}
+inline bool Keyboard::key_jump() {
+	return (keys.find(Key::KEY_JUMP) != keys.end());
+}
+inline bool Keyboard::key_left() {
+	return (keys.find(Key::KEY_LEFT) != keys.end());
+}
+inline bool Keyboard::key_right() {
+	return (keys.find(Key::KEY_RIGHT) != keys.end());
+}
+inline bool Keyboard::key_crouch() {
+	return (keys.find(Key::KEY_CROUCH) != keys.end());
+}
+inline bool Keyboard::key_fireball() {
+	return (keys.find(Key::KEY_FIREBALL) != keys.end());
+}
+inline bool Keyboard::key_pause() {
+	return (keys.find(Key::KEY_PAUSE) != keys.end());
+}
+
+inline bool Keyboard::multipleKeysPressed() {
+	return keys.size() > 1;
+}
