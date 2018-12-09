@@ -36,7 +36,7 @@ for image in images:
 # Converts the image to a 8 hex width column major order text file
 python_hardware_sim = open("python_hardware_sim_code", "w", 1)
 python_hardware_sim.write("address_to_sprite_map = {}\n")
-
+regular_hex_file = open("regular_hex_file.txt", "w")
 
 sprite_file = open("sprite_file.txt", "w", 1)
 address_offset = 0
@@ -68,13 +68,17 @@ for img in images:
                 mem_file.write(format(address_offset, "0" + str(int(math.ceil(math.log(MAX_ADDRESSES, 16)))) + "x"))
                 mem_file.write(" : ")
                 mem_file.write("00")
+                regular_hex_file.write("00")
             else:
                 mem_file.write(format(address_offset, "0" + str(int(math.ceil(math.log(MAX_ADDRESSES, 16)))) + "x"))
                 mem_file.write(" : ")
+                regular_hex_file.write("%0.2x" % color_dict[(pix[0], pix[1], pix[2])])
                 mem_file.write(format(color_dict[(pix[0], pix[1], pix[2])], "02x"))
             address_offset += 1
             if address_offset % 1 == 0:
                 mem_file.write(";\n")
+            if address_offset % 2 == 0:
+                regular_hex_file.write(" ")
     status_file.write("End Address: " + str(address_offset) + "\n\n")
     address_offset += 1
     sprite_id_start += 1
