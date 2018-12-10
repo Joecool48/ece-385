@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'final_project'
  * SOPC Builder design path: ../../final_project.sopcinfo
  *
- * Generated: Tue Nov 27 15:29:38 CST 2018
+ * Generated: Mon Dec 10 02:41:32 CST 2018
  */
 
 /*
@@ -139,6 +139,21 @@
 #define __ALTERA_AVALON_SYSID_QSYS
 #define __ALTERA_NIOS2_GEN2
 #define __ALTPLL
+#define __SDCARDSLAVE
+
+
+/*
+ * SdCardSlave_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_SdCardSlave_0 SdCardSlave
+#define SDCARDSLAVE_0_BASE 0x1000840
+#define SDCARDSLAVE_0_IRQ -1
+#define SDCARDSLAVE_0_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define SDCARDSLAVE_0_NAME "/dev/SdCardSlave_0"
+#define SDCARDSLAVE_0_SPAN 32
+#define SDCARDSLAVE_0_TYPE "SdCardSlave"
 
 
 /*
@@ -212,7 +227,7 @@
  */
 
 #define ALT_MODULE_CLASS_pll altpll
-#define PLL_BASE 0x10008e0
+#define PLL_BASE 0x1000920
 #define PLL_IRQ -1
 #define PLL_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define PLL_NAME "/dev/pll"
@@ -265,7 +280,7 @@
  */
 
 #define ALT_MODULE_CLASS_sprite_address_pio altera_avalon_pio
-#define SPRITE_ADDRESS_PIO_BASE 0x10008c0
+#define SPRITE_ADDRESS_PIO_BASE 0x1000900
 #define SPRITE_ADDRESS_PIO_BIT_CLEARING_EDGE_REGISTER 0
 #define SPRITE_ADDRESS_PIO_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SPRITE_ADDRESS_PIO_CAPTURE 0
@@ -292,7 +307,7 @@
  */
 
 #define ALT_MODULE_CLASS_sprite_height_pio altera_avalon_pio
-#define SPRITE_HEIGHT_PIO_BASE 0x10008a0
+#define SPRITE_HEIGHT_PIO_BASE 0x10008e0
 #define SPRITE_HEIGHT_PIO_BIT_CLEARING_EDGE_REGISTER 0
 #define SPRITE_HEIGHT_PIO_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SPRITE_HEIGHT_PIO_CAPTURE 0
@@ -319,7 +334,7 @@
  */
 
 #define ALT_MODULE_CLASS_sprite_id_pio altera_avalon_pio
-#define SPRITE_ID_PIO_BASE 0x10008d0
+#define SPRITE_ID_PIO_BASE 0x1000910
 #define SPRITE_ID_PIO_BIT_CLEARING_EDGE_REGISTER 0
 #define SPRITE_ID_PIO_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SPRITE_ID_PIO_CAPTURE 0
@@ -346,7 +361,7 @@
  */
 
 #define ALT_MODULE_CLASS_sprite_width_pio altera_avalon_pio
-#define SPRITE_WIDTH_PIO_BASE 0x10008b0
+#define SPRITE_WIDTH_PIO_BASE 0x10008f0
 #define SPRITE_WIDTH_PIO_BIT_CLEARING_EDGE_REGISTER 0
 #define SPRITE_WIDTH_PIO_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SPRITE_WIDTH_PIO_CAPTURE 0
@@ -373,7 +388,7 @@
  */
 
 #define ALT_MODULE_CLASS_sprite_x_pio altera_avalon_pio
-#define SPRITE_X_PIO_BASE 0x1000890
+#define SPRITE_X_PIO_BASE 0x10008d0
 #define SPRITE_X_PIO_BIT_CLEARING_EDGE_REGISTER 0
 #define SPRITE_X_PIO_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SPRITE_X_PIO_CAPTURE 0
@@ -400,7 +415,7 @@
  */
 
 #define ALT_MODULE_CLASS_sprite_y_pio altera_avalon_pio
-#define SPRITE_Y_PIO_BASE 0x1000880
+#define SPRITE_Y_PIO_BASE 0x10008c0
 #define SPRITE_Y_PIO_BIT_CLEARING_EDGE_REGISTER 0
 #define SPRITE_Y_PIO_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SPRITE_Y_PIO_CAPTURE 0
@@ -433,7 +448,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1543353772
+#define SYSID_TIMESTAMP 1544429596
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */

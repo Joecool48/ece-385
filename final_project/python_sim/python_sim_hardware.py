@@ -95,8 +95,8 @@ sprite_width_pio = "SPRITE_WIDTH_PIO"
 sprite_x_pio = "SPRITE_X_PIO"
 sprite_y_pio = "SPRITE_Y_PIO"
 scancode_open = open(scancode_file, "w")
-#hardware_file = open(hardware_done, "w")
-#last_sprite_id = int(linecache.getline(sprite_id_pio, 1) if linecache.getline(sprite_id_pio, 1) != "" else "0")
+hardware_file = open(hardware_done, "w")
+last_sprite_id = int(linecache.getline(sprite_id_pio, 1) if linecache.getline(sprite_id_pio, 1) != "" else "0")
 
 pygame.init()
 
@@ -125,41 +125,41 @@ while True:
     for event in events: # Check events and send scancodes over
         if event.type == pygame.KEYDOWN:
             scancode_open.truncate(0)
-            print(str(key_down[event.key]))
+            #print(str(key_down[event.key]))
             scancode_open.write(str(key_down[event.key]) + "\n")
             scancode_open.flush()
         elif event.type == pygame.KEYUP:
             scancode_open.truncate(0)
-            print(str(key_up[event.key]))
+            #print(str(key_up[event.key]))
             scancode_open.write(str(key_up[event.key]) + "\n")
             scancode_open.flush()
-        time.sleep(1 / 60)
-    '''linecache.checkcache()
+    linecache.checkcache()
     if last_sprite_id != int(linecache.getline(sprite_id_pio, 1) if linecache.getline(sprite_id_pio, 1) != "" else "0"):
         last_sprite_id = int(linecache.getline(sprite_id_pio, 1) if linecache.getline(sprite_id_pio, 1) != "" else "0")
         x = int(strip_newline(linecache.getline(sprite_x_pio, 1)))
         y = int(strip_newline(linecache.getline(sprite_y_pio, 1)))
         width = int(strip_newline(linecache.getline(sprite_width_pio, 1)))
         height =int(strip_newline(linecache.getline(sprite_width_pio, 1)))
+        print(str(x), str(y))
         update_sprites.append((address_to_sprite_map[int(strip_newline(linecache.getline(sprite_address_pio, 1)))], (x, y)))
         gamedisplay.blit(address_to_sprite_map[int(strip_newline(linecache.getline(sprite_address_pio, 1)))], (x, y))
     linecache.checkcache()
-    print(len(update_sprites))
+    if len(update_sprites) != 0:
+        print("There are sprites to be displayed")
     if int(linecache.getline(software_done, 1)) == 1:
-        print("Got there")
-        gamedisplay.fill((0, 0, 0))
+        #gamedisplay.fill((0, 0, 0))
         displayed_already = True
         for i in update_sprites:
             gamedisplay.blit(i[0], (i[1][0], i[1][1]))
         pygame.display.update()
         update_sprites.clear()
         linecache.checkcache()
-        hardware_file.truncate(0)
+        hardware_file.seek(0)
         hardware_file.write("1\n")
         hardware_file.flush()
+        time.sleep(1/30)
         while int(linecache.getline(software_done, 1)) != 1:
             linecache.checkcache()
         hardware_file.truncate(0)
         hardware_file.write("0\n")
         hardware_file.flush()
-    '''

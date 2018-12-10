@@ -10,34 +10,36 @@
 #include <cstdint>
 #include <iostream>
 
+/*
+ * Returns true if the rect collider is outside the visible dimensions of the screen
+ */
+bool Background::offScreen(Rect_Collider & other) {
+	return (other.collide_x > screenCenterX + window_width / 2 || other.collide_y > window_height);
+}
+
 Background_Object::Background_Object(Rect_Collider collider, bool contains_item) {
 	this->collider = collider;
 	this->contains_item = contains_item;
 }
-// TODO Fix later
-float overlapX (Rect_Collider & rect1, Rect_Collider & rect2) {
-	return 0;
-	if (!rect1.collides_left(rect2) && !rect1.collides_right(rect2)) {
-		return 0;
-	}
+// Vel is for direction
+float overlapX (Rect_Collider & rect1, Rect_Collider & rect2, float velX) {
 	float dist1 = 0, dist2 = 0;
 	dist1 = rect2.collide_x + rect2.collide_width - rect1.collide_x;
-	if (dist1 >= 0) return dist1;
+	if (dist1 > 0 && velX < 0) return dist1;
 	dist2 = rect1.collide_x + rect1.collide_width - rect2.collide_x;
-	if (dist2 >= 0) return -dist2;
+	if (dist2 > 0 && velX > 0) return -dist2;
 	return 0;
 
 }
 // Returns how much to offset rect1 first param
-float overlapY (Rect_Collider & rect1, Rect_Collider & rect2) {
-	if (!rect1.collides_above(rect2) && !rect1.collides_below(rect2)) {
-		return 0;
-	}
+float overlapY (Rect_Collider & rect1, Rect_Collider & rect2, float velY) {
+	std::cout << "Vely in overlapy " << velY << std::endl;
 	float dist1 = 0, dist2 = 0;
 	dist1 = rect1.collide_y + rect1.collide_height - rect2.collide_y;
-	if (dist1 >= 0) return -dist1;
+	// Allow for some tolerance with gravity
+	if (dist1 > 0 && velY > GRAVITY_STRENGTH) return -dist1;
 	dist2 = rect2.collide_y + rect2.collide_height - rect1.collide_y;
-	if (dist2 <= 0) return dist2;
+	if (dist2 < 0 && velY < GRAVITY_STRENGTH) return dist2;
 	return 0;
 }
 
@@ -86,6 +88,7 @@ Background::~Background() {
  * MAKE SURE TO UPDATE THE BACKGROUND OBJECTS AS IT SCROLLS SO THAT THEY MOVE WITH IT
  */
 void Background::scrollBackgroundX (int moveAmount) {
+	int screenCenterXOriginal = screenCenterX;
 	if (screenCenterX + moveAmount - (window_width / 2) < x) {
 		screenCenterX = x + (window_width / 2);
 	}
@@ -95,9 +98,9 @@ void Background::scrollBackgroundX (int moveAmount) {
 	else {
 		screenCenterX += moveAmount;
 	}
-	for (auto it = collidable_background_objects.begin(); it != collidable_background_objects.end(); it++) {
-		it->second->collider.collide_x -= moveAmount;
-	}
+//	for (auto it = collidable_background_objects.begin(); it != collidable_background_objects.end(); it++) {
+//		it->second->collider.collide_x -= (screenCenterX - screenCenterXOriginal);
+//	}
 }
 
 
@@ -127,21 +130,21 @@ void Background::drawWindow() {
 	// Don't need to draw background objects
 	// Draw all the enemies at the current frame
 	for (auto it = enemies.begin(); it != enemies.end(); it++) {
-		if (it->second != nullptr)
+		if (it->second != nullptr && !offScreen(it->second->collider))
 			it->second->draw();
 	}
 	// Draw all the items on the screen
 	for (auto it = items.begin(); it != items.end(); it++) {
-		if (it->second != nullptr)
+		if (it->second != nullptr && !offScreen(it->second->collider))
 			it->second->draw();
 	}
 	// Draw all fireballs thrown by the player
 	for (auto it = fireballs.begin(); it != fireballs.end(); it++) {
-		if (it->second != nullptr)
+		if (it->second != nullptr && !offScreen(it->second->collider))
 			it->second->draw();
 	}
 	// Just draw the player
-	if (current_player != nullptr)
+	if (current_player != nullptr) // Player should always be drawn and onscreen
 		current_player->draw();
 	else
 		std::cout << "Player is null when trying to draw him :(" << std::endl;
@@ -227,6 +230,8 @@ void Background::updateBackground() {
 	// Move the background based on player pos
 	std::cout << "Player mode " << unsigned(current_player->getMode()) << std::endl;
 	std::cout << "Player frame " << unsigned(current_player->current_frame_in_state) << std::endl;
+	std::cout << "Begin background player y " << current_player->player_collider.collide_y << std::endl;
+	// TODO turn on scrolling again sometime
 	if (current_player != nullptr)
 		scrollBackgroundX(current_player->velX);
 	for (auto it = items.begin(); it != items.end();) {
@@ -259,7 +264,9 @@ void Background::updateBackground() {
 			it++;
 		}
 	}
+	std::cout << "Before player y update " << current_player->player_collider.collide_y << std::endl;
 	current_player->update();
+	std::cout << "After update player y " << current_player->player_collider.collide_y << std::endl;
 	current_player->gravity();
 	resolveCollisions();
 	drawWindow();
@@ -280,61 +287,104 @@ void Background::resolveCollisions() {
 	for (auto backgroundIt = collidable_background_objects.begin(); backgroundIt != collidable_background_objects.end(); backgroundIt++) {
 		if (backgroundIt->second == nullptr) continue;
 		for (auto enemiesIt = enemies.begin(); enemiesIt != enemies.end(); enemiesIt++) {
-			if (!enemiesIt->second->noCollide && enemiesIt->second->collider.collides_with(backgroundIt->second->collider)) {
-				shiftX = overlapX(enemiesIt->second->collider, backgroundIt->second->collider);
-				shiftY = overlapY(enemiesIt->second->collider, backgroundIt->second->collider);
-				if (shiftX != 0) {
-					enemiesIt->second->collider.collide_x += shiftX;
-					enemiesIt->second->velX = 0;
+			Rect_Collider update_collider = enemiesIt->second->collider;
+			update_collider.collide_x += enemiesIt->second->velX;
+			update_collider.collide_y += enemiesIt->second->velY;
+			if (!enemiesIt->second->noCollide && update_collider.collides_with(backgroundIt->second->collider)) {
+				// Remove updated y to see if x collides
+				update_collider.collide_y -= enemiesIt->second->velY;
+				if (update_collider.collides_with(backgroundIt->second->collider) && (update_collider.collides_left(backgroundIt->second->collider) || update_collider.collides_right(backgroundIt->second->collider))) {
+					shiftX = overlapX(update_collider, backgroundIt->second->collider, enemiesIt->second->velX);
+					if (shiftX != 0) {
+						enemiesIt->second->collider.collide_x += shiftX + enemiesIt->second->velX;
+						enemiesIt->second->velX = 0;
+					}
 				}
-				if (shiftY != 0) {
-					enemiesIt->second->collider.collide_y += shiftY;
-					enemiesIt->second->velY = 0;
+				update_collider.collide_x -= enemiesIt->second->velX; // Remove velX update and add velY
+				update_collider.collide_y += enemiesIt->second->velY;
+				if (update_collider.collides_with(backgroundIt->second->collider) && (update_collider.collides_left(backgroundIt->second->collider) || update_collider.collides_right(backgroundIt->second->collider))) {
+					shiftY = overlapY(update_collider, backgroundIt->second->collider, enemiesIt->second->velY);
+					if (shiftY != 0) {
+						enemiesIt->second->collider.collide_y += shiftY + enemiesIt->second->velY;
+						enemiesIt->second->velY = 0;
+					}
 				}
 			}
 		}
-		if (current_player != nullptr && current_player->player_collider.collides_with(backgroundIt->second->collider) && !current_player->noCollide) {
-			std::cout << "Player collided with background object" << std::endl;
-			shiftX = overlapX(current_player->player_collider, backgroundIt->second->collider);
-			shiftY = overlapY(current_player->player_collider, backgroundIt->second->collider);
-			std::cout << shiftX << " " << shiftY << std::endl;
-			if (shiftX != 0) {
-				current_player->player_collider.collide_x += shiftX;
-				current_player->velX = 0;
+		Rect_Collider update_collider = current_player->player_collider;
+		update_collider.collide_x += current_player->velX;
+		update_collider.collide_y += current_player->velY;
+		if (current_player != nullptr && update_collider.collides_with(backgroundIt->second->collider) && !current_player->noCollide) {
+			std::cout << "Player collided with background object at " << backgroundIt->second->collider.collide_x << " " << backgroundIt->second->collider.collide_y << std::endl;
+			update_collider.collide_x -= current_player->velX; // Check vely first
+			if (update_collider.collides_with(backgroundIt->second->collider) && (update_collider.collides_above(backgroundIt->second->collider) || update_collider.collides_below(backgroundIt->second->collider))) {
+				shiftY = overlapY(update_collider, backgroundIt->second->collider, current_player->velY);
+				std::cout << "Shifty is " << shiftY << std::endl;
+				if (shiftY != 0) {
+					current_player->player_collider.collide_y += shiftY + current_player->velY;
+					current_player->velY = 0;
+				}
 			}
-			if (shiftY != 0) {
-				current_player->player_collider.collide_y += shiftY;
-				current_player->velY = 0;
+			update_collider.collide_y -= current_player->velY;
+			update_collider.collide_x += current_player->velX;
+			if (update_collider.collides_with(backgroundIt->second->collider) && (update_collider.collides_left(backgroundIt->second->collider) || update_collider.collides_right(backgroundIt->second->collider))) {
+				shiftX = overlapX(update_collider, backgroundIt->second->collider, current_player->velX);
+				if (shiftX != 0) {
+					current_player->player_collider.collide_x += shiftX + current_player->velX;
+					current_player->velX = 0;
+				}
 			}
 			// Pass in background too
 			backgroundIt->second->collided_with(current_player->player_collider, this);
 			current_player->collided_with(backgroundIt->second->collider);
 		}
 		for (auto itemsIt = items.begin(); itemsIt != items.end(); itemsIt++) {
-			if (itemsIt->second->collider.collides_with(backgroundIt->second->collider)) {
-				shiftX = overlapX(itemsIt->second->collider, backgroundIt->second->collider);
-				shiftY = overlapY(itemsIt->second->collider, backgroundIt->second->collider);
-				if (shiftX != 0) {
-					itemsIt->second->collider.collide_x += shiftX;
-					itemsIt->second->velX = 0;
+			Rect_Collider update_collider = itemsIt->second->collider;
+			update_collider.collide_x += itemsIt->second->velX;
+			update_collider.collide_y += itemsIt->second->velY;
+			if (update_collider.collides_with(backgroundIt->second->collider)) {
+				// Remove updated y to see if x collides
+				update_collider.collide_y -= itemsIt->second->velY;
+				if (update_collider.collides_with(backgroundIt->second->collider) && (update_collider.collides_left(backgroundIt->second->collider) || update_collider.collides_right(backgroundIt->second->collider))) {
+					shiftX = overlapX(update_collider, backgroundIt->second->collider, itemsIt->second->velX);
+					if (shiftX != 0) {
+						itemsIt->second->collider.collide_x += shiftX + itemsIt->second->velX;
+						itemsIt->second->velX = 0;
+					}
 				}
-				if (shiftY != 0) {
-					itemsIt->second->collider.collide_y += shiftY;
-					itemsIt->second->velY = 0;
+				update_collider.collide_x -= itemsIt->second->velX; // Remove velX update and add velY
+				update_collider.collide_y += itemsIt->second->velY;
+				if (update_collider.collides_with(backgroundIt->second->collider) && (update_collider.collides_left(backgroundIt->second->collider) || update_collider.collides_right(backgroundIt->second->collider))) {
+					shiftY = overlapY(update_collider, backgroundIt->second->collider, itemsIt->second->velY);
+					if (shiftY != 0) {
+						itemsIt->second->collider.collide_y += shiftY + itemsIt->second->velY;
+						itemsIt->second->velY = 0;
+					}
 				}
 			}
 		}
 		for (auto fireballsIt = fireballs.begin(); fireballsIt != fireballs.end(); fireballsIt++) {
-			if (fireballsIt->second->collider.collides_with(backgroundIt->second->collider)) {
-				shiftX = overlapX(fireballsIt->second->collider, backgroundIt->second->collider);
-				shiftY = overlapY(fireballsIt->second->collider, backgroundIt->second->collider);
-				if (shiftX != 0) {
-					fireballsIt->second->collider.collide_x += shiftX;
-					fireballsIt->second->velX = 0;
+			Rect_Collider update_collider = fireballsIt->second->collider;
+			update_collider.collide_x += fireballsIt->second->velX;
+			update_collider.collide_y += fireballsIt->second->velY;
+			if (update_collider.collides_with(backgroundIt->second->collider)) {
+				// Remove updated y to see if x collides
+				update_collider.collide_y -= fireballsIt->second->velY;
+				if (update_collider.collides_with(backgroundIt->second->collider) && (update_collider.collides_left(backgroundIt->second->collider) || update_collider.collides_right(backgroundIt->second->collider))) {
+					shiftX = overlapX(update_collider, backgroundIt->second->collider, fireballsIt->second->velX);
+					if (shiftX != 0) {
+						fireballsIt->second->collider.collide_x += shiftX + fireballsIt->second->velX;
+						fireballsIt->second->velX = 0;
+					}
 				}
-				if (shiftY != 0) {
-					fireballsIt->second->collider.collide_y += shiftY;
-					fireballsIt->second->velY = 0;
+				update_collider.collide_x -= fireballsIt->second->velX; // Remove velX update and add velY
+				update_collider.collide_y += fireballsIt->second->velY;
+				if (update_collider.collides_with(backgroundIt->second->collider) && (update_collider.collides_left(backgroundIt->second->collider) || update_collider.collides_right(backgroundIt->second->collider))) {
+					shiftY = overlapY(update_collider, backgroundIt->second->collider, fireballsIt->second->velY);
+					if (shiftY != 0) {
+						fireballsIt->second->collider.collide_y += shiftY + fireballsIt->second->velY;
+						fireballsIt->second->velY = 0;
+					}
 				}
 				fireballsIt->second->collided_with(backgroundIt->second->collider); // Let fireball know that it collided with the platform
 				// Platform doesnt need to know

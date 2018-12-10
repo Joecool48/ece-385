@@ -52,7 +52,14 @@ bool Rect_Collider::collides_above(Rect_Collider & other) {
  * For detecting whether Mario jumped on a enemy
  */
 bool Rect_Collider::collides_left(Rect_Collider & other) {
-	return (collides_with(other) && collide_x + collide_width / 2 >= other.collide_x && collide_x + collide_width < other.collide_x + other.collide_width / 2);
+	Rect_Collider collider = *this;
+	// First half of rectangle should collide, but second half should not
+	collider.collide_width /= 2;
+	if (collider.collides_with(other)) {
+		collider.collide_x += collider.collide_width;
+		if (!collider.collides_with(other)) return true;
+	}
+	return false;
 }
 
 /* TODO:
@@ -60,7 +67,13 @@ bool Rect_Collider::collides_left(Rect_Collider & other) {
  * For detecting whether Mario jumped on a enemy
  */
 bool Rect_Collider::collides_right(Rect_Collider & other) {
-	return other.collides_left(*this);
+	Rect_Collider collider = *this;
+	collider.collide_width /= 2;
+	if (!collider.collides_with(other)) {
+		collider.collide_x += collider.collide_width;
+		if (collider.collides_with(other)) return true;
+	}
+	return false;
 }
 
 /* TODO:

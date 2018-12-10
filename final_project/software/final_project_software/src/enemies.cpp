@@ -74,7 +74,7 @@ void Turtle::collided_with(Rect_Collider & other) {
 		shell_move_right = other.collides_left(collider);
 		current_anim_state = SHELL_MOVING;
 	}
-	else if ((other.collide_type == Collider_Type::PLAYER && other.collides_above(collider)) && current_anim_state == SHELL_MOVING) {
+	else if ((other.collide_type == Collider_Type::PLAYER && other.collides_above(collider)) && getState() == SHELL_MOVING) {
 		current_anim_state = SHELL;
 	}
 	else if (other.collide_type == Collider_Type::FIREBALL) {

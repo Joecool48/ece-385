@@ -163,7 +163,6 @@ void Player::update() {
 	std::cout << "Current player state is " << current_anim_state << std::endl;
 	std::cout << "Player velx = " << velX << std::endl;
 	std::cout << "Player vely = " << velY << std::endl;
-	std::cout << "Keys pressed " << Keyboard::keys_pressed() << std::endl;
 	if (wait_frames) {
 		wait_frames--;
 		return;
@@ -231,15 +230,13 @@ void Player::draw() {
 	std::cout << "Start draw Player" << std::endl;
 	// Choose whether to flip the sprite based on private variable
 	Sprite s = getCurrentSprite();
-	std::cout << "After get current" << std::endl;
 	// Update the rect collider!!!
 	//player_collider.collide_x = static_cast<int16_t>(x); // Convert the floats to ints
 	//player_collider.collide_y = static_cast<int16_t> (y);
 
 	player_collider.collide_width = s.width;
 	player_collider.collide_height = s.height;
-	std::cout << "Before static cast" << std::endl;
-	std::cout << player_collider.collide_x << " " << player_collider.collide_y << std::endl;
+	std::cout << "Right before drawing " << player_collider.collide_x << " " << player_collider.collide_y << std::endl;
 	s.drawSprite(static_cast<int16_t>(player_collider.collide_x), static_cast<int16_t> (player_collider.collide_y), flipped_mode ? FLIP_HORIZONTAL : NO_FLIP, isVisible); // Gets the current player sprite and draws it
 	std::cout << "After draw player" << std::endl;
 }
@@ -284,6 +281,7 @@ void Player::collided_with(Rect_Collider & other) {
 		current_anim_state = JUMPING; // They are technically in the air now
 	}
 	else if (other.collide_type == Collider_Type::PLATFORM_UNBREAKABLE) {
+		std::cout << "Collided with ground" << std::endl;
 		inAir = false;
 	}
 }
@@ -330,7 +328,7 @@ void Player::idleState () {
 			}
 		}
 	}
-	else if (Keyboard::key_jump(enablePlayerControl)) {
+	else if (Keyboard::key_jump(enablePlayerControl) || isInAir()) {
 		current_anim_state = JUMPING;
 	}
 	else if (Keyboard::key_crouch(enablePlayerControl) && current_anim_mode != MINI_MODE && !isInAir()) {
@@ -355,7 +353,7 @@ void Player::idleState () {
 	}
 	else if (hitByEnemy() && enemyCanKill) {
 		if (current_anim_mode == MINI_MODE) {
-			current_anim_state == DYING;
+			current_anim_state = DYING;
 		}
 		else if (current_anim_mode == NORMAL_MODE) {
 			current_anim_state = SHRINKING;
@@ -385,17 +383,18 @@ void Player::idleState () {
  */
 void Player::walkingState() {
 	return_state = WALKING;
-
-	if (Keyboard::multipleKeysPressed()) {
-		current_anim_state = SLIDING;
-	}
-	else if (flipped_mode && Keyboard::key_right(enablePlayerControl)) {
+	// For determining if the jump or walk speed should be used if in air
+	float moveVelXMax = MAX_WALK_SPEED, moveAccelX = WALK_ACCEL;
+//	if (Keyboard::multipleKeysPressed()) {
+//		current_anim_state = SLIDING;
+//	}
+	if (flipped_mode && Keyboard::key_right(enablePlayerControl)) {
 		current_anim_state = FLIPPING;
 	}
 	else if (!flipped_mode && Keyboard::key_left(enablePlayerControl)) {
 		current_anim_state = FLIPPING;
 	}
-	else if (Keyboard::key_jump(enablePlayerControl)) {
+	else if (Keyboard::key_jump(enablePlayerControl) || isInAir()) {
 		current_anim_state = JUMPING;
 	}
 	else if (Keyboard::key_crouch(enablePlayerControl) && current_anim_mode != MINI_MODE) {
@@ -409,7 +408,7 @@ void Player::walkingState() {
 	}
 	else if (hitByEnemy() && enemyCanKill) {
 		if (current_anim_mode == MINI_MODE) {
-			current_anim_state == DYING;
+			current_anim_state = DYING;
 		}
 		else if (current_anim_mode == NORMAL_MODE) {
 			current_anim_state = SHRINKING;
@@ -433,22 +432,26 @@ void Player::walkingState() {
 	else if (!Keyboard::key_left(enablePlayerControl) && !Keyboard::key_right(enablePlayerControl)) {
 		current_anim_state = IDLE;
 	}
-	else if (velX == 0) {
+	else if (isInAir()) {
+		moveVelXMax = MAX_JUMP_MOVE_SPEED;
+		moveAccelX = JUMP_MOVE_ACCEL;
+	}
+	if (velX == 0) {
 		if (Keyboard::key_left(enablePlayerControl)) {
-			if (velX > -MAX_WALK_SPEED) {
-				velX -= WALK_ACCEL;
-				if (velX < -MAX_WALK_SPEED) {
-					velX = -MAX_WALK_SPEED;
+			if (velX > -moveVelXMax) {
+				velX -= moveAccelX;
+				if (velX < -moveVelXMax) {
+					velX = -moveVelXMax;
 				}
 			}
 			player_collider.collide_x += velX;
 		}
 		else if (Keyboard::key_right(enablePlayerControl)) {
-			if (velX < MAX_WALK_SPEED) {
-				velX += WALK_ACCEL;
-				if (velX < MAX_WALK_SPEED) {
-					if (velX > MAX_WALK_SPEED) {
-						velX = MAX_WALK_SPEED;
+			if (velX < moveVelXMax) {
+				velX += moveAccelX;
+				if (velX < moveVelXMax) {
+					if (velX > moveVelXMax) {
+						velX = moveVelXMax;
 					}
 				}
 			}
@@ -456,20 +459,20 @@ void Player::walkingState() {
 		}
 	}
 	else if (velX < 0 && Keyboard::key_left(enablePlayerControl)) {
-		if (velX > -MAX_WALK_SPEED) {
-			velX -= WALK_ACCEL;
-			if (velX < -MAX_WALK_SPEED) {
-				velX = -MAX_WALK_SPEED;
+		if (velX > -moveVelXMax) {
+			velX -= moveAccelX;
+			if (velX < -moveVelXMax) {
+				velX = -moveVelXMax;
 			}
 		}
 		player_collider.collide_x += velX;
 	}
 	else if (velX > 0 && Keyboard::key_right(enablePlayerControl)) {
-		if (velX < MAX_WALK_SPEED) {
-			velX += WALK_ACCEL;
-			if (velX < MAX_WALK_SPEED) {
-				if (velX > MAX_WALK_SPEED) {
-					velX = MAX_WALK_SPEED;
+		if (velX < moveVelXMax) {
+			velX += moveAccelX;
+			if (velX < moveVelXMax) {
+				if (velX > moveVelXMax) {
+					velX = moveVelXMax;
 				}
 			}
 		}
@@ -484,6 +487,22 @@ void Player::walkingState() {
 void Player::jumpingState() {
 	return_state = JUMPING;
 	std::cout << "In jumping state and vely = " << velY << std::endl;
+	if (isInAir()) {
+			if (Keyboard::key_left(enablePlayerControl)) {
+				velX -= JUMP_MOVE_ACCEL;
+				if (velX < -MAX_JUMP_MOVE_SPEED) {
+					velX = -MAX_JUMP_MOVE_SPEED;
+				}
+				player_collider.collide_x += velX;
+			}
+			else if (Keyboard::key_right(enablePlayerControl)) {
+				velX += JUMP_MOVE_ACCEL;
+				if (velX > MAX_JUMP_MOVE_SPEED) {
+					velX = MAX_JUMP_MOVE_SPEED;
+				}
+				player_collider.collide_x += velX;
+			}
+		}
 	// If you were moving when jumping and hit the ground
 	std::cout << "IsInAir = " << isInAir() << std::endl;
 	if (!hasJumped && !isInAir() && Keyboard::key_jump(enablePlayerControl)) {
@@ -504,28 +523,12 @@ void Player::jumpingState() {
 		current_anim_state = IDLE;
 	}
 	// Allow for slight changes of movement while in midair
-	else if (isInAir() && !Keyboard::multipleKeysPressed()) {
-		if (Keyboard::key_left(enablePlayerControl)) {
-			velX -= JUMP_MOVE_ACCEL;
-			if (velX < -MAX_JUMP_MOVE_SPEED) {
-				velX = -MAX_JUMP_MOVE_SPEED;
-			}
-			player_collider.collide_x += velX;
-		}
-		else if (Keyboard::key_right(enablePlayerControl)) {
-			velX += JUMP_MOVE_ACCEL;
-			if (velX > MAX_JUMP_MOVE_SPEED) {
-				velX = MAX_JUMP_MOVE_SPEED;
-			}
-			player_collider.collide_x += velX;
-		}
-	}
 	else if (Keyboard::key_fireball(enablePlayerControl) && current_anim_mode == FIRE_MODE) {
 		current_anim_state = THROWFIREBALL;
 	}
 	else if (hitByEnemy() && enemyCanKill) {
 		if (current_anim_mode == MINI_MODE) {
-			current_anim_state == DYING;
+			current_anim_state = DYING;
 		}
 		else if (current_anim_mode == NORMAL_MODE) {
 			current_anim_state = SHRINKING;
@@ -573,7 +576,6 @@ void Player::enlargingState() {
  * State for when the player crouches. Can be only when he is on the ground and not in mini mode
  */
 void Player::crouchingState() {
-	std::cout << "In crouching" << std::endl;
 	return_state = CROUCHING;
 	velX = 0;
 	velY = 0;

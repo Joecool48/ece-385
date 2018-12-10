@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Dec 7, 2018 3:58:50 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1544219930965</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Dec 10, 2018 2:41:32 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1544431292118</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/home/joey/courses/ece385/final_project/software/final_project_software_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../final_project.sopcinfo</SopcDesignFile>
@@ -917,44 +917,50 @@
                 <attributes>printable</attributes>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>SdCardSlave_0</slaveDescriptor>
+                <addressRange>0x01000840 - 0x0100085F</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>sprite_y_pio</slaveDescriptor>
-                <addressRange>0x01000880 - 0x0100088F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>sprite_x_pio</slaveDescriptor>
-                <addressRange>0x01000890 - 0x0100089F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>sprite_height_pio</slaveDescriptor>
-                <addressRange>0x010008A0 - 0x010008AF</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>sprite_width_pio</slaveDescriptor>
-                <addressRange>0x010008B0 - 0x010008BF</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>sprite_address_pio</slaveDescriptor>
                 <addressRange>0x010008C0 - 0x010008CF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>sprite_id_pio</slaveDescriptor>
+                <slaveDescriptor>sprite_x_pio</slaveDescriptor>
                 <addressRange>0x010008D0 - 0x010008DF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>pll</slaveDescriptor>
+                <slaveDescriptor>sprite_height_pio</slaveDescriptor>
                 <addressRange>0x010008E0 - 0x010008EF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>sprite_width_pio</slaveDescriptor>
+                <addressRange>0x010008F0 - 0x010008FF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>sprite_address_pio</slaveDescriptor>
+                <addressRange>0x01000900 - 0x0100090F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>sprite_id_pio</slaveDescriptor>
+                <addressRange>0x01000910 - 0x0100091F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>pll</slaveDescriptor>
+                <addressRange>0x01000920 - 0x0100092F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>

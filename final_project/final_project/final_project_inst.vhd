@@ -27,7 +27,11 @@
 			sprite_width_pio_export        : out   std_logic_vector(15 downto 0);                    -- export
 			sprite_x_pio_export            : out   std_logic_vector(15 downto 0);                    -- export
 			sprite_y_pio_export            : out   std_logic_vector(15 downto 0);                    -- export
-			sys_clk_clk                    : out   std_logic                                         -- clk
+			sys_clk_clk                    : out   std_logic;                                        -- clk
+			sdcard_wire_DAT3               : inout std_logic                     := 'X';             -- DAT3
+			sdcard_wire_DAT                : inout std_logic                     := 'X';             -- DAT
+			sdcard_wire_CMD                : inout std_logic                     := 'X';             -- CMD
+			sdcard_wire_CLK                : out   std_logic                                         -- CLK
 		);
 	end component final_project;
 
@@ -60,6 +64,10 @@
 			sprite_width_pio_export        => CONNECTED_TO_sprite_width_pio_export,        --   sprite_width_pio.export
 			sprite_x_pio_export            => CONNECTED_TO_sprite_x_pio_export,            --       sprite_x_pio.export
 			sprite_y_pio_export            => CONNECTED_TO_sprite_y_pio_export,            --       sprite_y_pio.export
-			sys_clk_clk                    => CONNECTED_TO_sys_clk_clk                     --            sys_clk.clk
+			sys_clk_clk                    => CONNECTED_TO_sys_clk_clk,                    --            sys_clk.clk
+			sdcard_wire_DAT3               => CONNECTED_TO_sdcard_wire_DAT3,               --        sdcard_wire.DAT3
+			sdcard_wire_DAT                => CONNECTED_TO_sdcard_wire_DAT,                --                   .DAT
+			sdcard_wire_CMD                => CONNECTED_TO_sdcard_wire_CMD,                --                   .CMD
+			sdcard_wire_CLK                => CONNECTED_TO_sdcard_wire_CLK                 --                   .CLK
 		);
 

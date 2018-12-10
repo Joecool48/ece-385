@@ -61,6 +61,7 @@ public:
 	void setPlayer (Player *curr_player);
 	bool outOfBounds(Rect_Collider & other);
 	void resolveCollisions(); // Function called after update to resolve collisions
+	bool offScreen(Rect_Collider & other); // Returns true only if the rect collider is not visible within the current background bounds
 
 };
 

@@ -2,14 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="FLIPPING" key="selection"/>
+		<item value="collides" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="FLIPPING"/>
-			<item value="FIRE_MODE"/>
+			<item value="collides"/>
+			<item value="multiple"/>
+			<item value="outof"/>
+			<item value="cout"/>
+			<item value="scrollBackground"/>
+			<item value="scroll"/>
+			<item value="326"/>
+			<item value="current"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -18,7 +24,7 @@
 		<item value="321" key="DIALOG_WIDTH"/>
 		<item value="1|Noto Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="422" key="DIALOG_HEIGHT"/>
-		<item value="1458" key="DIALOG_X_ORIGIN"/>
-		<item value="444" key="DIALOG_Y_ORIGIN"/>
+		<item value="1557" key="DIALOG_X_ORIGIN"/>
+		<item value="592" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

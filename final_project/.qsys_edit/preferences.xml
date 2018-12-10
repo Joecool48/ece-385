@@ -5,8 +5,10 @@
   <columns>
    <connections preferredWidth="223" />
    <irq preferredWidth="34" />
+   <name preferredWidth="227" />
   </columns>
  </systemtable>
- <library expandedCategories="Library,Project" />
+ <library
+   expandedCategories="Library/Interface Protocols/Audio &amp; Video,Library/Memory Interfaces and Controllers,Library/Interface Protocols,Library/University Program/Clock,Library/Interface Protocols/JESD,Library/Memory Interfaces and Controllers/SDRAM,Library/Memory Interfaces and Controllers/Memory Interfaces with UniPHY,Library/Basic Functions/Configuration and Programming,Project,Library/Basic Functions,Library,Library/Memory Interfaces and Controllers/Memory Interfaces with ALTMEMPHY,Library/University Program" />
  <window width="1920" height="1025" x="0" y="27" />
 </preferences>

@@ -324,7 +324,8 @@ hal_C_LIB_SRCS := \
 	$(hal_SRCS_ROOT)/src/alt_times.c \
 	$(hal_SRCS_ROOT)/src/alt_unlink.c \
 	$(hal_SRCS_ROOT)/src/alt_wait.c \
-	$(hal_SRCS_ROOT)/src/alt_write.c
+	$(hal_SRCS_ROOT)/src/alt_write.c \
+	$(hal_SRCS_ROOT)/src/altera_up_sd_card_avalon_interface.c # For sd card interface
 
 
 # Assemble all component C source files 

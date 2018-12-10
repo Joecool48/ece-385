@@ -12,11 +12,61 @@
 #include "../include/keyboard.h"
 #include "../include/sim.h"
 #include <unistd.h>
+#include <system.h>
+#include <altera_up_sd_card_avalon_interface.h>
+
 using namespace std;
 
 string strip_newline(string str) {
 	if (str.length() <= 1) return "";
 	return str.substr(str.length() - 1);
+}
+char toDec(char hex) {
+	if (hex >= 'a' && hex <= 'f') {
+		return hex - 'a' + 10;
+	}
+	else if (hex >= 'A' && hex <= 'F') {
+		return hex - 'A' + 10;
+	}
+	else {
+		return hex - '0';
+	}
+}
+void init_sdcard() {
+	char * address = (char *) ADDRESS_OFFSET;
+	if (!alt_up_sd_card_is_Present()) {
+		printf("No SD card available to read\n");
+		return;
+	}
+	if (!alt_up_sd_card_is_FAT16()) {
+		printf("Cannot read card. Not FAT16\n");
+		return;
+	}
+	char filename[] = "test.hex";
+	short fd = alt_up_sd_card_fopen(filename, false);
+	if (fd < 0) {
+		printf("SD card error. Could not be opened\n");
+		return;
+	}
+	char curr_char;
+	char curr_char2;
+	do {
+		curr_char = alt_up_sd_card_read(fd);
+		curr_char2 = alt_up_sd_card_read(fd);
+		*address = (toDec(curr_char) * 16) + toDec(curr_char2);
+		address += 1;
+		curr_char = alt_up_sd_card_read(fd);
+		curr_char2 = alt_up_sd_card_read(fd);
+		*address = (toDec(curr_char) * 16) + toDec(curr_char2);
+		address += 1;
+		curr_char = alt_up_sd_card_read(fd); // Get the space at the hex format after every 4 ascii chars
+		address += 1;
+
+	} while(curr_char >= 0);
+	if (curr_char != -1) {
+		printf("Reading SD card failed\n");
+		return;
+	}
 }
 
 int main ()
@@ -37,20 +87,16 @@ int main ()
 	player->setBackground(background);
 	setBackgroundObjectWorld1(background); // Add the world 1 object colliders
 	Keyboard::initKeyboard(); // Startup the keyboard
-	Fireflower * fireflower = new Fireflower(30, 150);
-	background->items[fireflower->collider.collider_id] = fireflower;
 	string line;
+	init_sdcard(); // Initialize the sd card memory
 	while (true) {
 		Sim::scancode_file.seekg(0, ios_base::beg);
 		Sim::scancode_file >> line;
-		std::cout << "Line " << line << std::endl;
 		std::cout << "Scancode:" << unsigned(atoi((line == "" ? "0" : line).c_str())) << std::endl;
 
 		*Keyboard::SCANCODE_PIO = unsigned(atoi((line == "" ? "0" : line).c_str()));
 		Keyboard::updateKeys();
-		std::cout << "Before update background" << std::endl;
 		background->updateBackground(); // Function that does everything in the game.
-		std::cout << "After  backgroundUpdate" << std::endl;
 		// Wait for hardware, and signal that you're done
 		*Sprite::SOFTWARE_DONE = 1;
 		Sim::software_done_file.seekp(0, ios_base::beg);
@@ -64,7 +110,6 @@ int main ()
 			Sim::hardware_done_file.seekg(0, ios_base::beg);
 			Sim::hardware_done_file >> line;
 			*Sprite::HARDWARE_DONE = atoi(line.c_str());
-			std::cout << "Line 2" << line << std::endl;
 			usleep(500000);
 		}
 		*Sprite::SOFTWARE_DONE = 0;

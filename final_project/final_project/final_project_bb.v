@@ -27,7 +27,11 @@ module final_project (
 	sprite_width_pio_export,
 	sprite_x_pio_export,
 	sprite_y_pio_export,
-	sys_clk_clk);	
+	sys_clk_clk,
+	sdcard_wire_DAT3,
+	sdcard_wire_DAT,
+	sdcard_wire_CMD,
+	sdcard_wire_CLK);	
 
 	input		avalon_control_fixed_location;
 	input	[31:0]	avalon_control_read_base;
@@ -57,4 +61,8 @@ module final_project (
 	output	[15:0]	sprite_x_pio_export;
 	output	[15:0]	sprite_y_pio_export;
 	output		sys_clk_clk;
+	inout		sdcard_wire_DAT3;
+	inout		sdcard_wire_DAT;
+	inout		sdcard_wire_CMD;
+	output		sdcard_wire_CLK;
 endmodule

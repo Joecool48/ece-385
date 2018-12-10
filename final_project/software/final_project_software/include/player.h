@@ -23,7 +23,7 @@ class Sprite_Animator;
 // Represents a playable character
 class Player : public Sprite_Animator {
 public:
-	const float MAX_WALK_SPEED = 1; // Max amount that can be added per frame
+	const float MAX_WALK_SPEED = 2; // Max amount that can be added per frame
 	const float WALK_ACCEL = .1;
 	const float JUMP_MOVE_ACCEL = .02;
 	const float MAX_JUMP_MOVE_SPEED = 1;

@@ -15,6 +15,10 @@ module final_project (
 		output wire        avalon_user_data_available,     //                   .data_available
 		input  wire        clk_clk,                        //                clk.clk
 		input  wire        reset_reset_n,                  //              reset.reset_n
+		inout  wire        sdcard_wire_DAT3,               //        sdcard_wire.DAT3
+		inout  wire        sdcard_wire_DAT,                //                   .DAT
+		inout  wire        sdcard_wire_CMD,                //                   .CMD
+		output wire        sdcard_wire_CLK,                //                   .CLK
 		output wire        sdram_clk_clk,                  //          sdram_clk.clk
 		output wire [11:0] sdram_wire_addr,                //         sdram_wire.addr
 		output wire [1:0]  sdram_wire_ba,                  //                   .ba
@@ -34,7 +38,7 @@ module final_project (
 		output wire        sys_clk_clk                     //            sys_clk.clk
 	);
 
-	wire         pll_c0_clk;                                                     // pll:c0 -> [irq_mapper:clk, jtag_game_nios:clk, master_template_0:clk, mm_interconnect_0:pll_c0_clk, nios2_gen2_0:clk, rst_controller:clk, sdram:clk, sprite_address_pio:clk, sprite_height_pio:clk, sprite_id_pio:clk, sprite_width_pio:clk, sprite_x_pio:clk, sprite_y_pio:clk, sysid:clock]
+	wire         pll_c0_clk;                                                     // pll:c0 -> [SdCardSlave_0:clk, irq_mapper:clk, jtag_game_nios:clk, master_template_0:clk, mm_interconnect_0:pll_c0_clk, nios2_gen2_0:clk, rst_controller:clk, sdram:clk, sprite_address_pio:clk, sprite_height_pio:clk, sprite_id_pio:clk, sprite_width_pio:clk, sprite_x_pio:clk, sprite_y_pio:clk, sysid:clock]
 	wire   [7:0] master_template_0_avalon_master_readdata;                       // mm_interconnect_0:master_template_0_avalon_master_readdata -> master_template_0:master_readdata
 	wire         master_template_0_avalon_master_waitrequest;                    // mm_interconnect_0:master_template_0_avalon_master_waitrequest -> master_template_0:master_waitrequest
 	wire  [31:0] master_template_0_avalon_master_address;                        // master_template_0:master_address -> mm_interconnect_0:master_template_0_avalon_master_address
@@ -80,6 +84,12 @@ module final_project (
 	wire         mm_interconnect_0_sdram_s1_readdatavalid;                       // sdram:za_valid -> mm_interconnect_0:sdram_s1_readdatavalid
 	wire         mm_interconnect_0_sdram_s1_write;                               // mm_interconnect_0:sdram_s1_write -> sdram:az_wr_n
 	wire  [31:0] mm_interconnect_0_sdram_s1_writedata;                           // mm_interconnect_0:sdram_s1_writedata -> sdram:az_data
+	wire  [31:0] mm_interconnect_0_sdcardslave_0_avalon_slave_0_readdata;        // SdCardSlave_0:readdata -> mm_interconnect_0:SdCardSlave_0_avalon_slave_0_readdata
+	wire   [2:0] mm_interconnect_0_sdcardslave_0_avalon_slave_0_address;         // mm_interconnect_0:SdCardSlave_0_avalon_slave_0_address -> SdCardSlave_0:address
+	wire         mm_interconnect_0_sdcardslave_0_avalon_slave_0_read;            // mm_interconnect_0:SdCardSlave_0_avalon_slave_0_read -> SdCardSlave_0:read
+	wire         mm_interconnect_0_sdcardslave_0_avalon_slave_0_begintransfer;   // mm_interconnect_0:SdCardSlave_0_avalon_slave_0_begintransfer -> SdCardSlave_0:begintransfer
+	wire         mm_interconnect_0_sdcardslave_0_avalon_slave_0_write;           // mm_interconnect_0:SdCardSlave_0_avalon_slave_0_write -> SdCardSlave_0:write
+	wire  [31:0] mm_interconnect_0_sdcardslave_0_avalon_slave_0_writedata;       // mm_interconnect_0:SdCardSlave_0_avalon_slave_0_writedata -> SdCardSlave_0:writedata
 	wire  [31:0] mm_interconnect_0_pll_pll_slave_readdata;                       // pll:readdata -> mm_interconnect_0:pll_pll_slave_readdata
 	wire   [1:0] mm_interconnect_0_pll_pll_slave_address;                        // mm_interconnect_0:pll_pll_slave_address -> pll:address
 	wire         mm_interconnect_0_pll_pll_slave_read;                           // mm_interconnect_0:pll_pll_slave_read -> pll:read
@@ -117,9 +127,24 @@ module final_project (
 	wire  [31:0] mm_interconnect_0_sprite_y_pio_s1_writedata;                    // mm_interconnect_0:sprite_y_pio_s1_writedata -> sprite_y_pio:writedata
 	wire         irq_mapper_receiver0_irq;                                       // jtag_game_nios:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] nios2_gen2_0_irq_irq;                                           // irq_mapper:sender_irq -> nios2_gen2_0:irq
-	wire         rst_controller_reset_out_reset;                                 // rst_controller:reset_out -> [irq_mapper:reset, jtag_game_nios:rst_n, master_template_0:reset, mm_interconnect_0:master_template_0_clock_reset_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, rst_translator:in_reset, sdram:reset_n, sprite_address_pio:reset_n, sprite_height_pio:reset_n, sprite_id_pio:reset_n, sprite_width_pio:reset_n, sprite_x_pio:reset_n, sprite_y_pio:reset_n, sysid:reset_n]
+	wire         rst_controller_reset_out_reset;                                 // rst_controller:reset_out -> [SdCardSlave_0:reset, irq_mapper:reset, jtag_game_nios:rst_n, master_template_0:reset, mm_interconnect_0:master_template_0_clock_reset_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, rst_translator:in_reset, sdram:reset_n, sprite_address_pio:reset_n, sprite_height_pio:reset_n, sprite_id_pio:reset_n, sprite_width_pio:reset_n, sprite_x_pio:reset_n, sprite_y_pio:reset_n, sysid:reset_n]
 	wire         rst_controller_reset_out_reset_req;                             // rst_controller:reset_req -> [nios2_gen2_0:reset_req, rst_translator:reset_req_in]
 	wire         rst_controller_001_reset_out_reset;                             // rst_controller_001:reset_out -> [mm_interconnect_0:pll_inclk_interface_reset_reset_bridge_in_reset_reset, pll:reset]
+
+	SdCardSlave sdcardslave_0 (
+		.clk           (pll_c0_clk),                                                   //       clock_reset.clk
+		.reset         (rst_controller_reset_out_reset),                               // clock_reset_reset.reset
+		.address       (mm_interconnect_0_sdcardslave_0_avalon_slave_0_address),       //    avalon_slave_0.address
+		.read          (mm_interconnect_0_sdcardslave_0_avalon_slave_0_read),          //                  .read
+		.write         (mm_interconnect_0_sdcardslave_0_avalon_slave_0_write),         //                  .write
+		.writedata     (mm_interconnect_0_sdcardslave_0_avalon_slave_0_writedata),     //                  .writedata
+		.readdata      (mm_interconnect_0_sdcardslave_0_avalon_slave_0_readdata),      //                  .readdata
+		.begintransfer (mm_interconnect_0_sdcardslave_0_avalon_slave_0_begintransfer), //                  .begintransfer
+		.SD_DAT3       (sdcard_wire_DAT3),                                             //       conduit_end.export
+		.SD_DAT        (sdcard_wire_DAT),                                              //                  .export
+		.SD_CMD        (sdcard_wire_CMD),                                              //                  .export
+		.SD_CLK        (sdcard_wire_CLK)                                               //                  .export
+	);
 
 	final_project_jtag_game_nios jtag_game_nios (
 		.clk            (pll_c0_clk),                                                     //               clk.clk
@@ -367,6 +392,12 @@ module final_project (
 		.pll_pll_slave_read                                              (mm_interconnect_0_pll_pll_slave_read),                           //                                                          .read
 		.pll_pll_slave_readdata                                          (mm_interconnect_0_pll_pll_slave_readdata),                       //                                                          .readdata
 		.pll_pll_slave_writedata                                         (mm_interconnect_0_pll_pll_slave_writedata),                      //                                                          .writedata
+		.SdCardSlave_0_avalon_slave_0_address                            (mm_interconnect_0_sdcardslave_0_avalon_slave_0_address),         //                              SdCardSlave_0_avalon_slave_0.address
+		.SdCardSlave_0_avalon_slave_0_write                              (mm_interconnect_0_sdcardslave_0_avalon_slave_0_write),           //                                                          .write
+		.SdCardSlave_0_avalon_slave_0_read                               (mm_interconnect_0_sdcardslave_0_avalon_slave_0_read),            //                                                          .read
+		.SdCardSlave_0_avalon_slave_0_readdata                           (mm_interconnect_0_sdcardslave_0_avalon_slave_0_readdata),        //                                                          .readdata
+		.SdCardSlave_0_avalon_slave_0_writedata                          (mm_interconnect_0_sdcardslave_0_avalon_slave_0_writedata),       //                                                          .writedata
+		.SdCardSlave_0_avalon_slave_0_begintransfer                      (mm_interconnect_0_sdcardslave_0_avalon_slave_0_begintransfer),   //                                                          .begintransfer
 		.sdram_s1_address                                                (mm_interconnect_0_sdram_s1_address),                             //                                                  sdram_s1.address
 		.sdram_s1_write                                                  (mm_interconnect_0_sdram_s1_write),                               //                                                          .write
 		.sdram_s1_read                                                   (mm_interconnect_0_sdram_s1_read),                                //                                                          .read
