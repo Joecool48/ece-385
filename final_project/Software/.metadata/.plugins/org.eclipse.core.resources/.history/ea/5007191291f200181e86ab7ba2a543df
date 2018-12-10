@@ -1,0 +1,28 @@
+/*
+ * Sprite.h
+ *
+ *  Created on: Nov 27, 2018
+ *      Author: joey
+ */
+
+#ifndef INCLUDE_SPRITE_H_
+#define INCLUDE_SPRITE_H_
+
+class Image {
+public:
+	unsigned x;
+	unsigned y;
+	unsigned width;
+	unsigned height;
+	unsigned start_address;
+	virtual ~Image ();
+};
+class Sprite : public Image {
+
+};
+class Sprite_Animator
+class Mario_Animator : public Sprite_Animator {
+
+};
+
+#endif /* INCLUDE_SPRITE_H_ */

@@ -1,0 +1,33 @@
+/*
+ * sim.h
+ *
+ *  Created on: Dec 8, 2018
+ *      Author: joey
+ */
+
+#ifndef INCLUDE_SIM_H_
+#define INCLUDE_SIM_H_
+#include <string>
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+
+	const static string prefix_path = "/home/joey/courses/ece385/final_project/python_sim";
+	static fstream software_done_file, hardware_done_file, sprite_x_file, sprite_y_file, sprite_width_file, sprite_height_file, scancode_file, sprite_address_file, sprite_id_file, sprite_flip_mode_file;
+	static void initSim(fstream & software_done_file, fstream & hardware_done_file, fstream & sprite_x_file, fstream & sprite_y_file, fstream & sprite_width_file, fstream & sprite_height_file, fstream & scancode_file, fstream & sprite_address_file, fstream & sprite_id_file, fstream & sprite_flip_mode_file) {
+		software_done_file.open(prefix_path + "SOFTWARE_DONE");
+		hardware_done_file.open(prefix_path + "HARDWARE_DONE");
+		sprite_x_file.open(prefix_path + "SPRITE_X_PIO");
+		sprite_y_file.open(prefix_path + "SPRITE_Y_PIO");
+		sprite_width_file.open(prefix_path + "SPRITE_WIDTH_PIO");
+		sprite_height_file.open(prefix_path + "SPRITE_HEIGHT_PIO");
+		sprite_id_file.open(prefix_path + "SPRITE_ID_PIO");
+		sprite_flip_mode_file.open(prefix_path + "SPRITE_FLIP_MODE_PIO");
+		scancode_file.open(prefix_path + "SCANCODE_PIO");
+		sprite_address_file.open(prefix_path + "SPRITE_ADDRESS_PIO");
+	}
+};
+
+
+#endif /* INCLUDE_SIM_H_ */

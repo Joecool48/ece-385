@@ -1,0 +1,24 @@
+/*
+ * background_object.h
+ *
+ *  Created on: Dec 7, 2018
+ *      Author: joey
+ */
+
+#ifndef INCLUDE_BACKGROUND_OBJECT_H_
+#define INCLUDE_BACKGROUND_OBJECT_H_
+
+#include "../include/background.h"
+
+class Background_Object {
+public:
+	Rect_Collider collider;
+	Background_Object (Rect_Collider collider, bool contains_item);
+	// TODO Implement collided_with for background objects
+	void collided_with(Rect_Collider & other, Background * back); // TODO implement collider method to do stuff when it collides
+	bool contains_item;
+};
+
+
+
+#endif /* INCLUDE_BACKGROUND_OBJECT_H_ */

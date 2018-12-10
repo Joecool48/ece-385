@@ -9,6 +9,22 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element SdCardSlave_0
+   {
+      datum _sortIndex
+      {
+         value = "13";
+         type = "int";
+      }
+   }
+   element SdCardSlave_0.avalon_slave_0
+   {
+      datum baseAddress
+      {
+         value = "16779328";
+         type = "String";
+      }
+   }
    element clk_0
    {
       datum _sortIndex
@@ -69,7 +85,7 @@
    {
       datum baseAddress
       {
-         value = "134219776";
+         value = "16779552";
          type = "String";
       }
    }
@@ -101,7 +117,7 @@
    {
       datum baseAddress
       {
-         value = "134220000";
+         value = "16779520";
          type = "String";
       }
    }
@@ -117,7 +133,7 @@
    {
       datum baseAddress
       {
-         value = "134219968";
+         value = "16779488";
          type = "String";
       }
    }
@@ -133,23 +149,7 @@
    {
       datum baseAddress
       {
-         value = "134220016";
-         type = "String";
-      }
-   }
-   element sprite_rotate_pio
-   {
-      datum _sortIndex
-      {
-         value = "13";
-         type = "int";
-      }
-   }
-   element sprite_rotate_pio.s1
-   {
-      datum baseAddress
-      {
-         value = "134219920";
+         value = "16779536";
          type = "String";
       }
    }
@@ -165,7 +165,7 @@
    {
       datum baseAddress
       {
-         value = "134219984";
+         value = "16779504";
          type = "String";
       }
    }
@@ -181,7 +181,7 @@
    {
       datum baseAddress
       {
-         value = "134219952";
+         value = "16779472";
          type = "String";
       }
    }
@@ -197,7 +197,7 @@
    {
       datum baseAddress
       {
-         value = "134219936";
+         value = "16779456";
          type = "String";
       }
    }
@@ -250,6 +250,11 @@
    dir="end" />
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <interface
+   name="sdcard_wire"
+   internal="SdCardSlave_0.conduit_end"
+   type="conduit"
+   dir="end" />
  <interface name="sdram_clk" internal="pll.c2" type="clock" dir="start" />
  <interface name="sdram_wire" internal="sdram.wire" type="conduit" dir="end" />
  <interface
@@ -288,6 +293,10 @@
    type="conduit"
    dir="end" />
  <interface name="sys_clk" internal="pll.c3" type="clock" dir="start" />
+ <module name="SdCardSlave_0" kind="SdCardSlave" version="1.0" enabled="1">
+  <parameter name="AUTO_CLOCK_RESET_CLOCK_RATE" value="100000000" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+ </module>
  <module name="clk_0" kind="clock_source" version="18.1" enabled="1">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -354,7 +363,7 @@
   <parameter name="dataAddrWidth" value="28" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x8000000' end='0x8000800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='pll.pll_slave' start='0x8000800' end='0x8000810' type='altpll.pll_slave' /><slave name='jtag_game_nios.avalon_jtag_slave' start='0x8000810' end='0x8000818' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sysid.control_slave' start='0x8000818' end='0x8000820' type='altera_avalon_sysid_qsys.control_slave' /><slave name='sprite_rotate_pio.s1' start='0x8000890' end='0x80008A0' type='altera_avalon_pio.s1' /><slave name='sprite_y_pio.s1' start='0x80008A0' end='0x80008B0' type='altera_avalon_pio.s1' /><slave name='sprite_x_pio.s1' start='0x80008B0' end='0x80008C0' type='altera_avalon_pio.s1' /><slave name='sprite_height_pio.s1' start='0x80008C0' end='0x80008D0' type='altera_avalon_pio.s1' /><slave name='sprite_width_pio.s1' start='0x80008D0' end='0x80008E0' type='altera_avalon_pio.s1' /><slave name='sprite_address_pio.s1' start='0x80008E0' end='0x80008F0' type='altera_avalon_pio.s1' /><slave name='sprite_id_pio.s1' start='0x80008F0' end='0x8000900' type='altera_avalon_pio.s1' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x1000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x1000000' end='0x1000800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='sysid.control_slave' start='0x1000800' end='0x1000808' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_game_nios.avalon_jtag_slave' start='0x1000808' end='0x1000810' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='SdCardSlave_0.avalon_slave_0' start='0x1000840' end='0x1000860' type='SdCardSlave.avalon_slave_0' /><slave name='sprite_y_pio.s1' start='0x10008C0' end='0x10008D0' type='altera_avalon_pio.s1' /><slave name='sprite_x_pio.s1' start='0x10008D0' end='0x10008E0' type='altera_avalon_pio.s1' /><slave name='sprite_height_pio.s1' start='0x10008E0' end='0x10008F0' type='altera_avalon_pio.s1' /><slave name='sprite_width_pio.s1' start='0x10008F0' end='0x1000900' type='altera_avalon_pio.s1' /><slave name='sprite_address_pio.s1' start='0x1000900' end='0x1000910' type='altera_avalon_pio.s1' /><slave name='sprite_id_pio.s1' start='0x1000910' end='0x1000920' type='altera_avalon_pio.s1' /><slave name='pll.pll_slave' start='0x1000920' end='0x1000930' type='altpll.pll_slave' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -392,8 +401,8 @@
   <parameter name="icache_size" value="4096" />
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Tiny" />
-  <parameter name="instAddrWidth" value="28" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x8000000' end='0x8000800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='pll.pll_slave' start='0x8000800' end='0x8000810' type='altpll.pll_slave' /><slave name='jtag_game_nios.avalon_jtag_slave' start='0x8000810' end='0x8000818' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sysid.control_slave' start='0x8000818' end='0x8000820' type='altera_avalon_sysid_qsys.control_slave' /><slave name='sprite_rotate_pio.s1' start='0x8000890' end='0x80008A0' type='altera_avalon_pio.s1' /><slave name='sprite_y_pio.s1' start='0x80008A0' end='0x80008B0' type='altera_avalon_pio.s1' /><slave name='sprite_x_pio.s1' start='0x80008B0' end='0x80008C0' type='altera_avalon_pio.s1' /><slave name='sprite_height_pio.s1' start='0x80008C0' end='0x80008D0' type='altera_avalon_pio.s1' /><slave name='sprite_width_pio.s1' start='0x80008D0' end='0x80008E0' type='altera_avalon_pio.s1' /><slave name='sprite_address_pio.s1' start='0x80008E0' end='0x80008F0' type='altera_avalon_pio.s1' /><slave name='sprite_id_pio.s1' start='0x80008F0' end='0x8000900' type='altera_avalon_pio.s1' /></address-map>]]></parameter>
+  <parameter name="instAddrWidth" value="25" />
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x1000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x1000000' end='0x1000800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='sysid.control_slave' start='0x1000800' end='0x1000808' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_game_nios.avalon_jtag_slave' start='0x1000808' end='0x1000810' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='SdCardSlave_0.avalon_slave_0' start='0x1000840' end='0x1000860' type='SdCardSlave.avalon_slave_0' /><slave name='sprite_y_pio.s1' start='0x10008C0' end='0x10008D0' type='altera_avalon_pio.s1' /><slave name='sprite_x_pio.s1' start='0x10008D0' end='0x10008E0' type='altera_avalon_pio.s1' /><slave name='sprite_height_pio.s1' start='0x10008E0' end='0x10008F0' type='altera_avalon_pio.s1' /><slave name='sprite_width_pio.s1' start='0x10008F0' end='0x1000900' type='altera_avalon_pio.s1' /><slave name='sprite_address_pio.s1' start='0x1000900' end='0x1000910' type='altera_avalon_pio.s1' /><slave name='sprite_id_pio.s1' start='0x1000910' end='0x1000920' type='altera_avalon_pio.s1' /><slave name='pll.pll_slave' start='0x1000920' end='0x1000930' type='altpll.pll_slave' /></address-map>]]></parameter>
   <parameter name="instructionMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="instructionMasterHighPerformanceMapParam" value="" />
   <parameter name="instruction_master_high_performance_paddr_base" value="0" />
@@ -872,6 +881,15 @@
    kind="avalon"
    version="18.1"
    start="nios2_gen2_0.data_master"
+   end="SdCardSlave_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01000840" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios2_gen2_0.data_master"
    end="sysid.control_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x08000818" />
@@ -892,7 +910,7 @@
    start="nios2_gen2_0.data_master"
    end="pll.pll_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x08000800" />
+  <parameter name="baseAddress" value="0x01000920" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -910,7 +928,7 @@
    start="nios2_gen2_0.data_master"
    end="sprite_address_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008e0" />
+  <parameter name="baseAddress" value="0x01000910" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -919,7 +937,7 @@
    start="nios2_gen2_0.data_master"
    end="sprite_width_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008d0" />
+  <parameter name="baseAddress" value="0x01000900" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -928,7 +946,7 @@
    start="nios2_gen2_0.data_master"
    end="sprite_height_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008c0" />
+  <parameter name="baseAddress" value="0x010008f0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -937,7 +955,7 @@
    start="nios2_gen2_0.data_master"
    end="sprite_x_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008b0" />
+  <parameter name="baseAddress" value="0x010008e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -946,7 +964,7 @@
    start="nios2_gen2_0.data_master"
    end="sprite_y_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008a0" />
+  <parameter name="baseAddress" value="0x010008d0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -955,7 +973,7 @@
    start="nios2_gen2_0.data_master"
    end="sprite_rotate_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x08000890" />
+  <parameter name="baseAddress" value="0x010008c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -971,7 +989,16 @@
    kind="avalon"
    version="18.1"
    start="nios2_gen2_0.instruction_master"
-   end="jtag_game_nios.avalon_jtag_slave">
+   end="SdCardSlave_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01000840" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios2_gen2_0.instruction_master"
+   end="sysid.control_slave">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x08000810" />
   <parameter name="defaultConnection" value="false" />
@@ -991,7 +1018,7 @@
    start="nios2_gen2_0.instruction_master"
    end="nios2_gen2_0.debug_mem_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x08000000" />
+  <parameter name="baseAddress" value="0x01000920" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1009,7 +1036,7 @@
    start="nios2_gen2_0.instruction_master"
    end="sprite_id_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008f0" />
+  <parameter name="baseAddress" value="0x01000910" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1018,7 +1045,7 @@
    start="nios2_gen2_0.instruction_master"
    end="sprite_address_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008e0" />
+  <parameter name="baseAddress" value="0x01000900" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1027,7 +1054,7 @@
    start="nios2_gen2_0.instruction_master"
    end="sprite_width_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008d0" />
+  <parameter name="baseAddress" value="0x010008f0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1036,7 +1063,7 @@
    start="nios2_gen2_0.instruction_master"
    end="sprite_height_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008c0" />
+  <parameter name="baseAddress" value="0x010008e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1045,7 +1072,7 @@
    start="nios2_gen2_0.instruction_master"
    end="sprite_x_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008b0" />
+  <parameter name="baseAddress" value="0x010008d0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1054,25 +1081,7 @@
    start="nios2_gen2_0.instruction_master"
    end="sprite_y_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008a0" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="nios2_gen2_0.instruction_master"
-   end="sprite_rotate_pio.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x08000890" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="nios2_gen2_0.instruction_master"
-   end="sdram.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="baseAddress" value="0x010008c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="18.1" start="pll.c0" end="nios2_gen2_0.clk" />
@@ -1106,6 +1115,11 @@
  <connection
    kind="clock"
    version="18.1"
+   start="pll.c0"
+   end="SdCardSlave_0.clock_reset" />
+ <connection
+   kind="clock"
+   version="18.1"
    start="clk_0.clk"
    end="pll.inclk_interface" />
  <connection
@@ -1120,6 +1134,11 @@
    version="18.1"
    start="clk_0.clk_reset"
    end="master_template_0.clock_reset_reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="SdCardSlave_0.clock_reset_reset" />
  <connection
    kind="reset"
    version="18.1"

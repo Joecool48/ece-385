@@ -1,200 +1,130 @@
         8'd1: begin
-            red = 8'd255;
-            green = 8'd255;
-            blue = 8'd255;
-        end
-        8'd2: begin
-            red = 8'd105;
-            green = 8'd0;
-            blue = 8'd45;
-        end
-        8'd3: begin
-            red = 8'd0;
-            green = 8'd0;
-            blue = 8'd0;
-        end
-        8'd4: begin
-            red = 8'd146;
-            green = 8'd39;
-            blue = 8'd143;
-        end
-        8'd5: begin
-            red = 8'd177;
-            green = 8'd52;
-            blue = 8'd37;
-        end
-        8'd6: begin
-            red = 8'd247;
-            green = 8'd214;
-            blue = 8'd164;
-        end
-        8'd7: begin
-            red = 8'd58;
-            green = 8'd132;
-            blue = 8'd0;
-        end
-        8'd8: begin
-            red = 8'd0;
-            green = 8'd66;
-            blue = 8'd74;
-        end
-        8'd9: begin
-            red = 8'd0;
-            green = 8'd123;
-            blue = 8'd140;
-        end
-        8'd10: begin
-            red = 8'd99;
-            green = 8'd99;
-            blue = 8'd99;
-        end
-        8'd11: begin
-            red = 8'd173;
-            green = 8'd173;
-            blue = 8'd173;
-        end
-        8'd12: begin
-            red = 8'd106;
-            green = 8'd107;
-            blue = 8'd4;
-        end
-        8'd13: begin
-            red = 8'd227;
-            green = 8'd157;
-            blue = 8'd37;
-        end
-        8'd14: begin
-            red = 8'd181;
-            green = 8'd49;
-            blue = 8'd33;
-        end
-        8'd15: begin
-            red = 8'd230;
-            green = 8'd156;
-            blue = 8'd33;
-        end
-        8'd16: begin
-            red = 8'd156;
-            green = 8'd74;
-            blue = 8'd0;
-        end
-        8'd17: begin
-            red = 8'd255;
-            green = 8'd206;
-            blue = 8'd197;
-        end
-        8'd18: begin
-            red = 8'd181;
-            green = 8'd239;
-            blue = 8'd239;
-        end
-        8'd19: begin
-            red = 8'd153;
-            green = 8'd75;
-            blue = 8'd12;
-        end
-        8'd20: begin
-            red = 8'd166;
-            green = 8'd166;
-            blue = 8'd166;
-        end
-        8'd21: begin
-            red = 8'd16;
-            green = 8'd50;
-            blue = 8'd57;
-        end
-        8'd22: begin
-            red = 8'd86;
-            green = 8'd86;
-            blue = 8'd86;
-        end
-        8'd23: begin
-            red = 8'd255;
-            green = 8'd200;
-            blue = 8'd184;
-        end
-        8'd24: begin
-            red = 8'd174;
-            green = 8'd234;
-            blue = 8'd233;
-        end
-        8'd25: begin
-            red = 8'd215;
-            green = 8'd141;
-            blue = 8'd34;
-        end
-        8'd26: begin
-            red = 8'd30;
-            green = 8'd132;
-            blue = 8'd0;
-        end
-        8'd27: begin
-            red = 8'd156;
-            green = 8'd37;
-            blue = 8'd32;
-        end
-        8'd28: begin
-            red = 8'd174;
-            green = 8'd174;
-            blue = 8'd174;
-        end
-        8'd29: begin
-            red = 8'd255;
-            green = 8'd206;
-            blue = 8'd198;
-        end
-        8'd30: begin
-            red = 8'd105;
-            green = 8'd105;
-            blue = 8'd105;
-        end
-        8'd31: begin
-            red = 8'd231;
-            green = 8'd156;
-            blue = 8'd33;
-        end
-        8'd32: begin
-            red = 8'd16;
-            green = 8'd148;
-            blue = 8'd0;
-        end
-        8'd33: begin
             red = 8'd107;
             green = 8'd140;
             blue = 8'd255;
         end
-        8'd34: begin
+        8'd2: begin
+            red = 8'd0;
+            green = 8'd0;
+            blue = 8'd0;
+        end
+        8'd3: begin
             red = 8'd231;
             green = 8'd90;
             blue = 8'd16;
         end
-        8'd35: begin
+        8'd4: begin
             red = 8'd247;
             green = 8'd214;
             blue = 8'd181;
         end
-        8'd36: begin
+        8'd5: begin
             red = 8'd0;
             green = 8'd173;
             blue = 8'd0;
         end
-        8'd37: begin
+        8'd6: begin
             red = 8'd189;
             green = 8'd255;
             blue = 8'd24;
         end
-        8'd38: begin
+        8'd7: begin
             red = 8'd255;
             green = 8'd165;
             blue = 8'd66;
         end
-        8'd39: begin
+        8'd8: begin
             red = 8'd254;
             green = 8'd254;
             blue = 8'd254;
         end
-        8'd40: begin
+        8'd9: begin
             red = 8'd57;
             green = 8'd189;
             blue = 8'd255;
+        end
+        8'd10: begin
+            red = 8'd255;
+            green = 8'd255;
+            blue = 8'd255;
+        end
+        8'd11: begin
+            red = 8'd215;
+            green = 8'd141;
+            blue = 8'd34;
+        end
+        8'd12: begin
+            red = 8'd30;
+            green = 8'd132;
+            blue = 8'd0;
+        end
+        8'd13: begin
+            red = 8'd153;
+            green = 8'd75;
+            blue = 8'd12;
+        end
+        8'd14: begin
+            red = 8'd255;
+            green = 8'd200;
+            blue = 8'd184;
+        end
+        8'd15: begin
+            red = 8'd181;
+            green = 8'd49;
+            blue = 8'd33;
+        end
+        8'd16: begin
+            red = 8'd247;
+            green = 8'd214;
+            blue = 8'd164;
+        end
+        8'd17: begin
+            red = 8'd227;
+            green = 8'd157;
+            blue = 8'd37;
+        end
+        8'd18: begin
+            red = 8'd230;
+            green = 8'd156;
+            blue = 8'd33;
+        end
+        8'd19: begin
+            red = 8'd16;
+            green = 8'd148;
+            blue = 8'd0;
+        end
+        8'd20: begin
+            red = 8'd107;
+            green = 8'd107;
+            blue = 8'd0;
+        end
+        8'd21: begin
+            red = 8'd231;
+            green = 8'd156;
+            blue = 8'd33;
+        end
+        8'd22: begin
+            red = 8'd252;
+            green = 8'd252;
+            blue = 8'd252;
+        end
+        8'd23: begin
+            red = 8'd255;
+            green = 8'd206;
+            blue = 8'd197;
+        end
+        8'd24: begin
+            red = 8'd156;
+            green = 8'd74;
+            blue = 8'd0;
+        end
+        8'd25: begin
+            red = 8'd106;
+            green = 8'd107;
+            blue = 8'd4;
+        end
+        8'd26: begin
+            red = 8'd177;
+            green = 8'd52;
+            blue = 8'd37;
         end

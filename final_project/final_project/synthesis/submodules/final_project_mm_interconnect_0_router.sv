@@ -47,7 +47,7 @@ module final_project_mm_interconnect_0_router_default_decode
      parameter DEFAULT_CHANNEL = 1,
                DEFAULT_WR_CHANNEL = -1,
                DEFAULT_RD_CHANNEL = -1,
-               DEFAULT_DESTID = 3 
+               DEFAULT_DESTID = 4 
    )
   (output [73 - 70 : 0] default_destination_id,
    output [12-1 : 0] default_wr_channel,
@@ -189,15 +189,27 @@ module final_project_mm_interconnect_0_router
         // Sets the channel and destination ID based on the address
         // --------------------------------------------------
 
-    // ( 0x0 .. 0x8000000 )
-    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 28'h0   ) begin
-            src_channel = 12'b10;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
+    // ( 0x0 .. 0x1000000 )
+    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 25'h0   ) begin
+            src_channel = 12'b1000;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 4;
     end
 
-    // ( 0x8000000 .. 0x8000800 )
-    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 28'h8000000   ) begin
-            src_channel = 12'b01;
+    // ( 0x1000000 .. 0x1000800 )
+    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 25'h1000000   ) begin
+            src_channel = 12'b0100;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
+    end
+
+    // ( 0x1000800 .. 0x1000808 )
+    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 25'h1000800  && read_transaction  ) begin
+            src_channel = 12'b0010;
+            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 11;
+    end
+
+    // ( 0x1000808 .. 0x1000810 )
+    if ( {address[RG:PAD3],{PAD3{1'b0}}} == 25'h1000808   ) begin
+            src_channel = 12'b0001;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;
     end
 

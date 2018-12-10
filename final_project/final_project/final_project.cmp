@@ -11,6 +11,10 @@
 			avalon_user_data_available     : out   std_logic;                                        -- data_available
 			clk_clk                        : in    std_logic                     := 'X';             -- clk
 			reset_reset_n                  : in    std_logic                     := 'X';             -- reset_n
+			sdcard_wire_DAT3               : inout std_logic                     := 'X';             -- DAT3
+			sdcard_wire_DAT                : inout std_logic                     := 'X';             -- DAT
+			sdcard_wire_CMD                : inout std_logic                     := 'X';             -- CMD
+			sdcard_wire_CLK                : out   std_logic;                                        -- CLK
 			sdram_clk_clk                  : out   std_logic;                                        -- clk
 			sdram_wire_addr                : out   std_logic_vector(12 downto 0);                    -- addr
 			sdram_wire_ba                  : out   std_logic_vector(1 downto 0);                     -- ba

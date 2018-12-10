@@ -1,0 +1,14 @@
+/*
+ * init.cpp
+ *
+ *  Created on: Dec 3, 2018
+ *      Author: joey
+ */
+#include "init.h"
+
+void setBackgroundObjectWorld1(Background * b) {
+
+}
+
+
+

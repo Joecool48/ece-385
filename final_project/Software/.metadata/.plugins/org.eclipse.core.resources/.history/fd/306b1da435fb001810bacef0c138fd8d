@@ -1,0 +1,13 @@
+/*
+ * config.cpp
+ *
+ *  Created on: Dec 8, 2018
+ *      Author: joey
+ */
+
+#include "../include/config.h"
+
+uint16_t sprite_x = 0, sprite_y, sprite_width, sprite_height, sprite_id;
+uint32_t sprite_address;
+uint8_t sprite_flip_mode, scancode, hardware_done, software_done;
+

@@ -67,6 +67,20 @@ module final_project_mm_interconnect_0_rsp_mux
     input                       sink1_endofpacket,
     output                      sink1_ready,
 
+    input                       sink2_valid,
+    input [114-1   : 0]  sink2_data,
+    input [12-1: 0]  sink2_channel,
+    input                       sink2_startofpacket,
+    input                       sink2_endofpacket,
+    output                      sink2_ready,
+
+    input                       sink3_valid,
+    input [114-1   : 0]  sink3_data,
+    input [12-1: 0]  sink3_channel,
+    input                       sink3_startofpacket,
+    input                       sink3_endofpacket,
+    output                      sink3_ready,
+
 
     // ----------------------
     // Source
@@ -85,7 +99,7 @@ module final_project_mm_interconnect_0_rsp_mux
     input reset
 );
     localparam PAYLOAD_W        = 114 + 12 + 2;
-    localparam NUM_INPUTS       = 2;
+    localparam NUM_INPUTS       = 4;
     localparam SHARE_COUNTER_W  = 1;
     localparam PIPELINE_ARB     = 0;
     localparam ST_DATA_W        = 114;
