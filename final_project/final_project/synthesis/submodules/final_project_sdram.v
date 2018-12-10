@@ -39,23 +39,23 @@ module final_project_sdram_input_efifo_module (
   output           almost_full;
   output           empty;
   output           full;
-  output  [ 58: 0] rd_data;
+  output  [ 61: 0] rd_data;
   input            clk;
   input            rd;
   input            reset_n;
   input            wr;
-  input   [ 58: 0] wr_data;
+  input   [ 61: 0] wr_data;
 
 
 wire             almost_empty;
 wire             almost_full;
 wire             empty;
 reg     [  1: 0] entries;
-reg     [ 58: 0] entry_0;
-reg     [ 58: 0] entry_1;
+reg     [ 61: 0] entry_0;
+reg     [ 61: 0] entry_1;
 wire             full;
 reg              rd_address;
-reg     [ 58: 0] rd_data;
+reg     [ 61: 0] rd_data;
 wire    [  1: 0] rdwr;
 reg              wr_address;
   assign rdwr = {rd, wr};
@@ -186,7 +186,7 @@ module final_project_sdram (
   output  [ 31: 0] za_data;
   output           za_valid;
   output           za_waitrequest;
-  output  [ 11: 0] zs_addr;
+  output  [ 12: 0] zs_addr;
   output  [  1: 0] zs_ba;
   output           zs_cas_n;
   output           zs_cke;
@@ -195,7 +195,7 @@ module final_project_sdram (
   output  [  3: 0] zs_dqm;
   output           zs_ras_n;
   output           zs_we_n;
-  input   [ 21: 0] az_addr;
+  input   [ 24: 0] az_addr;
   input   [  3: 0] az_be_n;
   input            az_cs;
   input   [ 31: 0] az_data;
@@ -207,7 +207,7 @@ module final_project_sdram (
 
 wire    [ 23: 0] CODE;
 reg              ack_refresh_request;
-reg     [ 21: 0] active_addr;
+reg     [ 24: 0] active_addr;
 wire    [  1: 0] active_bank;
 reg              active_cs_n;
 reg     [ 31: 0] active_data;
@@ -216,14 +216,14 @@ reg              active_rnw;
 wire             almost_empty;
 wire             almost_full;
 wire             bank_match;
-wire    [  7: 0] cas_addr;
+wire    [  9: 0] cas_addr;
 wire             clk_en;
 wire    [  3: 0] cmd_all;
 wire    [  2: 0] cmd_code;
 wire             cs_n;
 wire             csn_decode;
 wire             csn_match;
-wire    [ 21: 0] f_addr;
+wire    [ 24: 0] f_addr;
 wire    [  1: 0] f_bank;
 wire             f_cs_n;
 wire    [ 31: 0] f_data;
@@ -232,15 +232,15 @@ wire             f_empty;
 reg              f_pop;
 wire             f_rnw;
 wire             f_select;
-wire    [ 58: 0] fifo_read_data;
-reg     [ 11: 0] i_addr;
+wire    [ 61: 0] fifo_read_data;
+reg     [ 12: 0] i_addr;
 reg     [  3: 0] i_cmd;
 reg     [  2: 0] i_count;
 reg     [  2: 0] i_next;
 reg     [  2: 0] i_refs;
 reg     [  2: 0] i_state;
 reg              init_done;
-reg     [ 11: 0] m_addr /* synthesis ALTERA_ATTRIBUTE = "FAST_OUTPUT_REGISTER=ON"  */;
+reg     [ 12: 0] m_addr /* synthesis ALTERA_ATTRIBUTE = "FAST_OUTPUT_REGISTER=ON"  */;
 reg     [  1: 0] m_bank /* synthesis ALTERA_ATTRIBUTE = "FAST_OUTPUT_REGISTER=ON"  */;
 reg     [  3: 0] m_cmd /* synthesis ALTERA_ATTRIBUTE = "FAST_OUTPUT_REGISTER=ON"  */;
 reg     [  2: 0] m_count;
@@ -252,7 +252,7 @@ reg              oe /* synthesis ALTERA_ATTRIBUTE = "FAST_OUTPUT_ENABLE_REGISTER
 wire             pending;
 wire             rd_strobe;
 reg     [  2: 0] rd_valid;
-reg     [ 13: 0] refresh_counter;
+reg     [ 14: 0] refresh_counter;
 reg              refresh_request;
 wire             rnw_match;
 wire             row_match;
@@ -261,7 +261,7 @@ reg              za_cannotrefresh;
 reg     [ 31: 0] za_data /* synthesis ALTERA_ATTRIBUTE = "FAST_INPUT_REGISTER=ON"  */;
 reg              za_valid;
 wire             za_waitrequest;
-wire    [ 11: 0] zs_addr;
+wire    [ 12: 0] zs_addr;
 wire    [  1: 0] zs_ba;
 wire             zs_cas_n;
 wire             zs_cke;
@@ -297,14 +297,14 @@ wire             zs_we_n;
       .wr_data      ({az_wr_n, az_addr, az_wr_n ? 4'b0 : az_be_n, az_data})
     );
 
-  assign f_bank = {f_addr[21],f_addr[8]};
+  assign f_bank = {f_addr[24],f_addr[10]};
   // Refresh/init counter.
   always @(posedge clk or negedge reset_n)
     begin
       if (reset_n == 0)
-          refresh_counter <= 10000;
+          refresh_counter <= 20000;
       else if (refresh_counter == 0)
-          refresh_counter <= 1562;
+          refresh_counter <= 781;
       else 
         refresh_counter <= refresh_counter - 1'b1;
     end
@@ -348,12 +348,12 @@ wire             zs_we_n;
           i_state <= 3'b000;
           i_next <= 3'b000;
           i_cmd <= 4'b1111;
-          i_addr <= {12{1'b1}};
+          i_addr <= {13{1'b1}};
           i_count <= {3{1'b0}};
         end
       else 
         begin
-          i_addr <= {12{1'b1}};
+          i_addr <= {13{1'b1}};
           case (i_state) // synthesis parallel_case full_case
           
               3'b000: begin
@@ -399,7 +399,7 @@ wire             zs_we_n;
               3'b111: begin
                   i_state <= 3'b011;
                   i_cmd <= {{1{1'b0}},3'h0};
-                  i_addr <= {{2{1'b0}},1'b0,2'b00,3'h3,4'h0};
+                  i_addr <= {{3{1'b0}},1'b0,2'b00,3'h3,4'h0};
                   i_count <= 4;
                   i_next <= 3'b101;
               end // 3'b111 
@@ -413,13 +413,13 @@ wire             zs_we_n;
     end
 
 
-  assign active_bank = {active_addr[21],active_addr[8]};
+  assign active_bank = {active_addr[24],active_addr[10]};
   assign csn_match = active_cs_n == f_cs_n;
   assign rnw_match = active_rnw == f_rnw;
   assign bank_match = active_bank == f_bank;
-  assign row_match = {active_addr[20 : 9]} == {f_addr[20 : 9]};
+  assign row_match = {active_addr[23 : 11]} == {f_addr[23 : 11]};
   assign pending = csn_match && rnw_match && bank_match && row_match && !f_empty;
-  assign cas_addr = f_select ? { {4{1'b0}},f_addr[7 : 0] } : { {4{1'b0}},active_addr[7 : 0] };
+  assign cas_addr = f_select ? { {3{1'b0}},f_addr[9 : 0] } : { {3{1'b0}},active_addr[9 : 0] };
   // **** Main FSM ****
   always @(posedge clk or negedge reset_n)
     begin
@@ -429,7 +429,7 @@ wire             zs_we_n;
           m_next <= 9'b000000001;
           m_cmd <= 4'b1111;
           m_bank <= 2'b00;
-          m_addr <= 12'b000000000000;
+          m_addr <= 13'b0000000000000;
           m_data <= 32'b00000000000000000000000000000000;
           m_dqm <= 4'b0000;
           m_count <= 3'b000;
@@ -485,7 +485,7 @@ wire             zs_we_n;
                   m_state <= 9'b000000100;
                   m_cmd <= {csn_decode,3'h3};
                   m_bank <= active_bank;
-                  m_addr <= active_addr[20 : 9];
+                  m_addr <= active_addr[23 : 11];
                   m_data <= active_data;
                   m_dqm <= active_dqm;
                   m_count <= 2;
@@ -592,7 +592,7 @@ wire             zs_we_n;
           
               9'b001000000: begin
                   m_state <= 9'b000000100;
-                  m_addr <= {12{1'b1}};
+                  m_addr <= {13{1'b1}};
                   // precharge all if arf, else precharge csn_decode
                   if (refresh_request)
                       m_cmd <= {{1{1'b0}},3'h2};

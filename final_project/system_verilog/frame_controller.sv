@@ -1,8 +1,6 @@
-`define FRAME_CURRENT 0
-`define FRAME_UPDATE 1
 module frame_controller (input logic Clk, Reset,
 								 input logic [9:0] DrawX, DrawY,
-								 output logic [7:0] VGA_R, VGA_G, VGA_B,
+								 output logic [7:0] red, green, blue,
 								 input active,
 								 output logic [17:0] fb_addr,
 								 input logic [7:0] read_fb_data_out
@@ -10,7 +8,7 @@ module frame_controller (input logic Clk, Reset,
 	enum logic [1:0] {WAIT, GET_ROW, WRITE_PIXEL, DONE} curr_state, next_state; 
 	logic [7:0] curr_pix;
 	logic [1:0] counter;
-	Color_Mapper color_mapper (.encoded_color(curr_pix), .red(VGA_R), .green(VGA_G), .blue(VGA_B));
+	Color_Mapper color_mapper (.encoded_color(curr_pix), .*);	//.* <=> r, g, b
 	
 	always_ff @ (posedge Clk) begin
 		counter <= counter + 2'd1;
@@ -29,8 +27,9 @@ module frame_controller (input logic Clk, Reset,
 			end
 			GET_ROW: begin
 				// Get the current row
-				curr_pix <= read_fb_data_out;
-				fb_addr <= fb_addr + 18'd1;
+				curr_pix <= (DrawX < 10'd480 && DrawY < 10'd360) ? read_fb_data_out : 8'd50;
+				fb_addr <= (DrawX < 10'd480 && DrawY < 10'd360) ? fb_addr + 18'd1 : fb_addr;
+				
 			end
 			WRITE_PIXEL: begin
 //				if (counter == 2'd3) begin

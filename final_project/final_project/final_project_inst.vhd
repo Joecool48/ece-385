@@ -12,7 +12,7 @@
 			clk_clk                        : in    std_logic                     := 'X';             -- clk
 			reset_reset_n                  : in    std_logic                     := 'X';             -- reset_n
 			sdram_clk_clk                  : out   std_logic;                                        -- clk
-			sdram_wire_addr                : out   std_logic_vector(11 downto 0);                    -- addr
+			sdram_wire_addr                : out   std_logic_vector(12 downto 0);                    -- addr
 			sdram_wire_ba                  : out   std_logic_vector(1 downto 0);                     -- ba
 			sdram_wire_cas_n               : out   std_logic;                                        -- cas_n
 			sdram_wire_cke                 : out   std_logic;                                        -- cke
@@ -24,11 +24,11 @@
 			sprite_address_pio_export      : out   std_logic_vector(31 downto 0);                    -- export
 			sprite_height_pio_export       : out   std_logic_vector(15 downto 0);                    -- export
 			sprite_id_pio_export           : out   std_logic_vector(15 downto 0);                    -- export
+			sprite_rotate_pio_export       : out   std_logic_vector(7 downto 0);                     -- export
 			sprite_width_pio_export        : out   std_logic_vector(15 downto 0);                    -- export
 			sprite_x_pio_export            : out   std_logic_vector(15 downto 0);                    -- export
 			sprite_y_pio_export            : out   std_logic_vector(15 downto 0);                    -- export
-			sys_clk_clk                    : out   std_logic;                                        -- clk
-			sprite_rotate_pio_export       : out   std_logic_vector(1 downto 0)                      -- export
+			sys_clk_clk                    : out   std_logic                                         -- clk
 		);
 	end component final_project;
 
@@ -58,10 +58,10 @@
 			sprite_address_pio_export      => CONNECTED_TO_sprite_address_pio_export,      -- sprite_address_pio.export
 			sprite_height_pio_export       => CONNECTED_TO_sprite_height_pio_export,       --  sprite_height_pio.export
 			sprite_id_pio_export           => CONNECTED_TO_sprite_id_pio_export,           --      sprite_id_pio.export
+			sprite_rotate_pio_export       => CONNECTED_TO_sprite_rotate_pio_export,       --  sprite_rotate_pio.export
 			sprite_width_pio_export        => CONNECTED_TO_sprite_width_pio_export,        --   sprite_width_pio.export
 			sprite_x_pio_export            => CONNECTED_TO_sprite_x_pio_export,            --       sprite_x_pio.export
 			sprite_y_pio_export            => CONNECTED_TO_sprite_y_pio_export,            --       sprite_y_pio.export
-			sys_clk_clk                    => CONNECTED_TO_sys_clk_clk,                    --            sys_clk.clk
-			sprite_rotate_pio_export       => CONNECTED_TO_sprite_rotate_pio_export        --  sprite_rotate_pio.export
+			sys_clk_clk                    => CONNECTED_TO_sys_clk_clk                     --            sys_clk.clk
 		);
 

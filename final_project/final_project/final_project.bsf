@@ -110,8 +110,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 344)
 		(output)
-		(text "sdram_wire_addr[11..0]" (rect 0 0 93 12)(font "Arial" (font_size 8)))
-		(text "sdram_wire_addr[11..0]" (rect 4 333 136 344)(font "Arial" (font_size 8)))
+		(text "sdram_wire_addr[12..0]" (rect 0 0 94 12)(font "Arial" (font_size 8)))
+		(text "sdram_wire_addr[12..0]" (rect 4 333 136 344)(font "Arial" (font_size 8)))
 		(line (pt 0 344)(pt 208 344)(line_width 3))
 	)
 	(port
@@ -187,8 +187,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 632)
 		(output)
-		(text "sprite_rotate_pio_export[1..0]" (rect 0 0 115 12)(font "Arial" (font_size 8)))
-		(text "sprite_rotate_pio_export[1..0]" (rect 4 621 184 632)(font "Arial" (font_size 8)))
+		(text "sprite_rotate_pio_export[7..0]" (rect 0 0 116 12)(font "Arial" (font_size 8)))
+		(text "sprite_rotate_pio_export[7..0]" (rect 4 621 184 632)(font "Arial" (font_size 8)))
 		(line (pt 0 632)(pt 208 632)(line_width 3))
 	)
 	(port

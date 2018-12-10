@@ -1,1 +1,3 @@
 v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,sprite_controller:s_ctl|lpm_mult:Mult0|mult_2at:auto_generated|mac_out2,
+PORT_SWAPPING,PORT_SWAPPING_FINISHED,sprite_controller:s_ctl|lpm_mult:Mult0|mult_2at:auto_generated|mac_mult1,

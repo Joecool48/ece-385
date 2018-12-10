@@ -16,7 +16,7 @@ module final_project (
 		input  wire        clk_clk,                        //                clk.clk
 		input  wire        reset_reset_n,                  //              reset.reset_n
 		output wire        sdram_clk_clk,                  //          sdram_clk.clk
-		output wire [11:0] sdram_wire_addr,                //         sdram_wire.addr
+		output wire [12:0] sdram_wire_addr,                //         sdram_wire.addr
 		output wire [1:0]  sdram_wire_ba,                  //                   .ba
 		output wire        sdram_wire_cas_n,               //                   .cas_n
 		output wire        sdram_wire_cke,                 //                   .cke
@@ -28,7 +28,7 @@ module final_project (
 		output wire [31:0] sprite_address_pio_export,      // sprite_address_pio.export
 		output wire [15:0] sprite_height_pio_export,       //  sprite_height_pio.export
 		output wire [15:0] sprite_id_pio_export,           //      sprite_id_pio.export
-		output wire [1:0]  sprite_rotate_pio_export,       //  sprite_rotate_pio.export
+		output wire [7:0]  sprite_rotate_pio_export,       //  sprite_rotate_pio.export
 		output wire [15:0] sprite_width_pio_export,        //   sprite_width_pio.export
 		output wire [15:0] sprite_x_pio_export,            //       sprite_x_pio.export
 		output wire [15:0] sprite_y_pio_export,            //       sprite_y_pio.export
@@ -46,24 +46,15 @@ module final_project (
 	wire  [31:0] nios2_gen2_0_data_master_readdata;                              // mm_interconnect_0:nios2_gen2_0_data_master_readdata -> nios2_gen2_0:d_readdata
 	wire         nios2_gen2_0_data_master_waitrequest;                           // mm_interconnect_0:nios2_gen2_0_data_master_waitrequest -> nios2_gen2_0:d_waitrequest
 	wire         nios2_gen2_0_data_master_debugaccess;                           // nios2_gen2_0:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:nios2_gen2_0_data_master_debugaccess
-	wire  [24:0] nios2_gen2_0_data_master_address;                               // nios2_gen2_0:d_address -> mm_interconnect_0:nios2_gen2_0_data_master_address
+	wire  [27:0] nios2_gen2_0_data_master_address;                               // nios2_gen2_0:d_address -> mm_interconnect_0:nios2_gen2_0_data_master_address
 	wire   [3:0] nios2_gen2_0_data_master_byteenable;                            // nios2_gen2_0:d_byteenable -> mm_interconnect_0:nios2_gen2_0_data_master_byteenable
 	wire         nios2_gen2_0_data_master_read;                                  // nios2_gen2_0:d_read -> mm_interconnect_0:nios2_gen2_0_data_master_read
 	wire         nios2_gen2_0_data_master_write;                                 // nios2_gen2_0:d_write -> mm_interconnect_0:nios2_gen2_0_data_master_write
 	wire  [31:0] nios2_gen2_0_data_master_writedata;                             // nios2_gen2_0:d_writedata -> mm_interconnect_0:nios2_gen2_0_data_master_writedata
 	wire  [31:0] nios2_gen2_0_instruction_master_readdata;                       // mm_interconnect_0:nios2_gen2_0_instruction_master_readdata -> nios2_gen2_0:i_readdata
 	wire         nios2_gen2_0_instruction_master_waitrequest;                    // mm_interconnect_0:nios2_gen2_0_instruction_master_waitrequest -> nios2_gen2_0:i_waitrequest
-	wire  [24:0] nios2_gen2_0_instruction_master_address;                        // nios2_gen2_0:i_address -> mm_interconnect_0:nios2_gen2_0_instruction_master_address
+	wire  [27:0] nios2_gen2_0_instruction_master_address;                        // nios2_gen2_0:i_address -> mm_interconnect_0:nios2_gen2_0_instruction_master_address
 	wire         nios2_gen2_0_instruction_master_read;                           // nios2_gen2_0:i_read -> mm_interconnect_0:nios2_gen2_0_instruction_master_read
-	wire         mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_chipselect;  // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_chipselect -> jtag_game_nios:av_chipselect
-	wire  [31:0] mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_readdata;    // jtag_game_nios:av_readdata -> mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_readdata
-	wire         mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_waitrequest; // jtag_game_nios:av_waitrequest -> mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_waitrequest
-	wire   [0:0] mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_address;     // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_address -> jtag_game_nios:av_address
-	wire         mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_read;        // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_read -> jtag_game_nios:av_read_n
-	wire         mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_write;       // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_write -> jtag_game_nios:av_write_n
-	wire  [31:0] mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_writedata;   // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_writedata -> jtag_game_nios:av_writedata
-	wire  [31:0] mm_interconnect_0_sysid_control_slave_readdata;                 // sysid:readdata -> mm_interconnect_0:sysid_control_slave_readdata
-	wire   [0:0] mm_interconnect_0_sysid_control_slave_address;                  // mm_interconnect_0:sysid_control_slave_address -> sysid:address
 	wire  [31:0] mm_interconnect_0_nios2_gen2_0_debug_mem_slave_readdata;        // nios2_gen2_0:debug_mem_slave_readdata -> mm_interconnect_0:nios2_gen2_0_debug_mem_slave_readdata
 	wire         mm_interconnect_0_nios2_gen2_0_debug_mem_slave_waitrequest;     // nios2_gen2_0:debug_mem_slave_waitrequest -> mm_interconnect_0:nios2_gen2_0_debug_mem_slave_waitrequest
 	wire         mm_interconnect_0_nios2_gen2_0_debug_mem_slave_debugaccess;     // mm_interconnect_0:nios2_gen2_0_debug_mem_slave_debugaccess -> nios2_gen2_0:debug_mem_slave_debugaccess
@@ -75,12 +66,21 @@ module final_project (
 	wire         mm_interconnect_0_sdram_s1_chipselect;                          // mm_interconnect_0:sdram_s1_chipselect -> sdram:az_cs
 	wire  [31:0] mm_interconnect_0_sdram_s1_readdata;                            // sdram:za_data -> mm_interconnect_0:sdram_s1_readdata
 	wire         mm_interconnect_0_sdram_s1_waitrequest;                         // sdram:za_waitrequest -> mm_interconnect_0:sdram_s1_waitrequest
-	wire  [21:0] mm_interconnect_0_sdram_s1_address;                             // mm_interconnect_0:sdram_s1_address -> sdram:az_addr
+	wire  [24:0] mm_interconnect_0_sdram_s1_address;                             // mm_interconnect_0:sdram_s1_address -> sdram:az_addr
 	wire         mm_interconnect_0_sdram_s1_read;                                // mm_interconnect_0:sdram_s1_read -> sdram:az_rd_n
 	wire   [3:0] mm_interconnect_0_sdram_s1_byteenable;                          // mm_interconnect_0:sdram_s1_byteenable -> sdram:az_be_n
 	wire         mm_interconnect_0_sdram_s1_readdatavalid;                       // sdram:za_valid -> mm_interconnect_0:sdram_s1_readdatavalid
 	wire         mm_interconnect_0_sdram_s1_write;                               // mm_interconnect_0:sdram_s1_write -> sdram:az_wr_n
 	wire  [31:0] mm_interconnect_0_sdram_s1_writedata;                           // mm_interconnect_0:sdram_s1_writedata -> sdram:az_data
+	wire         mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_chipselect;  // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_chipselect -> jtag_game_nios:av_chipselect
+	wire  [31:0] mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_readdata;    // jtag_game_nios:av_readdata -> mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_readdata
+	wire         mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_waitrequest; // jtag_game_nios:av_waitrequest -> mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_waitrequest
+	wire   [0:0] mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_address;     // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_address -> jtag_game_nios:av_address
+	wire         mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_read;        // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_read -> jtag_game_nios:av_read_n
+	wire         mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_write;       // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_write -> jtag_game_nios:av_write_n
+	wire  [31:0] mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_writedata;   // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_writedata -> jtag_game_nios:av_writedata
+	wire  [31:0] mm_interconnect_0_sysid_control_slave_readdata;                 // sysid:readdata -> mm_interconnect_0:sysid_control_slave_readdata
+	wire   [0:0] mm_interconnect_0_sysid_control_slave_address;                  // mm_interconnect_0:sysid_control_slave_address -> sysid:address
 	wire  [31:0] mm_interconnect_0_pll_pll_slave_readdata;                       // pll:readdata -> mm_interconnect_0:pll_pll_slave_readdata
 	wire   [1:0] mm_interconnect_0_pll_pll_slave_address;                        // mm_interconnect_0:pll_pll_slave_address -> pll:address
 	wire         mm_interconnect_0_pll_pll_slave_read;                           // mm_interconnect_0:pll_pll_slave_read -> pll:read

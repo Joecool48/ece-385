@@ -23,10 +23,10 @@
 		.sprite_address_pio_export      (<connected-to-sprite_address_pio_export>),      // sprite_address_pio.export
 		.sprite_height_pio_export       (<connected-to-sprite_height_pio_export>),       //  sprite_height_pio.export
 		.sprite_id_pio_export           (<connected-to-sprite_id_pio_export>),           //      sprite_id_pio.export
+		.sprite_rotate_pio_export       (<connected-to-sprite_rotate_pio_export>),       //  sprite_rotate_pio.export
 		.sprite_width_pio_export        (<connected-to-sprite_width_pio_export>),        //   sprite_width_pio.export
 		.sprite_x_pio_export            (<connected-to-sprite_x_pio_export>),            //       sprite_x_pio.export
 		.sprite_y_pio_export            (<connected-to-sprite_y_pio_export>),            //       sprite_y_pio.export
-		.sys_clk_clk                    (<connected-to-sys_clk_clk>),                    //            sys_clk.clk
-		.sprite_rotate_pio_export       (<connected-to-sprite_rotate_pio_export>)        //  sprite_rotate_pio.export
+		.sys_clk_clk                    (<connected-to-sys_clk_clk>)                     //            sys_clk.clk
 	);
 

@@ -24,11 +24,11 @@ module final_project (
 	sprite_address_pio_export,
 	sprite_height_pio_export,
 	sprite_id_pio_export,
+	sprite_rotate_pio_export,
 	sprite_width_pio_export,
 	sprite_x_pio_export,
 	sprite_y_pio_export,
-	sys_clk_clk,
-	sprite_rotate_pio_export);	
+	sys_clk_clk);	
 
 	input		avalon_control_fixed_location;
 	input	[31:0]	avalon_control_read_base;
@@ -42,7 +42,7 @@ module final_project (
 	input		clk_clk;
 	input		reset_reset_n;
 	output		sdram_clk_clk;
-	output	[11:0]	sdram_wire_addr;
+	output	[12:0]	sdram_wire_addr;
 	output	[1:0]	sdram_wire_ba;
 	output		sdram_wire_cas_n;
 	output		sdram_wire_cke;
@@ -54,9 +54,9 @@ module final_project (
 	output	[31:0]	sprite_address_pio_export;
 	output	[15:0]	sprite_height_pio_export;
 	output	[15:0]	sprite_id_pio_export;
+	output	[7:0]	sprite_rotate_pio_export;
 	output	[15:0]	sprite_width_pio_export;
 	output	[15:0]	sprite_x_pio_export;
 	output	[15:0]	sprite_y_pio_export;
 	output		sys_clk_clk;
-	output	[1:0]	sprite_rotate_pio_export;
 endmodule

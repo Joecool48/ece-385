@@ -25,7 +25,7 @@ image_dir_str = "../images/mario_sprites/"
 
 images = os.listdir(image_dir_str)
 #images.remove("NES-Mario-World1-1.png")
-address_offset = 0
+address_offset = 30000000
 sprite_id_start = 1
 MAX_ADDRESSES = 770336
 DATA_WIDTH = 8

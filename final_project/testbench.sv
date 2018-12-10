@@ -4,11 +4,7 @@
 //	logic        CLOCK_50;
 //	logic        [3:0]  KEY;          //bit 0 is set up as Reset
 //	logic				  SYS_CLK; // Clock for everything in the system
-//	logic [7:0] S_D;
-//	//logic DRAW, DONED;
-//	logic [15:0] S_X, S_Y, S_W, S_H, S_ID;
-//	logic [17:0] S_A;
-//	logic S_DO, S_AV;
+//
 //	// VGA Interface 
 //	logic [7:0]  VGA_R,        //VGA Red
 //					VGA_G,        //VGA Green
@@ -18,6 +14,7 @@
 //					VGA_BLANK_N,  //VGA Blank signal
 //					VGA_VS,       //VGA virtical sync signal
 //					VGA_HS;       //VGA horizontal sync signal
+//					
 //	// CY7C67200 Interface
 //	wire  [15:0] OTG_DATA;     //CY7C67200 Data bus 16 Bits
 //	logic [1:0]  OTG_ADDR;     //CY7C67200 Address 2 Bits
@@ -26,6 +23,7 @@
 //					OTG_WR_N,     //CY7C67200 Write
 //					OTG_RST_N;    //CY7C67200 Reset
 //	logic [1:0]            OTG_INT;      //CY7C67200 Interrupt
+//	
 //	// SDRAM Interface for Nios II Software
 //	logic [12:0] DRAM_ADDR;    //SDRAM Address 13 Bits
 //	wire  [31:0] DRAM_DQ;      //SDRAM Data 32 Bits
@@ -38,6 +36,12 @@
 //					DRAM_CS_N,    //SDRAM Chip Select
 //					DRAM_CLK; //SDRAM Clock
 //					
+//	logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7;	
+//
+//	logic [31:0] S_A;
+//	logic [15:0] S_X, S_Y, S_H, S_W, S_I;
+//	logic [7:0] S_R;
+//	
 //	logic [15:0] sprite_id;
 //	logic [15:0] sprite_x, sprite_y;
 //	logic [31:0] sprite_address;
@@ -143,25 +147,34 @@
 //		#5 SYS_CLK = ~SYS_CLK;
 //	end
 //	initial begin
-//		KEY = 4'b0000;
+//		KEY = 4'b1111;
+//		#20 KEY = 4'b1110;
 //		#20 KEY = 4'b1111;
-//		#8 S_X = 0;
-//		S_Y = 0;
-//		S_W = 16'd480;
-//		S_H = 16'd360;
-//		S_ID = 16'd1;
-//		S_A = 18'd1;
-//		#50 S_X = 16'd120;
-//		S_Y = 16'd90;
-//		S_W = 16'd240;
-//		S_H = 16'd180;
-//		S_ID = 16'd2;
-//		S_A = 18'd2;
+//		#10 KEY = 4'b1011;
+//		#10 KEY = 4'b1111;
+//		#20 KEY = 4'b1101;
+//		#10 KEY = 4'b1111;
+//		#20 KEY = 4'b0111;
+//		#20 KEY = 4'b1111;
+////		#8 S_X = 0;
+////		S_Y = 0;
+////		S_W = 16'd480;
+////		S_H = 16'd360;
+////		S_ID = 16'd1;
+//
+////		S_A = 18'd1;
+////		#50 S_X = 16'd120;
+////		S_Y = 16'd90;
+////		S_W = 16'd240;
+////		S_H = 16'd180;
+////		S_ID = 16'd2;
+////		S_A = 18'd2;
 //	end
-//	always @ (posedge SYS_CLK) begin
-//		if(test == 18'd1) S_D = 8'd15;
-//		if(test == 18'd2) S_D = 8'd240;
-//		if(curr_state == 3'b001) S_AV = 1'b1;
-//		if(curr_state == 3'b010) S_DO = 1'b1;
-//	end
+////	always @ (posedge SYS_CLK) begin
+//////		if(test == 18'd1) S_D = 8'd15;
+//////		if(test == 18'd2) S_D = 8'd240;
+////		if(curr_state == 3'b001) S_AV = 1'b1;
+////		if(curr_state == 3'b001) S_DO = 1'b1;
+////		else S_DO = 1'b0;
+////	end
 //endmodule

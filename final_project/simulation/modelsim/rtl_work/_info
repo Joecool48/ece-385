@@ -10,29 +10,29 @@ cModel Technology
 Z0 dC:/Users/yeda_/Documents/ECE_385/ece-385/final_project/simulation/modelsim
 vColor_Mapper
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1544022069
+Z2 !s110 1544176402
 !i10b 1
-!s100 ;2IPSNlKj64@^P3ZG26gM3
-I?zTY[FS<9?Z3:0Q0o3]`c3
+!s100 74S^5VWnkS^dVWPON6i2`2
+INNIkAHDBNV5O@Go64Z8>f0
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 !s105 Color_Mapper_sv_unit
 S1
 R0
-Z4 w1543905288
+w1544074648
 8C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/Color_Mapper.sv
 FC:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/Color_Mapper.sv
 L0 2
-Z5 OV;L;10.5b;63
+Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z6 !s108 1544022069.000000
+Z5 !s108 1544176402.000000
 !s107 C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/Color_Mapper.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog|C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/Color_Mapper.sv|
 !i113 1
-Z7 o-sv -work work
-Z8 !s92 -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog
-Z9 tCvgOpt 0
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog
+Z8 tCvgOpt 0
 n@color_@mapper
 vframe_controller
 R1
@@ -44,71 +44,72 @@ R3
 !s105 frame_controller_sv_unit
 S1
 R0
-R4
+w1544164730
 8C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_controller.sv
 FC:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_controller.sv
 L0 3
-R5
+R4
 r1
 !s85 0
 31
-R6
+R5
 !s107 C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_controller.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog|C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_controller.sv|
 !i113 1
+R6
 R7
 R8
-R9
 vframe_number
 R1
 R2
 !i10b 1
-!s100 k8fI02LOg`kU<7jL:nnFY1
-IHNDFIZPHQJ3GlaNOH8E2h3
+!s100 3kZh1N_IAmYRB<EVJd`<z0
+IhkU:J[Pk9OmG;ToH>GZ493
 R3
 !s105 frame_number_sv_unit
 S1
 R0
-w1543979079
+w1544160250
 8C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_number.sv
 FC:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_number.sv
 L0 2
-R5
+R4
 r1
 !s85 0
 31
-R6
+R5
 !s107 C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_number.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog|C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/frame_number.sv|
 !i113 1
+R6
 R7
 R8
-R9
-vmario_cv_game
+vHexDriver
 R1
 R2
 !i10b 1
-!s100 VEc=97eN;beijelefYW7Z2
-I<A0JDZ;M98K35ROC=h4NI1
+!s100 =R2i165HPJgkY;aA[TRmG3
+IcDL;QXaTeDUUo67[<B^>E1
 R3
-!s105 mario_cv_game_sv_unit
+!s105 HexDriver_sv_unit
 S1
 R0
-w1544015306
-8C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv
-FC:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv
-L0 3
-R5
+w1544080192
+8C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/HexDriver.sv
+FC:/Users/yeda_/Documents/ECE_385/ece-385/final_project/HexDriver.sv
+L0 1
+R4
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog|C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/mario_cv_game.sv|
+R5
+!s107 C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/HexDriver.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project|C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/HexDriver.sv|
 !i113 1
-R7
+R6
+Z9 !s92 -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project
 R8
-R9
+n@hex@driver
 vRAM_param
 R1
 R2
@@ -119,97 +120,47 @@ R3
 !s105 RAM_param_sv_unit
 S1
 R0
-w1544003457
+Z10 w1544074281
 8C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/RAM_param.sv
 FC:/Users/yeda_/Documents/ECE_385/ece-385/final_project/RAM_param.sv
 L0 1
-R5
+R4
 r1
 !s85 0
 31
-R6
+R5
 !s107 C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/RAM_param.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project|C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/RAM_param.sv|
 !i113 1
-R7
-Z10 !s92 -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project
-R9
-n@r@a@m_param
-vsprite_controller
-R1
-R2
-!i10b 1
-!s100 <>7EUi6^fo=RDKX12U>CD3
-ILhBRR;XI2hHeg85nU<Ab61
-R3
-!s105 sprite_controller_sv_unit
-S1
-R0
-w1544021882
-8C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_controller.sv
-FC:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_controller.sv
-L0 1
-R5
-r1
-!s85 0
-31
 R6
-!s107 C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_controller.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog|C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_controller.sv|
-!i113 1
-R7
-R8
 R9
+R8
+n@r@a@m_param
 vsprite_fifo
 R1
 R2
 !i10b 1
-!s100 ZFAIlVh1F;a9SnT]O9fLA3
-I`;oN;CmmYebVkg5GiYf`b3
+!s100 ZYAW<zk0N1IzWbNZ]AIgc3
+I7GC?iNJ=9mRUkDY798BWe2
 R3
 !s105 sprite_fifo_sv_unit
 S1
 R0
-w1544013379
+w1544078642
 8C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_fifo.sv
 FC:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_fifo.sv
 L0 1
-R5
+R4
 r1
 !s85 0
 31
-R6
+R5
 !s107 C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_fifo.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog|C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/sprite_fifo.sv|
 !i113 1
+R6
 R7
 R8
-R9
-vtestbench
-R1
-R2
-!i10b 1
-!s100 cJg:Ej^jF?RbaPgABajgH0
-IjUTRFRO0G13n^L^:d0AFm0
-R3
-!s105 testbench_sv_unit
-S1
-R0
-w1544021400
-8C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/testbench.sv
-FC:/Users/yeda_/Documents/ECE_385/ece-385/final_project/testbench.sv
-L0 1
-R5
-r1
-!s85 0
-31
-R6
-!s107 C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/testbench.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project|C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/testbench.sv|
-!i113 1
-R7
-R10
-R9
 vVGA_controller
 R1
 R2
@@ -220,19 +171,19 @@ R3
 !s105 VGA_controller_sv_unit
 S1
 R0
-R4
+R10
 8C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/VGA_controller.sv
 FC:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/VGA_controller.sv
 L0 26
-R5
+R4
 r1
 !s85 0
 31
-R6
+R5
 !s107 C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/VGA_controller.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog|C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/VGA_controller.sv|
 !i113 1
+R6
 R7
 R8
-R9
 n@v@g@a_controller
