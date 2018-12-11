@@ -33,6 +33,7 @@ module mario_cv_game (
 													  DRAM_WE_N,    //SDRAM Write Enable
 													  DRAM_CS_N,    //SDRAM Chip Select
 													  DRAM_CLK, //SDRAM Clock
+
 							
 							//Hexs
 							output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7
@@ -46,7 +47,7 @@ module mario_cv_game (
 							logic Reset;
 							assign Reset = KEY[0];
 							logic t1, t2;
-
+							
 							// Set it to 0 to make the bus burst
 							logic avalon_control_fixed_location;  // avalon_control.fixed_location
 							assign avalon_control_fixed_location = 1'b0;							
@@ -91,22 +92,36 @@ module mario_cv_game (
 							logic [7:0]  sprite_rotate, 
 											 sprite_rotate_pio_export,
 											 sprite_rotate_test;
-											 
-//							assign sprite_x_test = S_X;
-//							assign sprite_y_test = S_Y;
-//							assign sprite_height_test = S_H;
-//							assign sprite_width_test = S_W;
-//							assign sprite_address_test = S_A;
-//							assign sprite_id_test = S_I;
-//							assign sprite_rotate_test = S_R;
+							    logic Reset_h, Clk;
+							
+							logic [15:0] keycode;
+							assign {Reset_h} = ~(KEY[0]);  // The push buttons are active low
+    
+							logic [1:0] hpi_addr;
+							logic [15:0] hpi_data_in, hpi_data_out;
+							logic hpi_r, hpi_w,hpi_cs;
+	 
+    
+							// Interface between NIOS II and EZ-OTG chip
+							hpi_io_intf hpi_io_inst(
+                            .Clk(SYS_CLOCK),
+                            .Reset(Reset_h),
+                            // signals connected to NIOS II
+                            .from_sw_address(hpi_addr),
+                            .from_sw_data_in(hpi_data_in),
+                            .from_sw_data_out(hpi_data_out),
+                            .from_sw_r(hpi_r),
+                            .from_sw_w(hpi_w),
+                            .from_sw_cs(hpi_cs),
+                            // signals connected to EZ-OTG chip
+                            .OTG_DATA(OTG_DATA),    
+                            .OTG_ADDR(OTG_ADDR),    
+                            .OTG_RD_N(OTG_RD_N),    
+                            .OTG_WR_N(OTG_WR_N),    
+                            .OTG_CS_N(OTG_CS_N),    
+                            .OTG_RST_N(OTG_RST_N)
+    );
 
-//							assign sprite_x_test = 16'd30;
-//							assign sprite_y_test = 16'd30;
-//							assign sprite_height_test = 16'd50;
-//							assign sprite_width_test = 16'd50;
-//							assign sprite_address_test = 32'd0;
-//							assign sprite_id_test = 16'd1;
-//							assign sprite_rotate_test = 0;
 
 							always_ff @ (negedge VGA_VS or negedge Reset) begin 
 								if (~Reset) begin
@@ -133,7 +148,6 @@ module mario_cv_game (
 							end
 
 //							***SOC***
-						
 							//NIOS II, SDRAM_CTRL, PLL, MASTER_TEMPLATE, OTG, PIOs
 							final_project nios_system (
 											 .*,
@@ -149,7 +163,14 @@ module mario_cv_game (
 											 .sdram_wire_ras_n(DRAM_RAS_N),    //  .ras_n
 											 .sdram_wire_we_n(DRAM_WE_N),      //  .we_n
 											 .sdram_clk_clk(DRAM_CLK),			//  clock out to SDRAM from other PLL port
-											 .sys_clk_clk(SYS_CLK)			// Clock for system
+											 .sys_clk_clk(SYS_CLK),			// Clock for system
+											 .otg_address_pio_export_export(hpi_addr), // Keyboard chip signals
+											 .otg_data_pio_export_in_port(hpi_data_in),
+											 .otg_data_pio_export_out_port(hpi_data_out),
+											 .otg_cs_pio_export_export(hpi_cs),
+											 .otg_read_pio_export_export(hpi_r),
+											 .otg_write_pio_export_export(hpi_w),
+											 .keycode_pio_export_export(keycode)
 											 // Also imports all the sprite PIO information
 							);
 							

@@ -223,6 +223,13 @@ altera_avalon_jtag_uart_driver_C_LIB_SRCS := \
 altera_avalon_pio_driver_SRCS_ROOT := drivers
 
 # altera_avalon_pio_driver sources 
+# altera_avalon_spi_driver sources root 
+altera_avalon_spi_driver_SRCS_ROOT := drivers
+
+# altera_avalon_spi_driver sources 
+altera_avalon_spi_driver_C_LIB_SRCS := \
+	$(altera_avalon_spi_driver_SRCS_ROOT)/src/altera_avalon_spi.c
+
 # altera_avalon_sysid_qsys_driver sources root 
 altera_avalon_sysid_qsys_driver_SRCS_ROOT := drivers
 
@@ -324,13 +331,13 @@ hal_C_LIB_SRCS := \
 	$(hal_SRCS_ROOT)/src/alt_times.c \
 	$(hal_SRCS_ROOT)/src/alt_unlink.c \
 	$(hal_SRCS_ROOT)/src/alt_wait.c \
-	$(hal_SRCS_ROOT)/src/alt_write.c \
-	$(hal_SRCS_ROOT)/src/altera_up_sd_card_avalon_interface.c # For sd card interface
+	$(hal_SRCS_ROOT)/src/alt_write.c
 
 
 # Assemble all component C source files 
 COMPONENT_C_LIB_SRCS += \
 	$(altera_avalon_jtag_uart_driver_C_LIB_SRCS) \
+	$(altera_avalon_spi_driver_C_LIB_SRCS) \
 	$(altera_avalon_sysid_qsys_driver_C_LIB_SRCS) \
 	$(altera_nios2_gen2_hal_driver_C_LIB_SRCS) \
 	$(hal_C_LIB_SRCS)

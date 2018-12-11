@@ -19,11 +19,13 @@ Turtle::Turtle(uint16_t x, uint16_t y) {
 	animatorSetup();
 	shell_timer = 0;
 	shell_move_right = true;
+	brain = Brain(current_background, this);
 }
 
 Gumba::Gumba(uint16_t x, uint16_t y) {
 	collider = Rect_Collider(Collider_Type::GUMBA, x, y, GUMBA_COLLIDER_WIDTH, GUMBA_COLLIDER_HEIGHT);
 	animatorSetup();
+	brain = Brain(current_background, this);
 }
 
 void Turtle::animatorSetup() {
@@ -53,7 +55,10 @@ void Gumba::animatorSetup() {
 }
 
 void Gumba::collided_with(Rect_Collider & other) {
-	if ((other.collide_type == Collider_Type::PLAYER && other.collides_above(collider)) || other.collide_type == Collider_Type::TURTLE_SHELL) {
+	if (other.collide_type == Collider_Type::PLATFORM_UNBREAKABLE) {
+		last_collided = other;
+	}
+	else if ((other.collide_type == Collider_Type::PLAYER && other.collides_above(collider)) || other.collide_type == Collider_Type::TURTLE_SHELL) {
 		current_anim_state = DYING;
 	}
 	else if (other.collide_type == Collider_Type::FIREBALL) {
@@ -61,8 +66,12 @@ void Gumba::collided_with(Rect_Collider & other) {
 	}
 }
 void Turtle::collided_with(Rect_Collider & other) {
-	if ((other.collide_type == Collider_Type::PLATFORM_UNBREAKABLE && collider.collides_above(other) && getState() == SHELL_MOVING)) {
+	if ((other.collide_type == Collider_Type::PLATFORM_UNBREAKABLE && !collider.collides_above(other) && getState() == SHELL_MOVING)) {
 		shell_move_right = !shell_move_right;
+		last_collided = other;
+	}
+	else if (other.collide_type == Collider_Type::PLATFORM_UNBREAKABLE) {
+		last_collided = other;
 	}
 	else if ((other.collide_type == Collider_Type::PLAYER && other.collides_above(collider)) && getState() == WALKING) {
 		// Set the timer for the turtle to get up
@@ -77,14 +86,14 @@ void Turtle::collided_with(Rect_Collider & other) {
 	else if ((other.collide_type == Collider_Type::PLAYER && other.collides_above(collider)) && getState() == SHELL_MOVING) {
 		current_anim_state = SHELL;
 	}
-	else if (other.collide_type == Collider_Type::FIREBALL) {
+	else if (other.collide_type == Collider_Type::FIREBALL) { // Can also die from falling off the cliff. Objects automatically cleared that fall out the map
 		current_anim_state = DYING_FIREBALL;
 	}
 }
 
 void Enemy::destroyInBackground() {
 	if (current_background == nullptr || current_background->enemies.find(collider.collider_id) == current_background->enemies.end()) {
-		std::cout << "Problem finding the Item to destroy" << std::endl;
+		std::cout << "Problem finding the Enemy to destroy" << std::endl;
 		return;
 	}
 	delete current_background->enemies[collider.collider_id];
@@ -104,6 +113,7 @@ void Gumba::update() {
 	}
 	switch (current_anim_state) {
 	case WALKING:
+		brain.makeDecision();
 		// TODO
 		// AI Makes some decision
 		break;
@@ -136,6 +146,7 @@ void Turtle::update() {
 	}
 	switch (current_anim_state) {
 	case WALKING:
+		brain.makeDecision();
 		// TODO
 		// AI makes a decision
 		break;

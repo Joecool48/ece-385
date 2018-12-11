@@ -1379,6 +1379,9 @@
 			<provider id="altera.tool.Nios2GCCBuildCommandParser">
 				<language id="org.eclipse.cdt.core.g++">
 					<resource project-relative-path="src/sprite.cpp">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1390,9 +1393,14 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="src/player.cpp">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1404,9 +1412,14 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="src/colliders.cpp">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1418,9 +1431,14 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="src/enemies.cpp">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1432,9 +1450,14 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="src/item.cpp">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1446,9 +1469,14 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="src/brain.cpp">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1460,9 +1488,14 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="src/config.cpp">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1474,9 +1507,14 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="src/background.cpp">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1488,9 +1526,14 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="src/sim.cpp">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1502,9 +1545,14 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="src/main.cpp">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1516,9 +1564,14 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="src/keyboard.cpp">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1530,9 +1583,14 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="src/init.cpp">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1544,9 +1602,14 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="src/sprite_animator.cpp">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1558,25 +1621,13 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 				</language>
 				<language id="org.eclipse.cdt.core.gcc">
 					<resource project-relative-path="HAL/src/alt_uncached_free.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_wait.c">
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1604,20 +1655,6 @@
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
-					<resource project-relative-path="drivers/src/altera_avalon_jtag_uart_ioctl.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
 					<resource project-relative-path="HAL/src/alt_printf.c">
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
@@ -1632,49 +1669,7 @@
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_ioctl.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_fcntl.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
 					<resource project-relative-path="drivers/src/altera_avalon_jtag_uart_read.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_instruction_exception_entry.c">
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1744,20 +1739,6 @@
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_fd_unlock.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
 					<resource project-relative-path="HAL/src/alt_log_printf.c">
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
@@ -1800,7 +1781,10 @@
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_execve.c">
+					<resource project-relative-path="src/efsl/ioman.c">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1812,20 +1796,8 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_remap_cached.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="HAL/src/alt_remap_uncached.c">
@@ -1842,7 +1814,10 @@
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_stat.c">
+					<resource project-relative-path="src/efsl/debug.c">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1854,6 +1829,8 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="drivers/src/altera_avalon_jtag_uart_fd.c">
@@ -1884,7 +1861,10 @@
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_dcache_flush_all.c">
+					<resource project-relative-path="src/efsl/disc.c">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1896,9 +1876,14 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_errno.c">
+					<resource project-relative-path="src/efsl/plibc.c">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1910,34 +1895,8 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_exit.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_icache_flush_all.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="HAL/src/alt_alarm_start.c">
@@ -2010,34 +1969,6 @@
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_tick.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_close.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
 					<resource project-relative-path="HAL/src/alt_link.c">
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
@@ -2066,7 +1997,10 @@
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_irq_handler.c">
+					<resource project-relative-path="src/efsl/partition.c">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -2078,34 +2012,8 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_write.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_iic.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="HAL/src/alt_ecc_fatal_exception.c">
@@ -2123,6 +2031,20 @@
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="HAL/src/alt_fork.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="src/in.c">
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -2234,35 +2156,26 @@
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
+					<resource project-relative-path="src/efsl/nios2_ramdisk.c">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
 					<resource project-relative-path="HAL/src/alt_busy_sleep.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_fstat.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_do_ctors.c">
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -2304,7 +2217,668 @@
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
+					<resource project-relative-path="src/efsl/fs.c">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
 					<resource project-relative-path="HAL/src/alt_fs_reg.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="src/efsl/mkfs.c">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_open.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_gettod.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="drivers/src/altera_avalon_jtag_uart_write.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_isatty.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_putcharbuf.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_env_lock.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="src/efsl/fat.c">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_fd_lock.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="drivers/src/altera_avalon_jtag_uart_init.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_unlink.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_putstr.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="src/efsl/ui.c">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_times.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_kill.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_iic_isr_register.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_irq_vars.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_wait.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="drivers/src/altera_avalon_jtag_uart_ioctl.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_ioctl.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_fcntl.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_instruction_exception_entry.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="src/efsl/ls.c">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_fd_unlock.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="src/efsl/file.c">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_execve.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_remap_cached.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_stat.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="drivers/src/altera_avalon_spi.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_dcache_flush_all.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_errno.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_exit.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_icache_flush_all.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="src/efsl/dir.c">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_tick.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_close.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="src/efsl/nios2.c">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_irq_handler.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_write.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_iic.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="src/efsl/time.c">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_fstat.c">
+						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_do_ctors.c">
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -2374,63 +2948,7 @@
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_open.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
 					<resource project-relative-path="HAL/src/alt_find_dev.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_gettod.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="drivers/src/altera_avalon_jtag_uart_write.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_isatty.c">
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -2458,7 +2976,10 @@
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_putcharbuf.c">
+					<resource project-relative-path="src/efsl/extract.c">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -2470,48 +2991,8 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_env_lock.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_fd_lock.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="drivers/src/altera_avalon_jtag_uart_init.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="HAL/src/alt_release_fd.c">
@@ -2556,7 +3037,10 @@
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_unlink.c">
+					<resource project-relative-path="src/efsl/sd.c">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -2568,51 +3052,11 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 					<resource project-relative-path="HAL/src/alt_load.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_putstr.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_times.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_kill.c">
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -2654,20 +3098,6 @@
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_iic_isr_register.c">
-						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/final_project_software_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-					</resource>
 					<resource project-relative-path="HAL/src/alt_gmon.c">
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
@@ -2682,7 +3112,10 @@
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_irq_vars.c">
+					<resource project-relative-path="src/efsl/efs.c">
+						<entry kind="includePath" name="/${ProjName}/include/efsl">
+							<flag value="VALUE_WORKSPACE_PATH"/>
+						</entry>
 						<entry kind="includePath" name="/final_project_software_bsp/HAL/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -2694,6 +3127,8 @@
 						</entry>
 						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
 						<entry kind="macro" name="ALT_SINGLE_THREADED" value=""/>
+						<entry kind="macro" name="JOURNALING_ENABLED" value=""/>
+						<entry kind="macro" name="REPLICATION_ENABLED" value=""/>
 						<entry kind="macro" name="__hal__" value=""/>
 					</resource>
 				</language>

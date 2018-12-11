@@ -15,7 +15,7 @@
 <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="final_project_software.elf"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="final_project_software"/>
 <booleanAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_AUTO_ATTR" value="false"/>
-<stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.2046376566"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value=""/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/final_project_software"/>
 </listAttribute>

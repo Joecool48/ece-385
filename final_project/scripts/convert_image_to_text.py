@@ -1,6 +1,8 @@
 from PIL import Image
 import os
 import math
+import struct
+
 path_append = "../images/"
 
 pixel_count = 0
@@ -37,7 +39,7 @@ for image in images:
 python_hardware_sim = open("python_hardware_sim_code", "w", 1)
 python_hardware_sim.write("address_to_sprite_map = {}\n")
 regular_hex_file = open("regular_hex_file.txt", "w")
-
+ascii_file = os.open("ascii_file.txt", os.O_CREAT | os.O_WRONLY)
 sprite_file = open("sprite_file.txt", "w", 1)
 address_offset = 0
 sprite_id_start = 1
@@ -68,11 +70,13 @@ for img in images:
                 mem_file.write(format(address_offset, "0" + str(int(math.ceil(math.log(MAX_ADDRESSES, 16)))) + "x"))
                 mem_file.write(" : ")
                 mem_file.write("00")
+                os.write(ascii_file, struct.pack("B", 0))
                 regular_hex_file.write("00")
             else:
                 mem_file.write(format(address_offset, "0" + str(int(math.ceil(math.log(MAX_ADDRESSES, 16)))) + "x"))
                 mem_file.write(" : ")
                 regular_hex_file.write("%0.2x" % color_dict[(pix[0], pix[1], pix[2])])
+                os.write(ascii_file, struct.pack("B", color_dict[(pix[0], pix[1], pix[2])]))
                 mem_file.write(format(color_dict[(pix[0], pix[1], pix[2])], "02x"))
             address_offset += 1
             if address_offset % 1 == 0:
@@ -85,7 +89,7 @@ for img in images:
 mem_file.write("END;\n")
 
 
-
+os.close(ascii_file)
 sv_file = open("sv_output.txt", "w", 1)
 for key in color_dict.keys():
     sv_file.write("        8'd" + str(color_dict[key]) + ": begin\n")

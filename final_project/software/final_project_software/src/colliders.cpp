@@ -8,10 +8,10 @@
 #include "../include/config.h"
 
 bool Collidable::cantGoThrough (Collider_Type type) {
-	return type == Collider_Type::PLATFORM_UNBREAKABLE || type == Collider_Type::ITEM_BLOCK;
+	return (type == Collider_Type::PLATFORM_UNBREAKABLE) || (type == Collider_Type::ITEM_BLOCK);
 }
 bool Collidable::isEnemy (Collider_Type type) {
-	return type == Collider_Type::GUMBA || type == Collider_Type::TURTLE || type == Collider_Type::TURTLE_SHELL;
+	return (type == Collider_Type::GUMBA) || (type == Collider_Type::TURTLE) || (type == Collider_Type::TURTLE_SHELL);
 }
 
 Collidable::~Collidable() {}

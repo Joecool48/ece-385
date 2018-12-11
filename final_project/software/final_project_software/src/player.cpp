@@ -267,22 +267,47 @@ bool Player::hitByEnemy() {
  *
  */
 void Player::collided_with(Rect_Collider & other) {
-	if (other.collide_type == Collider_Type::MUSHROOM) {
-		gotMushroom = true;
+	std::cout << "In collided_with player" << std::endl;
+	std::cout << "isEnemy " << Collidable::isEnemy(other.collide_type) << std::endl;
+	if (other.collide_type == Collider_Type::MUSHROOM && current_anim_mode == MINI_MODE) {
+		wait_frames = FIREFLOWER_NUM_FRAMES; // Same as fireflower
+		current_anim_state = ENLARGING;
 	}
-	else if (other.collide_type == Collider_Type::FIREFLOWER) {
-		gotFireflower = true;
+	else if (other.collide_type == Collider_Type::FIREFLOWER && current_anim_state == NORMAL_MODE) {
+		current_anim_mode = FIRE_MODE;
+		wait_frames = FIREFLOWER_NUM_FRAMES;
 	}
-	else if (Collidable::isEnemy(other.collide_type) && !player_collider.collides_above(other)) {
-		gotHitByEnemy = true;
+	else if (Collidable::isEnemy(other.collide_type) && !player_collider.collides_above(other) && enemyCanKill) {
+		std::cout << "Player hurt by enemy" << std::endl;
+		if (current_anim_mode == MINI_MODE) {
+			current_anim_state = DYING;
+		}
+		else if (current_anim_mode == NORMAL_MODE) {
+			current_anim_state = SHRINKING;
+		}
+		else if (current_anim_mode == FIRE_MODE) {
+				current_anim_state = SHRINKING;
+		}
 	}
 	else if (Collidable::isEnemy(other.collide_type) && player_collider.collides_above(other)) {
+		std::cout << "Player kills enemy" << std::endl;
 		velY -= PLAYER_JUMP_ON_ENEMY_BOOST;
 		current_anim_state = JUMPING; // They are technically in the air now
 	}
 	else if (other.collide_type == Collider_Type::PLATFORM_UNBREAKABLE) {
 		std::cout << "Collided with ground" << std::endl;
 		inAir = false;
+	}
+	else if (getsMushroom() && current_anim_mode == MINI_MODE) {
+	}
+	else if (getsFireflower()) {
+		if (current_anim_mode == MINI_MODE) {
+			current_anim_state = ENLARGING;
+		}
+		else if (current_anim_mode == NORMAL_MODE) {
+			current_anim_mode = FIRE_MODE;
+			wait_frames = FIREFLOWER_NUM_FRAMES;
+		}
 	}
 }
 
@@ -351,29 +376,6 @@ void Player::idleState () {
 		std::cout << "Throwing fire" << std::endl;
 		current_anim_state = THROWFIREBALL;
 	}
-	else if (hitByEnemy() && enemyCanKill) {
-		if (current_anim_mode == MINI_MODE) {
-			current_anim_state = DYING;
-		}
-		else if (current_anim_mode == NORMAL_MODE) {
-			current_anim_state = SHRINKING;
-		}
-		else if (current_anim_mode == FIRE_MODE) {
-			current_anim_state = SHRINKING;
-		}
-	}
-	else if (getsMushroom() && current_anim_mode == MINI_MODE) {
-		current_anim_mode = ENLARGING;
-	}
-	else if (getsFireflower()) {
-		if (current_anim_mode == MINI_MODE) {
-			current_anim_state = ENLARGING;
-		}
-		else if (current_anim_mode == NORMAL_MODE) {
-			current_anim_mode = FIRE_MODE;
-			wait_frames = FIREFLOWER_NUM_FRAMES;
-		}
-	}
 	else if (Keyboard::multipleKeysPressed()) {
 		current_anim_state = SLIDING;
 	}
@@ -405,29 +407,6 @@ void Player::walkingState() {
 	}
 	else if (Keyboard::key_fireball(enablePlayerControl) && current_anim_mode == FIRE_MODE) {
 		current_anim_state = THROWFIREBALL;
-	}
-	else if (hitByEnemy() && enemyCanKill) {
-		if (current_anim_mode == MINI_MODE) {
-			current_anim_state = DYING;
-		}
-		else if (current_anim_mode == NORMAL_MODE) {
-			current_anim_state = SHRINKING;
-		}
-		else if (current_anim_mode == FIRE_MODE) {
-			current_anim_state = SHRINKING;
-		}
-	}
-	else if (getsMushroom() && current_anim_mode == MINI_MODE) {
-		current_anim_mode = ENLARGING;
-	}
-	else if (getsFireflower()) {
-		if (current_anim_mode == MINI_MODE) {
-			current_anim_state = ENLARGING;
-		}
-		else if (current_anim_mode == NORMAL_MODE) {
-			current_anim_mode = FIRE_MODE;
-			wait_frames = FIREFLOWER_NUM_FRAMES;
-		}
 	}
 	else if (!Keyboard::key_left(enablePlayerControl) && !Keyboard::key_right(enablePlayerControl)) {
 		current_anim_state = IDLE;
@@ -526,29 +505,6 @@ void Player::jumpingState() {
 	else if (Keyboard::key_fireball(enablePlayerControl) && current_anim_mode == FIRE_MODE) {
 		current_anim_state = THROWFIREBALL;
 	}
-	else if (hitByEnemy() && enemyCanKill) {
-		if (current_anim_mode == MINI_MODE) {
-			current_anim_state = DYING;
-		}
-		else if (current_anim_mode == NORMAL_MODE) {
-			current_anim_state = SHRINKING;
-		}
-		else if (current_anim_mode == FIRE_MODE) {
-			current_anim_state = SHRINKING;
-		}
-	}
-	else if (getsMushroom() && current_anim_mode == MINI_MODE) {
-		current_anim_mode = ENLARGING;
-	}
-	else if (getsFireflower()) {
-		if (current_anim_mode == MINI_MODE) {
-			current_anim_state = ENLARGING;
-		}
-		else if (current_anim_mode == NORMAL_MODE) {
-			current_anim_mode = FIRE_MODE;
-			wait_frames = FIREFLOWER_NUM_FRAMES;
-		}
-	}
 }
 
 /*
@@ -581,21 +537,6 @@ void Player::crouchingState() {
 	velY = 0;
 	if (!Keyboard::key_crouch(enablePlayerControl) || current_anim_mode == MINI_MODE) {
 		current_anim_state = IDLE;
-	}
-	else if (getsMushroom()) {
-		// Do nothing, but need to call the method to get rid of the mushroom. Can't become big while crouching cause he already is
-	}
-	else if (getsFireflower()) {
-		current_anim_mode = FIRE_MODE;
-		wait_frames = FIREFLOWER_NUM_FRAMES;
-	}
-	else if (hitByEnemy() && enemyCanKill) {
-		if (current_anim_mode == NORMAL_MODE) {
-			current_anim_state = SHRINKING;
-		}
-		else if (current_anim_mode == FIRE_MODE) {
-			current_anim_state = SHRINKING;
-		}
 	}
 }
 

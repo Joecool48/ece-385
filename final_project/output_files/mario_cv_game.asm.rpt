@@ -1,5 +1,5 @@
 Assembler report for mario_cv_game
-Mon Dec 10 05:15:37 2018
+Tue Dec 11 01:51:27 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -11,7 +11,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   3. Assembler Settings
   4. Assembler Encrypted IP Cores Summary
   5. Assembler Generated Files
-  6. Assembler Device Options: C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/output_files/mario_cv_game.sof
+  6. Assembler Device Options: mario_cv_game.sof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Dec 10 05:15:37 2018 ;
+; Assembler Status      ; Successful - Tue Dec 11 01:51:27 2018 ;
 ; Revision Name         ; mario_cv_game                         ;
 ; Top-level Entity Name ; mario_cv_game                         ;
 ; Family                ; Cyclone IV E                          ;
@@ -63,23 +63,23 @@ refer to the applicable agreement for further details.
 +--------+------------------------+--------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                             ;
-+---------------------------------------------------------------------------------------+
-; File Name                                                                             ;
-+---------------------------------------------------------------------------------------+
-; C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/output_files/mario_cv_game.sof ;
-+---------------------------------------------------------------------------------------+
++------------------------------------------------------------------------+
+; Assembler Generated Files                                              ;
++------------------------------------------------------------------------+
+; File Name                                                              ;
++------------------------------------------------------------------------+
+; /home/joey/courses/ece385/final_project/output_files/mario_cv_game.sof ;
++------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/output_files/mario_cv_game.sof ;
-+----------------+------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                        ;
-+----------------+------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x00DCE08C                                                                                     ;
-; Checksum       ; 0x00DCE08C                                                                                     ;
-+----------------+------------------------------------------------------------------------------------------------+
++---------------------------------------------+
+; Assembler Device Options: mario_cv_game.sof ;
++----------------+----------------------------+
+; Option         ; Setting                    ;
++----------------+----------------------------+
+; JTAG usercode  ; 0x00EFB78C                 ;
+; Checksum       ; 0x00EFB78C                 ;
++----------------+----------------------------+
 
 
 +--------------------+
@@ -88,14 +88,14 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Dec 10 05:15:32 2018
+    Info: Processing started: Tue Dec 11 01:51:23 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off mario_cv_game -c mario_cv_game
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4759 megabytes
-    Info: Processing ended: Mon Dec 10 05:15:37 2018
-    Info: Elapsed time: 00:00:05
+    Info: Peak virtual memory: 868 megabytes
+    Info: Processing ended: Tue Dec 11 01:51:27 2018
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:05
 
 

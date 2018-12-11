@@ -28,6 +28,7 @@ public:
 	bool noCollide;
 	uint16_t ENEMY_MODE = 213;
 	uint16_t ENEMY_STATE = 23;
+	Rect_Collider last_collided; // Collider to store the last collision. Used for fast implementation of enemy intelligence (simple)
 	Enemy();
 	void draw();
 	void gravity();
@@ -41,6 +42,7 @@ public:
  * Possibly implement dying animation
  */
 class Gumba : public Enemy {
+public:
 	uint16_t NORMAL_MODE = 0;
 	enum states {WALKING, DYING, DYING_FIREBALL, DESTROY};
 	void collided_with(Rect_Collider & other);
@@ -56,6 +58,7 @@ class Gumba : public Enemy {
  * Dying animation will not be implemented due to lack of time
  */
 class Turtle : public Enemy {
+public:
 	uint16_t NORMAL_MODE = 0;
 	const uint16_t REMAIN_IN_SHELL_FRAMES = 300;
 	const float SHELL_MOVE_SPEED = .5;

@@ -1,0 +1,31 @@
+/*
+ * brain.cpp
+ *
+ *  Created on: Nov 29, 2018
+ *      Author: joey
+ */
+#include "../include/brain.h"
+
+// Caller destroyed variables
+Brain::Brain(Background *back, Enemy * enemy) {
+
+}
+// Do nothing. All pointers are caller destroyed
+Brain::~Brain() {}
+
+// Simple function to make a decision where to move in which direction
+Brain::makeDecision(int16_t velX) {
+
+}
+/*
+ * Detects if the enemy will fall off the cliff in this many steps based on its current velocity
+ */
+bool Brain::willFallOffCliff(uint16_t numFrames) {
+	Rect_Collider update_collider = enemy->collider;
+
+	update_collider += enemy->velX;
+	if(update_collider.collides_with(enemy->last_collided)) {
+		return false;
+	}
+	return false;
+}

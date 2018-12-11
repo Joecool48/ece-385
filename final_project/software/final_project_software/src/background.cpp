@@ -291,22 +291,24 @@ void Background::resolveCollisions() {
 			update_collider.collide_x += enemiesIt->second->velX;
 			update_collider.collide_y += enemiesIt->second->velY;
 			if (!enemiesIt->second->noCollide && update_collider.collides_with(backgroundIt->second->collider)) {
+				std::cout << "Enenmy coliided with the ground" << std::endl;
 				// Remove updated y to see if x collides
+				update_collider.collide_x -= enemiesIt->second->velX;
+				if (update_collider.collides_with(backgroundIt->second->collider) && (update_collider.collides_below(backgroundIt->second->collider) || update_collider.collides_above(backgroundIt->second->collider))) {
+					shiftY = overlapY(update_collider, backgroundIt->second->collider, enemiesIt->second->velY);
+					std::cout << "Shifty is " << std::endl;
+					if (shiftY != 0) {
+						enemiesIt->second->collider.collide_y += shiftY + enemiesIt->second->velY;
+						enemiesIt->second->velY = 0;
+					}
+				}
+				update_collider.collide_x += enemiesIt->second->velX; // Remove velX update and add velY
 				update_collider.collide_y -= enemiesIt->second->velY;
 				if (update_collider.collides_with(backgroundIt->second->collider) && (update_collider.collides_left(backgroundIt->second->collider) || update_collider.collides_right(backgroundIt->second->collider))) {
 					shiftX = overlapX(update_collider, backgroundIt->second->collider, enemiesIt->second->velX);
 					if (shiftX != 0) {
 						enemiesIt->second->collider.collide_x += shiftX + enemiesIt->second->velX;
 						enemiesIt->second->velX = 0;
-					}
-				}
-				update_collider.collide_x -= enemiesIt->second->velX; // Remove velX update and add velY
-				update_collider.collide_y += enemiesIt->second->velY;
-				if (update_collider.collides_with(backgroundIt->second->collider) && (update_collider.collides_left(backgroundIt->second->collider) || update_collider.collides_right(backgroundIt->second->collider))) {
-					shiftY = overlapY(update_collider, backgroundIt->second->collider, enemiesIt->second->velY);
-					if (shiftY != 0) {
-						enemiesIt->second->collider.collide_y += shiftY + enemiesIt->second->velY;
-						enemiesIt->second->velY = 0;
 					}
 				}
 			}
@@ -399,6 +401,7 @@ void Background::resolveCollisions() {
 	}
 	for (auto enemiesIt = enemies.begin(); enemiesIt != enemies.end(); enemiesIt++) {
 		if (enemiesIt->second->collider.collides_with(current_player->player_collider)) {
+			std::cout << "Enemy collided with player" << std::endl;
 			enemiesIt->second->collided_with(current_player->player_collider);
 			current_player->collided_with(enemiesIt->second->collider);
 		}
@@ -415,7 +418,7 @@ void Background_Object::collided_with(Rect_Collider & other, Background * back) 
 	if (other.collide_type == Collider_Type::PLAYER && other.collides_below(this->collider)) {
 		if (this->collider.collide_type == Collider_Type::ITEM_BLOCK && contains_item) {
 			contains_item = false;
-			// Dispense item based on player mode
+			// Dispense item based on player mode. Should be above the block
 			if (back->current_player->getMode() == Player::MINI_MODE) {
 				Mushroom *mush = new Mushroom(this->collider.collide_x, this->collider.collide_y - Mushroom::MUSHROOM_COLLIDER_HEIGHT);
 				back->items[mush->collider.collider_id] = mush;

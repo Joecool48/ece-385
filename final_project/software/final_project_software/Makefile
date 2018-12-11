@@ -4,15 +4,15 @@
 
 # List of include directories for -I compiler option (-I added when used).
 # Includes the BSP.
-ALT_INCLUDE_DIRS :=
+ALT_INCLUDE_DIRS := include/efsl
 
 # List of library directories for -L linker option (-L added when used).
 # Includes the BSP.
-ALT_LIBRARY_DIRS :=
+ALT_LIBRARY_DIRS := #lib
 
 # List of library names for -l linker option (-l added when used).
 # Includes the BSP.
-ALT_LIBRARY_NAMES :=
+ALT_LIBRARY_NAMES := #efsl
 
 # List of library names for -msys-lib linker option (-msys-lib added when used).
 # These are libraries that might be located in the BSP and depend on the BSP
@@ -29,11 +29,11 @@ ALT_LDDEPS :=
 MAKEABLE_LIBRARY_ROOT_DIRS :=
 
 # Generic flags passed to the compiler for different types of input files.
-ALT_CFLAGS :=
-ALT_CXXFLAGS :=
-ALT_CPPFLAGS :=
+ALT_CFLAGS := -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os
+ALT_CXXFLAGS := -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os
+ALT_CPPFLAGS := -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os
 ALT_ASFLAGS :=
-ALT_LDFLAGS :=
+ALT_LDFLAGS := #-static
 
 
 #------------------------------------------------------------------------------
@@ -142,7 +142,24 @@ ACDS_VERSION := 18.1
 ELF := final_project_software.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS :=
+C_SRCS += src/efsl/debug.c
+C_SRCS += src/efsl/dir.c
+C_SRCS += src/efsl/disc.c
+C_SRCS += src/efsl/efs.c
+C_SRCS += src/efsl/extract.c
+C_SRCS += src/efsl/fat.c
+C_SRCS += src/efsl/file.c
+C_SRCS += src/efsl/fs.c
+C_SRCS += src/efsl/ioman.c
+C_SRCS += src/efsl/ls.c
+C_SRCS += src/efsl/mkfs.c
+C_SRCS += src/efsl/nios2.c
+C_SRCS += src/efsl/nios2_ramdisk.c
+C_SRCS += src/efsl/partition.c
+C_SRCS += src/efsl/plibc.c
+C_SRCS += src/efsl/sd.c
+C_SRCS += src/efsl/time.c
+C_SRCS += src/efsl/ui.c
 CXX_SRCS += src/main.cpp
 CXX_SRCS += src/colliders.cpp
 CXX_SRCS += src/enemies.cpp

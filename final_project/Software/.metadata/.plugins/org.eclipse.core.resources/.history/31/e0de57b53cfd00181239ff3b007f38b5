@@ -1,0 +1,21 @@
+/*
+ * brain.cpp
+ *
+ *  Created on: Nov 29, 2018
+ *      Author: joey
+ */
+#include "../include/brain.h"
+
+Brain::Brain() {
+
+}
+Brain::~Brain() {
+
+}
+/*
+ * Detects if the enemy will fall off the cliff in this many steps based on its current velocity
+ */
+bool Brain::willFallOffCliff(uint16_t numFrames, bool dir) {
+	Rect_Collider update_collider = collider;
+
+}

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'final_project'
  * SOPC Builder design path: ../../final_project.sopcinfo
  *
- * Generated: Mon Dec 10 02:41:32 CST 2018
+ * Generated: Mon Dec 10 18:15:45 CST 2018
  */
 
 /*
@@ -62,13 +62,13 @@
 
 #define ALT_CPU_ARCHITECTURE "altera_nios2_gen2"
 #define ALT_CPU_BIG_ENDIAN 0
-#define ALT_CPU_BREAK_ADDR 0x01000020
+#define ALT_CPU_BREAK_ADDR 0x08000020
 #define ALT_CPU_CPU_ARCH_NIOS2_R1
 #define ALT_CPU_CPU_FREQ 100000000u
 #define ALT_CPU_CPU_ID_SIZE 1
 #define ALT_CPU_CPU_ID_VALUE 0x00000000
 #define ALT_CPU_CPU_IMPLEMENTATION "tiny"
-#define ALT_CPU_DATA_ADDR_WIDTH 0x19
+#define ALT_CPU_DATA_ADDR_WIDTH 0x1c
 #define ALT_CPU_DCACHE_LINE_SIZE 0
 #define ALT_CPU_DCACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_DCACHE_SIZE 0
@@ -87,7 +87,7 @@
 #define ALT_CPU_ICACHE_LINE_SIZE 0
 #define ALT_CPU_ICACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_ICACHE_SIZE 0
-#define ALT_CPU_INST_ADDR_WIDTH 0x19
+#define ALT_CPU_INST_ADDR_WIDTH 0x1c
 #define ALT_CPU_NAME "nios2_gen2_0"
 #define ALT_CPU_OCI_VERSION 1
 #define ALT_CPU_RESET_ADDR 0x00000000
@@ -99,13 +99,13 @@
  */
 
 #define NIOS2_BIG_ENDIAN 0
-#define NIOS2_BREAK_ADDR 0x01000020
+#define NIOS2_BREAK_ADDR 0x08000020
 #define NIOS2_CPU_ARCH_NIOS2_R1
 #define NIOS2_CPU_FREQ 100000000u
 #define NIOS2_CPU_ID_SIZE 1
 #define NIOS2_CPU_ID_VALUE 0x00000000
 #define NIOS2_CPU_IMPLEMENTATION "tiny"
-#define NIOS2_DATA_ADDR_WIDTH 0x19
+#define NIOS2_DATA_ADDR_WIDTH 0x1c
 #define NIOS2_DCACHE_LINE_SIZE 0
 #define NIOS2_DCACHE_LINE_SIZE_LOG2 0
 #define NIOS2_DCACHE_SIZE 0
@@ -123,7 +123,7 @@
 #define NIOS2_ICACHE_LINE_SIZE 0
 #define NIOS2_ICACHE_LINE_SIZE_LOG2 0
 #define NIOS2_ICACHE_SIZE 0
-#define NIOS2_INST_ADDR_WIDTH 0x19
+#define NIOS2_INST_ADDR_WIDTH 0x1c
 #define NIOS2_OCI_VERSION 1
 #define NIOS2_RESET_ADDR 0x00000000
 
@@ -136,24 +136,10 @@
 #define __ALTERA_AVALON_JTAG_UART
 #define __ALTERA_AVALON_NEW_SDRAM_CONTROLLER
 #define __ALTERA_AVALON_PIO
+#define __ALTERA_AVALON_SPI
 #define __ALTERA_AVALON_SYSID_QSYS
 #define __ALTERA_NIOS2_GEN2
 #define __ALTPLL
-#define __SDCARDSLAVE
-
-
-/*
- * SdCardSlave_0 configuration
- *
- */
-
-#define ALT_MODULE_CLASS_SdCardSlave_0 SdCardSlave
-#define SDCARDSLAVE_0_BASE 0x1000840
-#define SDCARDSLAVE_0_IRQ -1
-#define SDCARDSLAVE_0_IRQ_INTERRUPT_CONTROLLER_ID -1
-#define SDCARDSLAVE_0_NAME "/dev/SdCardSlave_0"
-#define SDCARDSLAVE_0_SPAN 32
-#define SDCARDSLAVE_0_TYPE "SdCardSlave"
 
 
 /*
@@ -172,19 +158,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_game_nios"
-#define ALT_STDERR_BASE 0x1000808
+#define ALT_STDERR_BASE 0x8000958
 #define ALT_STDERR_DEV jtag_game_nios
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_game_nios"
-#define ALT_STDIN_BASE 0x1000808
+#define ALT_STDIN_BASE 0x8000958
 #define ALT_STDIN_DEV jtag_game_nios
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_game_nios"
-#define ALT_STDOUT_BASE 0x1000808
+#define ALT_STDOUT_BASE 0x8000958
 #define ALT_STDOUT_DEV jtag_game_nios
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -209,7 +195,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_game_nios altera_avalon_jtag_uart
-#define JTAG_GAME_NIOS_BASE 0x1000808
+#define JTAG_GAME_NIOS_BASE 0x8000958
 #define JTAG_GAME_NIOS_IRQ 0
 #define JTAG_GAME_NIOS_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_GAME_NIOS_NAME "/dev/jtag_game_nios"
@@ -227,7 +213,7 @@
  */
 
 #define ALT_MODULE_CLASS_pll altpll
-#define PLL_BASE 0x1000920
+#define PLL_BASE 0x8000930
 #define PLL_IRQ -1
 #define PLL_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define PLL_NAME "/dev/pll"
@@ -250,19 +236,19 @@
 #define SDRAM_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SDRAM_IS_INITIALIZED 1
 #define SDRAM_NAME "/dev/sdram"
-#define SDRAM_POWERUP_DELAY 100.0
-#define SDRAM_REFRESH_PERIOD 15.625
+#define SDRAM_POWERUP_DELAY 200.0
+#define SDRAM_REFRESH_PERIOD 7.8125
 #define SDRAM_REGISTER_DATA_IN 1
-#define SDRAM_SDRAM_ADDR_WIDTH 0x16
+#define SDRAM_SDRAM_ADDR_WIDTH 0x19
 #define SDRAM_SDRAM_BANK_WIDTH 2
-#define SDRAM_SDRAM_COL_WIDTH 8
+#define SDRAM_SDRAM_COL_WIDTH 10
 #define SDRAM_SDRAM_DATA_WIDTH 32
 #define SDRAM_SDRAM_NUM_BANKS 4
 #define SDRAM_SDRAM_NUM_CHIPSELECTS 1
-#define SDRAM_SDRAM_ROW_WIDTH 12
+#define SDRAM_SDRAM_ROW_WIDTH 13
 #define SDRAM_SHARED_DATA 0
 #define SDRAM_SIM_MODEL_BASE 0
-#define SDRAM_SPAN 16777216
+#define SDRAM_SPAN 134217728
 #define SDRAM_STARVATION_INDICATOR 0
 #define SDRAM_TRISTATE_BRIDGE_SLAVE ""
 #define SDRAM_TYPE "altera_avalon_new_sdram_controller"
@@ -275,12 +261,43 @@
 
 
 /*
+ * spi_0 configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_spi_0 altera_avalon_spi
+#define SPI_0_BASE 0x8000820
+#define SPI_0_CLOCKMULT 1
+#define SPI_0_CLOCKPHASE 0
+#define SPI_0_CLOCKPOLARITY 0
+#define SPI_0_CLOCKUNITS "Hz"
+#define SPI_0_DATABITS 8
+#define SPI_0_DATAWIDTH 16
+#define SPI_0_DELAYMULT "1.0E-9"
+#define SPI_0_DELAYUNITS "ns"
+#define SPI_0_EXTRADELAY 0
+#define SPI_0_INSERT_SYNC 0
+#define SPI_0_IRQ 1
+#define SPI_0_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define SPI_0_ISMASTER 1
+#define SPI_0_LSBFIRST 0
+#define SPI_0_NAME "/dev/spi_0"
+#define SPI_0_NUMSLAVES 1
+#define SPI_0_PREFIX "spi_"
+#define SPI_0_SPAN 32
+#define SPI_0_SYNC_REG_DEPTH 2
+#define SPI_0_TARGETCLOCK 128000u
+#define SPI_0_TARGETSSDELAY "0.0"
+#define SPI_0_TYPE "altera_avalon_spi"
+
+
+/*
  * sprite_address_pio configuration
  *
  */
 
 #define ALT_MODULE_CLASS_sprite_address_pio altera_avalon_pio
-#define SPRITE_ADDRESS_PIO_BASE 0x1000900
+#define SPRITE_ADDRESS_PIO_BASE 0x8000910
 #define SPRITE_ADDRESS_PIO_BIT_CLEARING_EDGE_REGISTER 0
 #define SPRITE_ADDRESS_PIO_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SPRITE_ADDRESS_PIO_CAPTURE 0
@@ -307,7 +324,7 @@
  */
 
 #define ALT_MODULE_CLASS_sprite_height_pio altera_avalon_pio
-#define SPRITE_HEIGHT_PIO_BASE 0x10008e0
+#define SPRITE_HEIGHT_PIO_BASE 0x80008f0
 #define SPRITE_HEIGHT_PIO_BIT_CLEARING_EDGE_REGISTER 0
 #define SPRITE_HEIGHT_PIO_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SPRITE_HEIGHT_PIO_CAPTURE 0
@@ -334,7 +351,7 @@
  */
 
 #define ALT_MODULE_CLASS_sprite_id_pio altera_avalon_pio
-#define SPRITE_ID_PIO_BASE 0x1000910
+#define SPRITE_ID_PIO_BASE 0x8000920
 #define SPRITE_ID_PIO_BIT_CLEARING_EDGE_REGISTER 0
 #define SPRITE_ID_PIO_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SPRITE_ID_PIO_CAPTURE 0
@@ -356,12 +373,39 @@
 
 
 /*
+ * sprite_rotate_pio configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_sprite_rotate_pio altera_avalon_pio
+#define SPRITE_ROTATE_PIO_BASE 0x80008c0
+#define SPRITE_ROTATE_PIO_BIT_CLEARING_EDGE_REGISTER 0
+#define SPRITE_ROTATE_PIO_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define SPRITE_ROTATE_PIO_CAPTURE 0
+#define SPRITE_ROTATE_PIO_DATA_WIDTH 8
+#define SPRITE_ROTATE_PIO_DO_TEST_BENCH_WIRING 0
+#define SPRITE_ROTATE_PIO_DRIVEN_SIM_VALUE 0
+#define SPRITE_ROTATE_PIO_EDGE_TYPE "NONE"
+#define SPRITE_ROTATE_PIO_FREQ 100000000
+#define SPRITE_ROTATE_PIO_HAS_IN 0
+#define SPRITE_ROTATE_PIO_HAS_OUT 1
+#define SPRITE_ROTATE_PIO_HAS_TRI 0
+#define SPRITE_ROTATE_PIO_IRQ -1
+#define SPRITE_ROTATE_PIO_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define SPRITE_ROTATE_PIO_IRQ_TYPE "NONE"
+#define SPRITE_ROTATE_PIO_NAME "/dev/sprite_rotate_pio"
+#define SPRITE_ROTATE_PIO_RESET_VALUE 0
+#define SPRITE_ROTATE_PIO_SPAN 16
+#define SPRITE_ROTATE_PIO_TYPE "altera_avalon_pio"
+
+
+/*
  * sprite_width_pio configuration
  *
  */
 
 #define ALT_MODULE_CLASS_sprite_width_pio altera_avalon_pio
-#define SPRITE_WIDTH_PIO_BASE 0x10008f0
+#define SPRITE_WIDTH_PIO_BASE 0x8000900
 #define SPRITE_WIDTH_PIO_BIT_CLEARING_EDGE_REGISTER 0
 #define SPRITE_WIDTH_PIO_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SPRITE_WIDTH_PIO_CAPTURE 0
@@ -388,7 +432,7 @@
  */
 
 #define ALT_MODULE_CLASS_sprite_x_pio altera_avalon_pio
-#define SPRITE_X_PIO_BASE 0x10008d0
+#define SPRITE_X_PIO_BASE 0x80008e0
 #define SPRITE_X_PIO_BIT_CLEARING_EDGE_REGISTER 0
 #define SPRITE_X_PIO_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SPRITE_X_PIO_CAPTURE 0
@@ -415,7 +459,7 @@
  */
 
 #define ALT_MODULE_CLASS_sprite_y_pio altera_avalon_pio
-#define SPRITE_Y_PIO_BASE 0x10008c0
+#define SPRITE_Y_PIO_BASE 0x80008d0
 #define SPRITE_Y_PIO_BIT_CLEARING_EDGE_REGISTER 0
 #define SPRITE_Y_PIO_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SPRITE_Y_PIO_CAPTURE 0
@@ -442,13 +486,13 @@
  */
 
 #define ALT_MODULE_CLASS_sysid altera_avalon_sysid_qsys
-#define SYSID_BASE 0x1000800
+#define SYSID_BASE 0x8000950
 #define SYSID_ID 0
 #define SYSID_IRQ -1
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1544429596
+#define SYSID_TIMESTAMP 1544487128
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */

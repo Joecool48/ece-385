@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/output_files/") File("mario_cv_game.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("/home/joey/courses/ece385/final_project/output_files/") File("mario_cv_game.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

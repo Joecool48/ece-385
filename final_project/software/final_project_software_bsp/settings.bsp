@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Dec 10, 2018 2:41:32 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1544431292118</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Dec 10, 2018 6:15:45 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1544487345237</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/home/joey/courses/ece385/final_project/software/final_project_software_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../final_project.sopcinfo</SopcDesignFile>
@@ -900,69 +900,75 @@
         </Setting>
         <MemoryMap>
                 <slaveDescriptor>sdram</slaveDescriptor>
-                <addressRange>0x00000000 - 0x00FFFFFF</addressRange>
-                <addressSpan>16777216</addressSpan>
+                <addressRange>0x00000000 - 0x07FFFFFF</addressRange>
+                <addressSpan>134217728</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>sysid</slaveDescriptor>
-                <addressRange>0x01000800 - 0x01000807</addressRange>
-                <addressSpan>8</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>jtag_game_nios</slaveDescriptor>
-                <addressRange>0x01000808 - 0x0100080F</addressRange>
-                <addressSpan>8</addressSpan>
-                <attributes>printable</attributes>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>SdCardSlave_0</slaveDescriptor>
-                <addressRange>0x01000840 - 0x0100085F</addressRange>
+                <slaveDescriptor>spi_0</slaveDescriptor>
+                <addressRange>0x08000820 - 0x0800083F</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>sprite_rotate_pio</slaveDescriptor>
+                <addressRange>0x080008C0 - 0x080008CF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>sprite_y_pio</slaveDescriptor>
-                <addressRange>0x010008C0 - 0x010008CF</addressRange>
+                <addressRange>0x080008D0 - 0x080008DF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sprite_x_pio</slaveDescriptor>
-                <addressRange>0x010008D0 - 0x010008DF</addressRange>
+                <addressRange>0x080008E0 - 0x080008EF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sprite_height_pio</slaveDescriptor>
-                <addressRange>0x010008E0 - 0x010008EF</addressRange>
+                <addressRange>0x080008F0 - 0x080008FF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sprite_width_pio</slaveDescriptor>
-                <addressRange>0x010008F0 - 0x010008FF</addressRange>
+                <addressRange>0x08000900 - 0x0800090F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sprite_address_pio</slaveDescriptor>
-                <addressRange>0x01000900 - 0x0100090F</addressRange>
+                <addressRange>0x08000910 - 0x0800091F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sprite_id_pio</slaveDescriptor>
-                <addressRange>0x01000910 - 0x0100091F</addressRange>
+                <addressRange>0x08000920 - 0x0800092F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>pll</slaveDescriptor>
-                <addressRange>0x01000920 - 0x0100092F</addressRange>
+                <addressRange>0x08000930 - 0x0800093F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>sysid</slaveDescriptor>
+                <addressRange>0x08000950 - 0x08000957</addressRange>
+                <addressSpan>8</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>jtag_game_nios</slaveDescriptor>
+                <addressRange>0x08000958 - 0x0800095F</addressRange>
+                <addressSpan>8</addressSpan>
+                <attributes>printable</attributes>
         </MemoryMap>
         <LinkerSection>
                 <sectionName>.text</sectionName>

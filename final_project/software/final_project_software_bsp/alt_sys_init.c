@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'final_project'
  * SOPC Builder design path: ../../final_project.sopcinfo
  *
- * Generated: Tue Nov 27 15:29:38 CST 2018
+ * Generated: Mon Dec 10 18:15:45 CST 2018
  */
 
 /*
@@ -60,6 +60,7 @@
 
 #include "altera_nios2_gen2_irq.h"
 #include "altera_avalon_jtag_uart.h"
+#include "altera_avalon_spi.h"
 #include "altera_avalon_sysid_qsys.h"
 
 /*
@@ -68,6 +69,7 @@
 
 ALTERA_NIOS2_GEN2_IRQ_INSTANCE ( NIOS2_GEN2_0, nios2_gen2_0);
 ALTERA_AVALON_JTAG_UART_INSTANCE ( JTAG_GAME_NIOS, jtag_game_nios);
+ALTERA_AVALON_SPI_INSTANCE ( SPI_0, spi_0);
 ALTERA_AVALON_SYSID_QSYS_INSTANCE ( SYSID, sysid);
 
 /*
@@ -92,5 +94,6 @@ void alt_irq_init ( const void* base )
 void alt_sys_init( void )
 {
     ALTERA_AVALON_JTAG_UART_INIT ( JTAG_GAME_NIOS, jtag_game_nios);
+    ALTERA_AVALON_SPI_INIT ( SPI_0, spi_0);
     ALTERA_AVALON_SYSID_QSYS_INIT ( SYSID, sysid);
 }

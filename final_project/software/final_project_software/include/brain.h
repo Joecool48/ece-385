@@ -12,8 +12,14 @@
 // Base class for enemy AI
 class Brain {
 public:
+	const bool LEFT = 0;
+	const bool RIGHT = 1;
 	virtual ~Brain();
-	Brain();
+	Background * background;
+	Enemy * enemy;
+	void makeDecision();
+	Brain(Background * back, Enemy * enemy);
+	bool willFallOffCliff(uint16_t numFrames);
 };
 
 
