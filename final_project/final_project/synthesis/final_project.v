@@ -4,45 +4,46 @@
 
 `timescale 1 ps / 1 ps
 module final_project (
-		input  wire        avalon_control_fixed_location,  //         avalon_control.fixed_location
-		input  wire [31:0] avalon_control_read_base,       //                       .read_base
-		input  wire [31:0] avalon_control_read_length,     //                       .read_length
-		input  wire        avalon_control_go,              //                       .go
-		output wire        avalon_control_done,            //                       .done
-		output wire        avalon_control_early_done,      //                       .early_done
-		input  wire        avalon_user_read_buffer,        //            avalon_user.read_buffer
-		output wire [7:0]  avalon_user_buffer_output_data, //                       .buffer_output_data
-		output wire        avalon_user_data_available,     //                       .data_available
-		input  wire        clk_clk,                        //                    clk.clk
-		input  wire [15:0] keycode_pio_export_export,      //     keycode_pio_export.export
-		output wire [7:0]  otg_address_pio_export_export,  // otg_address_pio_export.export
-		output wire [7:0]  otg_cs_pio_export_export,       //      otg_cs_pio_export.export
-		input  wire [15:0] otg_data_pio_export_in_port,    //    otg_data_pio_export.in_port
-		output wire [15:0] otg_data_pio_export_out_port,   //                       .out_port
-		output wire [7:0]  otg_read_pio_export_export,     //    otg_read_pio_export.export
-		output wire [7:0]  otg_write_pio_export_export,    //   otg_write_pio_export.export
-		input  wire        reset_reset_n,                  //                  reset.reset_n
-		output wire        sdram_clk_clk,                  //              sdram_clk.clk
-		output wire [12:0] sdram_wire_addr,                //             sdram_wire.addr
-		output wire [1:0]  sdram_wire_ba,                  //                       .ba
-		output wire        sdram_wire_cas_n,               //                       .cas_n
-		output wire        sdram_wire_cke,                 //                       .cke
-		output wire        sdram_wire_cs_n,                //                       .cs_n
-		inout  wire [31:0] sdram_wire_dq,                  //                       .dq
-		output wire [3:0]  sdram_wire_dqm,                 //                       .dqm
-		output wire        sdram_wire_ras_n,               //                       .ras_n
-		output wire        sdram_wire_we_n,                //                       .we_n
-		output wire [31:0] sprite_address_pio_export,      //     sprite_address_pio.export
-		output wire [15:0] sprite_height_pio_export,       //      sprite_height_pio.export
-		output wire [15:0] sprite_id_pio_export,           //          sprite_id_pio.export
-		output wire [7:0]  sprite_rotate_pio_export,       //      sprite_rotate_pio.export
-		output wire [15:0] sprite_width_pio_export,        //       sprite_width_pio.export
-		output wire [15:0] sprite_x_pio_export,            //           sprite_x_pio.export
-		output wire [15:0] sprite_y_pio_export,            //           sprite_y_pio.export
-		output wire        sys_clk_clk                     //                sys_clk.clk
+		input  wire        avalon_control_fixed_location,   //           avalon_control.fixed_location
+		input  wire [31:0] avalon_control_read_base,        //                         .read_base
+		input  wire [31:0] avalon_control_read_length,      //                         .read_length
+		input  wire        avalon_control_go,               //                         .go
+		output wire        avalon_control_done,             //                         .done
+		output wire        avalon_control_early_done,       //                         .early_done
+		input  wire        avalon_user_read_buffer,         //              avalon_user.read_buffer
+		output wire [7:0]  avalon_user_buffer_output_data,  //                         .buffer_output_data
+		output wire        avalon_user_data_available,      //                         .data_available
+		input  wire        clk_clk,                         //                      clk.clk
+		input  wire [7:0]  hardware_done_pio_export_export, // hardware_done_pio_export.export
+		input  wire [15:0] keycode_pio_export_export,       //       keycode_pio_export.export
+		output wire [7:0]  otg_address_pio_export_export,   //   otg_address_pio_export.export
+		output wire [7:0]  otg_cs_pio_export_export,        //        otg_cs_pio_export.export
+		input  wire [15:0] otg_data_pio_export_in_port,     //      otg_data_pio_export.in_port
+		output wire [15:0] otg_data_pio_export_out_port,    //                         .out_port
+		output wire [7:0]  otg_read_pio_export_export,      //      otg_read_pio_export.export
+		output wire [7:0]  otg_write_pio_export_export,     //     otg_write_pio_export.export
+		input  wire        reset_reset_n,                   //                    reset.reset_n
+		output wire        sdram_clk_clk,                   //                sdram_clk.clk
+		output wire [12:0] sdram_wire_addr,                 //               sdram_wire.addr
+		output wire [1:0]  sdram_wire_ba,                   //                         .ba
+		output wire        sdram_wire_cas_n,                //                         .cas_n
+		output wire        sdram_wire_cke,                  //                         .cke
+		output wire        sdram_wire_cs_n,                 //                         .cs_n
+		inout  wire [31:0] sdram_wire_dq,                   //                         .dq
+		output wire [3:0]  sdram_wire_dqm,                  //                         .dqm
+		output wire        sdram_wire_ras_n,                //                         .ras_n
+		output wire        sdram_wire_we_n,                 //                         .we_n
+		output wire [31:0] sprite_address_pio_export,       //       sprite_address_pio.export
+		output wire [15:0] sprite_height_pio_export,        //        sprite_height_pio.export
+		output wire [15:0] sprite_id_pio_export,            //            sprite_id_pio.export
+		output wire [7:0]  sprite_rotate_pio_export,        //        sprite_rotate_pio.export
+		output wire [15:0] sprite_width_pio_export,         //         sprite_width_pio.export
+		output wire [15:0] sprite_x_pio_export,             //             sprite_x_pio.export
+		output wire [15:0] sprite_y_pio_export,             //             sprite_y_pio.export
+		output wire        sys_clk_clk                      //                  sys_clk.clk
 	);
 
-	wire         pll_c0_clk;                                                     // pll:c0 -> [irq_mapper:clk, irq_mapper_001:clk, jtag_game_nios:clk, keycode_pio:clk, master_template_0:clk, mm_interconnect_0:pll_c0_clk, nios2_gen2_0:clk, nios2_gen2_1:clk, otg_address_pio:clk, otg_cs_pio:clk, otg_data_pio:clk, otg_read_pio:clk, otg_write_pio:clk, rst_controller:clk, sdram:clk, sprite_address_pio:clk, sprite_height_pio:clk, sprite_id_pio:clk, sprite_rotate_pio:clk, sprite_width_pio:clk, sprite_x_pio:clk, sprite_y_pio:clk, sysid:clock]
+	wire         pll_c0_clk;                                                     // pll:c0 -> [hardware_done_pio:clk, irq_mapper:clk, irq_mapper_001:clk, jtag_game_nios:clk, keycode_pio:clk, master_template_0:clk, mm_interconnect_0:pll_c0_clk, nios2_gen2_0:clk, nios2_gen2_1:clk, otg_address_pio:clk, otg_cs_pio:clk, otg_data_pio:clk, otg_read_pio:clk, otg_write_pio:clk, rst_controller:clk, sdram:clk, sprite_address_pio:clk, sprite_height_pio:clk, sprite_id_pio:clk, sprite_rotate_pio:clk, sprite_width_pio:clk, sprite_x_pio:clk, sprite_y_pio:clk, sysid:clock]
 	wire   [7:0] master_template_0_avalon_master_readdata;                       // mm_interconnect_0:master_template_0_avalon_master_readdata -> master_template_0:master_readdata
 	wire         master_template_0_avalon_master_waitrequest;                    // mm_interconnect_0:master_template_0_avalon_master_waitrequest -> master_template_0:master_waitrequest
 	wire  [31:0] master_template_0_avalon_master_address;                        // master_template_0:master_address -> mm_interconnect_0:master_template_0_avalon_master_address
@@ -99,6 +100,35 @@ module final_project (
 	wire         mm_interconnect_0_sdram_s1_readdatavalid;                       // sdram:za_valid -> mm_interconnect_0:sdram_s1_readdatavalid
 	wire         mm_interconnect_0_sdram_s1_write;                               // mm_interconnect_0:sdram_s1_write -> sdram:az_wr_n
 	wire  [31:0] mm_interconnect_0_sdram_s1_writedata;                           // mm_interconnect_0:sdram_s1_writedata -> sdram:az_data
+	wire         mm_interconnect_0_otg_address_pio_s1_chipselect;                // mm_interconnect_0:otg_address_pio_s1_chipselect -> otg_address_pio:chipselect
+	wire  [31:0] mm_interconnect_0_otg_address_pio_s1_readdata;                  // otg_address_pio:readdata -> mm_interconnect_0:otg_address_pio_s1_readdata
+	wire   [1:0] mm_interconnect_0_otg_address_pio_s1_address;                   // mm_interconnect_0:otg_address_pio_s1_address -> otg_address_pio:address
+	wire         mm_interconnect_0_otg_address_pio_s1_write;                     // mm_interconnect_0:otg_address_pio_s1_write -> otg_address_pio:write_n
+	wire  [31:0] mm_interconnect_0_otg_address_pio_s1_writedata;                 // mm_interconnect_0:otg_address_pio_s1_writedata -> otg_address_pio:writedata
+	wire         mm_interconnect_0_otg_write_pio_s1_chipselect;                  // mm_interconnect_0:otg_write_pio_s1_chipselect -> otg_write_pio:chipselect
+	wire  [31:0] mm_interconnect_0_otg_write_pio_s1_readdata;                    // otg_write_pio:readdata -> mm_interconnect_0:otg_write_pio_s1_readdata
+	wire   [1:0] mm_interconnect_0_otg_write_pio_s1_address;                     // mm_interconnect_0:otg_write_pio_s1_address -> otg_write_pio:address
+	wire         mm_interconnect_0_otg_write_pio_s1_write;                       // mm_interconnect_0:otg_write_pio_s1_write -> otg_write_pio:write_n
+	wire  [31:0] mm_interconnect_0_otg_write_pio_s1_writedata;                   // mm_interconnect_0:otg_write_pio_s1_writedata -> otg_write_pio:writedata
+	wire         mm_interconnect_0_otg_read_pio_s1_chipselect;                   // mm_interconnect_0:otg_read_pio_s1_chipselect -> otg_read_pio:chipselect
+	wire  [31:0] mm_interconnect_0_otg_read_pio_s1_readdata;                     // otg_read_pio:readdata -> mm_interconnect_0:otg_read_pio_s1_readdata
+	wire   [1:0] mm_interconnect_0_otg_read_pio_s1_address;                      // mm_interconnect_0:otg_read_pio_s1_address -> otg_read_pio:address
+	wire         mm_interconnect_0_otg_read_pio_s1_write;                        // mm_interconnect_0:otg_read_pio_s1_write -> otg_read_pio:write_n
+	wire  [31:0] mm_interconnect_0_otg_read_pio_s1_writedata;                    // mm_interconnect_0:otg_read_pio_s1_writedata -> otg_read_pio:writedata
+	wire         mm_interconnect_0_otg_cs_pio_s1_chipselect;                     // mm_interconnect_0:otg_cs_pio_s1_chipselect -> otg_cs_pio:chipselect
+	wire  [31:0] mm_interconnect_0_otg_cs_pio_s1_readdata;                       // otg_cs_pio:readdata -> mm_interconnect_0:otg_cs_pio_s1_readdata
+	wire   [1:0] mm_interconnect_0_otg_cs_pio_s1_address;                        // mm_interconnect_0:otg_cs_pio_s1_address -> otg_cs_pio:address
+	wire         mm_interconnect_0_otg_cs_pio_s1_write;                          // mm_interconnect_0:otg_cs_pio_s1_write -> otg_cs_pio:write_n
+	wire  [31:0] mm_interconnect_0_otg_cs_pio_s1_writedata;                      // mm_interconnect_0:otg_cs_pio_s1_writedata -> otg_cs_pio:writedata
+	wire         mm_interconnect_0_otg_data_pio_s1_chipselect;                   // mm_interconnect_0:otg_data_pio_s1_chipselect -> otg_data_pio:chipselect
+	wire  [31:0] mm_interconnect_0_otg_data_pio_s1_readdata;                     // otg_data_pio:readdata -> mm_interconnect_0:otg_data_pio_s1_readdata
+	wire   [1:0] mm_interconnect_0_otg_data_pio_s1_address;                      // mm_interconnect_0:otg_data_pio_s1_address -> otg_data_pio:address
+	wire         mm_interconnect_0_otg_data_pio_s1_write;                        // mm_interconnect_0:otg_data_pio_s1_write -> otg_data_pio:write_n
+	wire  [31:0] mm_interconnect_0_otg_data_pio_s1_writedata;                    // mm_interconnect_0:otg_data_pio_s1_writedata -> otg_data_pio:writedata
+	wire  [31:0] mm_interconnect_0_keycode_pio_s1_readdata;                      // keycode_pio:readdata -> mm_interconnect_0:keycode_pio_s1_readdata
+	wire   [1:0] mm_interconnect_0_keycode_pio_s1_address;                       // mm_interconnect_0:keycode_pio_s1_address -> keycode_pio:address
+	wire  [31:0] mm_interconnect_0_hardware_done_pio_s1_readdata;                // hardware_done_pio:readdata -> mm_interconnect_0:hardware_done_pio_s1_readdata
+	wire   [1:0] mm_interconnect_0_hardware_done_pio_s1_address;                 // mm_interconnect_0:hardware_done_pio_s1_address -> hardware_done_pio:address
 	wire         mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_chipselect;  // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_chipselect -> jtag_game_nios:av_chipselect
 	wire  [31:0] mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_readdata;    // jtag_game_nios:av_readdata -> mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_readdata
 	wire         mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_waitrequest; // jtag_game_nios:av_waitrequest -> mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_waitrequest
@@ -148,39 +178,20 @@ module final_project (
 	wire   [1:0] mm_interconnect_0_sprite_rotate_pio_s1_address;                 // mm_interconnect_0:sprite_rotate_pio_s1_address -> sprite_rotate_pio:address
 	wire         mm_interconnect_0_sprite_rotate_pio_s1_write;                   // mm_interconnect_0:sprite_rotate_pio_s1_write -> sprite_rotate_pio:write_n
 	wire  [31:0] mm_interconnect_0_sprite_rotate_pio_s1_writedata;               // mm_interconnect_0:sprite_rotate_pio_s1_writedata -> sprite_rotate_pio:writedata
-	wire         mm_interconnect_0_otg_address_pio_s1_chipselect;                // mm_interconnect_0:otg_address_pio_s1_chipselect -> otg_address_pio:chipselect
-	wire  [31:0] mm_interconnect_0_otg_address_pio_s1_readdata;                  // otg_address_pio:readdata -> mm_interconnect_0:otg_address_pio_s1_readdata
-	wire   [1:0] mm_interconnect_0_otg_address_pio_s1_address;                   // mm_interconnect_0:otg_address_pio_s1_address -> otg_address_pio:address
-	wire         mm_interconnect_0_otg_address_pio_s1_write;                     // mm_interconnect_0:otg_address_pio_s1_write -> otg_address_pio:write_n
-	wire  [31:0] mm_interconnect_0_otg_address_pio_s1_writedata;                 // mm_interconnect_0:otg_address_pio_s1_writedata -> otg_address_pio:writedata
-	wire         mm_interconnect_0_otg_write_pio_s1_chipselect;                  // mm_interconnect_0:otg_write_pio_s1_chipselect -> otg_write_pio:chipselect
-	wire  [31:0] mm_interconnect_0_otg_write_pio_s1_readdata;                    // otg_write_pio:readdata -> mm_interconnect_0:otg_write_pio_s1_readdata
-	wire   [1:0] mm_interconnect_0_otg_write_pio_s1_address;                     // mm_interconnect_0:otg_write_pio_s1_address -> otg_write_pio:address
-	wire         mm_interconnect_0_otg_write_pio_s1_write;                       // mm_interconnect_0:otg_write_pio_s1_write -> otg_write_pio:write_n
-	wire  [31:0] mm_interconnect_0_otg_write_pio_s1_writedata;                   // mm_interconnect_0:otg_write_pio_s1_writedata -> otg_write_pio:writedata
-	wire         mm_interconnect_0_otg_read_pio_s1_chipselect;                   // mm_interconnect_0:otg_read_pio_s1_chipselect -> otg_read_pio:chipselect
-	wire  [31:0] mm_interconnect_0_otg_read_pio_s1_readdata;                     // otg_read_pio:readdata -> mm_interconnect_0:otg_read_pio_s1_readdata
-	wire   [1:0] mm_interconnect_0_otg_read_pio_s1_address;                      // mm_interconnect_0:otg_read_pio_s1_address -> otg_read_pio:address
-	wire         mm_interconnect_0_otg_read_pio_s1_write;                        // mm_interconnect_0:otg_read_pio_s1_write -> otg_read_pio:write_n
-	wire  [31:0] mm_interconnect_0_otg_read_pio_s1_writedata;                    // mm_interconnect_0:otg_read_pio_s1_writedata -> otg_read_pio:writedata
-	wire         mm_interconnect_0_otg_cs_pio_s1_chipselect;                     // mm_interconnect_0:otg_cs_pio_s1_chipselect -> otg_cs_pio:chipselect
-	wire  [31:0] mm_interconnect_0_otg_cs_pio_s1_readdata;                       // otg_cs_pio:readdata -> mm_interconnect_0:otg_cs_pio_s1_readdata
-	wire   [1:0] mm_interconnect_0_otg_cs_pio_s1_address;                        // mm_interconnect_0:otg_cs_pio_s1_address -> otg_cs_pio:address
-	wire         mm_interconnect_0_otg_cs_pio_s1_write;                          // mm_interconnect_0:otg_cs_pio_s1_write -> otg_cs_pio:write_n
-	wire  [31:0] mm_interconnect_0_otg_cs_pio_s1_writedata;                      // mm_interconnect_0:otg_cs_pio_s1_writedata -> otg_cs_pio:writedata
-	wire         mm_interconnect_0_otg_data_pio_s1_chipselect;                   // mm_interconnect_0:otg_data_pio_s1_chipselect -> otg_data_pio:chipselect
-	wire  [31:0] mm_interconnect_0_otg_data_pio_s1_readdata;                     // otg_data_pio:readdata -> mm_interconnect_0:otg_data_pio_s1_readdata
-	wire   [1:0] mm_interconnect_0_otg_data_pio_s1_address;                      // mm_interconnect_0:otg_data_pio_s1_address -> otg_data_pio:address
-	wire         mm_interconnect_0_otg_data_pio_s1_write;                        // mm_interconnect_0:otg_data_pio_s1_write -> otg_data_pio:write_n
-	wire  [31:0] mm_interconnect_0_otg_data_pio_s1_writedata;                    // mm_interconnect_0:otg_data_pio_s1_writedata -> otg_data_pio:writedata
-	wire  [31:0] mm_interconnect_0_keycode_pio_s1_readdata;                      // keycode_pio:readdata -> mm_interconnect_0:keycode_pio_s1_readdata
-	wire   [1:0] mm_interconnect_0_keycode_pio_s1_address;                       // mm_interconnect_0:keycode_pio_s1_address -> keycode_pio:address
 	wire         irq_mapper_receiver0_irq;                                       // jtag_game_nios:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] nios2_gen2_0_irq_irq;                                           // irq_mapper:sender_irq -> nios2_gen2_0:irq
 	wire  [31:0] nios2_gen2_1_irq_irq;                                           // irq_mapper_001:sender_irq -> nios2_gen2_1:irq
-	wire         rst_controller_reset_out_reset;                                 // rst_controller:reset_out -> [irq_mapper:reset, irq_mapper_001:reset, jtag_game_nios:rst_n, keycode_pio:reset_n, master_template_0:reset, mm_interconnect_0:master_template_0_clock_reset_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, nios2_gen2_1:reset_n, otg_address_pio:reset_n, otg_cs_pio:reset_n, otg_data_pio:reset_n, otg_read_pio:reset_n, otg_write_pio:reset_n, rst_translator:in_reset, sdram:reset_n, sprite_address_pio:reset_n, sprite_height_pio:reset_n, sprite_id_pio:reset_n, sprite_rotate_pio:reset_n, sprite_width_pio:reset_n, sprite_x_pio:reset_n, sprite_y_pio:reset_n, sysid:reset_n]
+	wire         rst_controller_reset_out_reset;                                 // rst_controller:reset_out -> [hardware_done_pio:reset_n, irq_mapper:reset, irq_mapper_001:reset, jtag_game_nios:rst_n, keycode_pio:reset_n, master_template_0:reset, mm_interconnect_0:master_template_0_clock_reset_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, nios2_gen2_1:reset_n, otg_address_pio:reset_n, otg_cs_pio:reset_n, otg_data_pio:reset_n, otg_read_pio:reset_n, otg_write_pio:reset_n, rst_translator:in_reset, sdram:reset_n, sprite_address_pio:reset_n, sprite_height_pio:reset_n, sprite_id_pio:reset_n, sprite_rotate_pio:reset_n, sprite_width_pio:reset_n, sprite_x_pio:reset_n, sprite_y_pio:reset_n, sysid:reset_n]
 	wire         rst_controller_reset_out_reset_req;                             // rst_controller:reset_req -> [nios2_gen2_0:reset_req, nios2_gen2_1:reset_req, rst_translator:reset_req_in]
 	wire         rst_controller_001_reset_out_reset;                             // rst_controller_001:reset_out -> [mm_interconnect_0:pll_inclk_interface_reset_reset_bridge_in_reset_reset, pll:reset]
+
+	final_project_hardware_done_pio hardware_done_pio (
+		.clk      (pll_c0_clk),                                      //                 clk.clk
+		.reset_n  (~rst_controller_reset_out_reset),                 //               reset.reset_n
+		.address  (mm_interconnect_0_hardware_done_pio_s1_address),  //                  s1.address
+		.readdata (mm_interconnect_0_hardware_done_pio_s1_readdata), //                    .readdata
+		.in_port  (hardware_done_pio_export_export)                  // external_connection.export
+	);
 
 	final_project_jtag_game_nios jtag_game_nios (
 		.clk            (pll_c0_clk),                                                     //               clk.clk
@@ -524,6 +535,8 @@ module final_project (
 		.nios2_gen2_1_instruction_master_waitrequest                     (nios2_gen2_1_instruction_master_waitrequest),                    //                                                          .waitrequest
 		.nios2_gen2_1_instruction_master_read                            (nios2_gen2_1_instruction_master_read),                           //                                                          .read
 		.nios2_gen2_1_instruction_master_readdata                        (nios2_gen2_1_instruction_master_readdata),                       //                                                          .readdata
+		.hardware_done_pio_s1_address                                    (mm_interconnect_0_hardware_done_pio_s1_address),                 //                                      hardware_done_pio_s1.address
+		.hardware_done_pio_s1_readdata                                   (mm_interconnect_0_hardware_done_pio_s1_readdata),                //                                                          .readdata
 		.jtag_game_nios_avalon_jtag_slave_address                        (mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_address),     //                          jtag_game_nios_avalon_jtag_slave.address
 		.jtag_game_nios_avalon_jtag_slave_write                          (mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_write),       //                                                          .write
 		.jtag_game_nios_avalon_jtag_slave_read                           (mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_read),        //                                                          .read

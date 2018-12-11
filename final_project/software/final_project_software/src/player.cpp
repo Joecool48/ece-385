@@ -376,9 +376,6 @@ void Player::idleState () {
 		std::cout << "Throwing fire" << std::endl;
 		current_anim_state = THROWFIREBALL;
 	}
-	else if (Keyboard::multipleKeysPressed()) {
-		current_anim_state = SLIDING;
-	}
 }
 /*
  * Function for when the player is walking

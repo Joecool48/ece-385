@@ -27,13 +27,13 @@ public:
 	static bool key_fireball(bool keyboardEnable);
 	static bool key_pause();
 	static bool keys_pressed();
-	static bool multipleKeysPressed(); // Returns true if mult keys pressed
-	static volatile uint8_t * const SCANCODE_PIO;
+	static volatile uint16_t * const SCANCODE_PIO;
 	//volatile uint32_t * const SCANCODE_PIO = (uint32_t*) 0x3132313;
-	static uint8_t scancode;
-	static set<Key> keys;
-	static map<uint8_t, Key> key_ups;
-	static map<uint8_t, Key> key_downs;
+//	static uint8_t scancode;
+//	static set<Key> keys;
+//	static map<uint8_t, Key> key_ups;
+//	static map<uint8_t, Key> key_downs;
+	static map<uint8_t, Key> keys;
 };
 
 

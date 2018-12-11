@@ -1145,3 +1145,21 @@ Info:                                     130985 KBytes free for stack + heap.
 Info: Creating final_project_keyboard_parser.objdump
 nios2-elf-objdump --disassemble --syms --all-header --source final_project_keyboard_parser.elf >final_project_keyboard_parser.objdump
 [final_project_keyboard_parser build complete]
+11:28:51 **** Incremental Build of configuration Nios II for project final_project_keyboard_parser ****
+make all 
+Info: Building ../final_project_keyboard_parser_bsp/
+make --no-print-directory -C ../final_project_keyboard_parser_bsp/
+Makefile not up to date.
+../../final_project.sopcinfo has been modified since the BSP was generated.
+
+Generate the BSP to update the Makefile, and then build again.
+
+To generate from Eclipse:
+ 1. Right-click the BSP project.
+ 2. In the Nios II Menu, click Generate BSP.
+
+To generate from the command line:
+ nios2-bsp-generate-files --settings=<settings file> --bsp-dir=<target bsp files directory>
+
+make[1]: *** [Makefile:557: public.mk] Error 1
+make: *** [Makefile:895: ../final_project_keyboard_parser_bsp/-recurs-make-lib] Error 2

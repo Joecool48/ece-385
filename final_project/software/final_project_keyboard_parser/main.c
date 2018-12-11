@@ -32,7 +32,7 @@
 #include "usb.h"
 #include "lcp_cmd.h"
 #include "lcp_data.h"
-#define KEYCODE_BASE		0x80010e0
+#define KEYCODE_BASE		0x8001010
 
 //----------------------------------------------------------------------------------------//
 //

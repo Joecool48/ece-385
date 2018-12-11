@@ -23,11 +23,10 @@ public:
 	static volatile uint32_t * const SPRITE_ADDRESS_PIO;
 	static volatile uint8_t * const SPRITE_FLIP_MODE_PIO;
 	static volatile uint8_t * const HARDWARE_DONE;
-	static volatile uint8_t * const SOFTWARE_DONE;
-	static int16_t sprite_x, sprite_y, sprite_width, sprite_height, sprite_id;
-	static uint32_t sprite_address;
-	static uint8_t sprite_flip_mode;
-	static uint8_t hardware_done, software_done;
+//	static int16_t sprite_x, sprite_y, sprite_width, sprite_height, sprite_id;
+//	static uint32_t sprite_address;
+//	static uint8_t sprite_flip_mode;
+//	static uint8_t hardware_done, software_done;
 	//// Sprite PIO Start Addresses
 	//volatile uint32_t * const SPRITE_X_PIO = (uint32_t*) 0x01000890;
 	//volatile uint32_t * const SPRITE_Y_PIO = (uint32_t*) 0x01000880;

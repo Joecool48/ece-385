@@ -37,5 +37,5 @@ bool Brain::willFallOffCliff(uint16_t numFrames) {
 	if(update_collider.collides_with(enemy->last_collided) && !background->outOfBounds(update_collider)) {
 		return false;
 	}
-	return false;
+	return true;
 }

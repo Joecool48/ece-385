@@ -4,6 +4,8 @@ Progress: Loading final_project/final_project.qsys
 Progress: Reading input file
 Progress: Adding clk_0 [clock_source 18.1]
 Progress: Parameterizing module clk_0
+Progress: Adding hardware_done_pio [altera_avalon_pio 18.1]
+Progress: Parameterizing module hardware_done_pio
 Progress: Adding jtag_game_nios [altera_avalon_jtag_uart 18.1]
 Progress: Parameterizing module jtag_game_nios
 Progress: Adding keycode_pio [altera_avalon_pio 18.1]
@@ -48,6 +50,7 @@ Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
+Info: final_project.hardware_done_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: final_project.jtag_game_nios: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
 Info: final_project.keycode_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: final_project.otg_data_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
@@ -63,6 +66,8 @@ Progress: Loading final_project/final_project.qsys
 Progress: Reading input file
 Progress: Adding clk_0 [clock_source 18.1]
 Progress: Parameterizing module clk_0
+Progress: Adding hardware_done_pio [altera_avalon_pio 18.1]
+Progress: Parameterizing module hardware_done_pio
 Progress: Adding jtag_game_nios [altera_avalon_jtag_uart 18.1]
 Progress: Parameterizing module jtag_game_nios
 Progress: Adding keycode_pio [altera_avalon_pio 18.1]
@@ -107,6 +112,7 @@ Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
+Info: final_project.hardware_done_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: final_project.jtag_game_nios: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
 Info: final_project.keycode_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: final_project.otg_data_pio: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
@@ -114,40 +120,44 @@ Info: final_project.sdram: SDRAM Controller will only be supported in Quartus Pr
 Info: final_project.sysid: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
 Info: final_project.sysid: Time stamp will be automatically updated when this component is generated.
 Info: final_project: Generating final_project "final_project" for QUARTUS_SYNTH
-Info: Inserting clock-crossing logic between cmd_demux_001.src5 and cmd_mux_005.sink0
-Info: Inserting clock-crossing logic between cmd_demux_002.src5 and cmd_mux_005.sink1
-Info: Inserting clock-crossing logic between rsp_demux_005.src0 and rsp_mux_001.sink5
-Info: Inserting clock-crossing logic between rsp_demux_005.src1 and rsp_mux_002.sink5
+Info: Inserting clock-crossing logic between cmd_demux_001.src12 and cmd_mux_012.sink0
+Info: Inserting clock-crossing logic between cmd_demux_002.src12 and cmd_mux_012.sink1
+Info: Inserting clock-crossing logic between rsp_demux_012.src0 and rsp_mux_001.sink12
+Info: Inserting clock-crossing logic between rsp_demux_012.src1 and rsp_mux_002.sink12
+Info: hardware_done_pio: Starting RTL generation for module 'final_project_hardware_done_pio'
+Info: hardware_done_pio:   Generation command is [exec /opt/altera/18.1/quartus/linux64/perl/bin/perl -I /opt/altera/18.1/quartus/linux64/perl/lib -I /opt/altera/18.1/quartus/sopc_builder/bin/europa -I /opt/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/18.1/quartus/sopc_builder/bin -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=final_project_hardware_done_pio --dir=/tmp/alt7876_3245764822259536411.dir/0006_hardware_done_pio_gen/ --quartus_dir=/opt/altera/18.1/quartus --verilog --config=/tmp/alt7876_3245764822259536411.dir/0006_hardware_done_pio_gen//final_project_hardware_done_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: hardware_done_pio: Done RTL generation for module 'final_project_hardware_done_pio'
+Info: hardware_done_pio: "final_project" instantiated altera_avalon_pio "hardware_done_pio"
 Info: jtag_game_nios: Starting RTL generation for module 'final_project_jtag_game_nios'
-Info: jtag_game_nios:   Generation command is [exec /opt/altera/18.1/quartus/linux64/perl/bin/perl -I /opt/altera/18.1/quartus/linux64/perl/lib -I /opt/altera/18.1/quartus/sopc_builder/bin/europa -I /opt/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/18.1/quartus/sopc_builder/bin -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=final_project_jtag_game_nios --dir=/tmp/alt7876_4066988170493024664.dir/0096_jtag_game_nios_gen/ --quartus_dir=/opt/altera/18.1/quartus --verilog --config=/tmp/alt7876_4066988170493024664.dir/0096_jtag_game_nios_gen//final_project_jtag_game_nios_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_game_nios:   Generation command is [exec /opt/altera/18.1/quartus/linux64/perl/bin/perl -I /opt/altera/18.1/quartus/linux64/perl/lib -I /opt/altera/18.1/quartus/sopc_builder/bin/europa -I /opt/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/18.1/quartus/sopc_builder/bin -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=final_project_jtag_game_nios --dir=/tmp/alt7876_3245764822259536411.dir/0007_jtag_game_nios_gen/ --quartus_dir=/opt/altera/18.1/quartus --verilog --config=/tmp/alt7876_3245764822259536411.dir/0007_jtag_game_nios_gen//final_project_jtag_game_nios_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_game_nios: Done RTL generation for module 'final_project_jtag_game_nios'
 Info: jtag_game_nios: "final_project" instantiated altera_avalon_jtag_uart "jtag_game_nios"
 Info: keycode_pio: Starting RTL generation for module 'final_project_keycode_pio'
-Info: keycode_pio:   Generation command is [exec /opt/altera/18.1/quartus/linux64/perl/bin/perl -I /opt/altera/18.1/quartus/linux64/perl/lib -I /opt/altera/18.1/quartus/sopc_builder/bin/europa -I /opt/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/18.1/quartus/sopc_builder/bin -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=final_project_keycode_pio --dir=/tmp/alt7876_4066988170493024664.dir/0097_keycode_pio_gen/ --quartus_dir=/opt/altera/18.1/quartus --verilog --config=/tmp/alt7876_4066988170493024664.dir/0097_keycode_pio_gen//final_project_keycode_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: keycode_pio:   Generation command is [exec /opt/altera/18.1/quartus/linux64/perl/bin/perl -I /opt/altera/18.1/quartus/linux64/perl/lib -I /opt/altera/18.1/quartus/sopc_builder/bin/europa -I /opt/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/18.1/quartus/sopc_builder/bin -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=final_project_keycode_pio --dir=/tmp/alt7876_3245764822259536411.dir/0008_keycode_pio_gen/ --quartus_dir=/opt/altera/18.1/quartus --verilog --config=/tmp/alt7876_3245764822259536411.dir/0008_keycode_pio_gen//final_project_keycode_pio_component_configuration.pl  --do_build_sim=0  ]
 Info: keycode_pio: Done RTL generation for module 'final_project_keycode_pio'
 Info: keycode_pio: "final_project" instantiated altera_avalon_pio "keycode_pio"
 Info: master_template_0: "final_project" instantiated master_template "master_template_0"
 Info: nios2_gen2_0: "final_project" instantiated altera_nios2_gen2 "nios2_gen2_0"
 Info: nios2_gen2_1: "final_project" instantiated altera_nios2_gen2 "nios2_gen2_1"
 Info: otg_address_pio: Starting RTL generation for module 'final_project_otg_address_pio'
-Info: otg_address_pio:   Generation command is [exec /opt/altera/18.1/quartus/linux64/perl/bin/perl -I /opt/altera/18.1/quartus/linux64/perl/lib -I /opt/altera/18.1/quartus/sopc_builder/bin/europa -I /opt/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/18.1/quartus/sopc_builder/bin -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=final_project_otg_address_pio --dir=/tmp/alt7876_4066988170493024664.dir/0099_otg_address_pio_gen/ --quartus_dir=/opt/altera/18.1/quartus --verilog --config=/tmp/alt7876_4066988170493024664.dir/0099_otg_address_pio_gen//final_project_otg_address_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: otg_address_pio:   Generation command is [exec /opt/altera/18.1/quartus/linux64/perl/bin/perl -I /opt/altera/18.1/quartus/linux64/perl/lib -I /opt/altera/18.1/quartus/sopc_builder/bin/europa -I /opt/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/18.1/quartus/sopc_builder/bin -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=final_project_otg_address_pio --dir=/tmp/alt7876_3245764822259536411.dir/0010_otg_address_pio_gen/ --quartus_dir=/opt/altera/18.1/quartus --verilog --config=/tmp/alt7876_3245764822259536411.dir/0010_otg_address_pio_gen//final_project_otg_address_pio_component_configuration.pl  --do_build_sim=0  ]
 Info: otg_address_pio: Done RTL generation for module 'final_project_otg_address_pio'
 Info: otg_address_pio: "final_project" instantiated altera_avalon_pio "otg_address_pio"
 Info: otg_data_pio: Starting RTL generation for module 'final_project_otg_data_pio'
-Info: otg_data_pio:   Generation command is [exec /opt/altera/18.1/quartus/linux64/perl/bin/perl -I /opt/altera/18.1/quartus/linux64/perl/lib -I /opt/altera/18.1/quartus/sopc_builder/bin/europa -I /opt/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/18.1/quartus/sopc_builder/bin -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=final_project_otg_data_pio --dir=/tmp/alt7876_4066988170493024664.dir/0100_otg_data_pio_gen/ --quartus_dir=/opt/altera/18.1/quartus --verilog --config=/tmp/alt7876_4066988170493024664.dir/0100_otg_data_pio_gen//final_project_otg_data_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: otg_data_pio:   Generation command is [exec /opt/altera/18.1/quartus/linux64/perl/bin/perl -I /opt/altera/18.1/quartus/linux64/perl/lib -I /opt/altera/18.1/quartus/sopc_builder/bin/europa -I /opt/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/18.1/quartus/sopc_builder/bin -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=final_project_otg_data_pio --dir=/tmp/alt7876_3245764822259536411.dir/0011_otg_data_pio_gen/ --quartus_dir=/opt/altera/18.1/quartus --verilog --config=/tmp/alt7876_3245764822259536411.dir/0011_otg_data_pio_gen//final_project_otg_data_pio_component_configuration.pl  --do_build_sim=0  ]
 Info: otg_data_pio: Done RTL generation for module 'final_project_otg_data_pio'
 Info: otg_data_pio: "final_project" instantiated altera_avalon_pio "otg_data_pio"
 Info: pll: "final_project" instantiated altpll "pll"
 Info: sdram: Starting RTL generation for module 'final_project_sdram'
-Info: sdram:   Generation command is [exec /opt/altera/18.1/quartus/linux64/perl/bin/perl -I /opt/altera/18.1/quartus/linux64/perl/lib -I /opt/altera/18.1/quartus/sopc_builder/bin/europa -I /opt/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/18.1/quartus/sopc_builder/bin -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=final_project_sdram --dir=/tmp/alt7876_4066988170493024664.dir/0103_sdram_gen/ --quartus_dir=/opt/altera/18.1/quartus --verilog --config=/tmp/alt7876_4066988170493024664.dir/0103_sdram_gen//final_project_sdram_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram:   Generation command is [exec /opt/altera/18.1/quartus/linux64/perl/bin/perl -I /opt/altera/18.1/quartus/linux64/perl/lib -I /opt/altera/18.1/quartus/sopc_builder/bin/europa -I /opt/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/18.1/quartus/sopc_builder/bin -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=final_project_sdram --dir=/tmp/alt7876_3245764822259536411.dir/0014_sdram_gen/ --quartus_dir=/opt/altera/18.1/quartus --verilog --config=/tmp/alt7876_3245764822259536411.dir/0014_sdram_gen//final_project_sdram_component_configuration.pl  --do_build_sim=0  ]
 Info: sdram: Done RTL generation for module 'final_project_sdram'
 Info: sdram: "final_project" instantiated altera_avalon_new_sdram_controller "sdram"
 Info: sprite_address_pio: Starting RTL generation for module 'final_project_sprite_address_pio'
-Info: sprite_address_pio:   Generation command is [exec /opt/altera/18.1/quartus/linux64/perl/bin/perl -I /opt/altera/18.1/quartus/linux64/perl/lib -I /opt/altera/18.1/quartus/sopc_builder/bin/europa -I /opt/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/18.1/quartus/sopc_builder/bin -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=final_project_sprite_address_pio --dir=/tmp/alt7876_4066988170493024664.dir/0104_sprite_address_pio_gen/ --quartus_dir=/opt/altera/18.1/quartus --verilog --config=/tmp/alt7876_4066988170493024664.dir/0104_sprite_address_pio_gen//final_project_sprite_address_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: sprite_address_pio:   Generation command is [exec /opt/altera/18.1/quartus/linux64/perl/bin/perl -I /opt/altera/18.1/quartus/linux64/perl/lib -I /opt/altera/18.1/quartus/sopc_builder/bin/europa -I /opt/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/18.1/quartus/sopc_builder/bin -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=final_project_sprite_address_pio --dir=/tmp/alt7876_3245764822259536411.dir/0015_sprite_address_pio_gen/ --quartus_dir=/opt/altera/18.1/quartus --verilog --config=/tmp/alt7876_3245764822259536411.dir/0015_sprite_address_pio_gen//final_project_sprite_address_pio_component_configuration.pl  --do_build_sim=0  ]
 Info: sprite_address_pio: Done RTL generation for module 'final_project_sprite_address_pio'
 Info: sprite_address_pio: "final_project" instantiated altera_avalon_pio "sprite_address_pio"
 Info: sprite_height_pio: Starting RTL generation for module 'final_project_sprite_height_pio'
-Info: sprite_height_pio:   Generation command is [exec /opt/altera/18.1/quartus/linux64/perl/bin/perl -I /opt/altera/18.1/quartus/linux64/perl/lib -I /opt/altera/18.1/quartus/sopc_builder/bin/europa -I /opt/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/18.1/quartus/sopc_builder/bin -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=final_project_sprite_height_pio --dir=/tmp/alt7876_4066988170493024664.dir/0105_sprite_height_pio_gen/ --quartus_dir=/opt/altera/18.1/quartus --verilog --config=/tmp/alt7876_4066988170493024664.dir/0105_sprite_height_pio_gen//final_project_sprite_height_pio_component_configuration.pl  --do_build_sim=0  ]
+Info: sprite_height_pio:   Generation command is [exec /opt/altera/18.1/quartus/linux64/perl/bin/perl -I /opt/altera/18.1/quartus/linux64/perl/lib -I /opt/altera/18.1/quartus/sopc_builder/bin/europa -I /opt/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/18.1/quartus/sopc_builder/bin -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /opt/altera/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=final_project_sprite_height_pio --dir=/tmp/alt7876_3245764822259536411.dir/0016_sprite_height_pio_gen/ --quartus_dir=/opt/altera/18.1/quartus --verilog --config=/tmp/alt7876_3245764822259536411.dir/0016_sprite_height_pio_gen//final_project_sprite_height_pio_component_configuration.pl  --do_build_sim=0  ]
 Info: sprite_height_pio: Done RTL generation for module 'final_project_sprite_height_pio'
 Info: sprite_height_pio: "final_project" instantiated altera_avalon_pio "sprite_height_pio"
 Info: sysid: "final_project" instantiated altera_avalon_sysid_qsys "sysid"
@@ -170,40 +180,41 @@ Info: avalon_st_adapter_015: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_016: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_017: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_018: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_019: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "final_project" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: irq_mapper: "final_project" instantiated altera_irq_mapper "irq_mapper"
 Info: irq_mapper_001: "final_project" instantiated altera_irq_mapper "irq_mapper_001"
 Info: rst_controller: "final_project" instantiated altera_reset_controller "rst_controller"
 Info: cpu: Starting RTL generation for module 'final_project_nios2_gen2_0_cpu'
-Info: cpu:   Generation command is [exec /opt/altera/18.1/quartus/linux64//eperlcmd -I /opt/altera/18.1/quartus/linux64//perl/lib -I /opt/altera/18.1/quartus/sopc_builder/bin/europa -I /opt/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/18.1/quartus/sopc_builder/bin -I /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=final_project_nios2_gen2_0_cpu --dir=/tmp/alt7876_4066988170493024664.dir/0110_cpu_gen/ --quartus_bindir=/opt/altera/18.1/quartus/linux64/ --verilog --config=/tmp/alt7876_4066988170493024664.dir/0110_cpu_gen//final_project_nios2_gen2_0_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2018.12.11 01:48:11 (*) Starting Nios II generation
-Info: cpu: # 2018.12.11 01:48:11 (*)   Checking for plaintext license.
-Info: cpu: # 2018.12.11 01:48:11 (*)   Couldn't query license setup in Quartus directory /opt/altera/18.1/quartus/linux64/
-Info: cpu: # 2018.12.11 01:48:11 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2018.12.11 01:48:11 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2018.12.11 01:48:11 (*)   Plaintext license not found.
-Info: cpu: # 2018.12.11 01:48:11 (*)   No license required to generate encrypted Nios II/e.
-Info: cpu: # 2018.12.11 01:48:11 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2018.12.11 01:48:11 (*)   Creating all objects for CPU
-Info: cpu: # 2018.12.11 01:48:12 (*)   Generating RTL from CPU objects
-Info: cpu: # 2018.12.11 01:48:12 (*)   Creating plain-text RTL
-Info: cpu: # 2018.12.11 01:48:13 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec /opt/altera/18.1/quartus/linux64//eperlcmd -I /opt/altera/18.1/quartus/linux64//perl/lib -I /opt/altera/18.1/quartus/sopc_builder/bin/europa -I /opt/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/18.1/quartus/sopc_builder/bin -I /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=final_project_nios2_gen2_0_cpu --dir=/tmp/alt7876_3245764822259536411.dir/0021_cpu_gen/ --quartus_bindir=/opt/altera/18.1/quartus/linux64/ --verilog --config=/tmp/alt7876_3245764822259536411.dir/0021_cpu_gen//final_project_nios2_gen2_0_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2018.12.11 11:03:49 (*) Starting Nios II generation
+Info: cpu: # 2018.12.11 11:03:49 (*)   Checking for plaintext license.
+Info: cpu: # 2018.12.11 11:03:49 (*)   Couldn't query license setup in Quartus directory /opt/altera/18.1/quartus/linux64/
+Info: cpu: # 2018.12.11 11:03:49 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2018.12.11 11:03:49 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2018.12.11 11:03:49 (*)   Plaintext license not found.
+Info: cpu: # 2018.12.11 11:03:49 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2018.12.11 11:03:49 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2018.12.11 11:03:49 (*)   Creating all objects for CPU
+Info: cpu: # 2018.12.11 11:03:50 (*)   Generating RTL from CPU objects
+Info: cpu: # 2018.12.11 11:03:50 (*)   Creating plain-text RTL
+Info: cpu: # 2018.12.11 11:03:51 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'final_project_nios2_gen2_0_cpu'
 Info: cpu: "nios2_gen2_0" instantiated altera_nios2_gen2_unit "cpu"
 Info: cpu: Starting RTL generation for module 'final_project_nios2_gen2_1_cpu'
-Info: cpu:   Generation command is [exec /opt/altera/18.1/quartus/linux64//eperlcmd -I /opt/altera/18.1/quartus/linux64//perl/lib -I /opt/altera/18.1/quartus/sopc_builder/bin/europa -I /opt/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/18.1/quartus/sopc_builder/bin -I /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=final_project_nios2_gen2_1_cpu --dir=/tmp/alt7876_4066988170493024664.dir/0111_cpu_gen/ --quartus_bindir=/opt/altera/18.1/quartus/linux64/ --verilog --config=/tmp/alt7876_4066988170493024664.dir/0111_cpu_gen//final_project_nios2_gen2_1_cpu_processor_configuration.pl  --do_build_sim=0  ]
-Info: cpu: # 2018.12.11 01:48:13 (*) Starting Nios II generation
-Info: cpu: # 2018.12.11 01:48:13 (*)   Checking for plaintext license.
-Info: cpu: # 2018.12.11 01:48:14 (*)   Couldn't query license setup in Quartus directory /opt/altera/18.1/quartus/linux64/
-Info: cpu: # 2018.12.11 01:48:14 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2018.12.11 01:48:14 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2018.12.11 01:48:14 (*)   Plaintext license not found.
-Info: cpu: # 2018.12.11 01:48:14 (*)   No license required to generate encrypted Nios II/e.
-Info: cpu: # 2018.12.11 01:48:14 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2018.12.11 01:48:14 (*)   Creating all objects for CPU
-Info: cpu: # 2018.12.11 01:48:14 (*)   Generating RTL from CPU objects
-Info: cpu: # 2018.12.11 01:48:14 (*)   Creating plain-text RTL
-Info: cpu: # 2018.12.11 01:48:15 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec /opt/altera/18.1/quartus/linux64//eperlcmd -I /opt/altera/18.1/quartus/linux64//perl/lib -I /opt/altera/18.1/quartus/sopc_builder/bin/europa -I /opt/altera/18.1/quartus/sopc_builder/bin/perl_lib -I /opt/altera/18.1/quartus/sopc_builder/bin -I /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- /opt/altera/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=final_project_nios2_gen2_1_cpu --dir=/tmp/alt7876_3245764822259536411.dir/0022_cpu_gen/ --quartus_bindir=/opt/altera/18.1/quartus/linux64/ --verilog --config=/tmp/alt7876_3245764822259536411.dir/0022_cpu_gen//final_project_nios2_gen2_1_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2018.12.11 11:03:51 (*) Starting Nios II generation
+Info: cpu: # 2018.12.11 11:03:51 (*)   Checking for plaintext license.
+Info: cpu: # 2018.12.11 11:03:52 (*)   Couldn't query license setup in Quartus directory /opt/altera/18.1/quartus/linux64/
+Info: cpu: # 2018.12.11 11:03:52 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2018.12.11 11:03:52 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2018.12.11 11:03:52 (*)   Plaintext license not found.
+Info: cpu: # 2018.12.11 11:03:52 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2018.12.11 11:03:52 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2018.12.11 11:03:52 (*)   Creating all objects for CPU
+Info: cpu: # 2018.12.11 11:03:53 (*)   Generating RTL from CPU objects
+Info: cpu: # 2018.12.11 11:03:53 (*)   Creating plain-text RTL
+Info: cpu: # 2018.12.11 11:03:53 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'final_project_nios2_gen2_1_cpu'
 Info: cpu: "nios2_gen2_1" instantiated altera_nios2_gen2_unit "cpu"
 Info: master_template_0_avalon_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "master_template_0_avalon_master_translator"
@@ -214,9 +225,11 @@ Info: nios2_gen2_0_debug_mem_slave_agent_rsp_fifo: "mm_interconnect_0" instantia
 Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
 Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
 Info: router_005: "mm_interconnect_0" instantiated altera_merlin_router "router_005"
 Info: router_006: "mm_interconnect_0" instantiated altera_merlin_router "router_006"
-Info: router_008: "mm_interconnect_0" instantiated altera_merlin_router "router_008"
+Info: router_014: "mm_interconnect_0" instantiated altera_merlin_router "router_014"
+Info: router_015: "mm_interconnect_0" instantiated altera_merlin_router "router_015"
 Info: master_template_0_avalon_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "master_template_0_avalon_master_limiter"
 Info: Reusing file /home/joey/courses/ece385/final_project/final_project/synthesis/submodules/altera_avalon_sc_fifo.v
 Info: nios2_gen2_0_debug_mem_slave_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "nios2_gen2_0_debug_mem_slave_burst_adapter"
@@ -224,18 +237,26 @@ Info: Reusing file /home/joey/courses/ece385/final_project/final_project/synthes
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
 Info: cmd_demux_003: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_003"
+Info: cmd_demux_004: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_004"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
 Info: Reusing file /home/joey/courses/ece385/final_project/final_project/synthesis/submodules/altera_merlin_arbitrator.sv
-Info: cmd_mux_003: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_003"
+Info: cmd_mux_009: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_009"
 Info: Reusing file /home/joey/courses/ece385/final_project/final_project/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: cmd_mux_010: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_010"
+Info: Reusing file /home/joey/courses/ece385/final_project/final_project/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
-Info: rsp_demux_005: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_005"
+Info: rsp_demux_009: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_009"
+Info: rsp_demux_010: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_010"
+Info: rsp_demux_012: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_012"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
 Info: Reusing file /home/joey/courses/ece385/final_project/final_project/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
 Info: Reusing file /home/joey/courses/ece385/final_project/final_project/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_003: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_003"
+Info: Reusing file /home/joey/courses/ece385/final_project/final_project/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_004: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_004"
 Info: Reusing file /home/joey/courses/ece385/final_project/final_project/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: master_template_0_avalon_master_cmd_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "master_template_0_avalon_master_cmd_width_adapter"
 Info: Reusing file /home/joey/courses/ece385/final_project/final_project/synthesis/submodules/altera_merlin_address_alignment.sv
@@ -244,6 +265,6 @@ Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock
 Info: Reusing file /home/joey/courses/ece385/final_project/final_project/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: final_project: Done "final_project" with 47 modules, 84 files
+Info: final_project: Done "final_project" with 56 modules, 93 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

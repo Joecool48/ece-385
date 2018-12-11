@@ -16,7 +16,7 @@ using namespace std;
  * TODO
  * Add real address offset here
  */
-const uint32_t ADDRESS_OFFSET = 0x30000000; // Place where the memory is initialized in SDRAM
+const uint32_t ADDRESS_OFFSET = 0x10000000; // Place where the memory is initialized in SDRAM
 
 
 const uint16_t SCREEN_WIDTH = 480; // Screen height and width in pixels

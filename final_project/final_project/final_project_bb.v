@@ -10,6 +10,13 @@ module final_project (
 	avalon_user_buffer_output_data,
 	avalon_user_data_available,
 	clk_clk,
+	keycode_pio_export_export,
+	otg_address_pio_export_export,
+	otg_cs_pio_export_export,
+	otg_data_pio_export_in_port,
+	otg_data_pio_export_out_port,
+	otg_read_pio_export_export,
+	otg_write_pio_export_export,
 	reset_reset_n,
 	sdram_clk_clk,
 	sdram_wire_addr,
@@ -29,13 +36,7 @@ module final_project (
 	sprite_x_pio_export,
 	sprite_y_pio_export,
 	sys_clk_clk,
-	keycode_pio_export_export,
-	otg_data_pio_export_in_port,
-	otg_data_pio_export_out_port,
-	otg_cs_pio_export_export,
-	otg_read_pio_export_export,
-	otg_write_pio_export_export,
-	otg_address_pio_export_export);	
+	hardware_done_pio_export_export);	
 
 	input		avalon_control_fixed_location;
 	input	[31:0]	avalon_control_read_base;
@@ -47,6 +48,13 @@ module final_project (
 	output	[7:0]	avalon_user_buffer_output_data;
 	output		avalon_user_data_available;
 	input		clk_clk;
+	input	[15:0]	keycode_pio_export_export;
+	output	[7:0]	otg_address_pio_export_export;
+	output	[7:0]	otg_cs_pio_export_export;
+	input	[15:0]	otg_data_pio_export_in_port;
+	output	[15:0]	otg_data_pio_export_out_port;
+	output	[7:0]	otg_read_pio_export_export;
+	output	[7:0]	otg_write_pio_export_export;
 	input		reset_reset_n;
 	output		sdram_clk_clk;
 	output	[12:0]	sdram_wire_addr;
@@ -66,11 +74,5 @@ module final_project (
 	output	[15:0]	sprite_x_pio_export;
 	output	[15:0]	sprite_y_pio_export;
 	output		sys_clk_clk;
-	input	[15:0]	keycode_pio_export_export;
-	input	[15:0]	otg_data_pio_export_in_port;
-	output	[15:0]	otg_data_pio_export_out_port;
-	output	[7:0]	otg_cs_pio_export_export;
-	output	[7:0]	otg_read_pio_export_export;
-	output	[7:0]	otg_write_pio_export_export;
-	output	[7:0]	otg_address_pio_export_export;
+	input	[7:0]	hardware_done_pio_export_export;
 endmodule
