@@ -1,5 +1,5 @@
 Flow report for mario_cv_game
-Tue Dec 11 23:05:23 2018
+Tue Dec 11 22:40:58 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Dec 11 23:05:23 2018       ;
+; Flow Status                        ; Successful - Tue Dec 11 22:40:58 2018       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; mario_cv_game                               ;
 ; Top-level Entity Name              ; mario_cv_game                               ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 1,449 / 114,480 ( 1 % )                     ;
-;     Total combinational functions  ; 1,398 / 114,480 ( 1 % )                     ;
+; Total logic elements               ; 1,458 / 114,480 ( 1 % )                     ;
+;     Total combinational functions  ; 1,402 / 114,480 ( 1 % )                     ;
 ;     Dedicated logic registers      ; 641 / 114,480 ( < 1 % )                     ;
 ; Total registers                    ; 641                                         ;
 ; Total pins                         ; 172 / 529 ( 33 % )                          ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/11/2018 23:02:53 ;
+; Start date & time ; 12/11/2018 22:39:33 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; mario_cv_game       ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 62375689495936.154459097314792         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 136784553372249.154458957323859        ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; testbench      ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; testbench                              ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation ;
@@ -107,13 +107,13 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:17     ; 1.0                     ; 4852 MB             ; 00:02:18                           ;
-; Fitter               ; 00:00:41     ; 1.0                     ; 5829 MB             ; 00:01:16                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 4708 MB             ; 00:00:04                           ;
-; Power Analyzer       ; 00:00:10     ; 1.0                     ; 4920 MB             ; 00:00:10                           ;
-; Timing Analyzer      ; 00:00:05     ; 1.2                     ; 4886 MB             ; 00:00:05                           ;
-; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4696 MB             ; 00:00:04                           ;
-; Total                ; 00:02:21     ; --                      ; --                  ; 00:03:57                           ;
+; Analysis & Synthesis ; 00:00:40     ; 1.0                     ; 991 MB              ; 00:01:33                           ;
+; Fitter               ; 00:00:27     ; 1.0                     ; 1710 MB             ; 00:00:52                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 818 MB              ; 00:00:03                           ;
+; Power Analyzer       ; 00:00:06     ; 1.0                     ; 1298 MB             ; 00:00:07                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.2                     ; 929 MB              ; 00:00:03                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 1058 MB             ; 00:00:02                           ;
+; Total                ; 00:01:20     ; --                      ; --                  ; 00:02:40                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -122,12 +122,12 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-NK7ISUL  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-NK7ISUL  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-NK7ISUL  ; Windows 10 ; 10.0       ; x86_64         ;
-; Power Analyzer       ; DESKTOP-NK7ISUL  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-NK7ISUL  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-NK7ISUL  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; Joey_PC          ; Arch Linux ; Arch Linux ; x86_64         ;
+; Fitter               ; Joey_PC          ; Arch Linux ; Arch Linux ; x86_64         ;
+; Assembler            ; Joey_PC          ; Arch Linux ; Arch Linux ; x86_64         ;
+; Power Analyzer       ; Joey_PC          ; Arch Linux ; Arch Linux ; x86_64         ;
+; Timing Analyzer      ; Joey_PC          ; Arch Linux ; Arch Linux ; x86_64         ;
+; EDA Netlist Writer   ; Joey_PC          ; Arch Linux ; Arch Linux ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

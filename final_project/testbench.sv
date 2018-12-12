@@ -147,7 +147,7 @@ module testbench();
 		#5 SYS_CLK = ~SYS_CLK;
 	end
 	initial begin
-		KEY = 4'b1110;
+		KEY = 4'b0111;
 		#10 KEY = 4'b1111;
 		#50 KEY = 4'b1011;
 		#20 KEY = 4'b1111;

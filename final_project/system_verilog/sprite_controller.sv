@@ -30,7 +30,6 @@ module sprite_controller (input logic Clk, Reset,
 	logic [15:0] x_count, y_count;
 	logic [15:0] x_count2, y_count2;
 	logic [31:0] pix_addr;
-	assign state = curr_state;
 	
 	logic [7:0] pix_rot;
 //	always_ff @ (posedge Clk) begin
@@ -40,6 +39,7 @@ module sprite_controller (input logic Clk, Reset,
 //	end
 	assign pix = ((pix_x + x_count) + (pix_y + y_count)*18'd480);
 	enum logic [3:0] {WAIT, LOAD_NEW_SPRITE, FETCH_AVALON_MEM, FETCH_FB_ROW, WAIT_AVAL, PAUSE, PAUSE2, PAUSE3, FETCH_FB_ROW_2, DONE} curr_state, next_state;
+	assign state = curr_state;	
 	always_ff @ (posedge Clk) begin
 		case (curr_state)
 			WAIT: begin

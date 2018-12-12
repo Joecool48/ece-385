@@ -7,30 +7,258 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/yeda_/Documents/ECE_385/ece-385/final_project/simulation/modelsim
-vVGA_controller
-DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-!s110 1544591167
+Z0 d/home/joey/courses/ece385/final_project/simulation/modelsim
+vColor_Mapper
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1544589693
 !i10b 1
-!s100 [X3l;RKfRfG;7Z7T@5h4D0
-IPn0oZXg<^Oam5PPMhgB^z3
-VDg1SIo80bB@j0V0VzS_@n1
-!s105 VGA_controller_sv_unit
+!s100 JTcJ;c8IKH=DPOh:DlN=W3
+IBS^ek4:BLhlALROSiHH:l0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 Color_Mapper_sv_unit
 S1
 R0
-w1544441028
-8C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/VGA_controller.sv
-FC:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/VGA_controller.sv
-L0 26
-OV;L;10.5b;63
+Z4 w1544587933
+8/home/joey/courses/ece385/final_project/system_verilog/Color_Mapper.sv
+F/home/joey/courses/ece385/final_project/system_verilog/Color_Mapper.sv
+L0 2
+Z5 OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1544591167.000000
-!s107 C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/VGA_controller.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog|C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog/VGA_controller.sv|
+Z6 !s108 1544589693.000000
+!s107 /home/joey/courses/ece385/final_project/system_verilog/Color_Mapper.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/joey/courses/ece385/final_project/system_verilog|/home/joey/courses/ece385/final_project/system_verilog/Color_Mapper.sv|
 !i113 1
-o-sv -work work
-!s92 -sv -work work +incdir+C:/Users/yeda_/Documents/ECE_385/ece-385/final_project/system_verilog
-tCvgOpt 0
+Z7 o-sv -work work
+Z8 !s92 -sv -work work +incdir+/home/joey/courses/ece385/final_project/system_verilog
+Z9 tCvgOpt 0
+n@color_@mapper
+vframe_controller
+R1
+Z10 !s110 1544589694
+!i10b 1
+!s100 0GoO93V<^zV>B:W[IFAi_2
+IkC[VY=:_O026f=n6OeOTV1
+R3
+!s105 frame_controller_sv_unit
+S1
+R0
+Z11 w1544549641
+8/home/joey/courses/ece385/final_project/system_verilog/frame_controller.sv
+F/home/joey/courses/ece385/final_project/system_verilog/frame_controller.sv
+L0 1
+R5
+r1
+!s85 0
+31
+Z12 !s108 1544589694.000000
+!s107 /home/joey/courses/ece385/final_project/system_verilog/frame_controller.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/joey/courses/ece385/final_project/system_verilog|/home/joey/courses/ece385/final_project/system_verilog/frame_controller.sv|
+!i113 1
+R7
+R8
+R9
+vframe_number
+R1
+R2
+!i10b 1
+!s100 Jk:]1TYGza_cz<N3h?Sm42
+I0dc>P3VI]G`575f0hkKDO1
+R3
+!s105 frame_number_sv_unit
+S1
+R0
+R4
+8/home/joey/courses/ece385/final_project/system_verilog/frame_number.sv
+F/home/joey/courses/ece385/final_project/system_verilog/frame_number.sv
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/joey/courses/ece385/final_project/system_verilog/frame_number.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/joey/courses/ece385/final_project/system_verilog|/home/joey/courses/ece385/final_project/system_verilog/frame_number.sv|
+!i113 1
+R7
+R8
+R9
+vHexDriver
+R1
+R10
+!i10b 1
+!s100 =R2i165HPJgkY;aA[TRmG3
+IIdP9@hA^0O:;YU3>@5aMG2
+R3
+!s105 HexDriver_sv_unit
+S1
+R0
+w1544549640
+8/home/joey/courses/ece385/final_project/HexDriver.sv
+F/home/joey/courses/ece385/final_project/HexDriver.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R12
+!s107 /home/joey/courses/ece385/final_project/HexDriver.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/joey/courses/ece385/final_project|/home/joey/courses/ece385/final_project/HexDriver.sv|
+!i113 1
+R7
+Z13 !s92 -sv -work work +incdir+/home/joey/courses/ece385/final_project
+R9
+n@hex@driver
+vmario_cv_game
+R1
+R10
+!i10b 1
+!s100 Mik9zm;kQIZHAnE_g]hlX1
+I]nHO2=EQ8<n2<oIB]AjFP2
+R3
+!s105 mario_cv_game_sv_unit
+S1
+R0
+w1544589061
+8/home/joey/courses/ece385/final_project/system_verilog/mario_cv_game.sv
+F/home/joey/courses/ece385/final_project/system_verilog/mario_cv_game.sv
+L0 3
+R5
+r1
+!s85 0
+31
+R12
+!s107 /home/joey/courses/ece385/final_project/system_verilog/mario_cv_game.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/joey/courses/ece385/final_project/system_verilog|/home/joey/courses/ece385/final_project/system_verilog/mario_cv_game.sv|
+!i113 1
+R7
+R8
+R9
+vRAM_param
+R1
+R10
+!i10b 1
+!s100 K=n`5JP@I3ReAIO2Dmabl3
+I3OQPeHzFSEnkCY2I53M9b1
+R3
+!s105 RAM_param_sv_unit
+S1
+R0
+R4
+8/home/joey/courses/ece385/final_project/RAM_param.sv
+F/home/joey/courses/ece385/final_project/RAM_param.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R12
+!s107 /home/joey/courses/ece385/final_project/RAM_param.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/joey/courses/ece385/final_project|/home/joey/courses/ece385/final_project/RAM_param.sv|
+!i113 1
+R7
+R13
+R9
+n@r@a@m_param
+vsprite_controller
+R1
+R2
+!i10b 1
+!s100 diS1k4E_zZ=MZFCJdM5bj2
+IKZJV[MDDmLzUINk6f[ea@1
+R3
+!s105 sprite_controller_sv_unit
+S1
+R0
+w1544588079
+8/home/joey/courses/ece385/final_project/system_verilog/sprite_controller.sv
+F/home/joey/courses/ece385/final_project/system_verilog/sprite_controller.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/joey/courses/ece385/final_project/system_verilog/sprite_controller.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/joey/courses/ece385/final_project/system_verilog|/home/joey/courses/ece385/final_project/system_verilog/sprite_controller.sv|
+!i113 1
+R7
+R8
+R9
+vsprite_fifo
+R1
+R10
+!i10b 1
+!s100 T31Lz[U<Sh0VMUe?2RFDJ1
+IdclO6gkS7GMQPTkg;mI9k3
+R3
+!s105 sprite_fifo_sv_unit
+S1
+R0
+R4
+8/home/joey/courses/ece385/final_project/system_verilog/sprite_fifo.sv
+F/home/joey/courses/ece385/final_project/system_verilog/sprite_fifo.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R12
+!s107 /home/joey/courses/ece385/final_project/system_verilog/sprite_fifo.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/joey/courses/ece385/final_project/system_verilog|/home/joey/courses/ece385/final_project/system_verilog/sprite_fifo.sv|
+!i113 1
+R7
+R8
+R9
+vtestbench
+R1
+R10
+!i10b 1
+!s100 _RAcZL??C>kHaje;C1e9d0
+IPk22P86z8b]A1HUWzlYRK2
+R3
+!s105 testbench_sv_unit
+S1
+R0
+w1544589566
+8/home/joey/courses/ece385/final_project/testbench.sv
+F/home/joey/courses/ece385/final_project/testbench.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R12
+!s107 /home/joey/courses/ece385/final_project/testbench.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/joey/courses/ece385/final_project|/home/joey/courses/ece385/final_project/testbench.sv|
+!i113 1
+R7
+R13
+R9
+vVGA_controller
+R1
+R2
+!i10b 1
+!s100 [X3l;RKfRfG;7Z7T@5h4D0
+ISLn>Dc_0JGMX8^CEAO^GW2
+R3
+!s105 VGA_controller_sv_unit
+S1
+R0
+R11
+8/home/joey/courses/ece385/final_project/system_verilog/VGA_controller.sv
+F/home/joey/courses/ece385/final_project/system_verilog/VGA_controller.sv
+L0 26
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/joey/courses/ece385/final_project/system_verilog/VGA_controller.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/joey/courses/ece385/final_project/system_verilog|/home/joey/courses/ece385/final_project/system_verilog/VGA_controller.sv|
+!i113 1
+R7
+R8
+R9
 n@v@g@a_controller

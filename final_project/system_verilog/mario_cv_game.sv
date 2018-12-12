@@ -46,6 +46,7 @@ module mario_cv_game (
 							logic Reset;
 							assign Reset = KEY[0];
 							logic t1, t2;
+							logic [9:0] DrawX, DrawY;
 
 							// Set it to 0 to make the bus burst
 							logic avalon_control_fixed_location;  // avalon_control.fixed_location
@@ -55,7 +56,8 @@ module mario_cv_game (
 							logic avalon_control_go;              //               .go
 							logic avalon_control_done;            //               .done
 							logic avalon_control_early_done;      //               .early_done
-							
+							logic frame_end;
+
 							//Read from SDRAM
 							logic [31:0] avalon_control_read_base;       //               .read_base
 							logic [31:0] avalon_control_read_length;     //               .read_length
@@ -243,7 +245,6 @@ module mario_cv_game (
 //							***FB => VGA***
 							
 							// VGA controller current position
-							logic [9:0] DrawX, DrawY;
 							VGA_controller vga_controller (	.*, .Clk(SYS_CLK), 
 																		.VGA_CLK(VGA_CLK)
 							);
@@ -263,15 +264,17 @@ module mario_cv_game (
 							always_ff @ (posedge VGA_CLK) begin
 								if ((DrawX == H_TOTAL - 1) && (DrawY == V_TOTAL - 1)) read_active <= 1'b1;
 								else read_active <= 1'b0;
-							end
-							logic frame_end;
-							always_ff @ (posedge SYS_CLK or negedge Reset) begin
+							end							always_ff @ (posedge SYS_CLK or negedge Reset) begin
 								if (~Reset) frame_end <= 0;
 								else if((DrawX == H_TOTAL - 1) && (DrawY == V_TOTAL - 1)) frame_end <= 1'd1;
 								else frame_end <= 0;
 							end
 //							*** SDRAM => FB ***
-							
+							logic [31:0] test_addr;
+							logic [7:0] test_data;
+							logic [3:0] test_state;
+							assign test_data = fb_data_in;
+							assign test_addr = write_fb_addr;
 							// Sprite controller for writing sprites to the frame buffer that is currently selected
 							logic draw_sprite, done_draw;	// Tells the write buffer whether to draw a new sprite
 							
@@ -286,12 +289,6 @@ module mario_cv_game (
 
 //							logic [3:0] hex_6;
 //							logic [15:0] hex_9;
-
-							logic [31:0] test_addr;
-							logic [7:0] test_data;
-							logic [3:0] test_state;
-							assign test_data = fb_data_in;
-							assign test_addr = write_fb_addr;
 //							memory_reader m_test (.*, .Clk(SYS_CLK), .Start(~KEY[3]), .mem_addr(test_addr), .mem_data(test_data), .state(test_state));
 //							memory_writer m_test (.*, .Clk(SYS_CLK), .Start(~KEY[3]), .mem_addr(test_addr), .mem_data(test_data), .state(test_state));
 							
@@ -377,7 +374,7 @@ module mario_cv_game (
 							assign test_read = ~KEY[1];
 							assign test_write = ~KEY[2];
 							
-							// System to manage the draw_sprite, done_draw, read_active, and fifo_re/fifo_we signals
+							// System to manage the _sprite, done_draw, read_active, and fifo_re/fifo_we signals
 							always_ff @ (posedge SYS_CLK) begin
 								case (fifo_curr_state)
 									WAIT: begin
