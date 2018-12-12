@@ -17,6 +17,8 @@ obj/default/src/init.o: src/init.cpp src/../include/init.h \
  src/../include/../include/../include/enemies.h \
  src/../include/../include/../include/../include/background.h \
  src/../include/../include/../include/../include/brain.h \
+ src/../include/../include/../include/../include/background.h \
+ src/../include/../include/../include/../include/enemies.h \
  src/../include/../include/config.h
 
 src/../include/init.h:
@@ -56,5 +58,9 @@ src/../include/../include/../include/enemies.h:
 src/../include/../include/../include/../include/background.h:
 
 src/../include/../include/../include/../include/brain.h:
+
+src/../include/../include/../include/../include/background.h:
+
+src/../include/../include/../include/../include/enemies.h:
 
 src/../include/../include/config.h:

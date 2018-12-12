@@ -14,7 +14,9 @@ obj/default/src/background.o: src/background.cpp \
  src/../include/../include/../include/keyboard.h \
  src/../include/../include/enemies.h \
  src/../include/../include/../include/background.h \
- src/../include/../include/../include/brain.h
+ src/../include/../include/../include/brain.h \
+ src/../include/../include/../include/background.h \
+ src/../include/../include/../include/enemies.h
 
 src/../include/background.h:
 
@@ -51,3 +53,7 @@ src/../include/../include/enemies.h:
 src/../include/../include/../include/background.h:
 
 src/../include/../include/../include/brain.h:
+
+src/../include/../include/../include/background.h:
+
+src/../include/../include/../include/enemies.h:

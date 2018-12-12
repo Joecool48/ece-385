@@ -7,25 +7,32 @@
 #include "../include/enemies.h"
 #include "../include/config.h"
 
-Enemy::Enemy() : Sprite_Animator (ENEMY_MODE, ENEMY_STATE, 0) {
+Enemy::Enemy(Background * back) : Sprite_Animator (ENEMY_MODE, ENEMY_STATE, 0) {
 	velX = 0;
 	velY = 0;
 	noCollide = false;
-	current_background = nullptr;
+	current_background = back;
+	brain = new Brain(current_background, this);
 }
 
-Turtle::Turtle(uint16_t x, uint16_t y) {
+Enemy::~Enemy() {
+	delete brain;
+}
+
+Turtle::Turtle(uint16_t x, uint16_t y, Background * b) : Enemy(b) {
 	collider = Rect_Collider (Collider_Type::TURTLE, x, y, TURTLE_COLLIDER_WIDTH, TURTLE_COLLIDER_HEIGHT);
 	animatorSetup();
 	shell_timer = 0;
 	shell_move_right = true;
-	brain = Brain(current_background, this);
+	current_anim_mode = NORMAL_MODE;
+	current_anim_state = WALKING;
 }
 
-Gumba::Gumba(uint16_t x, uint16_t y) {
+Gumba::Gumba(uint16_t x, uint16_t y, Background * b) : Enemy(b) {
 	collider = Rect_Collider(Collider_Type::GUMBA, x, y, GUMBA_COLLIDER_WIDTH, GUMBA_COLLIDER_HEIGHT);
 	animatorSetup();
-	brain = Brain(current_background, this);
+	current_anim_mode = NORMAL_MODE;
+	current_anim_state = WALKING;
 }
 
 void Turtle::animatorSetup() {
@@ -113,7 +120,7 @@ void Gumba::update() {
 	}
 	switch (current_anim_state) {
 	case WALKING:
-		brain.makeDecision();
+		brain->makeDecision();
 		// TODO
 		// AI Makes some decision
 		break;
@@ -146,7 +153,7 @@ void Turtle::update() {
 	}
 	switch (current_anim_state) {
 	case WALKING:
-		brain.makeDecision();
+		brain->makeDecision();
 		// TODO
 		// AI makes a decision
 		break;

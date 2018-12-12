@@ -26,7 +26,7 @@ const uint16_t FRAMES_PER_SECOND = 60;
 
 enum class Key {KEY_LEFT, KEY_RIGHT, KEY_JUMP, KEY_CROUCH, KEY_FIREBALL, NO_KEY, KEY_PAUSE};
 
-const float GRAVITY_STRENGTH = .2;
+const float GRAVITY_STRENGTH = 1;
 const float TERMINAL_VELOCITY = 100;
 
 // Returns how much to offset rect1 first param

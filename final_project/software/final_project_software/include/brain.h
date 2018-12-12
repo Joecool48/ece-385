@@ -7,8 +7,10 @@
 
 #ifndef INCLUDE_BRAIN_H_
 #define INCLUDE_BRAIN_H_
-
-
+class Background;
+class Enemy;
+#include "background.h"
+#include "enemies.h"
 // Base class for enemy AI
 class Brain {
 public:

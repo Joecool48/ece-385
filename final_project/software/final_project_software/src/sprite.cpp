@@ -20,7 +20,7 @@ void Sprite::drawSprite(int16_t xx, int16_t yy, uint8_t flip_mode, bool isVis) {
 		std::cout << "Sprite width " << width << std::endl;
 		std::cout << "Sprite height " << height << std::endl;
 		std::cout << "Sprite address " << start_address << std::endl;
-		//std::cout << "Sprite ID " << sprite_id << std::endl;
+		std::cout << "Sprite ID " << sprite_id << std::endl;
 		*SPRITE_X_PIO = static_cast<uint16_t>(xx);
 //		Sim::sprite_x_file.seekp(0, ios_base::beg);
 //		Sim::sprite_x_file << xx << std::flush;
@@ -59,17 +59,17 @@ Sprite::Sprite(int16_t width, int16_t height, uint32_t address) {
 	this->start_address = address;
 }
 
-//int16_t Sprite::sprite_x = 0, Sprite::sprite_y = 0, Sprite::sprite_width = 0, Sprite::sprite_height = 0, Sprite::sprite_id = 0;
-//uint32_t Sprite::sprite_address = 0;
-//uint8_t Sprite::sprite_flip_mode = 0;
-//uint8_t Sprite::hardware_done = 0, Sprite::software_done = 0;
+int16_t Sprite::sprite_x = 0, Sprite::sprite_y = 0, Sprite::sprite_width = 0, Sprite::sprite_height = 0, Sprite::sprite_id = 0;
+uint32_t Sprite::sprite_address = 0;
+uint8_t Sprite::sprite_flip_mode = 0;
+uint8_t Sprite::hardware_done = 0, Sprite::software_done = 0;
 
-volatile int16_t * const Sprite::SPRITE_X_PIO((int16_t*) 0x8001110);
-volatile int16_t * const Sprite::SPRITE_Y_PIO((int16_t*) 0x8001100);
-volatile int16_t * const Sprite::SPRITE_WIDTH_PIO = ((int16_t*) 0x8001130);
-volatile int16_t * const Sprite::SPRITE_HEIGHT_PIO ((int16_t*) 0x8001120);
-volatile int16_t * const Sprite::SPRITE_ID_PIO((int16_t*) 0x8001150);
-volatile uint32_t * const Sprite::SPRITE_ADDRESS_PIO((uint32_t*) 0x8001140);
-volatile uint8_t * const Sprite::SPRITE_FLIP_MODE_PIO((uint8_t*) 0x80010f0);
-volatile uint8_t * const Sprite::HARDWARE_DONE((uint8_t*) 0x8001000); // Add real addresses of the done signal
+volatile int16_t * const Sprite::SPRITE_X_PIO((int16_t*) &Sprite::sprite_x);
+volatile int16_t * const Sprite::SPRITE_Y_PIO((int16_t*) &Sprite::sprite_y);
+volatile int16_t * const Sprite::SPRITE_WIDTH_PIO = ((int16_t*) &Sprite::sprite_width);
+volatile int16_t * const Sprite::SPRITE_HEIGHT_PIO ((int16_t*) &Sprite::sprite_height);
+volatile int16_t * const Sprite::SPRITE_ID_PIO((int16_t*) &Sprite::sprite_id);
+volatile uint32_t * const Sprite::SPRITE_ADDRESS_PIO((uint32_t*) &Sprite::sprite_address);
+volatile uint8_t * const Sprite::SPRITE_FLIP_MODE_PIO((uint8_t*) &Sprite::sprite_flip_mode);
+volatile uint8_t * const Sprite::HARDWARE_DONE((uint8_t*) &Sprite::hardware_done);
 

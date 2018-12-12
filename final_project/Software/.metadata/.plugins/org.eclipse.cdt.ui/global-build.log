@@ -1232,3 +1232,437 @@ To generate from the command line:
 
 make[1]: *** [Makefile:565: public.mk] Error 1
 make: *** [Makefile:922: ../final_project_software_bsp/-recurs-make-lib] Error 2
+13:07:27 **** Incremental Build of configuration Nios II for project final_project_software ****
+make all 
+Info: Building ../final_project_software_bsp/
+make --no-print-directory -C ../final_project_software_bsp/
+Compiling alt_alarm_start.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_alarm_start.o HAL/src/alt_alarm_start.c
+Compiling alt_busy_sleep.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_busy_sleep.o HAL/src/alt_busy_sleep.c
+Compiling alt_close.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_close.o HAL/src/alt_close.c
+Compiling alt_dcache_flush.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_dcache_flush.o HAL/src/alt_dcache_flush.c
+Compiling alt_dcache_flush_all.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_dcache_flush_all.o HAL/src/alt_dcache_flush_all.c
+Compiling alt_dcache_flush_no_writeback.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_dcache_flush_no_writeback.o HAL/src/alt_dcache_flush_no_writeback.c
+Compiling alt_dev.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_dev.o HAL/src/alt_dev.c
+Compiling alt_dma_rxchan_open.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_dma_rxchan_open.o HAL/src/alt_dma_rxchan_open.c
+Compiling alt_dma_txchan_open.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_dma_txchan_open.o HAL/src/alt_dma_txchan_open.c
+Compiling alt_ecc_fatal_exception.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_ecc_fatal_exception.o HAL/src/alt_ecc_fatal_exception.c
+Compiling alt_exception_entry.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_exception_entry.o HAL/src/alt_exception_entry.S
+Compiling alt_exit.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_exit.o HAL/src/alt_exit.c
+Compiling alt_fcntl.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_fcntl.o HAL/src/alt_fcntl.c
+Compiling alt_fd_lock.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_fd_lock.o HAL/src/alt_fd_lock.c
+Compiling alt_fd_unlock.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_fd_unlock.o HAL/src/alt_fd_unlock.c
+Compiling alt_find_dev.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_find_dev.o HAL/src/alt_find_dev.c
+Compiling alt_find_file.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_find_file.o HAL/src/alt_find_file.c
+Compiling alt_flash_dev.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_flash_dev.o HAL/src/alt_flash_dev.c
+Compiling alt_fs_reg.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_fs_reg.o HAL/src/alt_fs_reg.c
+Compiling alt_fstat.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_fstat.o HAL/src/alt_fstat.c
+Compiling alt_get_fd.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_get_fd.o HAL/src/alt_get_fd.c
+Compiling alt_gmon.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_gmon.o HAL/src/alt_gmon.c
+Compiling alt_icache_flush.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_icache_flush.o HAL/src/alt_icache_flush.c
+Compiling alt_icache_flush_all.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_icache_flush_all.o HAL/src/alt_icache_flush_all.c
+Compiling alt_iic.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_iic.o HAL/src/alt_iic.c
+Compiling alt_iic_isr_register.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_iic_isr_register.o HAL/src/alt_iic_isr_register.c
+Compiling alt_instruction_exception_entry.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_instruction_exception_entry.o HAL/src/alt_instruction_exception_entry.c
+Compiling alt_instruction_exception_register.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_instruction_exception_register.o HAL/src/alt_instruction_exception_register.c
+Compiling alt_io_redirect.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_io_redirect.o HAL/src/alt_io_redirect.c
+Compiling alt_ioctl.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_ioctl.o HAL/src/alt_ioctl.c
+Compiling alt_irq_entry.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_irq_entry.o HAL/src/alt_irq_entry.S
+Compiling alt_irq_handler.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_irq_handler.o HAL/src/alt_irq_handler.c
+Compiling alt_irq_register.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_irq_register.o HAL/src/alt_irq_register.c
+Compiling alt_irq_vars.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_irq_vars.o HAL/src/alt_irq_vars.c
+Compiling alt_isatty.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_isatty.o HAL/src/alt_isatty.c
+Compiling alt_lseek.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_lseek.o HAL/src/alt_lseek.c
+Compiling alt_main.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_main.o HAL/src/alt_main.c
+Compiling alt_open.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_open.o HAL/src/alt_open.c
+Compiling alt_read.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_read.o HAL/src/alt_read.c
+Compiling alt_release_fd.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_release_fd.o HAL/src/alt_release_fd.c
+Compiling alt_remap_cached.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_remap_cached.o HAL/src/alt_remap_cached.c
+Compiling alt_remap_uncached.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_remap_uncached.o HAL/src/alt_remap_uncached.c
+Compiling alt_sbrk.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_sbrk.o HAL/src/alt_sbrk.c
+Compiling alt_software_exception.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/alt_software_exception.o HAL/src/alt_software_exception.S
+Compiling alt_tick.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_tick.o HAL/src/alt_tick.c
+Compiling alt_uncached_free.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_uncached_free.o HAL/src/alt_uncached_free.c
+Compiling alt_uncached_malloc.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_uncached_malloc.o HAL/src/alt_uncached_malloc.c
+Compiling alt_write.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/alt_write.o HAL/src/alt_write.c
+Compiling altera_nios2_gen2_irq.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/HAL/src/altera_nios2_gen2_irq.o HAL/src/altera_nios2_gen2_irq.c
+Compiling crt0.S...
+nios2-elf-gcc -MP -MMD -c   -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global    -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -Wa,-gdwarf2  -o obj/HAL/src/crt0.o HAL/src/crt0.S
+Compiling altera_avalon_jtag_uart_fd.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/drivers/src/altera_avalon_jtag_uart_fd.o drivers/src/altera_avalon_jtag_uart_fd.c
+Compiling altera_avalon_jtag_uart_init.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/drivers/src/altera_avalon_jtag_uart_init.o drivers/src/altera_avalon_jtag_uart_init.c
+Compiling altera_avalon_jtag_uart_ioctl.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/drivers/src/altera_avalon_jtag_uart_ioctl.o drivers/src/altera_avalon_jtag_uart_ioctl.c
+Compiling altera_avalon_jtag_uart_read.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/drivers/src/altera_avalon_jtag_uart_read.o drivers/src/altera_avalon_jtag_uart_read.c
+Compiling altera_avalon_jtag_uart_write.c...
+nios2-elf-gcc -xc -MP -MMD -c  -I./HAL/inc -I. -I./drivers/inc -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall  -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global   -o obj/drivers/src/altera_avalon_jtag_uart_write.o drivers/src/altera_avalon_jtag_uart_write.c
+Creating libhal_bsp.a...
+rm -f -f libhal_bsp.a
+nios2-elf-ar -src libhal_bsp.a obj/HAL/src/alt_alarm_start.o obj/HAL/src/alt_busy_sleep.o obj/HAL/src/alt_close.o obj/HAL/src/alt_dcache_flush.o obj/HAL/src/alt_dcache_flush_all.o obj/HAL/src/alt_dcache_flush_no_writeback.o obj/HAL/src/alt_dev.o obj/HAL/src/alt_dev_llist_insert.o obj/HAL/src/alt_dma_rxchan_open.o obj/HAL/src/alt_dma_txchan_open.o obj/HAL/src/alt_do_ctors.o obj/HAL/src/alt_do_dtors.o obj/HAL/src/alt_ecc_fatal_entry.o obj/HAL/src/alt_ecc_fatal_exception.o obj/HAL/src/alt_env_lock.o obj/HAL/src/alt_environ.o obj/HAL/src/alt_errno.o obj/HAL/src/alt_exception_entry.o obj/HAL/src/alt_exception_muldiv.o obj/HAL/src/alt_exception_trap.o obj/HAL/src/alt_execve.o obj/HAL/src/alt_exit.o obj/HAL/src/alt_fcntl.o obj/HAL/src/alt_fd_lock.o obj/HAL/src/alt_fd_unlock.o obj/HAL/src/alt_find_dev.o obj/HAL/src/alt_find_file.o obj/HAL/src/alt_flash_dev.o obj/HAL/src/alt_fork.o obj/HAL/src/alt_fs_reg.o obj/HAL/src/alt_fstat.o obj/HAL/src/alt_get_fd.o obj/HAL/src/alt_getchar.o obj/HAL/src/alt_getpid.o obj/HAL/src/alt_gettod.o obj/HAL/src/alt_gmon.o obj/HAL/src/alt_icache_flush.o obj/HAL/src/alt_icache_flush_all.o obj/HAL/src/alt_iic.o obj/HAL/src/alt_iic_isr_register.o obj/HAL/src/alt_instruction_exception_entry.o obj/HAL/src/alt_instruction_exception_register.o obj/HAL/src/alt_io_redirect.o obj/HAL/src/alt_ioctl.o obj/HAL/src/alt_irq_entry.o obj/HAL/src/alt_irq_handler.o obj/HAL/src/alt_irq_register.o obj/HAL/src/alt_irq_vars.o obj/HAL/src/alt_isatty.o obj/HAL/src/alt_kill.o obj/HAL/src/alt_link.o obj/HAL/src/alt_load.o obj/HAL/src/alt_log_macro.o obj/HAL/src/alt_log_printf.o obj/HAL/src/alt_lseek.o obj/HAL/src/alt_main.o obj/HAL/src/alt_malloc_lock.o obj/HAL/src/alt_mcount.o obj/HAL/src/alt_open.o obj/HAL/src/alt_printf.o obj/HAL/src/alt_putchar.o obj/HAL/src/alt_putcharbuf.o obj/HAL/src/alt_putstr.o obj/HAL/src/alt_read.o obj/HAL/src/alt_release_fd.o obj/HAL/src/alt_remap_cached.o obj/HAL/src/alt_remap_uncached.o obj/HAL/src/alt_rename.o obj/HAL/src/alt_sbrk.o obj/HAL/src/alt_settod.o obj/HAL/src/alt_software_exception.o obj/HAL/src/alt_stat.o obj/HAL/src/alt_tick.o obj/HAL/src/alt_times.o obj/HAL/src/alt_uncached_free.o obj/HAL/src/alt_uncached_malloc.o obj/HAL/src/alt_unlink.o obj/HAL/src/alt_usleep.o obj/HAL/src/alt_wait.o obj/HAL/src/alt_write.o obj/HAL/src/altera_nios2_gen2_irq.o obj/HAL/src/crt0.o obj/alt_sys_init.o obj/drivers/src/altera_avalon_jtag_uart_fd.o obj/drivers/src/altera_avalon_jtag_uart_init.o obj/drivers/src/altera_avalon_jtag_uart_ioctl.o obj/drivers/src/altera_avalon_jtag_uart_read.o obj/drivers/src/altera_avalon_jtag_uart_write.o obj/drivers/src/altera_avalon_spi.o obj/drivers/src/altera_avalon_sysid_qsys.o
+[BSP build complete]
+Info: Compiling src/efsl/debug.c to obj/default/src/efsl/debug.o
+nios2-elf-gcc -xc -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/efsl/debug.o src/efsl/debug.c
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++14' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+Info: Compiling src/efsl/dir.c to obj/default/src/efsl/dir.o
+nios2-elf-gcc -xc -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/efsl/dir.o src/efsl/dir.c
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++14' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+src/efsl/dir.c: In function 'dir_createDefaultEntry':
+src/efsl/dir.c:78:41: warning: unused parameter 'fs' [-Wunused-parameter]
+ void dir_createDefaultEntry(FileSystem *fs,FileRecord *filerec,eint8* fatfilename)
+                                         ^
+Info: Compiling src/efsl/disc.c to obj/default/src/efsl/disc.o
+nios2-elf-gcc -xc -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/efsl/disc.o src/efsl/disc.c
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++14' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+Info: Compiling src/efsl/efs.c to obj/default/src/efsl/efs.o
+nios2-elf-gcc -xc -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/efsl/efs.o src/efsl/efs.c
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++14' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+Info: Compiling src/efsl/extract.c to obj/default/src/efsl/extract.o
+nios2-elf-gcc -xc -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/efsl/extract.o src/efsl/extract.c
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++14' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+src/efsl/extract.c: In function 'ex_setPartitionField':
+src/efsl/extract.c:72:35: warning: unused parameter 'buf' [-Wunused-parameter]
+ void ex_setPartitionField(euint8* buf,PartitionField* pf, euint32 offset)
+                                   ^
+src/efsl/extract.c:72:55: warning: unused parameter 'pf' [-Wunused-parameter]
+ void ex_setPartitionField(euint8* buf,PartitionField* pf, euint32 offset)
+                                                       ^
+src/efsl/extract.c:72:67: warning: unused parameter 'offset' [-Wunused-parameter]
+ void ex_setPartitionField(euint8* buf,PartitionField* pf, euint32 offset)
+                                                                   ^
+Info: Compiling src/efsl/fat.c to obj/default/src/efsl/fat.o
+nios2-elf-gcc -xc -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/efsl/fat.o src/efsl/fat.c
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++14' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+src/efsl/fat.c: In function 'fat_getNextClusterAddress':
+src/efsl/fat.c:86:80: warning: unused parameter 'linear' [-Wunused-parameter]
+ euint32 fat_getNextClusterAddress(FileSystem *fs,euint32 cluster_addr,euint16 *linear)
+                                                                                ^
+src/efsl/fat.c: In function 'fat_LogicToDiscCluster':
+src/efsl/fat.c:420:17: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if(logiccluster<Cache->LogicCluster || Cache->DiscCluster==0){
+                 ^
+src/efsl/fat.c:426:24: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if(Cache->LogicCluster==logiccluster){
+                        ^
+src/efsl/fat.c:430:27: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  while(Cache->LogicCluster!=logiccluster)
+                           ^
+Info: Compiling src/efsl/file.c to obj/default/src/efsl/file.o
+nios2-elf-gcc -xc -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/efsl/file.o src/efsl/file.c
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++14' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+Info: Compiling src/efsl/fs.c to obj/default/src/efsl/fs.o
+nios2-elf-gcc -xc -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/efsl/fs.o src/efsl/fs.c
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++14' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+src/efsl/fs.c: In function 'fs_giveFreeClusterHint':
+src/efsl/fs.c:311:44: warning: unused parameter 'fs' [-Wunused-parameter]
+ euint32 fs_giveFreeClusterHint(FileSystem *fs)
+                                            ^
+src/efsl/fs.c: In function 'fs_findFreeFile':
+src/efsl/fs.c:385:81: warning: unused parameter 'mode' [-Wunused-parameter]
+ esint16 fs_findFreeFile(FileSystem *fs,eint8* filename,FileLocation *loc,euint8 mode)
+                                                                                 ^
+src/efsl/fs.c: In function 'fs_initClusterChain':
+src/efsl/fs.c:446:38: warning: unused parameter 'fs' [-Wunused-parameter]
+ void fs_initClusterChain(FileSystem *fs,ClusterChain *cache,euint32 cluster_addr)
+                                      ^
+src/efsl/fs.c: In function 'fs_getFsInfo':
+src/efsl/fs.c:493:15: warning: comparison of constant '3' with boolean expression is always false [-Wbool-compare]
+   if(!fs->type==FAT32)return(0);
+               ^
+src/efsl/fs.c:493:15: warning: logical not is only applied to the left hand side of comparison [-Wlogical-not-parentheses]
+src/efsl/fs.c: In function 'fs_setFsInfo':
+src/efsl/fs.c:512:14: warning: comparison of constant '3' with boolean expression is always false [-Wbool-compare]
+  if(!fs->type==FAT32)return(0);
+              ^
+src/efsl/fs.c:512:14: warning: logical not is only applied to the left hand side of comparison [-Wlogical-not-parentheses]
+Info: Compiling src/efsl/ioman.c to obj/default/src/efsl/ioman.o
+nios2-elf-gcc -xc -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/efsl/ioman.o src/efsl/ioman.c
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++14' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+src/efsl/ioman.c: In function 'ioman_getBuffer':
+src/efsl/ioman.c:74:50: warning: unused parameter 'bufferarea' [-Wunused-parameter]
+ euint8* ioman_getBuffer(IOManager *ioman,euint8* bufferarea)
+                                                  ^
+Info: Compiling src/efsl/ls.c to obj/default/src/efsl/ls.o
+nios2-elf-gcc -xc -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/efsl/ls.o src/efsl/ls.c
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++14' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+Info: Compiling src/efsl/mkfs.c to obj/default/src/efsl/mkfs.o
+nios2-elf-gcc -xc -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/efsl/mkfs.o src/efsl/mkfs.c
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++14' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+src/efsl/mkfs.c: In function 'mkfs_makevfat':
+src/efsl/mkfs.c:146:2: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+  *(((unsigned long*)buf)  )=0x0FFFFFF8;
+  ^
+Info: Compiling src/efsl/nios2.c to obj/default/src/efsl/nios2.o
+nios2-elf-gcc -xc -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/efsl/nios2.o src/efsl/nios2.c
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++14' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+In file included from src/efsl/../../include/efsl/nios_2.h:38:0,
+                 from src/efsl/nios2.c:35:
+src/efsl/nios2.c: In function 'if_initInterface':
+src/efsl/nios2.c:62:14: warning: format '%d' expects argument of type 'int', but argument 2 has type 'euint32 {aka long unsigned int}' [-Wformat=]
+     DBG(TXT(("Card size:%d\n",size)));
+              ^
+src/efsl/../../include/efsl/debug.h:95:25: note: in definition of macro 'DBG'
+   #define DBG(x) printf x
+                         ^
+src/efsl/nios2.c:62:9: note: in expansion of macro 'TXT'
+     DBG(TXT(("Card size:%d\n",size)));
+         ^
+src/efsl/nios2.c:62:14: warning: format '%d' expects argument of type 'int', but argument 2 has type 'euint32 {aka long unsigned int}' [-Wformat=]
+     DBG(TXT(("Card size:%d\n",size)));
+              ^
+src/efsl/../../include/efsl/debug.h:95:25: note: in definition of macro 'DBG'
+   #define DBG(x) printf x
+                         ^
+src/efsl/nios2.c:62:9: note: in expansion of macro 'TXT'
+     DBG(TXT(("Card size:%d\n",size)));
+         ^
+src/efsl/nios2.c:46:51: warning: unused parameter 'opts' [-Wunused-parameter]
+ esint8 if_initInterface(hwInterface* file, eint8* opts)
+                                                   ^
+src/efsl/nios2.c: In function 'if_setPos':
+src/efsl/nios2.c:80:31: warning: unused parameter 'file' [-Wunused-parameter]
+ esint8 if_setPos(hwInterface* file,euint32 address)
+                               ^
+src/efsl/nios2.c:80:44: warning: unused parameter 'address' [-Wunused-parameter]
+ esint8 if_setPos(hwInterface* file,euint32 address)
+                                            ^
+src/efsl/nios2.c: In function 'if_spiInit':
+src/efsl/nios2.c:88:9: warning: unused variable 'i' [-Wunused-variable]
+  euint8 i;
+         ^
+src/efsl/nios2.c:86:30: warning: unused parameter 'iface' [-Wunused-parameter]
+ void if_spiInit(hwInterface *iface)
+                              ^
+src/efsl/nios2.c: In function 'if_spiSend':
+src/efsl/nios2.c:96:9: warning: unused variable 'incoming' [-Wunused-variable]
+  euint8 incoming=0;
+         ^
+src/efsl/nios2.c:94:32: warning: unused parameter 'iface' [-Wunused-parameter]
+ euint8 if_spiSend(hwInterface *iface, euint8 outgoing)
+                                ^
+src/efsl/nios2.c: In function 'if_spi_sendbuf':
+src/efsl/nios2.c:135:13: warning: unused variable 'SD_Data' [-Wunused-variable]
+     alt_u8  SD_Data=0,status;
+             ^
+src/efsl/nios2.c:133:36: warning: unused parameter 'iface' [-Wunused-parameter]
+ euint8 if_spi_sendbuf(hwInterface *iface, euint8 *buf, euint16 len)
+                                    ^
+src/efsl/nios2.c: In function 'if_spi_readbuf':
+src/efsl/nios2.c:162:36: warning: unused parameter 'iface' [-Wunused-parameter]
+ euint8 if_spi_readbuf(hwInterface *iface, euint8 *buf, euint16 len)
+                                    ^
+Info: Compiling src/efsl/nios2_ramdisk.c to obj/default/src/efsl/nios2_ramdisk.o
+nios2-elf-gcc -xc -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/efsl/nios2_ramdisk.o src/efsl/nios2_ramdisk.c
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++14' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+src/efsl/nios2_ramdisk.c: In function 'ramdisk_setup':
+src/efsl/nios2_ramdisk.c:11:36: warning: unused parameter 'DevType' [-Wunused-parameter]
+ static esint8 ramdisk_setup(euint8 DevType)
+                                    ^
+src/efsl/nios2_ramdisk.c: In function 'ramdisk_read':
+src/efsl/nios2_ramdisk.c:39:2: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  memcpy(buf,(euint8 *)(RAMDISK_ADDRESS_START + block * RAMDISK_SECTOR_SIZE),blkcnt * RAMDISK_SECTOR_SIZE);
+  ^
+src/efsl/nios2_ramdisk.c:39:2: warning: incompatible implicit declaration of built-in function 'memcpy'
+src/efsl/nios2_ramdisk.c:39:2: note: include '<string.h>' or provide a declaration of 'memcpy'
+src/efsl/nios2_ramdisk.c: In function 'ramdisk_write':
+src/efsl/nios2_ramdisk.c:53:2: warning: incompatible implicit declaration of built-in function 'memcpy'
+  memcpy((euint8 *)(RAMDISK_ADDRESS_START + block * RAMDISK_SECTOR_SIZE),buf,blkcnt * RAMDISK_SECTOR_SIZE);
+  ^
+src/efsl/nios2_ramdisk.c:53:2: note: include '<string.h>' or provide a declaration of 'memcpy'
+src/efsl/nios2_ramdisk.c: At top level:
+src/efsl/nios2_ramdisk.c:60:2: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+  ramdisk_setup,
+  ^
+src/efsl/nios2_ramdisk.c:60:2: note: (near initialization for 'spifuncs.setup')
+src/efsl/nios2_ramdisk.c:61:2: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+  ramdisk_read,
+  ^
+src/efsl/nios2_ramdisk.c:61:2: note: (near initialization for 'spifuncs.read')
+src/efsl/nios2_ramdisk.c:62:2: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+  ramdisk_write
+  ^
+Info: Compiling src/efsl/partition.c to obj/default/src/efsl/partition.o
+nios2-elf-gcc -xc -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/efsl/partition.o src/efsl/partition.c
+src/efsl/nios2_ramdisk.c:62:2: note: (near initialization for 'spifuncs.write')
+src/efsl/nios2_ramdisk.c: In function 'ramdisk_init':
+src/efsl/nios2_ramdisk.c:70:35: warning: unused parameter 'DevType' [-Wunused-parameter]
+ EFSBlockDev * ramdisk_init(euint8 DevType)
+                                   ^
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++14' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+Info: Compiling src/efsl/plibc.c to obj/default/src/efsl/plibc.o
+nios2-elf-gcc -xc -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/efsl/plibc.o src/efsl/plibc.c
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++14' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+Info: Compiling src/efsl/sd.c to obj/default/src/efsl/sd.o
+nios2-elf-gcc -xc -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/efsl/sd.o src/efsl/sd.c
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++14' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+src/efsl/sd.c: In function 'sd_Resp8bError':
+src/efsl/sd.c:127:34: warning: unused parameter 'iface' [-Wunused-parameter]
+ void sd_Resp8bError(hwInterface *iface,euint8 value)
+                                  ^
+src/efsl/sd.c: In function 'sd_writeSector':
+src/efsl/sd.c:222:10: warning: unused variable 'i' [-Wunused-variable]
+  euint16 i;
+          ^
+src/efsl/sd.c: In function 'sd_readSector':
+src/efsl/sd.c:271:10: warning: unused variable 'i' [-Wunused-variable]
+  euint32 i;
+          ^
+src/efsl/sd.c:269:9: warning: unused variable 'c' [-Wunused-variable]
+  euint8 c;
+         ^
+Info: Compiling src/efsl/time.c to obj/default/src/efsl/time.o
+nios2-elf-gcc -xc -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/efsl/time.o src/efsl/time.c
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++14' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+Info: Compiling src/efsl/ui.c to obj/default/src/efsl/ui.o
+nios2-elf-gcc -xc -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/efsl/ui.o src/efsl/ui.c
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++14' is valid for C++/ObjC++ but not for C
+cc1: warning: command line option '-std=gnu++11' is valid for C++/ObjC++ but not for C
+Info: Compiling src/background.cpp to obj/default/src/background.o
+nios2-elf-gcc -xc++ -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/background.o src/background.cpp
+src/background.cpp: In member function 'void Background::scrollBackgroundX(int)':
+src/background.cpp:91:6: warning: unused variable 'screenCenterXOriginal' [-Wunused-variable]
+  int screenCenterXOriginal = screenCenterX;
+      ^
+Info: Compiling src/brain.cpp to obj/default/src/brain.o
+nios2-elf-gcc -xc++ -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/brain.o src/brain.cpp
+Info: Compiling src/colliders.cpp to obj/default/src/colliders.o
+nios2-elf-gcc -xc++ -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/colliders.o src/colliders.cpp
+Info: Compiling src/enemies.cpp to obj/default/src/enemies.o
+nios2-elf-gcc -xc++ -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/enemies.o src/enemies.cpp
+Info: Compiling src/init.cpp to obj/default/src/init.o
+nios2-elf-gcc -xc++ -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/init.o src/init.cpp
+Info: Compiling src/item.cpp to obj/default/src/item.o
+nios2-elf-gcc -xc++ -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/item.o src/item.cpp
+src/item.cpp:13:22: warning: unused parameter 'start_x' [-Wunused-parameter]
+ Item::Item (uint16_t start_x, uint16_t start_y, uint16_t mode, uint16_t state, float start_frame, Rect_Collider rect) : Sprite_Animator (mode, state, start_frame){
+                      ^
+src/item.cpp:13:40: warning: unused parameter 'start_y' [-Wunused-parameter]
+ Item::Item (uint16_t start_x, uint16_t start_y, uint16_t mode, uint16_t state, float start_frame, Rect_Collider rect) : Sprite_Animator (mode, state, start_frame){
+                                        ^
+src/item.cpp:185:47: warning: unused parameter 'other' [-Wunused-parameter]
+ void Fireflower::collided_with(Rect_Collider &other) {
+                                               ^
+Info: Compiling src/keyboard.cpp to obj/default/src/keyboard.o
+nios2-elf-gcc -xc++ -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/keyboard.o src/keyboard.cpp
+Info: Compiling src/main.cpp to obj/default/src/main.o
+nios2-elf-gcc -xc++ -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/main.o src/main.cpp
+src/main.cpp: In function 'int main()':
+src/main.cpp:96:37: error: no matching function for call to 'Turtle::Turtle(int, int)'
+  Turtle * turt = new Turtle(100, 100);
+                                     ^
+In file included from src/../include/background.h:16:0,
+                 from src/main.cpp:3:
+src/../include/../include/enemies.h:69:2: note: candidate: Turtle::Turtle(uint16_t, uint16_t, Background*)
+  Turtle(uint16_t x, uint16_t y, Background * b);
+  ^
+src/../include/../include/enemies.h:69:2: note:   candidate expects 3 arguments, 2 provided
+src/../include/../include/enemies.h:58:7: note: candidate: Turtle::Turtle(const Turtle&)
+ class Turtle : public Enemy {
+       ^
+src/../include/../include/enemies.h:58:7: note:   candidate expects 1 argument, 2 provided
+src/../include/../include/enemies.h:58:7: note: candidate: Turtle::Turtle(Turtle&&)
+src/../include/../include/enemies.h:58:7: note:   candidate expects 1 argument, 2 provided
+make: *** [Makefile:807: obj/default/src/main.o] Error 1
+13:08:07 **** Incremental Build of configuration Nios II for project final_project_software ****
+make all 
+Info: Building ../final_project_software_bsp/
+make --no-print-directory -C ../final_project_software_bsp/
+[BSP build complete]
+Info: Compiling src/main.cpp to obj/default/src/main.o
+nios2-elf-gcc -xc++ -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/main.o src/main.cpp
+Info: Compiling src/player.cpp to obj/default/src/player.o
+nios2-elf-gcc -xc++ -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/player.o src/player.cpp
+Info: Compiling src/sprite.cpp to obj/default/src/sprite.o
+nios2-elf-gcc -xc++ -MP -MMD -c -Iinclude/efsl -I../final_project_software_bsp//HAL/inc -I../final_project_software_bsp/ -I../final_project_software_bsp//drivers/inc -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED  -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os    -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/src/sprite.o src/sprite.cpp
+Info: Linking final_project_software.elf
+nios2-elf-g++  -T'../final_project_software_bsp//linker.x' -msys-crt0='../final_project_software_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../final_project_software_bsp/   -Wl,-Map=final_project_software.map   -O0 -g -Wall -std=gnu++0x -std=gnu++14 -std=gnu++11 -g3 -Wall -Wextra -DREPLICATION_ENABLED -DJOURNALING_ENABLED -Os -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o final_project_software.elf obj/default/src/efsl/debug.o obj/default/src/efsl/dir.o obj/default/src/efsl/disc.o obj/default/src/efsl/efs.o obj/default/src/efsl/extract.o obj/default/src/efsl/fat.o obj/default/src/efsl/file.o obj/default/src/efsl/fs.o obj/default/src/efsl/ioman.o obj/default/src/efsl/ls.o obj/default/src/efsl/mkfs.o obj/default/src/efsl/nios2.o obj/default/src/efsl/nios2_ramdisk.o obj/default/src/efsl/partition.o obj/default/src/efsl/plibc.o obj/default/src/efsl/sd.o obj/default/src/efsl/time.o obj/default/src/efsl/ui.o obj/default/src/background.o obj/default/src/brain.o obj/default/src/colliders.o obj/default/src/config.o obj/default/src/enemies.o obj/default/src/init.o obj/default/src/item.o obj/default/src/keyboard.o obj/default/src/main.o obj/default/src/player.o obj/default/src/sim.o obj/default/src/sprite.o obj/default/src/sprite_animator.o -lm -msys-lib=m
+nios2-elf-insert final_project_software.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 0 --sidp 0x8000950 --timestamp 1544487128 --stderr_dev jtag_game_nios --stdin_dev jtag_game_nios --stdout_dev jtag_game_nios --sopc_system_name final_project --quartus_project_dir "/home/joey/courses/ece385/final_project" --jdi ../..//output_files/mario_cv_game.jdi --sopcinfo /home/joey/courses/ece385/final_project/software/final_project_software_bsp/../../final_project.sopcinfo
+Info: (final_project_software.elf) 894 KBytes program size (code + initialized data).
+Info:                              130169 KBytes free for stack + heap.
+Info: Creating final_project_software.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source final_project_software.elf >final_project_software.objdump
+[final_project_software build complete]

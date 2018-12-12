@@ -12,6 +12,7 @@
 #include "../include/keyboard.h"
 #include "../include/sim.h"
 #include <unistd.h>
+#include "../include/enemies.h"
 //extern "C" {
 //#include "../include/efsl/efs.h"
 //#include "../include/efsl/ls.h"
@@ -92,30 +93,31 @@ int main ()
 	Keyboard::initKeyboard(); // Startup the keyboard
 	string line;
 
-	Turtle * turt = new Turtle(100, 100);
+	Turtle * turt = new Turtle(100, 100, background);
 	background->enemies[turt->collider.collider_id] = turt;
-
+	std::cout << "Before loop" << std::endl;
 	while (true) {
-		//Sim::scancode_file.seekg(0, ios_base::beg);
-		//Sim::scancode_file >> line;
+		Sim::scancode_file.seekg(0, ios_base::beg);
+		Sim::scancode_file >> line;
 		std::cout << "Scancode:" << unsigned(atoi((line == "" ? "0" : line).c_str())) << std::endl;
 
 		*Keyboard::SCANCODE_PIO = unsigned(atoi((line == "" ? "0" : line).c_str()));
 		Keyboard::updateKeys();
 		background->updateBackground(); // Function that does everything in the game.
 		// Wait for hardware, and signal that you're done
+		usleep(500000);
 //		Sim::software_done_file.seekp(0, ios_base::beg);
 //		Sim::software_done_file << 1 << std::flush;
 //		Sim::hardware_done_file.seekg(0, ios_base::beg);
 //		getline(Sim::hardware_done_file, line);
 		//line = strip_newline(line);
-		*Sprite::HARDWARE_DONE = atoi(line.c_str());
-		while (!(*Sprite::HARDWARE_DONE)) { // Should update at 60ish fps
-			std::cout << "Waiting for hardware" << std::endl;
-//			Sim::hardware_done_file.seekg(0, ios_base::beg);
-//			Sim::hardware_done_file >> line;
-//			*Sprite::HARDWARE_DONE = atoi(line.c_str());
-		}
+		//*Sprite::HARDWARE_DONE = atoi(line.c_str());
+		//while (!(*Sprite::HARDWARE_DONE)) { // Should update at 60ish fps
+		//	std::cout << "Waiting for hardware" << std::endl;
+//		//	Sim::hardware_done_file.seekg(0, ios_base::beg);
+//		//	Sim::hardware_done_file >> line;
+//		//	*Sprite::HARDWARE_DONE = atoi(line.c_str());
+		//}
 //		Sim::software_done_file.seekp(0, ios_base::beg);
 //		Sim::software_done_file << 0 << std::flush;
 		cout << std::endl;

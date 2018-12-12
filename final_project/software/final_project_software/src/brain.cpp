@@ -33,7 +33,7 @@ void Brain::makeDecision() {
 bool Brain::willFallOffCliff(uint16_t numFrames) {
 	Rect_Collider update_collider = enemy->collider;
 
-	update_collider += enemy->velX * numFrames;
+	update_collider.collide_x += enemy->velX * numFrames;
 	if(update_collider.collides_with(enemy->last_collided) && !background->outOfBounds(update_collider)) {
 		return false;
 	}
