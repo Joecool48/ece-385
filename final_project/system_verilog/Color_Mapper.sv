@@ -184,9 +184,9 @@ Num colors is:  45
 			end
 
 			default begin
-				red = 8'd255;
-				green = 8'd255;
-				blue = 8'd255;
+				red = 8'd0;
+				green = 8'd0;
+				blue = 8'd0;
 			end
 		endcase
 	end

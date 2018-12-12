@@ -8,9 +8,12 @@ module RAM_param (input logic clk,
 	logic[7:0] mem [172800];
 	
 	always_ff @ (posedge clk) begin
-		if (wren)
-			mem[address] <= data;
+		if (wren && address < 18'd172800) begin
+			if(address < 18'd100000 && address > 18'd90000) mem[address] <= 8'd4;
+			else mem[address] <= data;
+		end
 		else
 			q <= mem[address];
+		
 	end
 endmodule

@@ -37,6 +37,7 @@ begin
         if( re && !e )
         begin
             data_out <= buff_mem[rd_ptr];
+				buff_mem[rd_ptr] <= 0;
             status[rd_ptr] <= 1'b0;
 				if(rd_ptr == FIFO_DEPTH-1) rd_ptr <= 0;
 				else rd_ptr <= rd_ptr + {{(FIFO_DEPTH-1){1'b0}}, 1'b1};

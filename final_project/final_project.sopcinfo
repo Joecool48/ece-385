@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="final_project" kind="final_project" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2018.12.10.05:12:05 -->
+ <!-- 2018.12.11.23:03:23 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1544440324</value>
+  <value>1544591003</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -1187,7 +1187,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="MAXIMUM_BURST_COUNT">
    <type>int</type>
-   <value>64</value>
+   <value>128</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1195,7 +1195,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="BURST_COUNT_WIDTH">
    <type>int</type>
-   <value>7</value>
+   <value>8</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1203,7 +1203,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="FIFO_DEPTH">
    <type>int</type>
-   <value>128</value>
+   <value>256</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1211,7 +1211,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="FIFO_DEPTH_LOG2">
    <type>int</type>
-   <value>7</value>
+   <value>8</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1662,7 +1662,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>master_burstcount</name>
     <direction>Output</direction>
-    <width>7</width>
+    <width>8</width>
     <role>burstcount</role>
    </port>
    <port>
@@ -3416,7 +3416,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="instSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x8000000' end='0x8000800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='pll.pll_slave' start='0x8000800' end='0x8000810' type='altpll.pll_slave' /><slave name='jtag_game_nios.avalon_jtag_slave' start='0x8000810' end='0x8000818' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sysid.control_slave' start='0x8000818' end='0x8000820' type='altera_avalon_sysid_qsys.control_slave' /><slave name='sprite_rotate_pio.s1' start='0x8000890' end='0x80008A0' type='altera_avalon_pio.s1' /><slave name='sprite_y_pio.s1' start='0x80008A0' end='0x80008B0' type='altera_avalon_pio.s1' /><slave name='sprite_x_pio.s1' start='0x80008B0' end='0x80008C0' type='altera_avalon_pio.s1' /><slave name='sprite_height_pio.s1' start='0x80008C0' end='0x80008D0' type='altera_avalon_pio.s1' /><slave name='sprite_width_pio.s1' start='0x80008D0' end='0x80008E0' type='altera_avalon_pio.s1' /><slave name='sprite_address_pio.s1' start='0x80008E0' end='0x80008F0' type='altera_avalon_pio.s1' /><slave name='sprite_id_pio.s1' start='0x80008F0' end='0x8000900' type='altera_avalon_pio.s1' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x8000000' end='0x8000800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='sprite_rotate_pio.s1' start='0x8000880' end='0x8000890' type='altera_avalon_pio.s1' /><slave name='sprite_y_pio.s1' start='0x8000890' end='0x80008A0' type='altera_avalon_pio.s1' /><slave name='sprite_x_pio.s1' start='0x80008A0' end='0x80008B0' type='altera_avalon_pio.s1' /><slave name='sprite_height_pio.s1' start='0x80008B0' end='0x80008C0' type='altera_avalon_pio.s1' /><slave name='sprite_width_pio.s1' start='0x80008C0' end='0x80008D0' type='altera_avalon_pio.s1' /><slave name='sprite_address_pio.s1' start='0x80008D0' end='0x80008E0' type='altera_avalon_pio.s1' /><slave name='sprite_id_pio.s1' start='0x80008E0' end='0x80008F0' type='altera_avalon_pio.s1' /><slave name='pll.pll_slave' start='0x80008F0' end='0x8000900' type='altpll.pll_slave' /><slave name='sysid.control_slave' start='0x8000908' end='0x8000910' type='altera_avalon_sysid_qsys.control_slave' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -3436,7 +3436,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x8000000' end='0x8000800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='pll.pll_slave' start='0x8000800' end='0x8000810' type='altpll.pll_slave' /><slave name='jtag_game_nios.avalon_jtag_slave' start='0x8000810' end='0x8000818' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sysid.control_slave' start='0x8000818' end='0x8000820' type='altera_avalon_sysid_qsys.control_slave' /><slave name='sprite_rotate_pio.s1' start='0x8000890' end='0x80008A0' type='altera_avalon_pio.s1' /><slave name='sprite_y_pio.s1' start='0x80008A0' end='0x80008B0' type='altera_avalon_pio.s1' /><slave name='sprite_x_pio.s1' start='0x80008B0' end='0x80008C0' type='altera_avalon_pio.s1' /><slave name='sprite_height_pio.s1' start='0x80008C0' end='0x80008D0' type='altera_avalon_pio.s1' /><slave name='sprite_width_pio.s1' start='0x80008D0' end='0x80008E0' type='altera_avalon_pio.s1' /><slave name='sprite_address_pio.s1' start='0x80008E0' end='0x80008F0' type='altera_avalon_pio.s1' /><slave name='sprite_id_pio.s1' start='0x80008F0' end='0x8000900' type='altera_avalon_pio.s1' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x8000000' end='0x8000800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='sprite_rotate_pio.s1' start='0x8000880' end='0x8000890' type='altera_avalon_pio.s1' /><slave name='sprite_y_pio.s1' start='0x8000890' end='0x80008A0' type='altera_avalon_pio.s1' /><slave name='sprite_x_pio.s1' start='0x80008A0' end='0x80008B0' type='altera_avalon_pio.s1' /><slave name='sprite_height_pio.s1' start='0x80008B0' end='0x80008C0' type='altera_avalon_pio.s1' /><slave name='sprite_width_pio.s1' start='0x80008C0' end='0x80008D0' type='altera_avalon_pio.s1' /><slave name='sprite_address_pio.s1' start='0x80008D0' end='0x80008E0' type='altera_avalon_pio.s1' /><slave name='sprite_id_pio.s1' start='0x80008E0' end='0x80008F0' type='altera_avalon_pio.s1' /><slave name='pll.pll_slave' start='0x80008F0' end='0x8000900' type='altpll.pll_slave' /><slave name='sysid.control_slave' start='0x8000908' end='0x8000910' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_game_nios.avalon_jtag_slave' start='0x8000910' end='0x8000918' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4107,7 +4107,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>jtag_game_nios</moduleName>
     <slaveName>avalon_jtag_slave</slaveName>
     <name>jtag_game_nios.avalon_jtag_slave</name>
-    <baseAddress>134219792</baseAddress>
+    <baseAddress>134220048</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
@@ -4115,7 +4115,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sysid</moduleName>
     <slaveName>control_slave</slaveName>
     <name>sysid.control_slave</name>
-    <baseAddress>134219800</baseAddress>
+    <baseAddress>134220040</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
@@ -4131,7 +4131,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>pll</moduleName>
     <slaveName>pll_slave</slaveName>
     <name>pll.pll_slave</name>
-    <baseAddress>134219776</baseAddress>
+    <baseAddress>134220016</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -4139,7 +4139,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sprite_id_pio</moduleName>
     <slaveName>s1</slaveName>
     <name>sprite_id_pio.s1</name>
-    <baseAddress>134220016</baseAddress>
+    <baseAddress>134220000</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -4147,7 +4147,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sprite_address_pio</moduleName>
     <slaveName>s1</slaveName>
     <name>sprite_address_pio.s1</name>
-    <baseAddress>134220000</baseAddress>
+    <baseAddress>134219984</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -4155,7 +4155,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sprite_width_pio</moduleName>
     <slaveName>s1</slaveName>
     <name>sprite_width_pio.s1</name>
-    <baseAddress>134219984</baseAddress>
+    <baseAddress>134219968</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -4163,7 +4163,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sprite_height_pio</moduleName>
     <slaveName>s1</slaveName>
     <name>sprite_height_pio.s1</name>
-    <baseAddress>134219968</baseAddress>
+    <baseAddress>134219952</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -4171,7 +4171,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sprite_x_pio</moduleName>
     <slaveName>s1</slaveName>
     <name>sprite_x_pio.s1</name>
-    <baseAddress>134219952</baseAddress>
+    <baseAddress>134219936</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -4179,7 +4179,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sprite_y_pio</moduleName>
     <slaveName>s1</slaveName>
     <name>sprite_y_pio.s1</name>
-    <baseAddress>134219936</baseAddress>
+    <baseAddress>134219920</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -4187,7 +4187,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sprite_rotate_pio</moduleName>
     <slaveName>s1</slaveName>
     <name>sprite_rotate_pio.s1</name>
-    <baseAddress>134219920</baseAddress>
+    <baseAddress>134219904</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -4487,18 +4487,10 @@ parameters are a RESULT of the module parameters. -->
    </port>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>jtag_game_nios</moduleName>
-    <slaveName>avalon_jtag_slave</slaveName>
-    <name>jtag_game_nios.avalon_jtag_slave</name>
-    <baseAddress>134219792</baseAddress>
-    <span>8</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
     <moduleName>sysid</moduleName>
     <slaveName>control_slave</slaveName>
     <name>sysid.control_slave</name>
-    <baseAddress>134219800</baseAddress>
+    <baseAddress>134220040</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
@@ -4514,7 +4506,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>pll</moduleName>
     <slaveName>pll_slave</slaveName>
     <name>pll.pll_slave</name>
-    <baseAddress>134219776</baseAddress>
+    <baseAddress>134220016</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -4522,7 +4514,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sprite_id_pio</moduleName>
     <slaveName>s1</slaveName>
     <name>sprite_id_pio.s1</name>
-    <baseAddress>134220016</baseAddress>
+    <baseAddress>134220000</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -4530,7 +4522,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sprite_address_pio</moduleName>
     <slaveName>s1</slaveName>
     <name>sprite_address_pio.s1</name>
-    <baseAddress>134220000</baseAddress>
+    <baseAddress>134219984</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -4538,7 +4530,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sprite_width_pio</moduleName>
     <slaveName>s1</slaveName>
     <name>sprite_width_pio.s1</name>
-    <baseAddress>134219984</baseAddress>
+    <baseAddress>134219968</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -4546,7 +4538,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sprite_height_pio</moduleName>
     <slaveName>s1</slaveName>
     <name>sprite_height_pio.s1</name>
-    <baseAddress>134219968</baseAddress>
+    <baseAddress>134219952</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -4554,7 +4546,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sprite_x_pio</moduleName>
     <slaveName>s1</slaveName>
     <name>sprite_x_pio.s1</name>
-    <baseAddress>134219952</baseAddress>
+    <baseAddress>134219936</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -4562,14 +4554,6 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sprite_y_pio</moduleName>
     <slaveName>s1</slaveName>
     <name>sprite_y_pio.s1</name>
-    <baseAddress>134219936</baseAddress>
-    <span>16</span>
-   </memoryBlock>
-   <memoryBlock>
-    <isBridge>false</isBridge>
-    <moduleName>sprite_rotate_pio</moduleName>
-    <slaveName>s1</slaveName>
-    <name>sprite_rotate_pio.s1</name>
     <baseAddress>134219920</baseAddress>
     <span>16</span>
    </memoryBlock>
@@ -4580,6 +4564,14 @@ parameters are a RESULT of the module parameters. -->
     <name>sdram.s1</name>
     <baseAddress>0</baseAddress>
     <span>134217728</span>
+   </memoryBlock>
+   <memoryBlock>
+    <isBridge>false</isBridge>
+    <moduleName>sprite_rotate_pio</moduleName>
+    <slaveName>s1</slaveName>
+    <name>sprite_rotate_pio.s1</name>
+    <baseAddress>134219904</baseAddress>
+    <span>16</span>
    </memoryBlock>
   </interface>
   <interface name="irq" kind="interrupt_receiver" version="18.1">
@@ -13736,7 +13728,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1544440324</value>
+   <value>1544591003</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -13756,7 +13748,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1544440324</value>
+   <value>1544591003</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -13772,7 +13764,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1544440324</value>
+   <value>1544591003</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -14347,7 +14339,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x08000810</value>
+   <value>0x08000910</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -14398,7 +14390,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x08000818</value>
+   <value>0x08000908</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -14500,7 +14492,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x08000800</value>
+   <value>0x080008f0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -14551,7 +14543,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x080008f0</value>
+   <value>0x080008e0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -14602,7 +14594,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x080008e0</value>
+   <value>0x080008d0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -14653,7 +14645,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x080008d0</value>
+   <value>0x080008c0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -14704,7 +14696,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x080008c0</value>
+   <value>0x080008b0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -14755,7 +14747,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x080008b0</value>
+   <value>0x080008a0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -14806,7 +14798,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x080008a0</value>
+   <value>0x08000890</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -14857,7 +14849,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x08000890</value>
+   <value>0x08000880</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -14944,57 +14936,6 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection
-   name="nios2_gen2_0.instruction_master/jtag_game_nios.avalon_jtag_slave"
-   kind="avalon"
-   version="18.1"
-   start="nios2_gen2_0.instruction_master"
-   end="jtag_game_nios.avalon_jtag_slave">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
-   <value>0x08000810</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>nios2_gen2_0</startModule>
-  <startConnectionPoint>instruction_master</startConnectionPoint>
-  <endModule>jtag_game_nios</endModule>
-  <endConnectionPoint>avalon_jtag_slave</endConnectionPoint>
- </connection>
- <connection
    name="nios2_gen2_0.instruction_master/sysid.control_slave"
    kind="avalon"
    version="18.1"
@@ -15010,7 +14951,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x08000818</value>
+   <value>0x08000908</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -15112,7 +15053,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x08000800</value>
+   <value>0x080008f0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -15163,7 +15104,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x080008f0</value>
+   <value>0x080008e0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -15214,7 +15155,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x080008e0</value>
+   <value>0x080008d0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -15265,7 +15206,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x080008d0</value>
+   <value>0x080008c0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -15316,7 +15257,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x080008c0</value>
+   <value>0x080008b0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -15367,7 +15308,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x080008b0</value>
+   <value>0x080008a0</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -15418,57 +15359,6 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x080008a0</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="defaultConnection">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>nios2_gen2_0</startModule>
-  <startConnectionPoint>instruction_master</startConnectionPoint>
-  <endModule>sprite_y_pio</endModule>
-  <endConnectionPoint>s1</endConnectionPoint>
- </connection>
- <connection
-   name="nios2_gen2_0.instruction_master/sprite_rotate_pio.s1"
-   kind="avalon"
-   version="18.1"
-   start="nios2_gen2_0.instruction_master"
-   end="sprite_rotate_pio.s1">
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>java.math.BigInteger</type>
    <value>0x08000890</value>
    <derived>false</derived>
    <enabled>true</enabled>
@@ -15501,7 +15391,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>nios2_gen2_0</startModule>
   <startConnectionPoint>instruction_master</startConnectionPoint>
-  <endModule>sprite_rotate_pio</endModule>
+  <endModule>sprite_y_pio</endModule>
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection
@@ -15553,6 +15443,57 @@ parameters are a RESULT of the module parameters. -->
   <startModule>nios2_gen2_0</startModule>
   <startConnectionPoint>instruction_master</startConnectionPoint>
   <endModule>sdram</endModule>
+  <endConnectionPoint>s1</endConnectionPoint>
+ </connection>
+ <connection
+   name="nios2_gen2_0.instruction_master/sprite_rotate_pio.s1"
+   kind="avalon"
+   version="18.1"
+   start="nios2_gen2_0.instruction_master"
+   end="sprite_rotate_pio.s1">
+  <parameter name="arbitrationPriority">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="baseAddress">
+   <type>java.math.BigInteger</type>
+   <value>0x08000880</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="defaultConnection">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>nios2_gen2_0</startModule>
+  <startConnectionPoint>instruction_master</startConnectionPoint>
+  <endModule>sprite_rotate_pio</endModule>
   <endConnectionPoint>s1</endConnectionPoint>
  </connection>
  <connection
@@ -16469,7 +16410,7 @@ parameters are a RESULT of the module parameters. -->
   <version>18.1</version>
  </plugin>
  <plugin>
-  <instanceCount>26</instanceCount>
+  <instanceCount>25</instanceCount>
   <name>avalon</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>

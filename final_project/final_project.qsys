@@ -13,7 +13,7 @@
    {
       datum _sortIndex
       {
-         value = "0";
+         value = "1";
          type = "int";
       }
    }
@@ -21,7 +21,7 @@
    {
       datum _sortIndex
       {
-         value = "5";
+         value = "6";
          type = "int";
       }
    }
@@ -29,7 +29,7 @@
    {
       datum baseAddress
       {
-         value = "134219792";
+         value = "134220048";
          type = "String";
       }
    }
@@ -37,7 +37,7 @@
    {
       datum _sortIndex
       {
-         value = "6";
+         value = "7";
          type = "int";
       }
    }
@@ -45,7 +45,7 @@
    {
       datum _sortIndex
       {
-         value = "1";
+         value = "2";
          type = "int";
       }
    }
@@ -61,7 +61,7 @@
    {
       datum _sortIndex
       {
-         value = "2";
+         value = "3";
          type = "int";
       }
    }
@@ -69,7 +69,7 @@
    {
       datum baseAddress
       {
-         value = "134219776";
+         value = "134220016";
          type = "String";
       }
    }
@@ -77,7 +77,7 @@
    {
       datum _sortIndex
       {
-         value = "3";
+         value = "4";
          type = "int";
       }
    }
@@ -93,7 +93,7 @@
    {
       datum _sortIndex
       {
-         value = "8";
+         value = "9";
          type = "int";
       }
    }
@@ -101,7 +101,7 @@
    {
       datum baseAddress
       {
-         value = "134220000";
+         value = "134219984";
          type = "String";
       }
    }
@@ -109,7 +109,7 @@
    {
       datum _sortIndex
       {
-         value = "10";
+         value = "11";
          type = "int";
       }
    }
@@ -117,7 +117,7 @@
    {
       datum baseAddress
       {
-         value = "134219968";
+         value = "134219952";
          type = "String";
       }
    }
@@ -125,7 +125,7 @@
    {
       datum _sortIndex
       {
-         value = "7";
+         value = "8";
          type = "int";
       }
    }
@@ -133,7 +133,7 @@
    {
       datum baseAddress
       {
-         value = "134220016";
+         value = "134220000";
          type = "String";
       }
    }
@@ -141,7 +141,7 @@
    {
       datum _sortIndex
       {
-         value = "13";
+         value = "0";
          type = "int";
       }
    }
@@ -149,7 +149,7 @@
    {
       datum baseAddress
       {
-         value = "134219920";
+         value = "134219904";
          type = "String";
       }
    }
@@ -157,7 +157,7 @@
    {
       datum _sortIndex
       {
-         value = "9";
+         value = "10";
          type = "int";
       }
    }
@@ -165,7 +165,7 @@
    {
       datum baseAddress
       {
-         value = "134219984";
+         value = "134219968";
          type = "String";
       }
    }
@@ -173,7 +173,7 @@
    {
       datum _sortIndex
       {
-         value = "11";
+         value = "12";
          type = "int";
       }
    }
@@ -181,7 +181,7 @@
    {
       datum baseAddress
       {
-         value = "134219952";
+         value = "134219936";
          type = "String";
       }
    }
@@ -189,7 +189,7 @@
    {
       datum _sortIndex
       {
-         value = "12";
+         value = "13";
          type = "int";
       }
    }
@@ -197,7 +197,7 @@
    {
       datum baseAddress
       {
-         value = "134219936";
+         value = "134219920";
          type = "String";
       }
    }
@@ -205,7 +205,7 @@
    {
       datum _sortIndex
       {
-         value = "4";
+         value = "5";
          type = "int";
       }
    }
@@ -213,7 +213,7 @@
    {
       datum baseAddress
       {
-         value = "134219800";
+         value = "134220040";
          type = "String";
       }
    }
@@ -322,12 +322,12 @@
   <parameter name="AUTO_CLOCK_RESET_CLOCK_RATE" value="100000000" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="BURST_CAPABLE" value="1" />
-  <parameter name="BURST_COUNT_WIDTH" value="7" />
+  <parameter name="BURST_COUNT_WIDTH" value="8" />
   <parameter name="DATA_WIDTH" value="8" />
-  <parameter name="FIFO_DEPTH" value="128" />
-  <parameter name="FIFO_DEPTH_LOG2" value="7" />
+  <parameter name="FIFO_DEPTH" value="256" />
+  <parameter name="FIFO_DEPTH_LOG2" value="8" />
   <parameter name="MASTER_DIRECTION" value="0" />
-  <parameter name="MAXIMUM_BURST_COUNT" value="64" />
+  <parameter name="MAXIMUM_BURST_COUNT" value="128" />
   <parameter name="MEMORY_BASED_FIFO" value="1" />
  </module>
  <module
@@ -354,7 +354,7 @@
   <parameter name="dataAddrWidth" value="28" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x8000000' end='0x8000800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='pll.pll_slave' start='0x8000800' end='0x8000810' type='altpll.pll_slave' /><slave name='jtag_game_nios.avalon_jtag_slave' start='0x8000810' end='0x8000818' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sysid.control_slave' start='0x8000818' end='0x8000820' type='altera_avalon_sysid_qsys.control_slave' /><slave name='sprite_rotate_pio.s1' start='0x8000890' end='0x80008A0' type='altera_avalon_pio.s1' /><slave name='sprite_y_pio.s1' start='0x80008A0' end='0x80008B0' type='altera_avalon_pio.s1' /><slave name='sprite_x_pio.s1' start='0x80008B0' end='0x80008C0' type='altera_avalon_pio.s1' /><slave name='sprite_height_pio.s1' start='0x80008C0' end='0x80008D0' type='altera_avalon_pio.s1' /><slave name='sprite_width_pio.s1' start='0x80008D0' end='0x80008E0' type='altera_avalon_pio.s1' /><slave name='sprite_address_pio.s1' start='0x80008E0' end='0x80008F0' type='altera_avalon_pio.s1' /><slave name='sprite_id_pio.s1' start='0x80008F0' end='0x8000900' type='altera_avalon_pio.s1' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x8000000' end='0x8000800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='sprite_rotate_pio.s1' start='0x8000880' end='0x8000890' type='altera_avalon_pio.s1' /><slave name='sprite_y_pio.s1' start='0x8000890' end='0x80008A0' type='altera_avalon_pio.s1' /><slave name='sprite_x_pio.s1' start='0x80008A0' end='0x80008B0' type='altera_avalon_pio.s1' /><slave name='sprite_height_pio.s1' start='0x80008B0' end='0x80008C0' type='altera_avalon_pio.s1' /><slave name='sprite_width_pio.s1' start='0x80008C0' end='0x80008D0' type='altera_avalon_pio.s1' /><slave name='sprite_address_pio.s1' start='0x80008D0' end='0x80008E0' type='altera_avalon_pio.s1' /><slave name='sprite_id_pio.s1' start='0x80008E0' end='0x80008F0' type='altera_avalon_pio.s1' /><slave name='pll.pll_slave' start='0x80008F0' end='0x8000900' type='altpll.pll_slave' /><slave name='sysid.control_slave' start='0x8000908' end='0x8000910' type='altera_avalon_sysid_qsys.control_slave' /><slave name='jtag_game_nios.avalon_jtag_slave' start='0x8000910' end='0x8000918' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -393,7 +393,7 @@
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Tiny" />
   <parameter name="instAddrWidth" value="28" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x8000000' end='0x8000800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='pll.pll_slave' start='0x8000800' end='0x8000810' type='altpll.pll_slave' /><slave name='jtag_game_nios.avalon_jtag_slave' start='0x8000810' end='0x8000818' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sysid.control_slave' start='0x8000818' end='0x8000820' type='altera_avalon_sysid_qsys.control_slave' /><slave name='sprite_rotate_pio.s1' start='0x8000890' end='0x80008A0' type='altera_avalon_pio.s1' /><slave name='sprite_y_pio.s1' start='0x80008A0' end='0x80008B0' type='altera_avalon_pio.s1' /><slave name='sprite_x_pio.s1' start='0x80008B0' end='0x80008C0' type='altera_avalon_pio.s1' /><slave name='sprite_height_pio.s1' start='0x80008C0' end='0x80008D0' type='altera_avalon_pio.s1' /><slave name='sprite_width_pio.s1' start='0x80008D0' end='0x80008E0' type='altera_avalon_pio.s1' /><slave name='sprite_address_pio.s1' start='0x80008E0' end='0x80008F0' type='altera_avalon_pio.s1' /><slave name='sprite_id_pio.s1' start='0x80008F0' end='0x8000900' type='altera_avalon_pio.s1' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x0' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /><slave name='nios2_gen2_0.debug_mem_slave' start='0x8000000' end='0x8000800' type='altera_nios2_gen2.debug_mem_slave' /><slave name='sprite_rotate_pio.s1' start='0x8000880' end='0x8000890' type='altera_avalon_pio.s1' /><slave name='sprite_y_pio.s1' start='0x8000890' end='0x80008A0' type='altera_avalon_pio.s1' /><slave name='sprite_x_pio.s1' start='0x80008A0' end='0x80008B0' type='altera_avalon_pio.s1' /><slave name='sprite_height_pio.s1' start='0x80008B0' end='0x80008C0' type='altera_avalon_pio.s1' /><slave name='sprite_width_pio.s1' start='0x80008C0' end='0x80008D0' type='altera_avalon_pio.s1' /><slave name='sprite_address_pio.s1' start='0x80008D0' end='0x80008E0' type='altera_avalon_pio.s1' /><slave name='sprite_id_pio.s1' start='0x80008E0' end='0x80008F0' type='altera_avalon_pio.s1' /><slave name='pll.pll_slave' start='0x80008F0' end='0x8000900' type='altpll.pll_slave' /><slave name='sysid.control_slave' start='0x8000908' end='0x8000910' type='altera_avalon_sysid_qsys.control_slave' /></address-map>]]></parameter>
   <parameter name="instructionMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="instructionMasterHighPerformanceMapParam" value="" />
   <parameter name="instruction_master_high_performance_paddr_base" value="0" />
@@ -865,7 +865,7 @@
    start="nios2_gen2_0.data_master"
    end="jtag_game_nios.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x08000810" />
+  <parameter name="baseAddress" value="0x08000910" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -874,7 +874,7 @@
    start="nios2_gen2_0.data_master"
    end="sysid.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x08000818" />
+  <parameter name="baseAddress" value="0x08000908" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -892,7 +892,7 @@
    start="nios2_gen2_0.data_master"
    end="pll.pll_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x08000800" />
+  <parameter name="baseAddress" value="0x080008f0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -901,7 +901,7 @@
    start="nios2_gen2_0.data_master"
    end="sprite_id_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008f0" />
+  <parameter name="baseAddress" value="0x080008e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -910,7 +910,7 @@
    start="nios2_gen2_0.data_master"
    end="sprite_address_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008e0" />
+  <parameter name="baseAddress" value="0x080008d0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -919,7 +919,7 @@
    start="nios2_gen2_0.data_master"
    end="sprite_width_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008d0" />
+  <parameter name="baseAddress" value="0x080008c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -928,7 +928,7 @@
    start="nios2_gen2_0.data_master"
    end="sprite_height_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008c0" />
+  <parameter name="baseAddress" value="0x080008b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -937,7 +937,7 @@
    start="nios2_gen2_0.data_master"
    end="sprite_x_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008b0" />
+  <parameter name="baseAddress" value="0x080008a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -946,7 +946,7 @@
    start="nios2_gen2_0.data_master"
    end="sprite_y_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008a0" />
+  <parameter name="baseAddress" value="0x08000890" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -955,7 +955,7 @@
    start="nios2_gen2_0.data_master"
    end="sprite_rotate_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x08000890" />
+  <parameter name="baseAddress" value="0x08000880" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -971,18 +971,9 @@
    kind="avalon"
    version="18.1"
    start="nios2_gen2_0.instruction_master"
-   end="jtag_game_nios.avalon_jtag_slave">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x08000810" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="nios2_gen2_0.instruction_master"
    end="sysid.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x08000818" />
+  <parameter name="baseAddress" value="0x08000908" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1000,7 +991,7 @@
    start="nios2_gen2_0.instruction_master"
    end="pll.pll_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x08000800" />
+  <parameter name="baseAddress" value="0x080008f0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1009,7 +1000,7 @@
    start="nios2_gen2_0.instruction_master"
    end="sprite_id_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008f0" />
+  <parameter name="baseAddress" value="0x080008e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1018,7 +1009,7 @@
    start="nios2_gen2_0.instruction_master"
    end="sprite_address_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008e0" />
+  <parameter name="baseAddress" value="0x080008d0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1027,7 +1018,7 @@
    start="nios2_gen2_0.instruction_master"
    end="sprite_width_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008d0" />
+  <parameter name="baseAddress" value="0x080008c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1036,7 +1027,7 @@
    start="nios2_gen2_0.instruction_master"
    end="sprite_height_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008c0" />
+  <parameter name="baseAddress" value="0x080008b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1045,15 +1036,6 @@
    start="nios2_gen2_0.instruction_master"
    end="sprite_x_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x080008b0" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="nios2_gen2_0.instruction_master"
-   end="sprite_y_pio.s1">
-  <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x080008a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
@@ -1061,7 +1043,7 @@
    kind="avalon"
    version="18.1"
    start="nios2_gen2_0.instruction_master"
-   end="sprite_rotate_pio.s1">
+   end="sprite_y_pio.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x08000890" />
   <parameter name="defaultConnection" value="false" />
@@ -1073,6 +1055,15 @@
    end="sdram.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios2_gen2_0.instruction_master"
+   end="sprite_rotate_pio.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x08000880" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="18.1" start="pll.c0" end="nios2_gen2_0.clk" />

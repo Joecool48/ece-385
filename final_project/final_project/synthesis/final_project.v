@@ -42,7 +42,7 @@ module final_project (
 	wire         master_template_0_avalon_master_read;                           // master_template_0:master_read -> mm_interconnect_0:master_template_0_avalon_master_read
 	wire         master_template_0_avalon_master_byteenable;                     // master_template_0:master_byteenable -> mm_interconnect_0:master_template_0_avalon_master_byteenable
 	wire         master_template_0_avalon_master_readdatavalid;                  // mm_interconnect_0:master_template_0_avalon_master_readdatavalid -> master_template_0:master_readdatavalid
-	wire   [6:0] master_template_0_avalon_master_burstcount;                     // master_template_0:master_burstcount -> mm_interconnect_0:master_template_0_avalon_master_burstcount
+	wire   [7:0] master_template_0_avalon_master_burstcount;                     // master_template_0:master_burstcount -> mm_interconnect_0:master_template_0_avalon_master_burstcount
 	wire  [31:0] nios2_gen2_0_data_master_readdata;                              // mm_interconnect_0:nios2_gen2_0_data_master_readdata -> nios2_gen2_0:d_readdata
 	wire         nios2_gen2_0_data_master_waitrequest;                           // mm_interconnect_0:nios2_gen2_0_data_master_waitrequest -> nios2_gen2_0:d_waitrequest
 	wire         nios2_gen2_0_data_master_debugaccess;                           // nios2_gen2_0:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:nios2_gen2_0_data_master_debugaccess
@@ -72,13 +72,6 @@ module final_project (
 	wire         mm_interconnect_0_sdram_s1_readdatavalid;                       // sdram:za_valid -> mm_interconnect_0:sdram_s1_readdatavalid
 	wire         mm_interconnect_0_sdram_s1_write;                               // mm_interconnect_0:sdram_s1_write -> sdram:az_wr_n
 	wire  [31:0] mm_interconnect_0_sdram_s1_writedata;                           // mm_interconnect_0:sdram_s1_writedata -> sdram:az_data
-	wire         mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_chipselect;  // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_chipselect -> jtag_game_nios:av_chipselect
-	wire  [31:0] mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_readdata;    // jtag_game_nios:av_readdata -> mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_readdata
-	wire         mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_waitrequest; // jtag_game_nios:av_waitrequest -> mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_waitrequest
-	wire   [0:0] mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_address;     // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_address -> jtag_game_nios:av_address
-	wire         mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_read;        // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_read -> jtag_game_nios:av_read_n
-	wire         mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_write;       // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_write -> jtag_game_nios:av_write_n
-	wire  [31:0] mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_writedata;   // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_writedata -> jtag_game_nios:av_writedata
 	wire  [31:0] mm_interconnect_0_sysid_control_slave_readdata;                 // sysid:readdata -> mm_interconnect_0:sysid_control_slave_readdata
 	wire   [0:0] mm_interconnect_0_sysid_control_slave_address;                  // mm_interconnect_0:sysid_control_slave_address -> sysid:address
 	wire  [31:0] mm_interconnect_0_pll_pll_slave_readdata;                       // pll:readdata -> mm_interconnect_0:pll_pll_slave_readdata
@@ -121,6 +114,13 @@ module final_project (
 	wire   [1:0] mm_interconnect_0_sprite_rotate_pio_s1_address;                 // mm_interconnect_0:sprite_rotate_pio_s1_address -> sprite_rotate_pio:address
 	wire         mm_interconnect_0_sprite_rotate_pio_s1_write;                   // mm_interconnect_0:sprite_rotate_pio_s1_write -> sprite_rotate_pio:write_n
 	wire  [31:0] mm_interconnect_0_sprite_rotate_pio_s1_writedata;               // mm_interconnect_0:sprite_rotate_pio_s1_writedata -> sprite_rotate_pio:writedata
+	wire         mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_chipselect;  // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_chipselect -> jtag_game_nios:av_chipselect
+	wire  [31:0] mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_readdata;    // jtag_game_nios:av_readdata -> mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_readdata
+	wire         mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_waitrequest; // jtag_game_nios:av_waitrequest -> mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_waitrequest
+	wire   [0:0] mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_address;     // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_address -> jtag_game_nios:av_address
+	wire         mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_read;        // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_read -> jtag_game_nios:av_read_n
+	wire         mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_write;       // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_write -> jtag_game_nios:av_write_n
+	wire  [31:0] mm_interconnect_0_jtag_game_nios_avalon_jtag_slave_writedata;   // mm_interconnect_0:jtag_game_nios_avalon_jtag_slave_writedata -> jtag_game_nios:av_writedata
 	wire         irq_mapper_receiver0_irq;                                       // jtag_game_nios:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] nios2_gen2_0_irq_irq;                                           // irq_mapper:sender_irq -> nios2_gen2_0:irq
 	wire         rst_controller_reset_out_reset;                                 // rst_controller:reset_out -> [irq_mapper:reset, jtag_game_nios:rst_n, master_template_0:reset, mm_interconnect_0:master_template_0_clock_reset_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, rst_translator:in_reset, sdram:reset_n, sprite_address_pio:reset_n, sprite_height_pio:reset_n, sprite_id_pio:reset_n, sprite_rotate_pio:reset_n, sprite_width_pio:reset_n, sprite_x_pio:reset_n, sprite_y_pio:reset_n, sysid:reset_n]
@@ -145,10 +145,10 @@ module final_project (
 		.DATA_WIDTH          (8),
 		.ADDRESS_WIDTH       (32),
 		.BURST_CAPABLE       (1),
-		.MAXIMUM_BURST_COUNT (64),
-		.BURST_COUNT_WIDTH   (7),
-		.FIFO_DEPTH          (128),
-		.FIFO_DEPTH_LOG2     (7),
+		.MAXIMUM_BURST_COUNT (128),
+		.BURST_COUNT_WIDTH   (8),
+		.FIFO_DEPTH          (256),
+		.FIFO_DEPTH_LOG2     (8),
 		.MEMORY_BASED_FIFO   (1)
 	) master_template_0 (
 		.clk                     (pll_c0_clk),                                    //       clock_reset.clk

@@ -3,7 +3,7 @@
 module mario_cv_game (
 							input  logic             CLOCK_50,
 							input  logic      [3:0]  KEY,          //bit 0 is set up as Reset
-							output logic				  SYS_CLK, // Clock for everything in the system
+							input logic				  SYS_CLK, // Clock for everything in the system
 
 							// VGA Interface 
 							output logic [7:0] VGA_R, VGA_G, VGA_B, //VGA Blue
@@ -91,7 +91,12 @@ module mario_cv_game (
 							logic [7:0]  sprite_rotate, 
 											 sprite_rotate_pio_export,
 											 sprite_rotate_test;
-											 
+							logic [7:0]  hardware_done_pio_export;
+							
+							always_ff @ (posedge SYS_CLK) begin
+								if (DrawY > 10'd795) hardware_done_pio_export <= 8'd1;
+								else hardware_done_pio_export <= 0;
+							end
 //							assign sprite_x_test = S_X;
 //							assign sprite_y_test = S_Y;
 //							assign sprite_height_test = S_H;
@@ -107,51 +112,92 @@ module mario_cv_game (
 //							assign sprite_address_test = 32'd0;
 //							assign sprite_id_test = 16'd1;
 //							assign sprite_rotate_test = 0;
+							logic key3, key2;
+							assign key3 = KEY[3];
+							assign key2 = KEY[2];
 
-							always_ff @ (negedge VGA_VS or negedge Reset) begin 
+							logic [31:0] frame_count;
+							logic  count_start;
+							enum logic [3:0] {FWAIT, BACK, FDONE} frame_state, next_frame_state; 
+							always_ff @ (posedge SYS_CLK) begin
+								case (frame_state)
+									FWAIT: begin
+										count_start <= 0;
+									end
+									BACK: begin
+										count_start <= 1'b1;
+									end
+									FDONE:
+										count_start <= 0;
+								endcase
+								if (count_start) begin
+									frame_count <= frame_count + 32'd1;
+								end
+								else frame_count <= 0;
+								frame_state <= next_frame_state;
+							end
+							logic [8:0] f_count;
+							always_ff @ (posedge SYS_CLK) begin
 								if (~Reset) begin
 									sprite_x_test <= 0;
 									sprite_y_test <= 0;
-									sprite_height_test <= 0;	//h*w = the nb of 4-hex-words
-									sprite_width_test <= 0;
-									sprite_address_test <= 0; //double the address of the control panel
-									sprite_id_test <= 0;
+									sprite_height_test <= 16'd224;	//h*w = the nb of 4-hex-words
+									sprite_width_test <= 16'd480;
+									sprite_address_test <= 32'd10000000; //double the address of the control panel
 									sprite_rotate_test <= 0;
+									sprite_id_test <= 16'd1;
 								end
-								else begin
-									if (frame_num == 0) begin
-										sprite_x_test <= sprite_x_test + 16'd25;
-										sprite_y_test <= sprite_y_test + 16'd25;
-										sprite_height_test <= 16'd50;	//h*w = the nb of 4-hex-words
-										sprite_width_test <= 16'd50;
-										sprite_id_test <= sprite_id_test + 16'd1;
-									end
-									else if (frame_num == 1'b1) begin
-										sprite_id_test <= sprite_id_test + 16'd1;
-									end
+								else if (~key2 && f_count < 8'd1) begin
+									sprite_x_test <= 16'd0;
+									sprite_y_test <= 16'd0;
+									sprite_height_test <= 16'd224;	//h*w = the nb of 4-hex-words
+									sprite_width_test <= 16'd480;
+									sprite_address_test <= 32'd10000000; //double the address of the control panel
+									sprite_rotate_test <= 8'd0;
+									sprite_id_test <= sprite_id_test + 16'd1;
+									f_count <= f_count + 8'd1;
 								end
+								else if (~key3 && f_count < 8'd1) begin
+									sprite_x_test <= 16'd180;
+									sprite_y_test <= 16'd240;
+									sprite_height_test <= 16'd31;	//h*w = the nb of 4-hex-words
+									sprite_width_test <= 16'd31;
+									sprite_address_test <= 32'd10771128; //double the address of the control panel
+									sprite_rotate_test <= 0;
+									sprite_id_test <= sprite_id_test + 16'd1;
+									f_count <= f_count + 8'd1;
+								end
+								else if (key2 && key3) f_count <= 0;
 							end
-
+							always_comb begin
+							   next_frame_state = frame_state;
+								case(frame_state) 
+									FWAIT: if(frame_end) next_frame_state = BACK;
+									BACK: if(frame_count == 32'd10000) next_frame_state = FDONE;
+									FDONE: next_frame_state = FWAIT;
+									default: next_frame_state = FWAIT;
+								endcase
+							end
 //							***SOC***
 						
 							//NIOS II, SDRAM_CTRL, PLL, MASTER_TEMPLATE, OTG, PIOs
-							final_project nios_system (
-											 .*,
-											 .clk_clk(CLOCK_50),
-											 .reset_reset_n(Reset), 
-											 .sdram_wire_addr(DRAM_ADDR),    //  sdram_wire.addr
-											 .sdram_wire_ba(DRAM_BA),      	//  .ba
-											 .sdram_wire_cas_n(DRAM_CAS_N),    //  .cas_n
-											 .sdram_wire_cke(DRAM_CKE),     	//  .cke
-											 .sdram_wire_cs_n(DRAM_CS_N),      //  .cs_n
-											 .sdram_wire_dq(DRAM_DQ),      	//  .dq
-											 .sdram_wire_dqm(DRAM_DQM),     	//  .dqm
-											 .sdram_wire_ras_n(DRAM_RAS_N),    //  .ras_n
-											 .sdram_wire_we_n(DRAM_WE_N),      //  .we_n
-											 .sdram_clk_clk(DRAM_CLK),			//  clock out to SDRAM from other PLL port
-											 .sys_clk_clk(SYS_CLK)			// Clock for system
-											 // Also imports all the sprite PIO information
-							);
+//							final_project nios_system (
+//											 .*,
+//											 .clk_clk(CLOCK_50),
+//											 .reset_reset_n(Reset), 
+//											 .sdram_wire_addr(DRAM_ADDR),    //  sdram_wire.addr
+//											 .sdram_wire_ba(DRAM_BA),      	//  .ba
+//											 .sdram_wire_cas_n(DRAM_CAS_N),    //  .cas_n
+//											 .sdram_wire_cke(DRAM_CKE),     	//  .cke
+//											 .sdram_wire_cs_n(DRAM_CS_N),      //  .cs_n
+//											 .sdram_wire_dq(DRAM_DQ),      	//  .dq
+//											 .sdram_wire_dqm(DRAM_DQM),     	//  .dqm
+//											 .sdram_wire_ras_n(DRAM_RAS_N),    //  .ras_n
+//											 .sdram_wire_we_n(DRAM_WE_N),      //  .we_n
+//											 .sdram_clk_clk(DRAM_CLK),			//  clock out to SDRAM from other PLL port
+//											 .sys_clk_clk(SYS_CLK)			// Clock for system
+//											 // Also imports all the sprite PIO information
+//							);
 							
 //							***FRAME BUFFERS***
 							
@@ -173,7 +219,7 @@ module mario_cv_game (
 							logic [7:0] fb_data_in;
 							logic write_fb_write_en;
 							logic write_active;
-							
+							logic [31:0] count, count2;
 							assign fb_data_out = (frame_num == 1) ? fb_curr_data_out : fb_update_data_out;
 							assign fb_curr_addr = (frame_num == 1) ? read_fb_addr : write_fb_addr;
 							assign fb_update_addr = (frame_num == 0) ? read_fb_addr : write_fb_addr;
@@ -218,7 +264,12 @@ module mario_cv_game (
 								if ((DrawX == H_TOTAL - 1) && (DrawY == V_TOTAL - 1)) read_active <= 1'b1;
 								else read_active <= 1'b0;
 							end
-							
+							logic frame_end;
+							always_ff @ (posedge SYS_CLK or negedge Reset) begin
+								if (~Reset) frame_end <= 0;
+								else if((DrawX == H_TOTAL - 1) && (DrawY == V_TOTAL - 1)) frame_end <= 1'd1;
+								else frame_end <= 0;
+							end
 //							*** SDRAM => FB ***
 							
 							// Sprite controller for writing sprites to the frame buffer that is currently selected
@@ -348,12 +399,12 @@ module mario_cv_game (
 										end
 									end
 									READ: begin
-										rd_counter <= rd_counter + 2'd1;
+										//rd_counter <= rd_counter + 2'd1;
 										fifo_re <= 1'b1;
 										draw_sprite <= 1'b1;
 									end
 									WRITE: begin
-										wr_counter <= wr_counter + 2'd1;
+										//wr_counter <= wr_counter + 2'd1;
 										fifo_we <= 1'b1;
 									end
 									DONE: begin
@@ -370,8 +421,8 @@ module mario_cv_game (
 										if (last_sprite_id != sprite_id_test && !fifo_full) fifo_next_state = WRITE;
 										else if (done_draw && !fifo_empty) fifo_next_state = READ; 
 									end
-									READ: if(rd_counter == 2'b11) fifo_next_state = DONE;
-									WRITE: if(wr_counter == 2'b11) fifo_next_state = DONE;
+									READ: fifo_next_state = DONE;
+									WRITE: fifo_next_state = DONE;
 									DONE: fifo_next_state = WAIT;
 									default: fifo_next_state = WAIT;
 								endcase
@@ -379,10 +430,10 @@ module mario_cv_game (
 							always_ff @ (posedge SYS_CLK) begin
 								fifo_curr_state <= fifo_next_state;
 							end
-							
+							logic [7:0] t_count;
 							//HEX DRIVERS
 							logic [6:0] hex0_comb, hex1_comb, hex2_comb, hex3_comb, hex4_comb, hex5_comb, hex6_comb, hex7_comb;
-			
+							logic [15:0] pix_x_test, pix_y_test;
 							always_ff @(posedge SYS_CLK) begin       
 									HEX0 <= hex0_comb;	
 									HEX1 <= hex1_comb;	
@@ -396,49 +447,49 @@ module mario_cv_game (
 							 
 							 HexDriver hex0_inst
 							 (
-								  .In0(sprite_id_test[3:0]),
+								  .In0(avalon_user_buffer_output_data[3:0]),
 								  .Out0(hex0_comb)
 							 );
 							 
 							 HexDriver hex1_inst
 							 (
-								  .In0(sprite_id_test[7:4]),
+								  .In0(avalon_user_buffer_output_data[7:4]),
 								  .Out0(hex1_comb)
 							 );
 							 
 							 HexDriver hex2_inst
 							 (
-								  .In0(last_sprite_id[3:0]),
+								  .In0(test_state[3:0]),
 								  .Out0(hex2_comb)
 							 );
 							 
 							 HexDriver hex3_inst
 							 (
-								  .In0(last_sprite_id[7:4]),
+								  .In0(t_count[3:0]),
 								  .Out0(hex3_comb)
 							 );
 							 
 							HexDriver hex4_inst
 							 (
-								  .In0(fifo_curr_state),
+								  .In0(t_count[7:4]),
 								  .Out0(hex4_comb)
 							 );
 							 
 							 HexDriver hex5_inst
 							 (
-								  .In0(avalon_control_done),
+								  .In0(avalon_user_read_buffer),
 								  .Out0(hex5_comb)
 							 );
 							 
 							HexDriver hex6_inst
 							 (
-								  .In0(test_state),
+								  .In0(avalon_control_done),
 								  .Out0(hex6_comb)
 							 );
 							 
 							 HexDriver hex7_inst
 							 (
-								  .In0(draw_sprite),
+								  .In0(avalon_user_data_available),
 								  .Out0(hex7_comb)
 							 );
 //							 logic SYS_CLK;
