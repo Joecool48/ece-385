@@ -1,0 +1,4 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+const volatile unsigned * SPRITE_ID_PIO_ADDRESS = 0x10008d0;

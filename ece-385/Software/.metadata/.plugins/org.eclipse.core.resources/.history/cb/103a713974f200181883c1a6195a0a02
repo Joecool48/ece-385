@@ -1,0 +1,22 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+/*
+ * 	Sprite Id should be incremented after every single addition
+ * 	of a sprite.
+ */
+/*
+ * These are the PIO address location declarations.
+ */
+/*
+ * Sprites are stored in column major order.
+ */
+const volatile unsigned * SPRITE_ID_PIO = 0x10008d0;
+const volatile unsigned * SPRITE_START_ADDR_PIO = 0x10008c0;
+const volatile unsigned * SPRITE_WIDTH_PIO = 0x10007b0;
+const volatile unsigned * SPRITE_HEIGHT_PIO = 0x10008a0;
+const volatile unsigned * SPRITE_X_PIO = 0x1000890;
+const volatile unsigned * SPRITE_Y_PIO = 0x1000880;
+
+
+const volatile unsigned BACKGROUND_ADDRESS = 0x31323123

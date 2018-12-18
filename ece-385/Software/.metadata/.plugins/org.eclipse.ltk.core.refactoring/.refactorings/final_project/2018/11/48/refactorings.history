@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;final_project/config.cpp&apos; to &apos;config.c&apos;" description="Rename resource &apos;config.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="config.cpp" name="config.c" stamp="1543342481041" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;final_project/config.c&apos; to &apos;config.h&apos;" description="Rename resource &apos;config.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="config.c" name="config.h" stamp="1543342504920" updateReferences="true"/>
+</session>
